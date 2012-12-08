@@ -2,14 +2,14 @@ This is BibTeX, Version 0.99d (TeX Live 2012/Arch Linux)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Vorlage_BA.aux
 I couldn't open style file IEEEtran.bst
----line 38 of file Vorlage_BA.aux
+---line 23 of file Vorlage_BA.aux
  : \bibstyle{IEEEtran
  :                   }
 I'm skipping whatever remains of this command
 I found no style file---while reading file Vorlage_BA.aux
-You've used 6 entries,
+You've used 1 entry,
             0 wiz_defined-function locations,
-            91 strings with 543 characters,
+            86 strings with 526 characters,
 and the built_in function-call counts, 0 in all, are:
 = -- 0
 > -- 0

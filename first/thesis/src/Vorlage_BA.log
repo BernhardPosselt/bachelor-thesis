@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2012.12.5)  5 DEC 2012 17:04
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2012.12.7)  8 DEC 2012 19:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -459,13 +459,13 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 65.
 (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<BM_2011.pdf, id=36, 598.235pt x 820.06375pt>
+<BM_2011.pdf, id=12, 598.235pt x 820.06375pt>
 File: BM_2011.pdf Graphic file (type pdf)
  <use BM_2011.pdf>
 Package pdftex.def Info: BM_2011.pdf used on input line 66.
 (pdftex.def)             Requested size: 598.74472pt x 845.10056pt.
 
-<FHTW_Logo_4c.pdf, id=37, 295.1025pt x 91.34125pt>
+<FHTW_Logo_4c.pdf, id=13, 295.1025pt x 91.34125pt>
 File: FHTW_Logo_4c.pdf Graphic file (type pdf)
  <use FHTW_Logo_4c.pdf>
 Package pdftex.def Info: FHTW_Logo_4c.pdf used on input line 67.
@@ -499,155 +499,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
-[4] [5] (./Vorlage_BA.toc)
+[4] (./Vorlage_BA.toc)
 \tf@toc=\write4
 \openout4 = `Vorlage_BA.toc'.
 
- [6
+ [5
 
 ]
 Kapitel 1.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 133.
 
-(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 140.
+LaTeX Warning: Citation `un_disabilities' on page 1 undefined on input line 134
+.
 
-<Buchruecken.jpg, id=87, 233.87375pt x 27.10126pt>
-File: Buchruecken.jpg Graphic file (type jpg)
- <use Buchruecken.jpg>
-Package pdftex.def Info: Buchruecken.jpg used on input line 152.
-(pdftex.def)             Requested size: 213.39566pt x 24.72957pt.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+(./Vorlage_BA.bbl)pdfTeX warning (ext4): destination with the same identifier (
+name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.176 \end{eqnarray}
-                     [1
+l.238 \addchap
+              {Abk"urzungsverzeichnis} [1
 
- <./Buchruecken.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 176--178
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
-
- []
-
-
-LaTeX Warning: Citation `kop05' on page 2 undefined on input line 189.
-
-
-LaTeX Warning: Citation `wil06' on page 2 undefined on input line 189.
-
-
-LaTeX Warning: Citation `mgb+05d' on page 2 undefined on input line 189.
-
-
-LaTeX Warning: Citation `mgb+04e' on page 2 undefined on input line 189.
-
-
-LaTeX Warning: Citation `mj00' on page 2 undefined on input line 189.
-
-
-LaTeX Warning: Citation `mj95' on page 2 undefined on input line 189.
-
-(./Vorlage_BA.bbl)
-
-LaTeX Font Warning: Font shape `T1/cmss/m/sc' in size <9> not available
-(Font)              Font shape `T1/cmr/m/sc' tried instead on input line 213.
-
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 252.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.213 \listoffigures
-                     [2] (./Vorlage_BA.lof)
-\tf@lof=\write5
-\openout5 = `Vorlage_BA.lof'.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.215 \newpage
-               [3
-
-] (./Vorlage_BA.lot)
-\tf@lot=\write6
-\openout6 = `Vorlage_BA.lot'.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.220 \newpage
-               [4
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.233 \chapter
-              [Erster Anhang]{"Uberschrift des ersten Anhangs} [5
+l.252 \end{document}
+                     [2
 
 ]
-Anhang A.
-pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.238 \chapter
-              [Zweiter Anhang]{"Uberschrift des zweiten Anhangs} [6
-
-]
-Anhang B.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 244.
-[7
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 244.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 252.
  (./Vorlage_BA.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 244.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 244.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 252.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 252.
 Package rerunfilecheck Info: File `Vorlage_BA.out' has not changed.
-(rerunfilecheck)             Checksum: 9AC794FB9CAA2F962414B03D8D885A1F;458.
+(rerunfilecheck)             Checksum: E050F450551BEC1DA8169B5504AAFFC7;109.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 244.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
  ) 
 Here is how much of TeX's memory you used:
- 8067 strings out of 493488
- 116703 string characters out of 3146892
- 226550 words of memory out of 3000000
- 11217 multiletter control sequences out of 15000+200000
- 31558 words of font info for 52 fonts, out of 3000000 for 9000
+ 7975 strings out of 493488
+ 115111 string characters out of 3146892
+ 221366 words of memory out of 3000000
+ 11156 multiletter control sequences out of 15000+200000
+ 26311 words of font info for 46 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,11n,51p,406b,402s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,8n,51p,727b,333s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
 exmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/
-public/cm-super/sfss0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
-/sfss0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><
-/usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/share/texm
-f-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhv
-r8a.pfb>
-Output written on Vorlage_BA.pdf (13 pages, 147662 bytes).
+/cm-super/sfss1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1
+095.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/
+texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on Vorlage_BA.pdf (7 pages, 58273 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 80 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
+ 27 words of extra memory for PDF output out of 10000 (max. 10000000)
 
