@@ -1,51 +1,56 @@
 This is BibTeX, Version 0.99d (TeX Live 2012/Arch Linux)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Vorlage_BA.aux
-I couldn't open style file IEEEtran.bst
----line 23 of file Vorlage_BA.aux
- : \bibstyle{IEEEtran
- :                   }
-I'm skipping whatever remains of this command
-I found no style file---while reading file Vorlage_BA.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Database file #1: Literatur.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
 You've used 1 entry,
-            0 wiz_defined-function locations,
-            86 strings with 526 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
+            4039 wiz_defined-function locations,
+            817 strings with 7412 characters,
+and the built_in function-call counts, 537 in all, are:
+= -- 41
+> -- 4
 < -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 2
+- -- 1
+* -- 34
+:= -- 112
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 1
+duplicate$ -- 37
+empty$ -- 42
+format.name$ -- 1
+if$ -- 98
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
+int.to.str$ -- 1
+missing$ -- 8
+newline$ -- 26
+num.names$ -- 1
+pop$ -- 16
+preamble$ -- 1
 purify$ -- 0
-quote$ -- 0
-skip$ -- 0
+quote$ -- 2
+skip$ -- 36
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 3
+swap$ -- 24
 text.length$ -- 0
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
+top$ -- 5
+type$ -- 1
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+while$ -- 1
+width$ -- 2
+write$ -- 32

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2012.12.7)  8 DEC 2012 19:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=latex 2012.12.7)  8 DEC 2012 19:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -144,7 +144,7 @@ Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -157,7 +157,7 @@ Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
 Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
 )
@@ -223,10 +223,17 @@ LaTeX Info: Redefining \pageref on input line 5847.
 \c@Hfootnote=\count96
 )
 
-Package hyperref Message: Driver (autodetected): hpdftex.
+Package hyperref Message: Driver (default): hdvips.
 
-(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2012/05/13 v6.82q Hyperref driver for pdfTeX
+(/usr/share/texmf-dist/tex/latex/hyperref/hdvips.def
+File: hdvips.def 2012/05/13 v6.82q Hyperref driver for dvips
+
+(/usr/share/texmf-dist/tex/latex/hyperref/pdfmark.def
+File: pdfmark.def 2012/05/13 v6.82q Hyperref definitions for pdfmark specials
+\pdf@docset=\toks15
+\pdf@box=\box27
+\pdf@toks=\toks16
+\pdf@defaulttoks=\toks17
 \Fld@listcount=\count97
 \c@bookmark@seq@number=\count98
 
@@ -236,11 +243,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip47
-)
+))
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
 
 (/usr/share/texmf-dist/tex/latex/base/ansinew.def
 File: ansinew.def 2008/03/30 v1.1d Input encoding file
@@ -276,7 +283,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks17
+\@emptytoks=\toks20
 \ex@=\dimen107
 ))
 (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -296,8 +303,8 @@ LaTeX Info: Redefining \overline on input line 307.
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
+\Mathstrutbox@=\box28
+\strutbox@=\box29
 \big@size=\dimen109
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
@@ -306,21 +313,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \dotsspace@=\muskip11
 \c@parentequation=\count107
 \dspbrk@lvl=\count108
-\tag@help=\toks18
+\tag@help=\toks21
 \row@=\count109
 \column@=\count110
 \maxfields@=\count111
-\andhelp@=\toks19
+\andhelp@=\toks22
 \eqnshift@=\dimen110
 \alignsep@=\dimen111
 \tagshift@=\dimen112
 \tagwidth@=\dimen113
 \totwidth@=\dimen114
 \lineht@=\dimen115
-\@envbody=\toks20
+\@envbody=\toks23
 \multlinegap=\skip49
 \multlinetaggap=\skip50
-\mathdisplay@stack=\toks21
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
@@ -351,11 +358,13 @@ Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 (/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: dvips.def on input line 130.
 
-(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count112
+(/usr/share/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+(/usr/share/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 (/usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
@@ -373,15 +382,34 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
-)
+
+(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+
+! Package pdftex.def Error: PDF mode expected, but DVI mode detected!
+(pdftex.def)                If you are using `latex', then call `pdflatex'.
+(pdftex.def)                Otherwise check and correct the driver options.
+(pdftex.def)                Error recovery by switching to PDF mode.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.433   }\@ehc
+              
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\Gread@gobject=\count112
+))
 \Gin@req@height=\dimen116
 \Gin@req@width=\dimen117
-)
-(/usr/share/texmf-dist/tex/latex/tools/array.sty
+) (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen118
 \extrarowheight=\dimen119
-\NC@list=\toks22
+\NC@list=\toks25
 \extratabsurround=\skip60
 \backup@length=\skip61
 ) (./Vorlage_BA.aux)
@@ -406,7 +434,7 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 57.
 (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-\AtBeginShipoutBox=\box29
+\AtBeginShipoutBox=\box30
 Package hyperref Info: Link coloring OFF on input line 57.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -430,42 +458,27 @@ LaTeX Info: Redefining \nameref on input line 57.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count114
 \scratchdimen=\dimen120
-\scratchbox=\box30
+\scratchbox=\box31
 \nofMPsegments=\count115
 \nofMParguments=\count116
-\everyMPshowfont=\toks23
+\everyMPshowfont=\toks26
 \MPscratchCnt=\count117
 \MPscratchDim=\dimen121
 \MPnumerator=\count118
 \makeMPintoPDFobject=\count119
-\everyMPtoPDFconversion=\toks24
-) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+\everyMPtoPDFconversion=\toks27
 )
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 LaTeX Font Info:    Try loading font information for T1+phv on input line 65.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
+ (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<BM_2011.pdf, id=12, 598.235pt x 820.06375pt>
+<BM_2011.pdf, id=1, 598.235pt x 820.06375pt>
 File: BM_2011.pdf Graphic file (type pdf)
  <use BM_2011.pdf>
 Package pdftex.def Info: BM_2011.pdf used on input line 66.
 (pdftex.def)             Requested size: 598.74472pt x 845.10056pt.
 
-<FHTW_Logo_4c.pdf, id=13, 295.1025pt x 91.34125pt>
+<FHTW_Logo_4c.pdf, id=2, 295.1025pt x 91.34125pt>
 File: FHTW_Logo_4c.pdf Graphic file (type pdf)
  <use FHTW_Logo_4c.pdf>
 Package pdftex.def Info: FHTW_Logo_4c.pdf used on input line 67.
@@ -484,79 +497,205 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 77.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
 
-{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map} <./BM_2011.pdf> <./FHTW_L
-ogo_4c.pdf>]
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./
+BM_2011.pdf> <./FHTW_Logo_4c.pdf>]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 91.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+ [2
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
+[3
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-[4] (./Vorlage_BA.toc)
+[4
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!] (./Vorlage_BA.toc)
 \tf@toc=\write4
 \openout4 = `Vorlage_BA.toc'.
 
  [5
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
 
-]
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
 Kapitel 1.
 
-LaTeX Warning: Citation `un_disabilities' on page 1 undefined on input line 134
+LaTeX Warning: Citation `un_disabilities' on page 1 undefined on input line 152
 .
 
-(./Vorlage_BA.bbl)pdfTeX warning (ext4): destination with the same identifier (
-name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.238 \addchap
-              {Abk"urzungsverzeichnis} [1
+[1
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 252.
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.252 \end{document}
-                     [2
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 252.
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Kapitel 2.
+[2
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Kapitel 3.
+[3
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Kapitel 4.
+(./Vorlage_BA.bbl [4
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]) [5
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 281.
+ [6
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 281.
  (./Vorlage_BA.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 252.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 252.
-Package rerunfilecheck Info: File `Vorlage_BA.out' has not changed.
-(rerunfilecheck)             Checksum: E050F450551BEC1DA8169B5504AAFFC7;109.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 281.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 281.
 
+
+Package rerunfilecheck Warning: File `Vorlage_BA.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Vorlage_BA.out':
+(rerunfilecheck)             Before: E050F450551BEC1DA8169B5504AAFFC7;109
+(rerunfilecheck)             After:  48EB5788865FBC9858630EA7C58F5E16;503.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 281.
  ) 
 Here is how much of TeX's memory you used:
- 7975 strings out of 493488
- 115111 string characters out of 3146892
- 221366 words of memory out of 3000000
- 11156 multiletter control sequences out of 15000+200000
+ 8067 strings out of 493489
+ 116261 string characters out of 3146915
+ 222824 words of memory out of 3000000
+ 11263 multiletter control sequences out of 15000+200000
  26311 words of font info for 46 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,8n,51p,727b,333s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,8n,51p,224b,341s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/t
 exmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public
 /cm-super/sfss1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1
 095.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/
 texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Vorlage_BA.pdf (7 pages, 58273 bytes).
+Output written on Vorlage_BA.pdf (11 pages, 61186 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
- 27 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 64 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
