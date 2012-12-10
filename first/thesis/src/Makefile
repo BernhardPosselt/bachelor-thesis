@@ -6,6 +6,9 @@ pdf:
 	pdflatex AccessibilityAndModernWeb.tex
 	pdflatex AccessibilityAndModernWeb.tex
 
+bib:
+	bibtex AccessibilityAndModernWeb.aux
+
 clean:
 	rm -rf AccessibilityAndModernWeb.pdf
 	rm -rf *.log

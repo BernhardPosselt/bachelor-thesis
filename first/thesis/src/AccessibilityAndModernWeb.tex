@@ -174,7 +174,7 @@ Jedoch kann es nicht nur aus den oben genannten Gr"unden erforderlich sein,
 einen barrierefreien Zugang bereitzustellen, sondern sogar gesetzlich
 vorgeschrieben. In den USA beispielsweise, gibt es daf"ur ein eigenes
 Gesetzt, den the Americans with Disabilities Act aus dem Jahre 1990 (ADA) und
-die Sektionen 504 und 508 aus dem Rehabilitation
+den Abschnitten 504 und 508 aus dem Rehabilitation
 Act (1973) \cite[S. 1-2]{achieving_web_acc}.
 
 \section{Arten von k"orperlichen oder geistigen
@@ -187,7 +187,7 @@ Die Anzahl der Personen, die Probleme beim Lesen von Displays aufweisen, wird we
 Die gr"o"sten Probleme f"ur sehbehinderte Personen entstehen nicht aus den Eingabeger"aten - die meisten Nutzer beherrschen das 10-Finger System - sondern aus den Ausgabeger"aten. Die am Meisten genutzten assistiven Technologien f"ur diese Personen sind Screen-Reader und Braillen. Braillen und andere in Hardware umgesetzte technologien sind jedoch meistens sehr teuer, da sie nur von einem geringen Prozentsatz der Bev"olkerung ben"otigt werden und deren Erlernung, beispielsweise die der Braillenschrift ist aufwendig und dementsprechend wenig verbreitet. 
 
 Deshalb ziehen die Meisten auf software basierende L"osungen vor, was dem Screen-Reader zu einer h"oheren Popularit"at verhilft. 
-\cite{screen_read_frust}[S. 249-250]. Bestimmte Screen Reader wie GNOME Orca \cite{orca} sind sogar frei f"ur jederman verf"ugbar. 
+\cite{screen_read_frust}[S. 249-250]. Bestimmte Screen Reader wie GNOME Orca \cite{orca} sind sogar frei f"ur jeden verf"ugbar. 
 
 
 \subsection{Personen mit H"ohst"orungen}
@@ -219,14 +219,14 @@ Success Criteria
 
 Im Web werden heutzutage vermehrt Ajax und JavaScript eingesetzt, nicht nur um eine immersive Erfahrung zu bieten, sondern auch um ganze Applikationen umzusetzen. Viele vom Desktop bekannte Paradigmen k"onnen nun mit JavaScript umgesetzt werden, z. B. Drag and Drop. Einige dieser Aktionen funktionieren jedoch nur mit speziellen Eingabeger"aten. So muss f"ur Drag and Drop zwingend eine Maus vorhanden sein. Für Nutzer eines Screen-Readers oder anderen assitiven Technologien wird es daher zunehmend schwieriger, mit der Webseite zu interagieren. 
 
-ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht dieses Problem mit zus"atzlichen HTML Attributen zu l"osen. Es erlaubt dem Programmierer zus"atzliche Meta-Informationen "uber die Funktionsweise und den gerade aktiven Status der Seite bereit zu stellen \cite{aria_intro}. Diese Attribute stellen jedoch nicht nur neue Funktionen bereit sondern dupplizieren zum Teil auch Information, die in HTML5 schon vorhanden sind und ausgelesen werden k"onnen z. B. aria-disabled oder aria-checked \cite[States and Properties]{aria} vgl. input Element Attribute checked und disabled \cite{html4_input}.
+ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht dieses Problem mit zus"atzlichen HTML Attributen zu l"osen. Es erlaubt dem Programmierer zus"atzliche Meta-Informationen "uber die Funktionsweise und den gerade aktiven Status der Seite bereit zu stellen \cite{aria_intro}. Diese Attribute stellen jedoch nicht nur neue Funktionen bereit sondern dupplizieren zum Teil auch Information, die in HTML5 schon vorhanden sind und ausgelesen werden k"onnen z. B. aria-disabled oder aria-checked \cite[States and Properties]{aria} vgl. input Element Attribute checked und disabled \cite[Abschnitt Forms, Input Element]{html4}. Dies erm"oglicht es, auch HTML Elemente als z. B. checked zu setzen, die urspr"unglich nicht daf"ur vorgesehen waren aber trotzdem so verwendet werden.
 
-Weiters ist es m"oglich eine die Struktur der Seite mit sogenannten ARIA Roles zu beschreiben.
+Weiters ist es m"oglich eine die Struktur der Seite mit sogenannten ARIA Roles zu beschreiben. Dies ist zum Teil auch schon mit den neuen HTML5 Elementen wie z. B. <nav> \cite[Abschnitt 4.4.3]{html5} vgl. role="navigation" \cite[Abschnitt 3.1]{xhtml_vocab}, doch auch hier wurde diese Information aus Flexibilit"atsgr"unden duppliziert. Jedoch kann an dieser Stelle auch erw"ahnt werden, dass HTML5 auch noch nicht fertiggestellt ist \cite{html5}.
 
 \section{Roles}
+Roles
 
-
-Alle m"oglichen Werte, die f"ur das Role attribut gesetzt werden k"onnen befinden sich auf der Seite \url{http://www.w3.org/1999/xhtml/vocab/} im Abschnitt \em{3. XHTML Role Vocabulary}. \cite[Sektion 3]{roles}
+Alle m"oglichen Werte, die f"ur das Role attribut gesetzt werden k"onnen befinden sich auf der Seite \url{http://www.w3.org/1999/xhtml/vocab/} im Abschnitt \em{3. XHTML Role Vocabulary}. \cite[Abschnitt 3]{roles}
 
 Diese 
 
@@ -337,10 +337,13 @@ Diese
 % \addsec{Abk"urzungsverzeichnis} zu ersetzen
 \addchap{Abk"urzungsverzeichnis}
 \hspace{-17mm}\begin{tabular}{>{\raggedleft}p{0.2\linewidth} p{0.75\linewidth} p{0.1\linewidth}}
-www & World Wide Web \\
+
+vgl. & vergleich\\
+z. B. & zum Beispiel\\
+www & World Wide Web\\
 W3C & World Wide Web Consortium\\
 URL & Uniform Resource Locator\\
-ARIA & Accessible Rich Internet Applications
+ARIA & Accessible Rich Internet Applications\\
 \end{tabular}
 
 % Anh"ange
