@@ -1,11 +1,11 @@
 all: pdf
 
 pdf:
-	pdflatex Vorlage_BA.tex
-	bibtex Literatur.aux
-	pdflatex Vorlage_BA.tex
-	pdflatex Vorlage_BA.tex
+	pdflatex AccessibilityAndModernWeb.tex
+	bibtex AccessibilityAndModernWeb.aux
+	pdflatex AccessibilityAndModernWeb.tex
+	pdflatex AccessibilityAndModernWeb.tex
 
 clean:
-	rm -rf Vorlage_BA.pdf
+	rm -rf AccessibilityAndModernWeb.pdf
 	rm *.log

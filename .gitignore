@@ -3,3 +3,8 @@ Vorlage_BA.pdf
 build/
 *.backup
 *.log
+*.aux
+*.bbl
+*.lot
+*.out
+*.toc
