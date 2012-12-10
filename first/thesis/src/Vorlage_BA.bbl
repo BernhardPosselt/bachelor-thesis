@@ -22,8 +22,12 @@
 \BIBdecl
 
 \bibitem{us_cens}
-J.~Waldrop and S.~M. Stern, ``{Disability Status: 2000},'' Website, UN, 2000,
+J.~Waldrop and S.~M. Stern, ``{Disability Status: 2000},'' Website, 2000,
   \url{http://www.census.gov/prod/2003pubs/c2kbr-17.pdf}.
+
+\bibitem{who_dis}
+WHO, ``{Disability, including prevention, management and rehabilitation},''
+  Website, WHO, 2012, \url{http://www.who.int/nmh/a5817/en/}.
 
 \bibitem{un_disabilities}
 U.~Nations, ``{Convention on the Rights of Persons with Disabilities},''
@@ -35,5 +39,13 @@ U.~Nations, ``{Convention on the Rights of Persons with Disabilities},''
 B.~Sierkowski, ``{Achieving Web Accessibility},'' \emph{SIGUCCS '02 Proceedings
   of the 30th annual ACM SIGUCCS conference on User services}, pp. 288--291,
   2002.
+
+\bibitem{screen_read_frust}
+J.~K. Jonathan~Lazar, Aaron~Allen and C.~Malarkey, ``{What Frustrates Screen
+  Reader Users on the Web: A Study of 100 Blind Users},'' \emph{International
+  Journal of Human-Computer Interaction}, pp. 247--269, 2008.
+
+\bibitem{orca}
+``{GNOME Orca},'' Website, GNOME, 2012, \url{http://projects.gnome.org/orca/}.
 
 \end{thebibliography}
