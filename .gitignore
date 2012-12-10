@@ -8,3 +8,4 @@ build/
 *.lot
 *.out
 *.toc
+*.blg
