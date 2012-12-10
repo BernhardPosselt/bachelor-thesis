@@ -8,8 +8,8 @@ To get the required dependency you'll need to install the latex-ieeetran package
   sudo cp /usr/share/texmf/tex/latex/IEEEtran/bibtex/IEEEtran.bst /usr/share/texmf-dist/bibtex/bst/ieee/
   sudo texhash
 
-Then the pdf can be compiled by running::
+Then the PDF can be compiled by running::
 
   make
 
-in the src directory.
+in the src/ directory.

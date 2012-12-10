@@ -25,7 +25,7 @@ HTML, Web, Browser
 
 Nichtziele
 ^^^^^^^^^^
-* Keine Beschreibungen von Behinderungen (Rot/Grün Sehschwäche, Blindheit, etc.) sondern nur Erwähnungen, dass diese Methode für Blinde einen Vorteil bringt
+* Keine Ursachen von Körperlichen oder geistigen Einschränkungen
 * Keine Beschreibung von Geräten, sondern nur generelle Erwähnung 
 * Kein CSS
 * Kein JavaScript
