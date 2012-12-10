@@ -1,3 +1,5 @@
 Vorlage_BA.pdf
 *~
 build/
+*.backup
+*.log
