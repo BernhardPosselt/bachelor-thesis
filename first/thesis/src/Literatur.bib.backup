@@ -14,14 +14,16 @@
 % ZUS"ATZLICHEN geschweiften Klammer geschrieben werden. Siehe Beispiele unten.	
 
 % Bei Bedarf k"onnen im File *.bbl "Anderungen vorgenommen werden.
-% 
+%SIGUCCS '02 Proceedings of the 30th annual ACM SIGUCCS conference on User
+%services 
 
 
 
 @misc{us_cens,
         key                     ={},
-        author              ={Judith Waldrop and Sharon M. Stern},
-        title                   ={{Disability Status: 2000}},
+        author              ={U.S. Census Bureau},
+        title                   ={{Population Profile of the United States:
+2000}},
         booktitle           ={},
     chapter             ={},
         edition             ={},
@@ -31,7 +33,8 @@
     journal             ={},
     month                   ={},
     note                   
-={\url{http://www.census.gov/prod/2003pubs/c2kbr-17.pdf}},
+={\url{http://www.census.gov/population/pop-
+profile/2000/chap19.pdf}},
     number              ={},
     organization    ={UN},
     pages                   ={},
@@ -54,8 +57,7 @@
     editor              ={},
     howpublished    ={},
     institution     ={},
-    journal             ={SIGUCCS '02 Proceedings of the 30th annual ACM
-SIGUCCS conference on User services},
+    journal             ={},
     month                   ={},
     note                    ={},
     number              ={},

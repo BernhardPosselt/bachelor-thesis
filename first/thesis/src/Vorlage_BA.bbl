@@ -21,10 +21,19 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{us_cens}
+J.~Waldrop and S.~M. Stern, ``{Disability Status: 2000},'' Website, UN, 2000,
+  \url{http://www.census.gov/prod/2003pubs/c2kbr-17.pdf}.
+
 \bibitem{un_disabilities}
 U.~Nations, ``{Convention on the Rights of Persons with Disabilities},''
   Website, UN, 2007,
   \url{http://www.un.org/disabilities/default.asp?navid=12&pid=150} [Zugang am
   8.12.2012].
+
+\bibitem{achieving_web_acc}
+B.~Sierkowski, ``{Achieving Web Accessibility},'' \emph{SIGUCCS '02 Proceedings
+  of the 30th annual ACM SIGUCCS conference on User services}, pp. 288--291,
+  2002.
 
 \end{thebibliography}
