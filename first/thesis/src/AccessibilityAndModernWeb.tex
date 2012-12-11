@@ -102,14 +102,7 @@ und auch noch nicht ver"offentlicht. Ich versichere, dass die abgegebene Version
 
 \section*{Kurzfassung}\thispagestyle{empty}
 In dieser Arbeit wird ein "Uberblick "uber moderne Web-Technologien im Bereich
-Accessibility gegeben. Immer mehr "offentliche Einrichtungen stellen heutzutage
-Zugang zu wichtige Informationen und Services im Web bereit. Dadurch muss dieser
-Zugang universell erreichbar und nutzbar sein. Um eine L"osung f"ur dieses
-Problem zu finden, wird ein Blick auf die Empfehlungen der W3C geworfen. Auch
-auf neuere Techniken wie ARIA, die erst in einer Candidate Recommendation
-vorhanden sind, werden eingangen. Das Ziel dieser Arbeit sollte ein guten
-"Uberblick "uber den heutigen Stand bieten und die Vorteile der Nutzung von
-Accessibility Methoden hervorstreichen. 
+Accessibility gegeben. Immer mehr "offentliche Einrichtungen stellen im Rahmen des \emph{e-governments} heutzutage einen Zugang zu wichtige Informationen und Services im Web bereit. Dadurch muss dieser Zugang universell erreichbar und nutzbar sein. Um eine L"osung f"ur dieses Problem zu finden, wird ein Blick auf die Empfehlungen der W3C geworfen. Auch auf neuere Techniken wie ARIA, die erst in einer Candidate Recommendation vorhanden sind, werden eingangen. Das Ziel dieser Arbeit sollte ein guten "Uberblick "uber den heutigen Stand bieten und die Vorteile der Nutzung von Accessibility Methoden hervorstreichen. 
 \vfill
 \paragraph*{Schlagw"orter:} Accessibility, Web, ARIA, HTML5
 
@@ -146,22 +139,12 @@ techniques.
 % dort Kurzformen der Kapitelbezeichnungen mittels:
 % \chapter[Kurzform]{Lange "Uberschrift}
 \chapter{Einf"uhrung}
-Das Web spielt im "offentlichen Bereich eine immer gr"o"sere Rolle. Viele
-Services und Informationen werden bereits "uber eigene Portale angeboten.
-Dadurch wird das "offentliche Leben immer mehr mit dem Web verwoben und es muss
-ein universeller Zugang f"ur alle B"urger m"oglich sein. Darunter fallen auch
-Personen, welche mit k"orperlichen oder geistigen Einschr"ankungen leben
-m"ussen.
+Das Web spielt im "offentlichen Bereich eine immer gr"o"sere Rolle: Viele
+Services und Informationen werden bereits "uber eigens daf"ur erstellte Portale angeboten. Daraus folgt, dass das "offentliche Leben immer st"arker mit dem Web verwoben wird. Wie auch bei anderen "offentlichen Einrichtungen muss ein universeller Zugang f"ur alle B"urger erm"oglicht werden, auch f"ur jene, die mit k"orperlichen oder geistigen Einschr"ankungen leben m"ussen, z. B. Blinde oder Personen mit eingeschr"ankten motorischen F"ahigkeiten. Solange dies nicht vollst"andig m"oglich ist muss als Ersatz eine zus"atzliche Einrichtung bereitstehen, die die gleichen M"oglichkeiten bietet \cite[S. 8]{understand_acc}. Es steht also auch im wirtschaftlichen Interesse "offentlicher Einrichtungen, ihre Services und Informationen barrierefrei anzubieten. 
 
-Diese Gruppe macht nicht nur einen kleinen Prozentteil in der Bev"olkerung aus.
-Laut einem Bericht des U.S. Census Bureau cite aus dem Jahre 2000
-leben alleine in den USA ca. 49.7 Millionen Menschen mit k"orperlichen oder
-geistigen Einschr"ankungen (entspricht ca. 20\% der amerikanischen
-Bev"olkerung), davon haben 42.9 Millionen eine schwere Einschr"ankung und 6.8
-Millionen haben eine so gravierende Einschr"ankung, dass sie Hilfe in ihrem
-allt"aglichem Leben brauchen \cite[S. 1]{us_cens}. Laut der World Health Organization
-wird die weltweite Anzahl von Personen mit Einschr"ankungen auf
-500 bis 600 Millionen Menschen gesch"atzt \cite{who_dis}.
+Dadurch, dass diese Gruppe eine Minorit"at in der Bev"olkerung ausmacht und noch dazu das Web auf andere Weise verwendet als nicht eingeschr"ankte Personen - z. B. blinde Personen verwenden Screen-Reader oder Braillen - muss oft ein zus"atzlicher Aufwand bei der Erstellung von Webseiten betrieben werden \cite[S. 7]{mod_software}. Ja "ofters wird sogar ganz darauf vergessen \cite[S. 7]{mod_software}. Roman Mauerhofer erfasst dieses Problem mit einem sehr treffenden Vergleich: \glqq Es ist beispielsweise so, als ob ein Architekt bei der Planung eines Bahnhofes den Einbau von Aufz"ugen vergisst\grqq  \cite[S. 7]{mod_software}.
+
+Diese Gruppe macht jedoch nicht einen ganz so geringen Prozentteil in der Bev"olkerung aus wie "ofters gedacht. Laut einem Bericht des U.S. Census Bureau aus dem Jahre 2000 leben alleine in den USA ca. 49.7 Millionen Menschen mit k"orperlichen oder geistigen Einschr"ankungen (entspricht ca. 20\% der amerikanischen Bev"olkerung), davon haben 42.9 Millionen eine schwere Einschr"ankung und 6.8 Millionen haben eine so gravierende Einschr"ankung, dass sie Hilfe in ihrem allt"aglichem Leben brauchen \cite[S. 1]{us_cens}. Laut der World Health Organization wird die weltweite Anzahl von Personen mit k"orperlichen oder geistigen Einschr"ankungen auf 500 bis 600 Millionen Menschen gesch"atzt \cite{who_dis}.
 
 Auch die UN erkennt eine immer gr"o"ser werdene Wichtigkeit in der angemessenen
 Berteitstellungen von Informationen f"ur k"orperlich oder geistig
@@ -174,8 +157,7 @@ Jedoch kann es nicht nur aus den oben genannten Gr"unden erforderlich sein,
 einen barrierefreien Zugang bereitzustellen, sondern sogar gesetzlich
 vorgeschrieben. In den USA beispielsweise, gibt es daf"ur ein eigenes
 Gesetzt, den the Americans with Disabilities Act aus dem Jahre 1990 (ADA) und
-den Abschnitten 504 und 508 aus dem Rehabilitation
-Act (1973) \cite[S. 1-2]{achieving_web_acc}.
+den Abschnitt 508 aus dem Rehabilitation Act (1973) \cite[S. 288-289]{achieving_web_acc}. Auch in Europa sind einige "ahnliche Regelungen vorhanden \cite[S. 7]{mod_software} doch eines haben sie beide gemeinsam: Sie basieren alle zu einem gro"sen Teil auf den Richtlinien der WAI (Web Accessibility Initiative), den WCAG (Web Content Accessibility Guidelines) \cite[S. 289]{achieving_web_acc} \cite[S. 7]{mod_software}.
 
 \section{Arten von k"orperlichen oder geistigen
 Einschr"ankungen und assistive Technologien}
@@ -353,6 +335,7 @@ www & World Wide Web\\
 W3C & World Wide Web Consortium\\
 URL & Uniform Resource Locator\\
 ARIA & Accessible Rich Internet Applications\\
+WAI & Web Accessibility Initiative\\
 \end{tabular}
 
 % Anh"ange
