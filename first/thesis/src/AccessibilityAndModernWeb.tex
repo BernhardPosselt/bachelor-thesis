@@ -159,10 +159,23 @@ vorgeschrieben. In den USA beispielsweise, gibt es daf"ur ein eigenes
 Gesetzt, den the Americans with Disabilities Act aus dem Jahre 1990 (ADA) und
 den Abschnitt 508 aus dem Rehabilitation Act (1973) \cite[S. 288-289]{achieving_web_acc}. Auch in Europa sind einige "ahnliche Regelungen vorhanden \cite[S. 7]{mod_software} doch eines haben sie beide gemeinsam: Sie basieren alle zu einem gro"sen Teil auf den Richtlinien der WAI (Web Accessibility Initiative), den WCAG (Web Content Accessibility Guidelines) \cite[S. 289]{achieving_web_acc} \cite[S. 7]{mod_software}.
 
-\section{Arten von k"orperlichen oder geistigen
+\section{Problemstellung}
+Nicht nur in der EU wird Accessibility k"unftig eine gr"o"sere Rolle spielen \cite[Abschnitt EU]{w3c_pol} sondern auch in der Privatwirtschaft. F"ur viele ProgrammiererInnen stellt jedoch die Implementation und das Testen von Accessibility Techniken einen nicht zu untersch"atzenden Mehraufwand dar \cite[S. 27]{understand_acc} und dadurch werden ihnen, selbst wenn sie es umsetzen wollen, oft Steine in den Weg gelegt. Dies erfolgt h"aufig in der Nennung nicht zu Ende gedachten Argumenten wie \glqq Barrierefreiheit bringt keine Vorteile\grqq \cite[S. 28]{understand_acc} oder \glqq Behinderte geh"oren nicht zu unserer Zielgruppe\grqq \cite[S. 31]{understand_acc}.
+
+Ein weiteres Problem ist die geringe Verbreitung der Standards, welche aus einer globalen Studie der United Nations im Jahre 2006 hervorging\cite{acc_report}: Nur drei von 100 getesteten Seiten erhielten die Bestnote \cite [S. 7]{acc_report}. Dies ist unter anderem auf ein Fehlen folgender Punkte zur"uckf"uhrbar: Achtsamkeit, Bildung und Tool Support\cite[S. 13]{tool_acc}.
+
+
+\section{L"osungsansatz}
+In dieser Bachelorarbeit soll ein genereller "Uberblick "uber die bestehenden und einsatzbaren Techniken gegeben werden, die hilfreich f"ur die Verbesserung im Bereich Accessibility im Modern Web sind. 
+
+Dazu soll ein eine "Ubersicht "uber die vom W3C bereitgestellten Spezifikationen, wie den WCAG 1.0 \cite{wcag1}, WCAG 2.0 \cite{wcag2} und ARIA \cite{aria} gegeben werden und auf die Unterschiede von WCAG 1.0 und WCAG 2.0 eingegangen werden.
+
+Weiters soll kurz auf die verschiedenen Arten von Einschr"ankungen eingegangen werden und die Probleme und verwendeten Hilfsger"ate aufgezeigt werden.
+
+\chapter{Arten von k"orperlichen oder geistigen
 Einschr"ankungen und assistive Technologien}
 
-\subsection{Personen mit Sehst"orungen}
+\section{Personen mit Sehst"orungen}
 Die Anzahl der Personen, die Probleme beim Lesen von Displays aufweisen, wird weltweit auf sechs Millionen Personen \cite[S. 249]{screen_read_frust}, die Anzahl blinder Personen in den USA wird auf eine Million und weltweit auf 38 Millionen Personen gesch"atzt.
 \cite{screen_read}.
 
@@ -171,15 +184,14 @@ Die gr"o"sten Probleme f"ur sehbehinderte Personen entstehen nicht aus den Einga
 Deshalb ziehen die Meisten auf software basierende L"osungen vor, was dem Screen-Reader zu einer h"oheren Popularit"at verhilft. 
 \cite{screen_read_frust}[S. 249-250]. Bestimmte Screen Reader wie GNOME Orca \cite{orca} sind sogar frei f"ur jeden verf"ugbar. 
 
-
-\subsection{Personen mit H"ohst"orungen}
+\section{Personen mit H"ohst"orungen}
 Kurze "Ubersicht wieviele Personen betroffen sind und was sie f"ur Ger"ate verwenden
 
-\subsection{Personen mit motorischen St"orungen}
+\section{Personen mit motorischen St"orungen}
 Diese Gruppe macht laut dem U.S. Census Report 21.2 Millionen Personen aus. Das
 sind ca. 8.2 Prozent der Bev"olkerung der USA \cite[S. 1]{us_cens}.
 
-\subsection{Personen mit geistigen St"orungen}
+\section{Personen mit geistigen St"orungen}
 Kurze "Ubersicht wieviele Personen betroffen sind und was sie f"ur Ger"ate verwenden
 
 \chapter{WCAG}
@@ -211,7 +223,7 @@ Unterschiede herausarbeiten.
 
 Im Web werden heutzutage vermehrt Ajax und JavaScript eingesetzt, nicht nur um eine immersive Erfahrung zu bieten, sondern auch um ganze Applikationen umzusetzen. Viele vom Desktop bekannte Paradigmen k"onnen nun mit JavaScript umgesetzt werden, z. B. Drag and Drop. Einige dieser Aktionen funktionieren jedoch nur mit speziellen Eingabeger"aten. So muss f"ur Drag and Drop zwingend eine Maus vorhanden sein. Für Nutzer eines Screen-Readers oder anderen assitiven Technologien wird es daher zunehmend schwieriger, mit der Webseite zu interagieren. \cite{aria_intro}
 
-ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht dieses Problem mit zus"atzlichen HTML Attributen zu l"osen. Es erlaubt dem Programmierer zus"atzliche Meta-Informationen "uber die Funktionsweise und den gerade aktiven Status der Seite bereit zu stellen. Zu diesen Meta Informationen geh"oren: Roles und States and Properties \cite{aria_intro}. 
+ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht dieses Problem mit zus"atzlichen HTML Attributen zu l"osen. Es erlaubt dem ProgrammiererInnen zus"atzliche Meta-Informationen "uber die Funktionsweise und den gerade aktiven Status der Seite bereit zu stellen. Zu diesen Meta Informationen geh"oren: Roles und States and Properties \cite{aria_intro}. 
 
 
 \section{Roles}
