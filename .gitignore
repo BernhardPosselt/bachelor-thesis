@@ -9,3 +9,6 @@ build/
 *.out
 *.toc
 *.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
