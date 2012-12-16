@@ -9,6 +9,7 @@
 % F"ur kurze Arbeiten w"are auch die Dokumentklasse "scrartcl" ausreichend. In diesem Fall ist "section" die h"ochste Ebene ("chapter" gibt es dann nicht).
 % \documentclass[a4paper,bibtotoc,oneside]{scrartcl}
 
+%\usepackage{cclicenses}
 
 % verlinkte Querverweise im pdf
 \usepackage{hyperref}
@@ -191,8 +192,14 @@ Die Anzahl blinder Personen allein in den USA wird auf eine Million Personen und
 
 Jedoch umfasst diese Kategorie nicht nur blinde Personen sondern auch Personen mit teilweisen Sehschw"achen: Nimmt jemand auf dem besten Auge weniger als 30\% wahr f"allt er/sie bereits unter diese Kategorie\cite[S. 12]{understand_acc}.  Diese Gruppe wird weltweit auf etwa sechs Millionen Personen beziffert\cite[S. 249]{screen_read_frust} und kann auch von den in diesem Feld eingesetzten Technologien profitieren.
 
-Personen mit Sehschw"achen haben die gr"o"sten Probleme nicht mit den Eingabeger"aten - die meisten Nutzer beherrschen Tippen ohne das auf das Keyboard zu schauen - sondern mit den Ausgabeger"aten. Die am Meisten genutzten assistiven Technologien in diesem Umfeld sind Screen-Reader und Braillen. Braillen und andere in Hardware umgesetzte Technologien sind jedoch meistens sehr teuer, da sie nur von einem geringen Prozentsatz der Bev"olkerung ben"otigt werden und deren Erlernung, beispielsweise die der Braillenschrift, aufwendig und dementsprechend wenig verbreitet ist\cite[S. 249-250]{screen_read_frust}.
+Personen mit Sehschw"achen haben die gr"o"sten Probleme nicht mit den Eingabeger"aten - die meisten Nutzer beherrschen Tippen ohne das auf das Keyboard zu schauen - sondern mit den Ausgabeger"aten. Die am Meisten genutzten assistiven Technologien in diesem Umfeld sind Screen-Reader und Braillen \ref{Abb1}. Braillen und andere in Hardware umgesetzte Technologien sind jedoch meistens sehr teuer, da sie nur von einem geringen Prozentsatz der Bev"olkerung ben"otigt werden und deren Erlernung, beispielsweise die der Braillenschrift, aufwendig und dementsprechend wenig verbreitet ist\cite[S. 249-250]{screen_read_frust}.
 Weiters bestehen die Braille aus vielen kleinen mechanischen Teilen und deshalb besonders verschlei"sanf"allig \cite[S. 11]{barr_webd}.
+
+\begin{figure}[braille]
+\centering
+\includegraphics[width=75mm]{braille}
+\caption[Beschriftung eines Buchr"uckens.]{Beispiel einer Braille (copyright Philip Tellis, Creative Commons BY-SA)}\label{Abb1}
+\end{figure}
 
 Deshalb ziehen die Meisten auf software basierende L"osungen vor, was dem Screen-Reader zu einer h"oheren Popularit"at verhilft\cite[S. 249-250]{screen_read_frust}. Ein Screen-Reader liest dem/der NutzerIn die Inhalte auf dem Bildschirm vor. Dies kann f"ur sehende Personen als st"orend empf"unden werden, blinde Personen sind jedoch st"arker auf auditive Reize ausgerichtet und kommen dementsprechend besser damit klar\cite[S. 13]{barr_webd}. Bestimmte Screen-Reader wie GNOME Orca \cite{orca} sind sogar frei f"ur jeden verf"ugbar. 
 F"ur diese Personen muss beim Erstellen von Websiten besonders folgendes beachtet werden: semantisch korrekter und sauberer HTML Code, der den Inhalt vom Layout trennt.\cite[S. 13-15]{barr_webd}
@@ -347,10 +354,9 @@ Zusammenfassen was es f"ur Methoden gibt um Accessibility im Modern Web umzusetz
 %\end{thebibliography}
 
 % Abbildungsverzeichnis
-%\listoffigures
-%\addcontentsline{toc}{chapter}{Abbildungsverzeichnis} % f"ugt den Eintrag
-%"Abbildungsverzeichnis" im Inhaltsverzeichnis hinzu
-%\newpage
+\listoffigures
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis} % f"ugt den Eintrag "Abbildungsverzeichnis" im Inhaltsverzeichnis hinzu
+\newpage
 
 % Tabellenverzeichnis
 %\listoftables 
