@@ -144,11 +144,10 @@ Services und Informationen werden bereits "uber eigens daf"ur erstellte Portale 
 
 Dadurch, dass diese Gruppe eine Minorit"at in der Bev"olkerung ausmacht und noch dazu das Web auf andere Weise verwendet als nicht eingeschr"ankte Personen - z. B. blinde Personen verwenden Screen-Reader oder Braillen - muss oft ein zus"atzlicher Aufwand bei der Erstellung von Webseiten betrieben werden. Ja "ofters wird sogar ganz darauf vergessen.\cite[S. 7]{mod_software} Roman Mauerhofer erfasst dieses Problem mit einem sehr treffenden Vergleich: \glqq Es ist beispielsweise so, als ob ein Architekt bei der Planung eines Bahnhofes den Einbau von Aufz"ugen vergisst.\grqq  \cite[S. 7]{mod_software}
 
-Diese Gruppe macht jedoch nicht einen ganz so geringen Prozentteil in der Bev"olkerung aus wie "ofters gedacht. Laut einem Bericht des U.S. Census Bureau aus dem Jahre 2000 leben alleine in den USA ca. 49.7 Millionen Menschen mit k"orperlichen oder geistigen Einschr"ankungen (entspricht ca. 20\% der amerikanischen Bev"olkerung), davon haben 42.9 Millionen eine schwere Einschr"ankung und 6.8 Millionen haben eine so gravierende Einschr"ankung, dass sie Hilfe in ihrem allt"aglichem Leben brauchen \cite[S. 1]{us_cens}. Laut der World Health Organization wird die weltweite Anzahl von Personen mit k"orperlichen oder geistigen Einschr"ankungen auf 500 bis 600 Millionen Menschen gesch"atzt \cite{who_dis}.
+Diese Gruppe macht jedoch nicht einen ganz so geringen Prozentteil in der Bev"olkerung aus wie "ofters gedacht. Laut einem Bericht des U.S. Census Bureau aus dem Jahre 2000 leben alleine in den USA ca. 49.7 Millionen Menschen mit k"orperlichen Einschr"ankungen und Lernschwierigkeiten (entspricht ca. 20\% der amerikanischen Bev"olkerung), davon haben 42.9 Millionen eine schwere Einschr"ankung und 6.8 Millionen haben eine so gravierende Einschr"ankung, dass sie Hilfe in ihrem allt"aglichem Leben brauchen \cite[S. 1]{us_cens}. Laut der World Health Organization wird die weltweite Anzahl von Personen mit k"orperlichen oder geistigen Einschr"ankungen auf 500 bis 600 Millionen Menschen gesch"atzt \cite{who_dis}.
 
 Auch die UN erkennt eine immer gr"o"ser werdene Wichtigkeit in der angemessenen
-Berteitstellungen von Informationen f"ur k"orperlich oder geistig
-engeschr"ankten Personen. Dies spiegelt sich in der \glqq UN Convention of Rights for Persons with Disabilities\grqq wider, welche am 30. M"arz 2007 unterzeichnet wurde. Sie erhielt die \glqq meisten Unterschriften an einem Er"offnungstag in der Geschichte der UN Konventionen\grqq \cite{un_disabilities} 
+Berteitstellungen von Informationen f"ur k"orperlich engeschr"ankten Personen und Personen mit Lernschwierigkeiten. Dies spiegelt sich in der \glqq UN Convention of Rights for Persons with Disabilities\grqq wider, welche am 30. M"arz 2007 unterzeichnet wurde. Sie erhielt die \glqq meisten Unterschriften an einem Er"offnungstag in der Geschichte der UN Konventionen\grqq \cite{un_disabilities}. 
 
 Jedoch kann es nicht nur aus den oben genannten Gr"unden erforderlich sein,
 einen barrierefreien Zugang bereitzustellen, sondern sogar gesetzlich
@@ -170,9 +169,13 @@ Dazu soll ein eine "Ubersicht "uber die vom W3C bereitgestellten Spezifikationen
 Weiters soll kurz auf die verschiedenen Arten von Einschr"ankungen eingegangen werden und die Probleme und verwendeten Hilfsger"ate aufgezeigt werden.
 
 \section{Aufbau}
-Eine kurze "Ubersicht "uber den Aufbau der Arbeit
+In Kapitel 2 wird ein kurzer "Uberblick "uber die h"aufigsten Einschr"ankungen gegeben und erkl"art, welche assistiven Technologien verwendet werden, um ihnen beim Zugriff auf das Web zu helfen. Die soll veranschaulichen, warum man Websiten f"ur diese Ger"ate optimieren soll.
 
-TODO: zitate checken und terminologie "uberpr"ufen.
+In Kapitel 3 wird auf die Richtlinien des W3C, die WCAG, eingegangen und die Entwicklung und Unterschiede zwischen der Version 1 und Version 2 betrachtet.
+
+In Kapitel 4 wird ein Blick auf ARIA geworfen und der Sinn und Einsatzzweck von verschiedenen Attritube und Roles wird erl"autert.
+
+In Kapitel 5 wird eine Zusammenfassung der jetzigen Situation und ein Ausblick "uber kommende Richtlinien gegeben, welche sich noch im \emph{Draft} Status befinden.
 
 \section{Begriffe}
 Da der Begriff \glqq Menschen mit geistigen Behinderungen/Einschr"ankungen\grqq auf negative Wei"se verstanden werden kann, wird in dieser Arbeit stattdessen der Begrif \glqq Menschen mit Lernschwierigkeiten\grqq  verwendet. Dies ist gleich zu setzen mit den Abschnitten F70-F79 im ICD-10 \cite{icd10}. Darunter z"ahlen unter anderem Menschen mit Konzentrationsschw"achen.
@@ -184,13 +187,13 @@ Der Begriff \glqq Menschen mit k"orperliche Einschr"ankung\grqq wird synonym f"u
  und assistive Technologien}
 
 \section{Personen mit Sehschw"achen}
-Die Anzahl der Personen, die Probleme beim Lesen von Displays aufweisen, wird weltweit auf sechs Millionen Personen \cite[S. 249]{screen_read_frust}, die Anzahl blinder Personen in den USA wird auf eine Million und weltweit auf 38 Millionen Personen gesch"atzt.
-\cite{screen_read}.
+Die Anzahl blinder Personen allein in den USA wird auf eine Million Personen und weltweit auf 38 Millionen Personen gesch"atzt\cite{screen_read}. Jedoch umfasst diese Kategorie nicht nur blinde Personen sondern auch Personen mit teilweisen Sehschw"achen. Diese Gruppe wird weltweit auf etwa sechs Millionen Personen gesch"atzt\cite[S. 249]{screen_read_frust} und kann auch von den in diesem Feld eingesetzten Technologien profitieren.
 
-Die gr"o"sten Probleme f"ur sehbehinderte Personen entstehen nicht aus den Eingabeger"aten - die meisten Nutzer beherrschen das 10-Finger System - sondern aus den Ausgabeger"aten. Die am Meisten genutzten assistiven Technologien f"ur diese Personen sind Screen-Reader und Braillen. Braillen und andere in Hardware umgesetzte technologien sind jedoch meistens sehr teuer, da sie nur von einem geringen Prozentsatz der Bev"olkerung ben"otigt werden und deren Erlernung, beispielsweise die der Braillenschrift ist aufwendig und dementsprechend wenig verbreitet. 
+Personen mit Sehschw"achen haben die gr"o"sten Probleme nicht mit den Eingabeger"aten - die meisten Nutzer beherrschen Tippen ohne das auf das Keyboard zu schauen - sondern mit den Ausgabeger"aten. Die am Meisten genutzten assistiven Technologien in diesem Umfeld sind Screen-Reader und Braillen. Braillen und andere in Hardware umgesetzte Technologien sind jedoch meistens sehr teuer, da sie nur von einem geringen Prozentsatz der Bev"olkerung ben"otigt werden und deren Erlernung, beispielsweise die der Braillenschrift ist aufwendig und dementsprechend wenig verbreitet. Weiters bestehen sie aus vielen kleinen Mechanischen Teilen und sind deshalb besonders verschlei"sanf"allig \cite[S. 11]{barr_webd}.
 
-Deshalb ziehen die Meisten auf software basierende L"osungen vor, was dem Screen-Reader zu einer h"oheren Popularit"at verhilft. 
-\cite{screen_read_frust}[S. 249-250]. Bestimmte Screen Reader wie GNOME Orca \cite{orca} sind sogar frei f"ur jeden verf"ugbar. 
+Deshalb ziehen die Meisten auf software basierende L"osungen vor, was dem Screen-Reader zu einer h"oheren Popularit"at verhilft. \cite{screen_read_frust}[S. 249-250]. Bestimmte Screen Reader wie GNOME Orca \cite{orca} sind sogar frei f"ur jeden verf"ugbar. 
+
+
 
 \section{Personen mit H"ohrschw"achen}
 Kurze "Ubersicht wieviele Personen betroffen sind und was sie f"ur Ger"ate verwenden
@@ -241,7 +244,7 @@ ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht
 Die Aufgaben der ARIA Roles Attributes ist es, die Struktur der Seite zu beschreiben. Dies ist zum Teil auch schon mit den neuen HTML5 Elementen wie z. B. <nav> \cite[Abschnitt 4.4.3]{html5} vgl. role="navigation" \cite[Abschnitt 3.1]{xhtml_vocab}, doch auch hier wurde diese Information aus Flexibilit"atsgr"unden duppliziert. Jedoch kann an dieser Stelle auch erw"ahnt werden, dass HTML5 auch noch nicht fertiggestellt ist \cite{html5}.
 Alle m"oglichen Werte, die f"ur das Role attribut gesetzt werden k"onnen befinden sich auf der Seite \url{http://www.w3.org/1999/xhtml/vocab/} im Abschnitt 3. XHTML Role Vocabulary. \cite[Abschnitt 3]{roles}
 
-Diese 
+Diese test
 
 
 \section{States and Properties}
