@@ -260,7 +260,7 @@ Die Aufgaben der ARIA Role Attributes ist es, die Struktur der Seite und Interak
 
 F"ur das Role Attribut k"onnen ein oder mehrere durch Leerzeichen getrennte Werte gesetzt werden. Der Wert des Role Attributes darf sich nicht ver"andern. Sollte dies jemals gefordert sein, muss das HTML Element zuerst komplett entfernt werden und mit einem neuen Element mit der dementsprechenden Role ersetzt werden.\cite[Abschnitt 5]{aria_roles}
 
-Die Werte die ein Role Element annehmen kann, gliedert sich in vier verschiedene Kategorien: Abstract Roles, Widget Roles, Document Structure und Landmark Roles. 
+Die Werte die ein Role Element annehmen kann, gliedert sich in vier verschiedene Kategorien: Abstract Roles, Widget Roles, Document Structure und Landmark Roles. \cite[Abschnitt 5.2]{aria_states}
 
 Abstract Roles sind f"ur die semantische Aufgabe des Elements gedacht und d"urfen nicht im Inhalt vorkommen. Ein Beispiel f"ur eine Abstract Role w"are z. B. \emph{widget} oder \emph{window}.\cite[Abschnitt 5.3.1]{aria_roles}
 
@@ -275,7 +275,7 @@ Die nachfolgenden genannten Werte stellen nur eine kleine Auswahl aller verf"ugb
 \begin{itemize}
 \item \emph{banner}: Am Anfang einer Seite befindet sich oft der sogenannte \glqq Header \grqq, welcher ein Bild oder den Titel der Seite enth"alt. Dieser Bereich enth"alt auch oft zus"atzliche Informationen, die sich auf die gesamte Seite beziehen. \cite[Abschnitt 5.4, banner]{aria_roles}
 
-\item \emph{dialog}: Viele JavaScript Frameworks wie z. B. jQuery-UI \cite{jquery_ui} bieten eine M"oglichkeit an, Dialoge mit mit JavaScript zu simulieren. Diese Dialoge sind verwenden beispielsweise HTML <div> Elemente und sind f"ur NutzerInnen assistiver Technologien oft nicht als solche erkennbar. \cite[Abschnitt 5.4, banner]{aria_roles}
+\item \emph{dialog}: Viele JavaScript Frameworks wie z. B. jQuery-UI \cite{jquery_ui} bieten eine M"oglichkeit an, Dialoge mit mit JavaScript zu simulieren. Diese Dialoge sind verwenden beispielsweise HTML <div> Elemente und sind f"ur NutzerInnen assistiver Technologien oft nicht als solche erkennbar. \cite[Abschnitt 5.4, dialog]{aria_roles}
 
 \item \emph{main}: Beinhaltet den eigentlich Inhalt der Seite. Duch eine Kennzeichnung mit dieser Role k"onnen assistive Technologien z. B. einen eigenen Shortcut anbieten, der bei der Aktivierung direkt zum eigentlichen Inhalt springt. \cite[Abschnitt 5.4, main]{aria_roles}
 
@@ -295,7 +295,17 @@ Die nachfolgenden genannten Werte stellen nur eine kleine Auswahl aller verf"ugb
 
 
 \section{States and Properties}
-State Attribute stellen jedoch nicht nur neue Funktionen bereit sondern dupplizieren zum Teil auch Information, die in HTML5 schon vorhanden sind und ausgelesen werden k"onnen z. B. aria-disabled oder aria-checked \cite[States and Properties]{aria} vgl. input Element Attribute checked und disabled \cite[Abschnitt Forms, Input Element]{html4}. Dies erm"oglicht es, auch HTML Elemente als z. B. checked zu setzen, die urspr"unglich nicht daf"ur vorgesehen waren aber trotzdem so verwendet werden.
+States und Properties werden verwendet um Zust"ande von HTML Elemente zu beschreiben bzw. um Roles mit zus"atzlichen Informationen zu versehen. Die Role \emph{dialog} kann beispielsweise mit einem Label versehen werden, um den Dialog zu beschreiben (\emph{aria-label} oder \emph{aria-labelledby})\cite[Abschnitt 5.4, dialog]{aria_roles}. Alle States und Properties Attribute werden mit einem vorangestellten \emph{aria-} gekennzeichnet. \cite[Abschnitt 6.1]{aria_states}
+
+Im Gegensatz zu Roles k"onnen States und Properties im Laufe der Websitenutzung ihre Werte "andern \cite[S. 29]{mod_software}. Ein Beispiel daf"ur ist \emph{aria-grabbed}, welcher sich im Zustand \emph{true} bzw. \emph{false} befinden kann, je nachdem ob gerade eine Drag and Drop Operation durchgef"uhrt wird \cite[Abschnitt 6.6, aria-grabbed]{aria_states}.
+
+State Attribute stellen jedoch nicht nur neue Funktionen bereit sondern dupplizieren zum Teil auch Information, die in HTML5 schon vorhanden sind und ausgelesen werden k"onnen z. B. aria-disabled oder aria-checked \cite[States and Properties]{aria} vgl. input Element Attribute checked und disabled \cite[Abschnitt Forms, Input Element]{html4}. Dies erm"oglicht es, auch HTML Elemente als z. B. checked zu setzen, die urspr"unglich nicht daf"ur vorgesehen waren aber trotzdem so verwendet werden. Das kann beispielsweise durch die Nutzung von JavaScript Frameworks geschehen. 
+
+States und Properties lassen sich in folgende vier Kategorien einteilen: Widget Attributes, Live Region Attributes, Drag and Drop Attributes und Relationship Attributes. \cite[Abschnitt 6.5]{aria_states}
+
+Widget Attributes werden verwenden um Widgets, sprich Interaktionselement wie HTML <input> zu beschreiben. Ein Beispiel daf"ur w"are \emph{aria-label}, welches benutzt werden kann, um eine genaue Beschreibung eines Eingabefelds zu erreichen. Es gibt zwar das HTML <label> Element, welches dieser Aufgabe nachkommt, jedoch ist es oft schwierig den Sinn des <input> Elementes zu verstehen, wenn sich dieses mitten im Beschreibungstext befindet. \cite[Abschnitt 6.6, aria-label]{aria_states}
+
+Live Regions werden dazu verwendet, um Bereiche zu markieren, in denen sich der Inhalt dynamisch ohne Zutun des/der BenutzerIn "andern kann, beispielsweise durch Nachladen von Informationen mittels AJAX Request. Ein Beispiel daf"ur w"are \emph{aria-busy}, welches dem Client mitteilt, dass sich gerade ein Bereich updated. \cite[Abschnitt 6.6, aria-busy]{aria_states}
 
 
 \chapter{Schluss}
