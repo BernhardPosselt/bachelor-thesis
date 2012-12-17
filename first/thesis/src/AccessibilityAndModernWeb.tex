@@ -256,11 +256,21 @@ ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht
 
 
 \section{Roles}
-Die Aufgaben der ARIA Role Attributes ist es, die Struktur der Seite zu beschreiben. Dies ist zum Teil auch schon mit den neuen HTML5 Elementen m"oglich, wie z. B. <nav> \cite[Abschnitt 4.4.3]{html5} vgl. \emph{role="navigation"} \cite[Abschnitt 3.1]{xhtml_vocab}, jedoch verwenden viele Personen noch "altere Browser, die diese neuen Funktionen noch nicht unterst"utzen. Daher werden oft neue Elemente mit "alterer Technologie umgesetzt, was die Nutzung f"ur k"orperlich eingeschr"ankte Personen deutlich erschwert. Auch bietet das role Attribut zus"atzliches Markup, welches in der jetzigen HTML5 Version noch nicht umgesetzt ist. Au"serdem ist HTML5 auch noch nicht fertigspezifiziert \cite{html5}. Das soll jedoch kein Freibrief f"ur Entwickler sein, alle semantischen HTML Elemente durch nicht semantische Elemente mit Role Attributen ersetzen \cite[Abschnitt 3]{roles}. 
+Die Aufgaben der ARIA Role Attributes ist es, die Struktur der Seite und Interaktionsm"oglichkeiten zu beschreiben. Dies ist zum Teil auch schon mit den neuen HTML5 Elementen m"oglich, wie z. B. <nav> \cite[Abschnitt 4.4.3]{html5} vgl. \emph{role="navigation"} \cite[Abschnitt 3.1]{xhtml_vocab}, jedoch verwenden viele Personen noch "altere Browser, die diese neuen Funktionen noch nicht unterst"utzen. Daher werden oft neue Elemente mit "alterer Technologie umgesetzt, was die Nutzung f"ur k"orperlich eingeschr"ankte Personen deutlich erschwert. Auch bietet das role Attribut zus"atzliches Markup, welches in der jetzigen HTML5 Version noch nicht umgesetzt ist. Au"serdem ist HTML5 auch noch nicht fertigspezifiziert \cite{html5}. Das soll jedoch kein Freibrief f"ur Entwickler sein, alle semantischen HTML Elemente durch nicht semantische Elemente mit Role Attributen ersetzen \cite[Abschnitt 3]{roles}. 
 
-Der Wert des Role Attributes darf sich nicht ver"andern. Sollte dies jemals gefordert sein, muss das HTML Element zuerst komplett entfernt werden und mit einem neuen Element mit der dementsprechenden Role ersetzt werden.\cite[Abschnitt 5]{aria_roles}
+F"ur das Role Attribut k"onnen ein oder mehrere durch Leerzeichen getrennte Werte gesetzt werden. Der Wert des Role Attributes darf sich nicht ver"andern. Sollte dies jemals gefordert sein, muss das HTML Element zuerst komplett entfernt werden und mit einem neuen Element mit der dementsprechenden Role ersetzt werden.\cite[Abschnitt 5]{aria_roles}
 
-F"ur das Role Attribut k"onnen ein oder mehrere durch Leerzeichen getrennte Werte gesetzt werden. Diese Werte umfassen unter anderem:
+Die Werte die ein Role Element annehmen kann, gliedert sich in vier verschiedene Kategorien: Abstract Roles, Widget Roles, Document Structure und Landmark Roles. 
+
+Abstract Roles sind f"ur die semantische Aufgabe des Elements gedacht und d"urfen nicht im Inhalt vorkommen. Ein Beispiel f"ur eine Abstract Role w"are z. B. \emph{widget} oder \emph{window}.\cite[Abschnitt 5.3.1]{aria_roles}
+
+Widget Roles sind f"ur die Beschreibung von Widgets gedacht. Widgets sind Elemente, die den User mit der Seite interagieren lassen\cite[Abschnitt 5.4, widget]{aria_roles}. Ein Beispiel f"ur eine Widget Role w"are z. B. \emph{dialog} oder \emph{progressbar}.\cite[Abschnitt 5.3.2]{aria_roles}
+
+Die Document Structure beschreibt die Struktur der Seite. Ein Beispiel f"ur eine Document Structure Role w"are z. B. \emph{article} oder \emph{list}.\cite[Abschnitt 5.3.3]{aria_roles}
+
+Landmark Roles beschreiben wichtige Navigationselemente und Bereiche. Ein Beispiel f"ur eine Landmark Role w"are z. B. \emph{banner} oder \emph{navigation}.\cite[Abschnitt 5.3.4]{aria_roles}
+
+Die nachfolgenden genannten Werte stellen nur eine kleine Auswahl aller verf"ugbaren Roles dar und sollen ein besseres Verst"andnis ihres Sinnes und ihrer Einsatzgebiete vermitteln. \cite[Abschnitt 5.3 - 5.4]{aria_roles}
 
 \begin{itemize}
 \item \emph{banner}: Am Anfang einer Seite befindet sich oft der sogenannte \glqq Header \grqq, welcher ein Bild oder den Titel der Seite ent"h"alt. Dieser Bereich enth"alt auch oft zus"atzliche Informationen, die sich auf die gesamte Seite beziehen.
@@ -276,8 +286,8 @@ F"ur das Role Attribut k"onnen ein oder mehrere durch Leerzeichen getrennte Wert
 \item \emph{tree} & \emph{treeitem}:
 \item \emph{tooltip}:
 \end{itemize}
+\cite[Abschnitt 5.3 - 5.4]{aria_roles}
 
-Die oben genannten Werte stellen nur eine kleine Auswahl aller verf"ugbaren Roles dar. \cite[Abschnitt 5.3 - 5.4]{aria_roles}
 
 \section{States and Properties}
 State Attribute stellen jedoch nicht nur neue Funktionen bereit sondern dupplizieren zum Teil auch Information, die in HTML5 schon vorhanden sind und ausgelesen werden k"onnen z. B. aria-disabled oder aria-checked \cite[States and Properties]{aria} vgl. input Element Attribute checked und disabled \cite[Abschnitt Forms, Input Element]{html4}. Dies erm"oglicht es, auch HTML Elemente als z. B. checked zu setzen, die urspr"unglich nicht daf"ur vorgesehen waren aber trotzdem so verwendet werden.
