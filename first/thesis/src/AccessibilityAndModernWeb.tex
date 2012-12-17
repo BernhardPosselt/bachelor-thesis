@@ -270,23 +270,28 @@ Die Document Structure beschreibt die Struktur der Seite. Ein Beispiel f"ur eine
 
 Landmark Roles beschreiben wichtige Navigationselemente und Bereiche. Ein Beispiel f"ur eine Landmark Role w"are z. B. \emph{banner} oder \emph{navigation}.\cite[Abschnitt 5.3.4]{aria_roles}
 
-Die nachfolgenden genannten Werte stellen nur eine kleine Auswahl aller verf"ugbaren Roles dar und sollen ein besseres Verst"andnis ihres Sinnes und ihrer Einsatzgebiete vermitteln. \cite[Abschnitt 5.3 - 5.4]{aria_roles}
+Die nachfolgenden genannten Werte stellen nur eine kleine Auswahl aller verf"ugbaren Roles dar und sollen ein besseres Verst"andnis ihres Sinnes und  Einsatzgebietes vermitteln:
 
 \begin{itemize}
-\item \emph{banner}: Am Anfang einer Seite befindet sich oft der sogenannte \glqq Header \grqq, welcher ein Bild oder den Titel der Seite ent"h"alt. Dieser Bereich enth"alt auch oft zus"atzliche Informationen, die sich auf die gesamte Seite beziehen.
-\item \emph{dialog}: Viele JavaScript Frameworks wie z. B. jQuery-UI \cite{jquery_ui} bieten eine M"oglichkeit an, Dialoge mit mit JavaScript zu simulieren. 
-\item \emph{main}:
-\item \emph{math}:
-\item \emph{menu} & \emph{menuitem}:
-\item \emph{navigation}:
-\item \emph{progressbar}:
-\item \emph{search}: Oft gibt es ein Suchfeld
-\item \emph{slider}:
-\item \emph{tab} & \emph{tabpanel}:
-\item \emph{tree} & \emph{treeitem}:
-\item \emph{tooltip}:
+\item \emph{banner}: Am Anfang einer Seite befindet sich oft der sogenannte \glqq Header \grqq, welcher ein Bild oder den Titel der Seite enth"alt. Dieser Bereich enth"alt auch oft zus"atzliche Informationen, die sich auf die gesamte Seite beziehen. \cite[Abschnitt 5.4, banner]{aria_roles}
+
+\item \emph{dialog}: Viele JavaScript Frameworks wie z. B. jQuery-UI \cite{jquery_ui} bieten eine M"oglichkeit an, Dialoge mit mit JavaScript zu simulieren. Diese Dialoge sind verwenden beispielsweise HTML <div> Elemente und sind f"ur NutzerInnen assistiver Technologien oft nicht als solche erkennbar. \cite[Abschnitt 5.4, banner]{aria_roles}
+
+\item \emph{main}: Beinhaltet den eigentlich Inhalt der Seite. Duch eine Kennzeichnung mit dieser Role k"onnen assistive Technologien z. B. einen eigenen Shortcut anbieten, der bei der Aktivierung direkt zum eigentlichen Inhalt springt. \cite[Abschnitt 5.4, main]{aria_roles}
+
+\item \emph{math}: Durch fehlende M"oglichkeiten zur Darstellung mathematischer Funktionen wurden und werden oft Bilder oder Markup Sprachen wie MathML oder Latex verwendet, um diese korrekt im Browser darzustellen. Diese Role hilft dem Browser die entsprechende Sektion in ein f"ur NutzerInnen verst"andliches Format zu umzuwandeln und darzustellen. \cite[Abschnitt 5.4, math]{aria_roles}
+
+\item \emph{menu} und \emph{menuitem}: Wird verwendet um Menus und deren Eintr"age zu beschreiben und kann am besten mit den vom Desktop bekannten Menus in Applikationen verglichen werden. Die Menus sollten die M"oglichkeit bieten, direkt mit der Tastatur bedient zu werden. \cite[Abschnitt 5.4, menu, menuitem]{aria_roles}
+
+\item \emph{navigation}: Wird verwendet um Elemente der Navigation zu beschreiben. In "alteren HTML Versionen wird meistens ein <div> mit der id \emph{nav} verwendet. Dieses <div> ELement kann mit der navigation role gekennzeichnet werden. \cite[Abschnitt 5.4, navigation]{aria_roles}
+
+\item \emph{progressbar}: Durch die fehlende Unterst"utzung der neuen HTML5 input Elemente in einigen aktuell verwendeten Browsern bieten Frameworks wie jQuery-UI\cite{jquery_ui} einen dementsprechenden, nicht semantisch eindeutigen, Ersatz an. \cite[Abschnitt 5.4, progressbar]{aria_roles}
+
+\item \emph{search}: Oft wird eine seitenweite Suche in Form eines normalen HTML <input> Elementes angeboten. Dieses Element kann mit dieser Role als Suche deklariert werden. \cite[Abschnitt 5.4, search]{aria_roles}
+
+\item \emph{tooltip}: Wird verwendet um Tooltips zu kennzeichnen, die durch eventuell verwendete JavaScript Frameworks generiert werden k"onnen. \cite[Abschnitt 5.4, tooltip]{aria_roles}
 \end{itemize}
-\cite[Abschnitt 5.3 - 5.4]{aria_roles}
+
 
 
 \section{States and Properties}
