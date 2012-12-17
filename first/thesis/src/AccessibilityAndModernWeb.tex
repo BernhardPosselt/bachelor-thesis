@@ -201,7 +201,7 @@ Weiters bestehen die Braille aus vielen kleinen mechanischen Teilen und deshalb 
 \caption[Beschriftung eines Buchr"uckens.]{Beispiel einer Braille (\copyright  Philip Tellis, Creative Commons BY-SA)}\label{Abb1}
 \end{figure}
 
-Deshalb ziehen die Meisten auf software basierende L"osungen vor, was dem Screen-Reader zu einer h"oheren Popularit"at verhilft\cite[S. 249-250]{screen_read_frust}. Ein Screen-Reader liest dem/der NutzerIn die Inhalte auf dem Bildschirm vor. Dies kann f"ur sehende Personen als st"orend empf"unden werden, blinde Personen sind jedoch st"arker auf auditive Reize ausgerichtet und kommen dementsprechend besser damit klar\cite[S. 13]{barr_webd}. Bestimmte Screen-Reader wie GNOME Orca \cite{orca} sind sogar frei f"ur jeden verf"ugbar. 
+Deshalb ziehen die Meisten auf Software basierende L"osungen vor, was dem Screen-Reader zu einer h"oheren Popularit"at verhilft\cite[S. 249-250]{screen_read_frust}. Ein Screen-Reader liest dem/der NutzerIn die Inhalte auf dem Bildschirm vor. Dies kann f"ur sehende Personen als st"orend empf"unden werden, blinde Personen sind jedoch st"arker auf auditive Reize ausgerichtet und kommen dementsprechend besser damit klar\cite[S. 13]{barr_webd}. Bestimmte Screen-Reader wie GNOME Orca \cite{orca} sind sogar frei f"ur jeden verf"ugbar. 
 F"ur diese Personen muss beim Erstellen von Websiten besonders folgendes beachtet werden: semantisch korrekter und sauberer HTML Code, der den Inhalt vom Layout trennt.\cite[S. 13-15]{barr_webd}
 
 \section{Personen mit H"ohrschw"achen}
@@ -250,18 +250,34 @@ Unterschiede herausarbeiten.
 
 
 \chapter{ARIA}
+Im Web werden heutzutage vermehrt AJAX und JavaScript eingesetzt, nicht nur um eine immersive Erfahrung zu bieten, sondern auch um ganze Applikationen umzusetzen. Diese Technik erm"oglicht es, bestimmte Inhalte auf der Seite nachzuladen, ohne die ganze Seite neu zu laden oder eigene Eingabekomponenten zu erstellen \cite[S.26]{mod_software}. Viele vom Desktop bekannte Paradigmen k"onnen nun umgesetzt werden, z. B. \glqq Drag and Drop \grqq. Einige dieser Aktionen funktionieren jedoch nur mit speziellen Eingabeger"aten. So muss f"ur Drag and Drop zwingend eine Maus vorhanden sein. F"ur Nutzer eines Screen-Readers oder anderen assitiven Technologien wird es daher zunehmend schwieriger, mit der Webseite zu interagieren. \cite{aria_intro}
 
-Im Web werden heutzutage vermehrt Ajax und JavaScript eingesetzt, nicht nur um eine immersive Erfahrung zu bieten, sondern auch um ganze Applikationen umzusetzen. Viele vom Desktop bekannte Paradigmen k"onnen nun mit JavaScript umgesetzt werden, z. B. Drag and Drop. Einige dieser Aktionen funktionieren jedoch nur mit speziellen Eingabeger"aten. So muss f"ur Drag and Drop zwingend eine Maus vorhanden sein. F"ur Nutzer eines Screen-Readers oder anderen assitiven Technologien wird es daher zunehmend schwieriger, mit der Webseite zu interagieren. \cite{aria_intro}
-
-ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht dieses Problem mit zus"atzlichen HTML Attributen zu l"osen. Es erlaubt den ProgrammiererInnen zus"atzliche Meta-Informationen "uber die Funktionsweise und den gerade aktiven Status der Seite bereit zu stellen. Zu diesen Meta Informationen geh"oren: Roles und States and Properties \cite{aria_intro}. 
+ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht dieses Problem mit zus"atzlichen semantischen HTML Attributen zu l"osen. Es erlaubt den ProgrammiererInnen zus"atzliche Meta-Informationen "uber die Funktionsweise und den gerade aktiven Status der Seite bereit zu stellen. Zu diesen Meta Informationen geh"oren: Roles, States und Properties \cite{aria_intro}. 
 
 
 \section{Roles}
-Die Aufgaben der ARIA Roles Attributes ist es, die Struktur der Seite zu beschreiben. Dies ist zum Teil auch schon mit den neuen HTML5 Elementen wie z. B. <nav> \cite[Abschnitt 4.4.3]{html5} vgl. role="navigation" \cite[Abschnitt 3.1]{xhtml_vocab}, doch auch hier wurde diese Information aus Flexibilit"atsgr"unden duppliziert. Jedoch kann an dieser Stelle auch erw"ahnt werden, dass HTML5 auch noch nicht fertiggestellt ist \cite{html5}.
-Alle m"oglichen Werte, die f"ur das Role attribut gesetzt werden k"onnen befinden sich auf der Seite \url{http://www.w3.org/1999/xhtml/vocab/} im Abschnitt 3. XHTML Role Vocabulary. \cite[Abschnitt 3]{roles}
+Die Aufgaben der ARIA Role Attributes ist es, die Struktur der Seite zu beschreiben. Dies ist zum Teil auch schon mit den neuen HTML5 Elementen m"oglich, wie z. B. <nav> \cite[Abschnitt 4.4.3]{html5} vgl. \emph{role="navigation"} \cite[Abschnitt 3.1]{xhtml_vocab}, jedoch verwenden viele Personen noch "altere Browser, die diese neuen Funktionen noch nicht unterst"utzen. Daher werden oft neue Elemente mit "alterer Technologie umgesetzt, was die Nutzung f"ur k"orperlich eingeschr"ankte Personen deutlich erschwert. Auch bietet das role Attribut zus"atzliches Markup, welches in der jetzigen HTML5 Version noch nicht umgesetzt ist. Au"serdem ist HTML5 auch noch nicht fertigspezifiziert \cite{html5}. Das soll jedoch kein Freibrief f"ur Entwickler sein, alle semantischen HTML Elemente durch nicht semantische Elemente mit Role Attributen ersetzen \cite[Abschnitt 3]{roles}. 
 
-Diese test
+Der Wert des Role Attributes darf sich nicht ver"andern. Sollte dies jemals gefordert sein, muss das HTML Element zuerst komplett entfernt werden und mit einem neuen Element mit der dementsprechenden Role ersetzt werden.\cite[Abschnitt 5]{aria_roles}
 
+F"ur das Role Attribut k"onnen ein oder mehrere durch Leerzeichen getrennte Werte gesetzt werden. Diese Werte umfassen unter anderem:
+
+\begin{itemize}
+\item \emph{banner}: Am Anfang einer Seite befindet sich oft der sogenannte \glqq Header \grqq, welcher ein Bild oder den Titel der Seite ent"h"alt. Dieser Bereich enth"alt auch oft zus"atzliche Informationen, die sich auf die gesamte Seite beziehen.
+\item \emph{dialog}: Viele JavaScript Frameworks wie z. B. jQuery-UI \cite{jquery_ui} bieten eine M"oglichkeit an, Dialoge mit mit JavaScript zu simulieren. 
+\item \emph{main}:
+\item \emph{math}:
+\item \emph{menu} & \emph{menuitem}:
+\item \emph{navigation}:
+\item \emph{progressbar}:
+\item \emph{search}: Oft gibt es ein Suchfeld
+\item \emph{slider}:
+\item \emph{tab} & \emph{tabpanel}:
+\item \emph{tree} & \emph{treeitem}:
+\item \emph{tooltip}:
+\end{itemize}
+
+Die oben genannten Werte stellen nur eine kleine Auswahl aller verf"ugbaren Roles dar. \cite[Abschnitt 5.3 - 5.4]{aria_roles}
 
 \section{States and Properties}
 State Attribute stellen jedoch nicht nur neue Funktionen bereit sondern dupplizieren zum Teil auch Information, die in HTML5 schon vorhanden sind und ausgelesen werden k"onnen z. B. aria-disabled oder aria-checked \cite[States and Properties]{aria} vgl. input Element Attribute checked und disabled \cite[Abschnitt Forms, Input Element]{html4}. Dies erm"oglicht es, auch HTML Elemente als z. B. checked zu setzen, die urspr"unglich nicht daf"ur vorgesehen waren aber trotzdem so verwendet werden.
@@ -375,6 +391,7 @@ W3C & World Wide Web Consortium\\
 URL & Uniform Resource Locator\\
 ARIA & Accessible Rich Internet Applications\\
 WAI & Web Accessibility Initiative\\
+AJAX & Asynchronous JavaScript and XML\\
 \end{tabular}
 
 % Anh"ange
