@@ -255,7 +255,7 @@ Diese Richtlinien bezieht sich vor allem Personen mit Rot-Gr"un Blindheit oder P
 
 
 \subsection{Bedienbarkeit}
-Unter die Kategorie Wahrnehmbarkeit fallen folgende Richtlinien: 
+Unter die Kategorie Bedienbarkeit fallen folgende Richtlinien: 
 
 \begin{itemize}
 \item Elemente, die von der Zeit abh"angen, sollen stoppbar oder pausierbar sein \cite[Abschnitt 6.7]{wcag1}
@@ -282,6 +282,7 @@ Diese Richtlinie betrifft vor allem Menschen mit Lern- und Konzentrationsschwier
 Von diesen Ma"snahmen k"onnen auch andere NutzerInnen profitieren, da sie den gesuchten Inhalt auf der Seite besser finden k"onnen \cite[S. 52]{barr_webd}.
 
 \subsection{Verst"andlichkeit}
+Unter die Kategorie Verst"andlichkeit fallen folgende Richtlinien: 
 
 \begin{itemize}
 \item Verwendete Hauptsprache und Fremdsprachen sollen gekennzeichnet werden\cite[Abschnitt 6.4]{wcag1}
@@ -302,20 +303,31 @@ Diese Richtlinie bezieht sich nicht nur auf Personen mit Lern- und Konzentration
 Dies ist jedoch schwer mess- und erreichbar. Ein zus"atzliches Verwenden von Bildern oder Audio erfordert zus"atzlich auch ein Vorhandensein einer Methode, die diese Informationen wieder anderen, z. B. Blinden Personen, zug"anglich macht. \cite[S. 52]{barr_webd}
 
 \subsection{Robustheit}
+Unter die Kategorie Robustheit fallen folgende Richtlinien: 
+
+
 \begin{itemize}
-\item Struktur und Pr"asentation soll getrennt werden\cite[Abschnitt 6.3]{wcag1}
+\item Struktur und Pr"asentation sollen korrekt verwendet und getrennt werden\cite[Abschnitt 6.3]{wcag1}
 \item Tabellen sollen korrekt verwendet werden\cite[Abschnitt 6.5]{wcag1}
 \item Webseiten sollen abw"artskompatibel sein\cite[Abschnitt 6.6]{wcag1}
 \item Webseiten sollen abw"artskompatibel zu "alteren assistiven Technologien sein\cite[Abschnitt 6.10]{wcag1}
 \item Standards und Richtlinien sollen verwendet werden\cite[Abschnitt 6.11]{wcag1}
 \end{itemize}
 
-\subsubsection{Struktur und Pr"asentation soll getrennt werden}
-\subsubsection{Tabellen sollen korrekt verwendet werden}
-\subsubsection{Webseiten sollen abw"artskompatibel sein}
-\subsubsection{Webseiten sollen abw"artskompatibel zu "alteren assistiven Technologien sein}
-\subsubsection{Standards und Richtlinien sollen verwendet werden}
+\subsubsection{Struktur und Pr"asentation sollen korrekt verwendet und getrennt werden}
+Eine gute Trennung der verschiedenen Layer ist notwendig, damit auch Clients, die sich nur auf das Markup konzentrieren den Inhalt korrekt darstellen k"onnen\cite[S. 42-43]{barr_webd}. Auch sollen die korrekten HTML Elemente f"ur die jeweils daf"ur vorgesehenen Einsatzzwecke verwendet werden, um den Inhalt korrekt zu "ubermitteln. \cite[Abschnitt 6.3]{wcag1}
 
+\subsubsection{Tabellen sollen korrekt verwendet werden}
+Diese Richtlinie hilft vor allem Personen mit Sehschw"achen. Tabellen sollen nicht als Layoutwerkzeug missbraucht werden, sondern mit Informationen gef"ullt werden, die auch am Besten in eine Tabellenform passen. Wird das Layout z. B. mit Tabellen erstellt, haben unter anderem Screen-Reader massive Schwierigkeiten damit, auf der Webseite zu navigieren. Auch das inkorrekte Verwenden oder Weglassen von Tabellen"uberschriften macht die Navigation f"ur Screen-Reader unn"otig kompliziert. \cite[Abschnitt 6.5]{wcag1}
+
+\subsubsection{Webseiten sollen abw"artskompatibel sein}
+Sollten neue Technologien eingesetzt werden, muss dabei auch die Abw"artskompabilit"at mitbeachtet werden. Erw"ahnt werden unter anderem das Einsetzen von \emph{<noscript>} oder \emph{<noframes>} Tags. Am Wichtigsten ist jedoch, dass die Seite auch ohne JavaScript und Stylesheets korrekt funktioniert, was vor allem f"ur dynamische Seiten ein Problem darstellen kann. Sollte dies nicht m"oglich, muss eine Alternative bereitstehen. \cite[Abschnitt 6.6]{wcag1}
+
+\subsubsection{Webseiten sollen abw"artskompatibel zu "alteren assistiven Technologien sein}
+Diese Richtlinie schl"agt in die gleiche Kerbe wie Richtlinie 6.6, aber bezieht sich mehr auf die Abw"artskompabilit"at zu "alteren assistiven Technologien. Da diese oft teuer sind, k"onnen sie nicht so oft durch aktuellere Ger"ate ersetzt werden \cite[S. 48]{barr_webd}. "Altere Ger"ate haben vor allem Problem mit leeren Eingabeelementen und Popups. Diese Probleme m"ussen bei der Abw"artskompabilit"at mit beachtet werden. \cite[Abschnitt 6.10]{wcag1}
+
+\subsubsection{Standards und Richtlinien sollen verwendet werden}
+Wann immer es m"oglich ist, sollen standardkonforme Techniken zum Einsatz kommen oder entsprechende Alternativen zur Verf"ugung stehen. Die Richtlinie listet unter den problematichen Technologien explizit PDF und Shockwave (das heutige Adobe Flash) und empfiehlt diese nur zu verwenden, wenn es unausweichlich ist. \cite[Abschnitt 6.11]{wcag1}
 
 \section{WCAG Version 2.0}
 Eigenschaften und Empfehlungen jeweils mit den einzelnen Sektionen
