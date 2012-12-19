@@ -275,7 +275,7 @@ Weiters sollte sich die Seite auch nicht automatisch neu laden, da Screen-Reader
 Um die Zug"anglichkeit der ganzen Seite zu gew"ahrleisten, m"ussen auch einzelne, eingebettete Objekte wie Java Applets oder Flash Container zug"anglich gestaltet sein. Ist dies nicht m"oglich, muss eine Alternative angeboten werden. \cite[Abschnitt 6.8]{wcag1}
 
 \subsubsection{Das Userinterface soll auch auf anderen Plattformen bedienbar sein}
-NutzerInnen verwenden die Seite auch oft auf anderen Ger"aten, wie z. B. Mobiltelefonen oder Terminals. Da diese Ger"ate oft verschiedene Eingabemethoden unterst"utzen, muss die Seite auch dahingehend optimiert werden. Dies umfasst z. B. die Bereitstellung eines funktionierenden Tabindexes oder Shortcuts f"ur oft verwendete Links. Desweiteren sollen Eingabespezifische Event-Handler wie z. B. onkeypress vermieden vermieden und versucht werden, diese stattdessen logisch anzuordnen. \cite[Abschnitt 6.9]{wcag1}
+NutzerInnen verwenden die Seite auch oft auf anderen Ger"aten, wie z. B. Mobiltelefonen oder Terminals. Da diese Ger"ate oft verschiedene Eingabemethoden unterst"utzen, muss die Seite auch dahingehend optimiert werden. Dies umfasst z. B. die Bereitstellung eines funktionierenden Tabindexes oder Shortcuts f"ur oft verwendete Links. Desweiteren sollen Eingabespezifische Event-Handler wie z. B. \emph{onkeypress} vermieden vermieden und versucht werden, diese stattdessen logisch anzuordnen. \cite[Abschnitt 6.9]{wcag1}
 
 \subsubsection{Eine gut strukturierte Navigation soll verf"ugbar sein}
 Diese Richtlinie betrifft vor allem Menschen mit Lern- und Konzentrationsschwierigkeiten und Personen mit Sehschw"achen. Eine einfache Navigation kann die Benutzung mit dem Screen-Reader angenehmer gestalten und die Orientierung zu verbessern. Dazu geh"oren unter anderem das Vorhandensein einer \glqq Site-Map \grqq und konsistent Navigationselementen: z.B. m"ussen die Ziele eines Links klar ersichtlich sein und "Uberschriften m"ussen unterscheidbar von anderen "Uberschriften sein. \cite[Abschnitt 6.13]{wcag1}
@@ -290,12 +290,16 @@ Von diesen Ma"snahmen k"onnen auch andere NutzerInnen profitieren, da sie den ge
 \end{itemize}
 
 \subsubsection{Verwendete Hauptsprache und Fremdsprachen sollen gekennzeichnet werden}
+Ein Vorhandensein von Sprachinformationen f"ur bestimmte Teile des Textes oder Abk"urzungen erm"oglicht es z. B. Screen-Readern, die Information in der korrekten Sprache auszugeben. Dazu soll das \emph{lang} Attribut verwendet werden, was zu einer der wichtigsten Kriterien z"ahlt (Priorit"at 1). F"ur Abk"urzung gibt es das \emph{<akronym>} und \emph{<abbr>} Element.
+Nat"urlicherweise soll auch die Hauptsprache der Webseite mit angegeben werden.\cite[Abschnitt 6.4]{wcag1}
 
 \subsubsection{Information zu Kontext und Orientierung soll verf"ugbar sein}
+Diese Richtlinie beschreibt vor allem den korrekten Umgang mit Frames und die korrekte Gruppierung von Elementen \cite[S. 50]{barr_webd}. Frames sollen identifizierbar sein und deren Sinn soll f"ur den/die BenutzerIn klar sein. Daf"ur werden die beiden Attribute \emph{title} und \emph{longdesc} vorgeschlagen. Des weiteren sollen verwandte Informationen und Links mit den daf"ur vorgesehen HTML Elementen gruppiert werden, z. B. mit \emph{<fieldset>} und \emph{<optgroup>} und die darin verwendeten Eingabeelementen sollen korrekt mit \emph{<label>} beschriftet werden. 
+\cite[Abschnitt 6.12]{wcag1}
 
 \subsubsection{Der Inhalt der Seite soll einfach und gut verst"andlich sein}
-
-
+Diese Richtlinie bezieht sich nicht nur auf Personen mit Lern- und Konzentrationsschwierigkeiten sondern auch auf alle anderen NutzerInnen. Sie besagt, dass die Seite einfach und verst"andlich sein soll. Des weiteren soll das Layout auf der Seite konsistent sein und Text mit Bildern oder Audio unterst"utzt werden. \cite[Abschnitt 6.14]{wcag1}
+Dies ist jedoch schwer mess- und erreichbar. Ein zus"atzliches Verwenden von Bildern oder Audio erfordert zus"atzlich auch ein Vorhandensein einer Methode, die diese Informationen wieder anderen, z. B. Blinden Personen, zug"anglich macht. \cite[S. 52]{barr_webd}
 
 \subsection{Robustheit}
 \begin{itemize}
