@@ -6,6 +6,7 @@ build/
 *.aux
 *.bbl
 *.lot
+*.lof
 *.out
 *.toc
 *.blg
