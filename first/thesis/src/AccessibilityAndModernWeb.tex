@@ -221,11 +221,12 @@ sind ca. 4.8 Prozent der Bev"olkerung der USA \cite[S. 1]{us_cens}. Jedoch geh"o
 Diese Personen haben vor allem Probleme mit zu komplizierten S"atzen oder einer fehlenden Struktur der Seite. Dadurch profitieren sie am Meisten durch: einfache und kurze S"atze, gute Strukturierung, Einsetzen von Bildern und Anbieten von einer Methode zum Vorlesen von Texten, was auch \glqq Text-to-Speech\grqq genannt wird. \cite[S. 18-19]{barr_webd}\cite[S. 19]{understand_acc}
 
 \chapter{WCAG}
-Die WCAG (Web Content Accessibility Guidelines) sind ein Dokument, welches vom W3C herausgegeben wurde um Webseiten auch f"ur k"orperlich eingeschr"ankte Personen oder Personen mit Lernschwierigkeiten zug"anglich zu machen. Jedoch bringt das Befolgen dieser Richtlinien auch zus"atzliche Vorteile f"ur andere NutzerInnen. \cite[Abschnitt Abstract]{wcag1}
+Die WCAG (Web Content Accessibility Guidelines) sind ein Dokument, welches vom W3C herausgegeben wurde um Webseiten auch f"ur k"orperlich eingeschr"ankte Personen oder Personen mit Lernschwierigkeiten zug"anglich zu machen. Jedoch bringt das Befolgen dieser Richtlinien auch zus"atzliche Vorteile f"ur andere NutzerInnen, z. B. Personen die mit mobilen Ger"aten oder mit anderen durch Form oder Einsatzgebiet eingeschr"ankten Plattformen auf das Web zugreifen. \cite[Abschnitt Abstract]{wcag1}
 
 
 \section{WCAG Version 1.0}
-Die Version 1.0 des Dokumentes wurde im Jahre 1999 finalisiert und beinhaltet 14 Richtlinien, welche jeweils Empfehlungen zur Umsetzung enthalten, die mit Checkpoints und Priorit"aten gekennzeichnet sind. \cite[Abschnitt Abstract]{wcag1}
+Die Version 1.0 des Dokumentes wurde im Jahre 1999 finalisiert und beinhaltet 14 Richtlinien, welche jeweils Empfehlungen f"ur WebentwicklerInnen enthalten. Diese Empfehlungen enthalten Unterpunkte, so genannte Checkpoints, die wiederum mit einer Priorit"at gekennzeichnet sind. \cite[Abschnitt Abstract]{wcag1}
+F"ur eine bessere Gegen"uberstellung dieser Kriterien mit den WCAG 2.0 wird versucht, diese 14 Richtlinien der WCAG 1.0 in die gleiche Struktur wie die der WCAG 2.0 zu bringen.
 
 \subsection{Success Criteria}
 Die Kriterien anhand derer man die erfolgreiche Umsetzung der Richtlinien pr"ufen kann werden in drei verschiedene Kategorien aufgeteilt: must, should und may Kriterien, sprich Kriterien die erf"ullt sein m"ussen, sollen und k"onnen. Anhand der Erf"ullung dieser Kritieren lassen sich nun folgende Konformit"atslevel definieren: \cite[Abschnitt 4]{wcag1}
@@ -236,7 +237,47 @@ Die Kriterien anhand derer man die erfolgreiche Umsetzung der Richtlinien pr"ufe
 \item \emph{AAA}: Alle mit Priorit"at 1, 2 und 3 angef"uhrten Kritierien sind umgesetzt
 \end{itemize}
 
-Die deutsche BITV (Barrierefreie Informationstechnologie Verordnung), welche im \emph{Bundesgesetz zur Gleichstellung behinderter Menschen} festgeschrieben ist, baut z. B. auf diesen Kriterien auf. Will man die BITV jedoch komplett erf"ullen, m"ussen sowohl die Kriterien der Stufe 1 als auch die der Stufe 2 komplett erf"ullt werden, was einer Mindeststufe AA entspricht. \cite[S. 38-39]{barr_webd}
+Die deutsche BITV (Barrierefreie Informationstechnologie Verordnung), welche im \emph{Bundesgesetz zur Gleichstellung behinderter Menschen} festgeschrieben ist, baut z. B. auf diesen Kriterien auf. Will man die BITV komplett erf"ullen, m"ussen sowohl die Kriterien der Stufe 1, als auch die der Stufe 2 komplett erf"ullt werden, was einer Mindeststufe des Konformit"atslevels AA entspricht. \cite[S. 38-39]{barr_webd}
+
+\subsection{Wahrnehmbarkeit}
+Unter die Kategorie Wahrnehmbarkeit fallen folgende Richtlinien: 
+
+\begin{itemize}
+\item Visuelle oder auditive Elemente sollen eine textbasierte Alternative besitzen\cite[Abschnitt 6.1]{wcag1}
+\item Der Sinn des Inhalts sollte nicht nur von der Farbe abh"angig sein \cite[Abschnitt 6.2]{wcag1}
+\end{itemize}
+
+\subsubsection{Visuelle oder auditive Elemente sollen eine textbasierte Alternative besitzen}
+Diese Richtlinie bezieht sich vor allem auf Personen mit Sehschw"achen und besagt, dass f"ur alle eingesetzten visuellen oder auditiven Elemente wie Bilder, Videos oder Kl"ange eine dementsprechende Alternative vorhanden sein soll. Dies kann z. B. erreicht werden, indem <img> Tags immer ein \emph{alt} Attribut besitzen oder Videos/Kl"ange mit einem beschreibenden Text oder Transkription versehen sind. Von den Kritieren, die  zur Erf"ullung dieser Richtlinien aufgez"ahlt sind, sind vier von f"unf der Priorit"at 1 zuzuordnen. \cite[Abschnitt 6.1]{wcag1}
+
+\subsubsection{Der Sinn des Inhalts sollte nicht nur von der Farbe abh"angig sein}
+Diese Richtlinien bezieht sich vor allem Personen mit Rot-Gr"un Blindheit oder Personen, deren Monitor keine Farben ausgeben kann \cite[S. 41]{barr_webd}. Dazu muss sicher gestellt werden, dass ein ausreichender Kontrast zwischen Hintergrund und Inhalt gew"ahrleistet ist (Priorit"at 2), und dass alle Informationen, die durch Farbe transport werden, auch ohne Farbe verstanden werden k"onnen (Priorit"at 1) \cite[Abschnitt 6.1]{wcag1}
+
+
+\subsection{Bedienbarkeit}
+Unter die Kategorie Wahrnehmbarkeit fallen folgende Richtlinien: 
+
+\begin{itemize}
+\item Elemente, die von der Zeit abh"angen, sollen stoppbar oder pausierbar sein \cite[Abschnitt 6.7]{wcag1}
+\item Das Userinterface soll auch auf anderen Plattformen bedienbar sein\cite[Abschnitt 6.8]{wcag1}
+\item Eine gut strukturierte Navigation soll verf"ugbar sein\cite[Abschnitt 6.13]{wcag1}
+\end{itemize}
+
+
+
+
+
+\subsection{Verst"andlichkeit}
+Clarify natural language usage\cite[Abschnitt 6.3]{wcag1}
+Provide context and orientation information.\cite[Abschnitt 6.12]{wcag1}
+Ensure that documents are clear and simple.\cite[Abschnitt 6.14]{wcag1}
+
+\subsection{Robustheit}
+Create tables that transform gracefully.\cite[Abschnitt 6.5]{wcag1}
+Ensure that pages featuring new technologies transform gracefully.\cite[Abschnitt 6.6]{wcag1}
+Design for device-independence.\cite[Abschnitt 6.9]{wcag1}
+Use interim solutions.\cite[Abschnitt 6.10]{wcag1}
+Use W3C technologies and guidelines.\cite[Abschnitt 6.11]{wcag1}
 
 \section{WCAG Version 2.0}
 Eigenschaften und Empfehlungen jeweils mit den einzelnen Sektionen
