@@ -330,7 +330,10 @@ Diese Richtlinie schl"agt in die gleiche Kerbe wie Richtlinie 6.6, aber bezieht 
 Wann immer es m"oglich ist, sollen standardkonforme Techniken zum Einsatz kommen oder entsprechende Alternativen zur Verf"ugung stehen. Die Richtlinie listet unter den problematichen Technologien explizit PDF und Shockwave (das heutige Adobe Flash) und empfiehlt diese nur zu verwenden, wenn es unausweichlich ist. \cite[Abschnitt 6.11]{wcag1}
 
 \section{WCAG Version 2.0}
-Eigenschaften und Empfehlungen jeweils mit den einzelnen Sektionen
+Version 2.0 wurde ver"offentlicht, um die Anforderungen allgemeiner und testbarer zu gestalten \cite[S. 20]{tool_acc}. Daraus folgt jedoch, dass sie schwieriger zu verstehen und anzuwenden sind als die vorige Version \cite[S. 24]{mod_software}.
+
+Im Gegensatz zu den WCAG der Version 1.0 ist die Version 2.0 in vier Kategorien gegliedert: Wahrnehmbarkeit, Bedienbarkeit, Verst"andlichkeit und Robustheit \cite[S. 23-24]{mod_software}. Um beide Dokumente jedoch besser vergleichen zu k"onnen, wurde in dieser Arbeit versucht, die WCAG 1.0 in eine ann"ahernd gleiche Struktur zu bringen. 
+
 
 \subsection{Success Criteria}
 Was f"ur success criteria gibt es und wie kann man sie erreichen.
@@ -358,20 +361,26 @@ ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht
 
 
 \section{Roles}
-Die Aufgaben der ARIA Role Attributes ist es, die Struktur der Seite und Interaktionsm"oglichkeiten zu beschreiben. Dies ist zum Teil auch schon mit den neuen HTML5 Elementen m"oglich, wie z. B. <nav> \cite[Abschnitt 4.4.3]{html5} vgl. \emph{role="navigation"} \cite[Abschnitt 3.1]{xhtml_vocab}, jedoch verwenden viele Personen noch "altere Browser, die diese neuen Funktionen noch nicht unterst"utzen. Daher werden oft neue Elemente mit "alterer Technologie umgesetzt, was die Nutzung f"ur k"orperlich eingeschr"ankte Personen deutlich erschwert. Auch bietet das role Attribut zus"atzliches Markup, welches in der jetzigen HTML5 Version noch nicht umgesetzt ist. Au"serdem ist HTML5 auch noch nicht fertig spezifiziert \cite{html5}. Das soll jedoch kein Freibrief f"ur Entwickler sein, alle semantischen HTML Elemente durch nicht semantische Elemente mit Role Attributen ersetzen \cite[Abschnitt 3]{roles}. 
+Die Aufgaben der ARIA Role Attributes ist es, die Struktur der Seite und Interaktionsm"oglichkeiten zu beschreiben. Dies ist zum Teil auch schon mit den neuen HTML5 Elementen m"oglich, wie z. B. <nav> \cite[Abschnitt 4.4.3]{html5} vgl. \emph{role="navigation"} \cite[Abschnitt 3.1]{xhtml_vocab}, jedoch verwenden viele Personen noch "altere Browser, die diese neuen Funktionen noch nicht unterst"utzen. Daher werden oft neue Elemente mit "alterer Technologie umgesetzt, was die Nutzung f"ur k"orperlich eingeschr"ankte Personen deutlich erschwert. Auch bietet das role Attribut zus"atzliches Markup, welches in der jetzigen HTML5 Version noch nicht umgesetzt ist. Au"serdem ist HTML5 auch noch vollkommen standardisiert \cite{html5}. Das soll jedoch kein Freibrief f"ur Entwickler sein, alle semantischen HTML Elemente durch nicht semantische Elemente mit Role Attributen ersetzen \cite[Abschnitt 3]{roles}. 
 
 F"ur das Role Attribut k"onnen ein oder mehrere durch Leerzeichen getrennte Werte gesetzt werden. Der Wert des Role Attributes darf sich nicht ver"andern. Sollte dies jemals gefordert sein, muss das HTML Element zuerst komplett entfernt werden und mit einem neuen Element mit der dementsprechenden Role ersetzt werden.\cite[Abschnitt 5]{aria_roles}
 
 Die Werte die ein Role Element annehmen kann, gliedert sich in vier verschiedene Kategorien: Abstract Roles, Widget Roles, Document Structure und Landmark Roles. \cite[Abschnitt 5.2]{aria_states}
 
+
+\subsection{Abstract Roles}
 Abstract Roles sind f"ur die semantische Aufgabe des Elements gedacht und d"urfen nicht im Inhalt vorkommen. Ein Beispiel f"ur eine Abstract Role w"are z. B. \emph{widget} oder \emph{window}.\cite[Abschnitt 5.3.1]{aria_roles}
 
+\subsection{Widget Roles}
 Widget Roles sind f"ur die Beschreibung von Widgets gedacht. Widgets sind Elemente, die den User mit der Seite interagieren lassen\cite[Abschnitt 5.4, widget]{aria_roles}. Ein Beispiel f"ur eine Widget Role w"are z. B. \emph{dialog} oder \emph{progressbar}.\cite[Abschnitt 5.3.2]{aria_roles}
 
+\subsection{Document Structure}
 Die Document Structure beschreibt die Struktur der Seite. Ein Beispiel f"ur eine Document Structure Role w"are z. B. \emph{article} oder \emph{list}.\cite[Abschnitt 5.3.3]{aria_roles}
 
+\subsection{Landmark Roles}
 Landmark Roles beschreiben wichtige Navigationselemente und Bereiche. Ein Beispiel f"ur eine Landmark Role w"are z. B. \emph{banner} oder \emph{navigation}.\cite[Abschnitt 5.3.4]{aria_roles}
 
+\subsection{ARIA Roles Beispiele}
 Die nachfolgenden genannten Werte stellen nur eine kleine Auswahl aller verf"ugbaren Roles dar und sollen ein besseres Verst"andnis ihres Sinnes und  Einsatzgebietes vermitteln:
 
 \begin{itemize}
@@ -405,12 +414,16 @@ State Attribute stellen jedoch nicht nur neue Funktionen bereit sondern duplizie
 
 States und Properties lassen sich in folgende vier Kategorien einteilen: Widget Attributes, Live Region Attributes, Drag and Drop Attributes und Relationship Attributes. \cite[Abschnitt 6.5]{aria_states}
 
+\subsection{Widget Attributes}
 Widget Attributes werden verwenden um Widgets, sprich Interaktionselement wie HTML <input> zu beschreiben. Ein Beispiel daf"ur w"are \emph{aria-label}, welches benutzt werden kann, um eine genaue Beschreibung eines Eingabefelds zu erreichen. Es gibt zwar das HTML <label> Element, welches dieser Aufgabe nachkommt, jedoch ist es oft schwierig den Sinn des <input> Elementes zu verstehen, wenn sich dieses mitten im Beschreibungstext befindet. \cite[Abschnitt 6.6, aria-label]{aria_states}
 
+\subsection{Live Regions}
 Live Regions werden dazu verwendet, um Bereiche zu markieren, in denen sich der Inhalt dynamisch ohne Zutun des/der BenutzerIn "andern kann, beispielsweise durch Nachladen von Informationen mittels AJAX Request. Ein Beispiel daf"ur w"are \emph{aria-busy}, welches dem Client mitteilt, dass sich gerade ein Bereich updated. \cite[Abschnitt 6.6, aria-busy]{aria_states}
 
+\subsection{Drag and Drop Attributes}
 Drag and Drop Attributes werden f"ur die Kennzeichnung von Drag and Drop f"ahigen Elementen verwendet. Ein Beispiel daf"ur w"are das schon erw"ahnte \emph{aria-grabbed}. \cite[Abschnitt 6.6, aria-grabbed]{aria_states}
 
+\subsection{Relationship Attributes}
 Relationship Attributes werden verwendet um Beziehungen zwischen bestimmten HTML Elementen herzustellen. Dies kann zum Beispiel wichtig sein, wenn sich ein Label f"ur ein Eingabeelement an einer anderen Stelle auf der Webseite befindet. Dies wird durch das Attribut \emph{aria-labelledby} erreicht, welches mittels einer ID das dementsprechende Label auf der Seite referenzieren kann. \cite[Abschnitt 6.6, aria-labelledby]{aria_states}
 
 Eine "Ubersicht "uber alle m"oglichen States und Properties kann auf der Spezifikationsseite nachgeschlagen werden. \cite[Abschnitt 6.6]{aria_states}
