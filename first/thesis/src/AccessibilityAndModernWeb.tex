@@ -330,13 +330,30 @@ Diese Richtlinie schl"agt in die gleiche Kerbe wie Richtlinie 6.6, aber bezieht 
 Wann immer es m"oglich ist, sollen standardkonforme Techniken zum Einsatz kommen oder entsprechende Alternativen zur Verf"ugung stehen. Die Richtlinie listet unter den problematichen Technologien explizit PDF und Shockwave (das heutige Adobe Flash) und empfiehlt diese nur zu verwenden, wenn es unausweichlich ist. \cite[Abschnitt 6.11]{wcag1}
 
 \section{WCAG Version 2.0}
-Version 2.0 wurde ver"offentlicht, um die Anforderungen allgemeiner und testbarer zu gestalten \cite[S. 20]{tool_acc}. Daraus folgt jedoch, dass sie schwieriger zu verstehen und anzuwenden sind als die vorige Version \cite[S. 24]{mod_software}.
+Version 2.0 wurde ver"offentlicht, um die Anforderungen allgemeiner und testbarer zu gestalten \cite[S. 20]{tool_acc}. Daraus folgt jedoch, dass sie schwieriger zu verstehen und anzuwenden sind als die Richtlinien der vorige Version \cite[S. 24]{mod_software}.
 
 Im Gegensatz zu den WCAG der Version 1.0 ist die Version 2.0 in vier Kategorien gegliedert: Wahrnehmbarkeit, Bedienbarkeit, Verst"andlichkeit und Robustheit \cite[S. 23-24]{mod_software}. Um beide Dokumente jedoch besser vergleichen zu k"onnen, wurde in dieser Arbeit versucht, die WCAG 1.0 in eine ann"ahernd gleiche Struktur zu bringen. 
 
 
 \subsection{Success Criteria}
-Was f"ur success criteria gibt es und wie kann man sie erreichen.
+Wie auch in den der Version 1.0 gibt es drei verschiedene Konformit"atslevel, die folgendenderma"sen erf"ullt werden: \cite[Abschnitt Understanding Requirement 1]{understand_conform}
+
+\begin{itemize}
+\item \emph{A}: Alle mit Konformit"atslevel A angef"uhrten Kritierien sind umgesetzt
+\item \emph{AA}: Alle mit Konformit"atslevel A und AA angef"uhrten Kritierien sind umgesetzt
+\item \emph{AAA}: Alle mit Konformit"atslevel A, AA und AAA angef"uhrten Kritierien sind umgesetzt
+\end{itemize}
+
+Die Gliederung in diese Konformit"atslevel wird anhand folgender Kritieren vorgenommen: \cite[Abschnitt Understanding Levels of Conformance]{understand_conform}
+
+\begin{itemize}
+\item Ist das Kriterium unabdingbar f"ur k"orperlich eingeschr"ankte Personen oder Personen mit Lernschwierigkeiten, um die Seite bedienen und begreifen zu k"onnen
+\item Ist das Kriterium umsetzbar
+\item Ist das Kriterium ohne unverh"altnism"a"sig gro"sen Aufwand umsetzbar
+\item Beeintr"achtigt das Kriterium das Aussehen oder die Bedienung der Webseite
+\item Gibt es Workarounds, wenn das Kriterium nicht erf"ullt wird
+\end{itemize}
+
 
 \subsection{Wahrnehmbarkeit}
 Was z"ahlt alles zu den Probleme der Wahrnehmung von Content auf der Webseite  f"ur Beeintr"achtigte Personen geben
@@ -348,7 +365,13 @@ Wo kann es auf der Seite Bedienungsprobleme f"ur Beeintr"achtigte Personen geben
 Wie kann man verhindern dass etwas unverst"andlich  f"ur Beeintr"achtigte Personen ist
 
 \subsection{Robustheit}
-Wie kann man m"oglichst gro"se Kompatibilit"at mit den derzeitigen und zuk"unftigen Browsern erreichen
+Diese Richtlinie beschreibt beinhaltet Kriterien f"ur eine korrekte, ger"ate- und software"ubergreifende Darstellung und Interpretation der Webseite. Darunter fallen folgende 2 Level A Kriterien: \emph{Parsing} und \emph{Name, Role, Value}. \cite[Abschnitt 4.1]{wcag2}
+
+\subsubsection{Parsing}
+Dieses Kriterium besagt im Wesentlichen, dass korrektes HTML Markup verwendet werden sollte, z. B. HTML Elemente m"ussen geschlossen werden oder es darf keine \emph{ID} zweimal vorkommen. \cite[Abschnitt 4.1.1]{wcag2}
+
+\subsubsection{Name, Role, Value}
+Diese Kriterium besagt, dass alle Userinterface Komponenten korrekt ausgelesen werden k"onnen m"ussen \cite[Abschnitt 4.1.2]{wcag2}. Dies stellt kein Problem dar, wenn die daf"ur vorgesehenen HTML Elemente verwendet werden. Werden jedoch eigene Elemente f"ur diese Zwecke erstellt, m"ussen diese durch zus"atzliche Techniken, wie etwa ARIA Roles, so beschrieben werden, dass eine korrekte Funktionsweise daraus abgeleitet werden kann \cite[Abschnitt Intent of this Success Criterion]{understand_412}
 
 \section{Unterschiede zwischen WCAG Version 2.0 und 1.0}
 Unterschiede herausarbeiten.
