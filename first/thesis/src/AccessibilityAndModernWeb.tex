@@ -103,7 +103,7 @@ und auch noch nicht ver"offentlicht. Ich versichere, dass die abgegebene Version
 
 \section*{Kurzfassung}\thispagestyle{empty}
 In dieser Arbeit wird ein "Uberblick "uber moderne Web-Technologien im Bereich
-Accessibility gegeben. Immer mehr "offentliche Einrichtungen stellen im Rahmen des \emph{e-governments} heutzutage einen Zugang zu wichtigen Informationen und Services im Web bereit. Dadurch muss dieser Zugang universell erreichbar und nutzbar sein. Um eine L"osung f"ur dieses Problem zu finden, wird ein Blick auf die Empfehlungen der W3C geworfen. Auch auf neuere Techniken wie ARIA, die erst in einer Candidate Recommendation vorhanden sind, wird eingegangen. Das Ziel dieser Arbeit ist, einen guten "Uberblick "uber den heutigen Stand der Accessibility im Web zu bieten und die Vorteile der Nutzung von Accessibility Methoden hervorzustreichen. 
+Accessibility gegeben. Immer mehr "offentliche Einrichtungen stellen im Rahmen des \emph{e-governments} heutzutage einen Zugang zu wichtigen Informationen und Services im Web bereit. Dadurch muss dieser Zugang universell erreichbar und nutzbar sein. Um eine L"osung f"ur dieses Problem zu finden, wird ein Blick auf die Empfehlungen der W3C geworfen. Auch auf neuere Techniken wie ARIA, die erst in einer \emph{Candidate Recommendation} vorhanden sind, wird eingegangen. Das Ziel dieser Arbeit ist, einen guten "Uberblick "uber den heutigen Stand der Accessibility im Web zu bieten und die Vorteile der Nutzung von Accessibility Methoden hervorzustreichen. 
 \vfill
 \paragraph*{Schlagw"orter:} Accessibility, Web, ARIA, HTML5
 
@@ -111,16 +111,13 @@ Accessibility gegeben. Immer mehr "offentliche Einrichtungen stellen im Rahmen d
 \newpage
 
 \section*{Abstract}\thispagestyle{empty}
-This thesis will present an overview over accessibility techniques used in the
+This thesis will present an overview over Accessibility techniques used in the
 modern web. Over the last years, the usage of the web to present and
 access information and services of public institutions has increased
-dramatically. This requires the services and information to be accessible for
+dramatically. This requires services and information to be accessible for
 every citizen. To find a solution for this problem, this thesis will look at
 the W3C's recommendations and guidelines. Also newer techniques like ARIA
-and the role attribute, which are currently in the Candidate Recommendation
-phase, will be part of it. The goal of this thesis is to present the current
-status of accessibility in the web and to show the advantages of using these
-techniques.
+and the Role Attribute, which are currently in the \emph{Candidate Recommendation} phase, will be part of it. The goal of this thesis is to present the current status of Accessibility in the web and to show the advantages of using these techniques.
 \vfill
 \paragraph*{Keywords:} Accessibility, Web, ARIA, HTML5
 \newpage
@@ -141,23 +138,21 @@ techniques.
 % \chapter[Kurzform]{Lange "Uberschrift}
 \chapter{Einf"uhrung}
 Das Web spielt im "offentlichen Bereich eine immer gr"o"sere Rolle: Viele
-Services und Informationen werden bereits "uber eigens daf"ur erstellte Portale angeboten. Daraus folgt, dass das "offentliche Leben immer st"arker mit dem Web verwoben wird. Wie auch bei anderen "offentlichen Einrichtungen muss ein universeller Zugang f"ur alle B"urger erm"oglicht werden, auch f"ur jene, die mit k"orperlichen Einschr"ankungen oder Lernschwierigkeiten leben m"ussen, z. B. Blinde oder Personen mit eingeschr"ankten motorischen F"ahigkeiten. Solange dies nicht vollst"andig m"oglich ist, muss als Ersatz eine zus"atzliche Einrichtung bereitstehen, die die gleichen M"oglichkeiten bietet \cite[S. 8]{understand_acc}. Es ist also auch im wirtschaftlichen Interesse "offentlicher Einrichtungen, ihre Services und Informationen barrierefrei anzubieten. 
+Services und Informationen werden bereits "uber eigens daf"ur erstellte Portale angeboten. Daraus folgt, dass das "offentliche Leben immer st"arker mit dem Web verwoben wird. Wie auch bei anderen "offentlichen Einrichtungen muss ein universeller Zugang f"ur alle B"urger erm"oglicht werden, auch f"ur jene, die mit k"orperlichen Einschr"ankungen oder Lernschwierigkeiten leben m"ussen, z. B. Blinde oder Personen mit eingeschr"ankten motorischen F"ahigkeiten. Solange dies nicht vollst"andig m"oglich ist, muss als Ersatz eine zus"atzliche Einrichtung bereitstehen, die "aquivalente M"oglichkeiten bietet \cite[S. 8]{understand_acc}. Es ist also auch im wirtschaftlichen Interesse "offentlicher Einrichtungen, ihre Services und Informationen barrierefrei anzubieten. 
 
-Dadurch, dass diese Gruppe eine Minorit"at in der Bev"olkerung ausmacht und noch dazu das Web auf andere Weise verwendet als nicht eingeschr"ankte Personen - z. B. blinde Personen verwenden Screen-Reader oder Braillen - muss oft ein zus"atzlicher Aufwand bei der Erstellung von Webseiten betrieben werden. Ja "ofters wird sogar ganz darauf vergessen.\cite[S. 7]{mod_software} Roman Mauerhofer erfasst dieses Problem mit einem sehr treffenden Vergleich: \glqq Es ist beispielsweise so, als ob ein Architekt bei der Planung eines Bahnhofes den Einbau von Aufz"ugen vergisst.\grqq  \cite[S. 7]{mod_software}
+Dadurch, dass diese Gruppe eine Minorit"at in der Bev"olkerung stellt und das Web auf andere Weise verwendet als nicht eingeschr"ankte Personen - z. B. blinde Personen verwenden Screen-Reader oder Braillen - muss oft ein zus"atzlicher Aufwand bei der Erstellung von Webseiten betrieben werden. Ja "ofters wird sogar ganz darauf vergessen\cite[S. 7]{mod_software}. Roman Mauerhofer erfasst dieses Problem mit einem sehr treffenden Vergleich: \glqq Es ist beispielsweise so, als ob ein Architekt bei der Planung eines Bahnhofes den Einbau von Aufz"ugen vergisst.\grqq  \cite[S. 7]{mod_software}
 
-Diese Gruppe macht jedoch nicht einen ganz so geringen Prozentanteil in der Bev"olkerung aus wie "ofters gedacht. Laut einem Bericht des U.S. Census Bureau aus dem Jahre 2000 leben alleine in den USA ca. 49.7 Millionen Menschen mit k"orperlichen Einschr"ankungen und Lernschwierigkeiten (entspricht ca. 20\% der amerikanischen Bev"olkerung), davon haben 42,9 Millionen eine schwere Einschr"ankung und 6,8 Millionen haben eine so gravierende Einschr"ankung, dass sie Hilfe in ihrem allt"aglichem Leben brauchen \cite[S. 1]{us_cens}. Laut der World Health Organization wird die weltweite Anzahl von Personen mit k"orperlichen oder geistigen Einschr"ankungen auf 500 bis 600 Millionen Menschen gesch"atzt \cite{who_dis}.
+Diese Gruppe macht jedoch keinen ganz so geringen Prozentanteil der Bev"olkerung aus wie "ofters angenommen. Laut einem Bericht des U.S. Census Bureau aus dem Jahre 2000 leben alleine in den USA ca. 49,7 Millionen Menschen mit k"orperlichen Einschr"ankungen und Lernschwierigkeiten (entspricht ca. 20\% der amerikanischen Bev"olkerung), davon haben 42,9 Millionen eine schwere Einschr"ankung und 6,8 Millionen haben eine so gravierende Einschr"ankung, dass sie Hilfe in ihrem allt"aglichem Leben brauchen \cite[S. 1]{us_cens}. Laut der \glqq World Health Organization\grqq wird der weltweite Anteil an Personen mit k"orperlichen Einschr"ankungen oder Lernschwierigkeiten auf 500 bis 600 Millionen Menschen gesch"atzt \cite{who_dis}.
 
 Auch die UN erkennt eine immer gr"o"ser werdende Wichtigkeit bez"uglich einer angemessenen Bereitstellung von Informationen f"ur k"orperlich eingeschr"ankten Personen und Personen mit Lernschwierigkeiten. Dies spiegelt sich in der \glqq UN Convention of Rights for Persons with Disabilities\grqq wider, welche am 30. M"arz 2007 unterzeichnet wurde. Sie erhielt die \glqq meisten Unterschriften an einem Er"offnungstag in der Geschichte der UN Konventionen\grqq \cite{un_disabilities}. 
 
 Jedoch kann es nicht nur aus den oben genannten Gr"unden erforderlich sein,
-einen barrierefreien Zugang bereitzustellen, sondern es wird sogar gesetzlich
-vorgeschrieben. In den USA beispielsweise, gibt es daf"ur ein eigenes
-Gesetz, den \glqq Americans with Disabilities Act\grqq aus dem Jahre 1990 (ADA) und den Abschnitt 508 aus dem \glqq Rehabilitation Act\grqq (1973) \cite[S. 288-289]{achieving_web_acc}. Auch in Europa sind einige "ahnliche Regelungen vorhanden \cite[S. 7]{mod_software}, doch eines haben die Meisten gemeinsam: Sie basieren alle zu einem gro"sen Teil auf den Richtlinien der WAI (Web Accessibility Initiative), den WCAG (Web Content Accessibility Guidelines) \cite[S. 289]{achieving_web_acc} \cite[S. 7]{mod_software}.
+einen barrierefreien Zugang bereitzustellen, sondern es wird sogar oft gesetzlich vorgeschrieben. In den USA beispielsweise, gibt es daf"ur ein eigenes Gesetz, den \glqq Americans with Disabilities Act\grqq aus dem Jahre 1990 (ADA) und den Abschnitt 508 aus dem \glqq Rehabilitation Act\grqq (1973) \cite[S. 288-289]{achieving_web_acc}. Auch in Europa sind einige "ahnliche Regelungen vorhanden \cite[S. 7]{mod_software}, doch eines haben die Meisten gemeinsam: Sie basieren nahezu alle zu einem gro"sen Teil auf den Richtlinien der WAI (Web Accessibility Initiative), den WCAG (Web Content Accessibility Guidelines) \cite[S. 289]{achieving_web_acc} \cite[S. 7]{mod_software}.
 
 \section{Problemstellung}
 Nicht nur in der EU wird Accessibility k"unftig eine gr"o"sere Rolle spielen \cite[Abschnitt EU]{w3c_pol}, sondern auch in der Privatwirtschaft. F"ur viele ProgrammiererInnen stellt jedoch die Implementation und das Testen von Accessibility Techniken einen nicht zu untersch"atzenden Mehraufwand dar \cite[S. 27]{understand_acc} und dadurch werden ihnen, selbst wenn sie sie umsetzen wollen, oft Steine in den Weg gelegt. Dies erfolgt h"aufig in der Nennung nicht zu Ende gedachter Argumente wie \glqq Barrierefreiheit bringt keine Vorteile\grqq \cite[S. 28]{understand_acc} oder \glqq Behinderte geh"oren nicht zu unserer Zielgruppe\grqq \cite[S. 31]{understand_acc}.
 
-Ein weiteres Problem ist die geringe Verbreitung der Standards. Dies wurde in einer globalen Studie der United Nations im Jahre 2006 festgestellt.\cite{acc_report}: Nur drei von 100 getesteten Seiten erhielten die Bestnote \cite [S. 7]{acc_report}. Dies ist unter anderem auf ein Fehlen folgender Punkte zur"uckzuf"uhren \cite[S. 13]{tool_acc}: 
+Ein weiteres Problem ist die geringe Verbreitung der Standards. Dies wurde in einer globalen Studie der United Nations im Jahre 2006 festgestellt\cite{acc_report}: Nur drei von 100 getesteten Seiten erhielten die Bestnote \cite [S. 7]{acc_report}. Dies ist unter anderem auf ein Fehlen folgender Punkte zur"uckzuf"uhren \cite[S. 13]{tool_acc}: 
 
 \begin{itemize}
 \item \emph{Achtsamkeit}: Vergessen oder "Ubersehen von Fehlern und Problemen im Bereich Accessibility
@@ -167,9 +162,9 @@ Ein weiteres Problem ist die geringe Verbreitung der Standards. Dies wurde in ei
 
 
 \section{L"osungsansatz}
-In dieser Bachelorarbeit soll ein genereller "Uberblick "uber die bestehenden und einsetzbaren Techniken gegeben werden, die hilfreich f"ur die Verbesserung im Bereich Accessibility im Modern Web sind. 
+In dieser Bachelorarbeit soll ein genereller "Uberblick "uber die bestehenden und einsetzbaren Techniken gegeben werden, die hilfreich f"ur Verbesserungen im Bereich Accessibility im Modern Web sind. 
 
-Dazu soll eine "Ubersicht "uber die vom W3C bereitgestellten Spezifikationen, wie den WCAG 1.0 \cite{wcag1}, WCAG 2.0 \cite{wcag2} und ARIA \cite{aria} gegeben werden und au"serdem soll auf die Unterschiede von WCAG 1.0 und WCAG 2.0 eingegangen werden.
+Dazu soll eine "Ubersicht "uber die vom W3C bereitgestellten Spezifikationen, den WCAG 1.0 \cite{wcag1}, WCAG 2.0 \cite{wcag2} und ARIA \cite{aria} gegeben werden und au"serdem soll auf die Unterschiede von WCAG 1.0 und WCAG 2.0 eingegangen werden.
 
 Zus"atzlich wird kurz auf die verschiedenen Arten von Einschr"ankungen eingegangen und die Probleme und verwendeten Hilfsger"ate werden aufgezeigt.
 
@@ -194,9 +189,9 @@ Der Begriff \glqq Menschen mit k"orperliche Einschr"ankung\grqq wird synonym f"u
 \section{Personen mit Sehschw"achen}
 Die Anzahl blinder Personen allein in den USA wird auf eine Million Personen und weltweit auf 38 Millionen Personen gesch"atzt\cite[S. 1]{screen_read}.  Als offiziell blind gilt eine Person, wenn sie unter 2\% auf dem besseren der zwei Augen wahrnimmt \cite[S. 12]{understand_acc}. 
 
-Jedoch umfasst diese Kategorie nicht nur blinde Personen, sondern auch Personen mit teilweisen Sehschw"achen: Nimmt jemand auf dem besten Auge weniger als 30\% wahr f"allt er/sie bereits unter diese Kategorie\cite[S. 12]{understand_acc}. In "Osterreich betr"agt die Anzahl der Personen mit Sehschw"achen rund 318.000 Personen, das entspricht 3,9\% der Bev"olkerung \cite[S. 13]{stat_austria}. Weltweit wird gesch"atzt, dass mindestens sechs Millionen Personen von so schweren Sehschw"achen betroffen sind, dass f"ur sie die Nutzung eines Computerbildschirmes unm"oglich ist\cite[S. 249]{screen_read_frust}.
+Jedoch umfasst diese Kategorie nicht nur blinde Personen, sondern auch Personen mit teilweisen Sehschw"achen: Nimmt jemand auf dem besten Auge weniger als 30\% wahr, f"allt er/sie bereits unter diese Kategorie\cite[S. 12]{understand_acc}. In "Osterreich betr"agt die Anzahl der Personen mit Sehschw"achen rund 318.000 Personen, das entspricht 3,9\% der Bev"olkerung \cite[S. 13]{stat_austria}. Es wird gesch"atzt, dass weltweit mindestens sechs Millionen Personen von so schweren Sehschw"achen betroffen sind, dass f"ur sie die Nutzung eines Computerbildschirmes unm"oglich ist\cite[S. 249]{screen_read_frust}.
 
-Personen mit Sehschw"achen haben die gr"o"sten Probleme nicht mit den Eingabeger"aten - die meisten Nutzer beherrschen Tippen ohne auf die Tastatur zu schauen - sondern eher mit den Ausgabeger"aten. Die am meisten genutzten assistiven Technologien in diesem Umfeld sind Screen-Reader und Braillen (siehe \ref{Abb1}). Braillen und andere in Hardware umgesetzte Technologien sind jedoch meistens sehr teuer, da sie nur von einem geringen Prozentsatz der Bev"olkerung ben"otigt werden und deren Erlernung, beispielsweise die der Braillenschrift, aufw"andig und dementsprechend wenig verbreitet ist\cite[S. 249-250]{screen_read_frust}.
+Personen mit Sehschw"achen haben die gr"o"sten Probleme nicht mit den Eingabeger"aten - die meisten Nutzer beherrschen das Tippen ohne auf die Tastatur zu schauen - sondern eher mit den Ausgabeger"aten. Die am meisten genutzten assistiven Technologien in diesem Umfeld sind Screen-Reader und Braillen (siehe \ref{Abb1}). Braillen und andere in Hardware umgesetzte Technologien sind jedoch meistens sehr teuer, da sie nur von einem geringen Prozentsatz der Bev"olkerung ben"otigt werden und deren Erlernung, beispielsweise die der Braillenschrift, aufw"andig und dementsprechend wenig verbreitet ist\cite[S. 249-250]{screen_read_frust}.
 Zus"atzlich besteht die Braille aus vielen kleinen, mechanischen Teilen und ist deshalb besonders verschlei"sanf"allig \cite[S. 11]{barr_webd}.
 
 \begin{figure}[braille]
@@ -205,23 +200,24 @@ Zus"atzlich besteht die Braille aus vielen kleinen, mechanischen Teilen und ist 
 \caption[Beispiel einer Braille]{Beispiel einer Braille (\copyright  Philip Tellis, Creative Commons BY-SA)}\label{Abb1}
 \end{figure}
 
-Deshalb ziehen die Meisten auf Software basierende L"osungen vor, was dem Screen-Reader zu einer h"oheren Popularit"at verhilft\cite[S. 249-250]{screen_read_frust}. Ein Screen-Reader liest dem/der NutzerIn die Inhalte auf dem Bildschirm vor. Dies kann f"ur sehende Personen als st"orend empfunden werden, blinde Personen sind jedoch st"arker auf auditive Reize ausgerichtet und kommen dementsprechend besser damit klar\cite[S. 13]{barr_webd}. Bestimmte Screen-Reader wie GNOME Orca \cite{orca} sind sogar frei f"ur jeden verf"ugbar. 
+Deshalb ziehen die Meisten auf Software basierende L"osungen vor, was dem Screen-Reader, etwa dem frei verf"ugbaren GNOME Orca \cite{orca}, zu einer h"oheren Popularit"at verhilft\cite[S. 249-250]{screen_read_frust}. Ein Screen-Reader liest dem/der NutzerIn die Inhalte auf dem Bildschirm vor. Dies kann f"ur sehende Personen als st"orend empfunden werden. Blinde Personen sind jedoch st"arker auf auditive Reize ausgerichtet und kommen dementsprechend besser damit klar\cite[S. 13]{barr_webd}. 
+
 F"ur diese Personen muss beim Erstellen von Webseiten besonders Folgendes beachtet werden: semantisch korrekter und sauberer HTML Code, der den Inhalt vom Layout trennt.\cite[S. 13-15]{barr_webd}
 
 \section{Personen mit H"orschw"achen}
-Alleine in "Osterreich befinden sich ca. 202.000 Personen (2,5\% der Bev"olkerung) mit eingeschr"ankter H"orf"ahigkeit. Personen mit schweren H"orschw"achen machen rund 2000 Personen aus \cite[S. 13-14]{stat_austria}. Die gr"o"sten Probleme entstehen f"ur diese Gruppe, wenn eine Webseite eine bestimmte Information nur "uber akustische Signale wiedergibt. Dies kann z. B. ein einfaches Video oder ein Podcast sein, oder ein Warnsignalton. \cite[S. 17]{barr_webd}\cite[S. 20]{understand_acc}
+Alleine in "Osterreich befinden sich ca. 202.000 Personen (2,5\% der Bev"olkerung) mit eingeschr"ankter H"orf"ahigkeit. Personen mit schweren H"orschw"achen machen rund 2.000 Personen aus \cite[S. 13-14]{stat_austria}. Die gr"o"sten Probleme entstehen f"ur diese Gruppe, wenn eine Webseite eine bestimmte Information nur "uber akustische Signale wiedergibt. Dies kann z. B. ein einfaches Video oder ein Podcast sein, oder ein Warnsignalton. \cite[S. 17]{barr_webd}\cite[S. 20]{understand_acc}
 
 F"ur diese Personen muss vor allem Folgendes beachtet werden: Bereitstellung von Untertiteln bei Videos oder Transkriptionen von Podcasts und Verzichten auf \glqq audio-only\grqq L"osungen. Das Anbieten von Videos mit Geb"ardensprache kann n"utzlich sein, stellt jedoch einen hohen Aufwand dar, den jeder/jede AuftraggeberIn selbst f"ur sich entscheiden muss. \cite[S. 17]{barr_webd}\cite[S. 20]{understand_acc}
 
 \section{Personen mit motorischen Schw"achen}
-Diese Gruppe macht laut dem U.S. Census Report 21.2 Millionen Personen aus. Das
-sind ca. 8.2 Prozent der Bev"olkerung der USA \cite[S. 1]{us_cens}. In "Osterreich betr"agt deren Anzahl 1 Million bzw. 13\% der Bev"olkerung \cite[S. 12]{stat_austria}. Probleme mit der Computerbenutzung treten vor allem dann auf, wenn Personen ihre H"ande nur eingeschr"ankt oder gar nicht verwenden k"onnen, beispielsweise Querschnittsgel"ahmte. F"ur diese muss eine alternative Steuerung des Computers angeboten werden. Darunter fallen z. B. Ger"ate, welche es den NutzerInnen erlauben, den Computer mit ihrer Zungenspitze zu bedienen.\cite[S. 15-16]{barr_webd}
+Diese Gruppe macht laut dem U.S. Census Report 21,2 Millionen Personen aus. Das
+sind ca. 8,2 Prozent der Bev"olkerung der USA \cite[S. 1]{us_cens}. In "Osterreich betr"agt deren Anzahl 1 Million bzw. 13\% der Bev"olkerung \cite[S. 12]{stat_austria}. Probleme mit der Computerbenutzung treten vor allem dann auf, wenn Personen ihre H"ande nur eingeschr"ankt oder gar nicht verwenden k"onnen, beispielsweise Querschnittsgel"ahmte. F"ur diese muss eine alternative Steuerung des Computers angeboten werden. Darunter fallen z. B. Ger"ate, welche es den NutzerInnen erlauben, den Computer mit ihrer Zungenspitze zu bedienen.\cite[S. 15-16]{barr_webd}
 
 Diese Art der Bedienung ist offensichtlich aufw"andiger und schwieriger und profitiert deshalb am meisten von einer klaren Struktur der Seite und einer guten Bedienbarkeit mit der Tastatur.\cite[S. 15-16]{barr_webd}\cite[S. 18]{understand_acc}
 
 \section{Personen mit Lernschwierigkeiten}
-Diese Gruppe macht laut dem U.S. Census Report 12.4 Millionen Personen aus. Das
-sind ca. 4.8 Prozent der Bev"olkerung der USA \cite[S. 1]{us_cens}. Jedoch geh"oren zu dieser Gruppe auch Analphabeten, welche etwa in Deutschland ca. vier Millionen Personen ausmachen (ca. 6.3\% der deutschen Bev"olkerung) \cite[S. 19]{understand_acc}. In "Osterreich sind 85.000 Personen bzw. 1\% der Bev"olkerung von Lernschwierigkeiten betroffen \cite[S. 14]{stat_austria}.
+Diese Gruppe macht laut dem U.S. Census Report 12,4 Millionen Personen aus. Das
+sind ca. 4,8 Prozent der Bev"olkerung der USA \cite[S. 1]{us_cens}. Zu dieser Gruppe geh"oren auch Analphabeten, welche etwa in Deutschland ca. vier Millionen Personen ausmachen (ca. 6,3\% der deutschen Bev"olkerung) \cite[S. 19]{understand_acc}. In "Osterreich sind 85.000 Personen bzw. 1\% der Bev"olkerung von Lernschwierigkeiten betroffen \cite[S. 14]{stat_austria}.
 
 Diese Personen haben vor allem Probleme mit zu komplizierten S"atzen oder einer fehlenden Struktur der Seite. Dadurch profitieren sie am meisten durch einfache und kurze S"atze, gute Strukturierung, Einsetzen von Bildern und Anbieten von einer Methode zum Vorlesen von Texten, was auch \glqq Text-to-Speech\grqq genannt wird. \cite[S. 18-19]{barr_webd}\cite[S. 19]{understand_acc}
 
@@ -231,10 +227,11 @@ Die WCAG (Web Content Accessibility Guidelines) ist ein Dokument, welches vom W3
 
 \section{WCAG Version 1.0}
 Die Version 1.0 des Dokumentes wurde im Jahre 1999 finalisiert und beinhaltet 14 Richtlinien, welche jeweils Empfehlungen f"ur WebentwicklerInnen enthalten. Diese Empfehlungen enthalten Unterpunkte, so genannte Checkpoints, die wiederum mit einer Priorit"at gekennzeichnet sind. \cite[Abschnitt Abstract]{wcag1}
-F"ur eine bessere Gegen"uberstellung dieser Kriterien mit den WCAG 2.0 wird versucht, diese 14 Richtlinien der WCAG 1.0 in die gleiche Struktur wie die der WCAG 2.0 zu bringen.
+
+F"ur eine bessere Gegen"uberstellung dieser Kriterien mit denen der WCAG 2.0 wird versucht, diese 14 Richtlinien der WCAG 1.0 in die gleiche Struktur wie die der WCAG 2.0 zu bringen.
 
 \subsection{Success Criteria}
-Die Kriterien, anhand derer die erfolgreiche Umsetzung der Richtlinien gepr"uft werden k"onnen, werden in drei verschiedene Kategorien aufgeteilt: \emph{must}, \emph{should} und \emph{may} Kriterien, sprich Kriterien die erf"ullt sein m"ussen, sollten und k"onnen. Anhand der Erf"ullung dieser Kriterien lassen sich jetzt folgende Konformit"atslevel definieren: \cite[Abschnitt 4]{wcag1}
+Die Kriterien, anhand derer die erfolgreiche Umsetzung der Richtlinien gepr"uft werden k"onnen, werden in drei verschiedene Kategorien aufgeteilt: \emph{must}, \emph{should} und \emph{may} Kriterien, sprich Kriterien die erf"ullt sein m"ussen, sollten und k"onnen. Anhand der Erf"ullung dieser Kriterien lassen sich folgende Konformit"atslevel definieren: \cite[Abschnitt 4]{wcag1}
 
 \begin{itemize}
 \item \emph{A}: Alle mit Priorit"at 1 angef"uhrten Kriterien sind umgesetzt
@@ -242,7 +239,7 @@ Die Kriterien, anhand derer die erfolgreiche Umsetzung der Richtlinien gepr"uft 
 \item \emph{AAA}: Alle mit Priorit"at 1, 2 und 3 angef"uhrten Kriterien sind umgesetzt
 \end{itemize}
 
-Die deutsche BITV (Barrierefreie Informationstechnologie Verordnung), welche im \emph{Bundesgesetz zur Gleichstellung behinderter Menschen} festgeschrieben ist, baut z. B. auf diesen Kriterien auf. Sollen die BITV komplett erf"ullt werden, m"ussen sowohl die Kriterien der Stufe 1, als auch die der Stufe 2 komplett erf"ullt werden, was einer Mindeststufe des Konformit"atslevels AA entspricht. \cite[S. 38-39]{barr_webd}
+Die deutsche BITV (Barrierefreie Informationstechnologie Verordnung), welche im \glqq Bundesgesetz zur Gleichstellung behinderter Menschen\grqq  festgeschrieben ist, baut z. B. auf diesen Kriterien auf. Sollen die BITV komplett erf"ullt werden, m"ussen sowohl die Kriterien der Stufe 1, als auch die der Stufe 2 komplett erf"ullt werden, was einer Mindeststufe des Konformit"atslevels AA entspricht. \cite[S. 38-39]{barr_webd}
 
 \subsection{Wahrnehmbarkeit}
 Unter die Kategorie Wahrnehmbarkeit fallen folgende Richtlinien: 
@@ -253,10 +250,10 @@ Unter die Kategorie Wahrnehmbarkeit fallen folgende Richtlinien:
 \end{itemize}
 
 \subsubsection{Visuelle oder auditive Elemente sollten eine textbasierte Alternative besitzen}
-Diese Richtlinie bezieht sich vor allem auf Personen mit Sehschw"achen und besagt, dass f"ur alle eingesetzten visuellen oder auditiven Elemente wie Bilder, Videos oder Kl"ange eine dementsprechende Alternative vorhanden sein sollte. Dies kann z. B. erreicht werden, indem <img> Elemente immer ein \emph{alt} Attribut besitzen oder Videos/Kl"ange mit einem beschreibenden Text oder Transkription versehen sind. Von den Kriterien, die  zur Erf"ullung dieser Richtlinien aufgez"ahlt sind, sind vier von f"unf der Priorit"at 1 zuzuordnen. \cite[Abschnitt 6.1]{wcag1}
+Diese Richtlinie bezieht sich vor allem auf Personen mit Sehschw"achen und besagt, dass f"ur alle eingesetzten visuellen oder auditiven Elemente wie Bilder, Videos oder Kl"ange eine dementsprechende Alternative vorhanden sein sollte. Dies kann z. B. erreicht werden, indem \emph{<img>} Elemente immer ein \emph{alt} Attribut besitzen oder Videos/Kl"ange mit einem beschreibenden Text oder Transkription versehen sind. Von den Kriterien, die  zur Erf"ullung dieser Richtlinie aufgez"ahlt sind, sind vier von f"unf der Priorit"at 1 zuzuordnen. \cite[Abschnitt 6.1]{wcag1}
 
 \subsubsection{Der Sinn des Inhalts sollte nicht nur von der Farbe abh"angig sein}
-Diese Richtlinien beziehen sich vor allem auf Personen mit Rot-Gr"un Blindheit oder Personen, deren Monitor keine Farben ausgeben kann \cite[S. 41]{barr_webd}. Dazu muss sicher gestellt werden, dass ein ausreichender Kontrast zwischen Hintergrund und Inhalt gew"ahrleistet ist (Priorit"at 2), und dass alle Informationen, die durch Farbe transportiert werden, auch ohne Farbe verstanden werden k"onnen (Priorit"at 1) \cite[Abschnitt 6.1]{wcag1}
+Diese Richtlinien beziehen sich vor allem auf Personen mit Rot-Gr"un Blindheit oder Personen, deren Monitor keine Farben ausgeben kann \cite[S. 41]{barr_webd}. Dazu muss sicher gestellt werden, dass ein ausreichender Kontrast zwischen Hintergrund und Inhalt vorhanden ist (Priorit"at 2), und dass alle Informationen, die durch Farbe transportiert werden, auch ohne Farbe verstanden werden k"onnen (Priorit"at 1) \cite[Abschnitt 6.1]{wcag1}
 
 
 \subsection{Bedienbarkeit}
@@ -270,11 +267,11 @@ Unter die Kategorie Bedienbarkeit fallen folgende Richtlinien:
 \end{itemize}
 
 \subsubsection{Elemente, die von der Zeit abh"angen, sollten stoppbar oder pausierbar sein}
-Diese Richtlinie bezieht sich vor allem auf Personen mit Lern- und Konzentrationsschwierigkeiten und Personen mit k"orperlichen Einschr"ankungen. Es kann sein, dass auf einer Webseite z. B. sich schnell bewegende oder blinkende Elemente vorhanden sind. Diese sind f"ur Personen, welche z. B. Einschr"ankungen in der Beweglichkeit ihrer H"anden haben, besonders schwer zu bedienen. F"ur Personen mit Konzentrations- und Lernschwierigkeiten oder Sehschw"achen k"onnen diese Texte sogar unlesbar sein (Screen-Reader z. B. k"onnen in Bewegung befindliche Texte nicht lesen). \cite[Abschnitt 6.7]{wcag1}
-Au"serdem k"onnen Blinkende Elemente oder Flackern des Bildschirms, z. B. durch neu laden der Seite bei Epileptikern Anf"alle verursachen.
-Diese Elemente sollten daher vermieden werden oder wenn verwendet pausierbar oder abschaltbar sein. \cite[S. 45]{barr_webd}
+Diese Richtlinie bezieht sich vor allem auf Personen mit Lern- und Konzentrationsschwierigkeiten und Personen mit k"orperlichen Einschr"ankungen. Es kann vorkommen, dass sich auf einer Webseite sich schnell bewegende oder blinkende Elemente befinden. Diese sind f"ur Personen, welche z. B. Einschr"ankungen in der Beweglichkeit ihrer H"anden haben, besonders schwer zu bedienen. F"ur Personen mit Konzentrations- und Lernschwierigkeiten oder Sehschw"achen k"onnen diese Texte sogar unlesbar sein (Screen-Reader k"onnen sich in Bewegung befindliche Texte nicht lesen). \cite[Abschnitt 6.7]{wcag1}
+Au"serdem k"onnen blinkende Elemente oder Flackern des Bildschirms, z. B. durch neu Laden der Seite, bei Epileptikern Anf"alle verursachen.
+Diese Elemente sollten daher vermieden werden, oder wenn verwendet, pausierbar oder abschaltbar sein. \cite[S. 45]{barr_webd}
 
-Des Weiteren sollte sich die Seite auch nicht automatisch neu Laden, da Screen-Reader oft mitten im Lesen abbrechen und den Text von neuem vorlesen. NutzerInnen dieser Ger"ate k"onnen so beispielsweise komplett die Orientierung verlieren. \cite[S. 45]{barr_webd}
+Des Weiteren sollte sich die Seite auch nicht automatisch neu laden, da Screen-Reader sonst mitten im Lesen abbrechen k"onnen und den Text dann von Neuem vorlesen. NutzerInnen dieser Ger"ate k"onnen so beispielsweise komplett die Orientierung verlieren. \cite[S. 45]{barr_webd}
 
 \subsubsection{Eingebettete Objekte sollten zug"anglich sein}
 Um die Zug"anglichkeit der ganzen Seite zu gew"ahrleisten m"ussen auch einzelne, eingebettete Objekte wie Java Applets oder Flash Container zug"anglich gestaltet sein. Ist dies nicht m"oglich, muss eine Alternative angeboten werden. \cite[Abschnitt 6.8]{wcag1}
@@ -283,7 +280,7 @@ Um die Zug"anglichkeit der ganzen Seite zu gew"ahrleisten m"ussen auch einzelne,
 NutzerInnen verwenden die Seite auch oft auf anderen Ger"aten, wie z. B. auf Mobiltelefonen oder Terminals. Da diese Ger"ate oft verschiedene Eingabemethoden unterst"utzen, muss die Seite auch dahingehend optimiert werden. Dies umfasst z. B. die Bereitstellung eines funktionierenden Tabindexes oder Shortcuts f"ur oft verwendete Links. Des Weiteren sollten eingabespezifische Event-Handler wie z. B. \emph{onkeypress} vermieden und versucht werden, diese stattdessen logisch anzuordnen. \cite[Abschnitt 6.9]{wcag1}
 
 \subsubsection{Eine gut strukturierte Navigation sollte verf"ugbar sein}
-Diese Richtlinie betrifft vor allem Menschen mit Lern- und Konzentrationsschwierigkeiten und Personen mit Sehschw"achen. Eine einfache Navigation kann die Benutzung mit dem Screen-Reader angenehmer gestalten und die Orientierung zu verbessern. Dazu geh"oren unter anderem das Vorhandensein einer \emph{Site-Map} und konsistenter Navigationselemente: z.B. m"ussen die Ziele eines Links klar ersichtlich sein und "Uberschriften m"ussen unterscheidbar von anderen "Uberschriften sein. \cite[Abschnitt 6.13]{wcag1}
+Diese Richtlinie betrifft vor allem Menschen mit Lern- und Konzentrationsschwierigkeiten und Personen mit Sehschw"achen. Eine einfache Navigation kann die Benutzung mit dem Screen-Reader angenehmer gestalten und die Orientierung verbessern. Dazu geh"oren unter anderem das Vorhandensein einer \emph{Site-Map} und konsistenter Navigationselemente: z.B. m"ussen die Ziele eines Links klar ersichtlich sein und "Uberschriften m"ussen unterscheidbar von anderen "Uberschriften sein. \cite[Abschnitt 6.13]{wcag1}
 Von diesen Ma"snahmen k"onnen auch andere NutzerInnen profitieren, da sie den gesuchten Inhalt auf der Seite besser finden k"onnen \cite[S. 52]{barr_webd}.
 
 \subsection{Verst"andlichkeit}
@@ -296,7 +293,7 @@ Unter die Kategorie Verst"andlichkeit fallen folgende Richtlinien:
 \end{itemize}
 
 \subsubsection{Verwendete Hauptsprache und Fremdsprachen sollten gekennzeichnet werden}
-Ein Vorhandensein von Sprachinformationen f"ur bestimmte Teile des Textes oder f"ur Abk"urzungen erm"oglicht es z. B. Screen-Readern, die Information in der korrekten Sprache auszugeben. Dazu sollte das \emph{lang} Attribut verwendet werden, was zu einer der wichtigsten Kriterien z"ahlt (Priorit"at 1). F"ur Abk"urzung gibt es das \emph{<akronym>} und \emph{<abbr>} Element.
+Ein Vorhandensein von Sprachinformationen f"ur bestimmte Teile des Textes oder f"ur Abk"urzungen erm"oglicht es z. B. Screen-Readern, die Information in der korrekten Sprache auszugeben. Dazu sollte das \emph{lang} Attribut verwendet werden, was zu einer der wichtigsten Kriterien z"ahlt (Priorit"at 1). F"ur Abk"urzungen gibt es das \emph{<akronym>} und \emph{<abbr>} Element.
 Au"serdem sollte auch die Hauptsprache der Webseite mit angegeben werden.\cite[Abschnitt 6.4]{wcag1}
 
 \subsubsection{Information zu Kontext und Orientierung sollte verf"ugbar sein}
@@ -320,13 +317,13 @@ Unter die Kategorie Robustheit fallen folgende Richtlinien:
 \end{itemize}
 
 \subsubsection{Struktur und Pr"asentation sollten korrekt verwendet und getrennt werden}
-Eine gute Trennung der verschiedenen \emph{Layer} ist notwendig, damit auch Clients, die sich nur auf das Markup konzentrieren, den Inhalt korrekt darstellen k"onnen\cite[S. 42-43]{barr_webd}. Auch sollten die korrekten HTML Elemente f"ur die jeweils daf"ur vorgesehenen Einsatzzwecke verwendet werden, um den Inhalt sinnvoll zu "ubermitteln. Als Beispiel daf"ur wird das Einbinden eines Zitates genannt: Dieses sollte nicht mit Stylesheets oder Einr"ucken gekennzeichnet werden, sondern mit dem \emph{<blockquote>} Element. \cite[Abschnitt 6.3]{wcag1}
+Eine gute Trennung der verschiedenen \emph{Layer} ist notwendig, damit auch Clients, die sich nur auf das \emph{Markup} konzentrieren, den Inhalt korrekt darstellen k"onnen\cite[S. 42-43]{barr_webd}. Auch sollten die korrekten HTML Elemente f"ur die jeweils daf"ur vorgesehenen Einsatzzwecke verwendet werden, um den Inhalt sinnvoll zu "ubermitteln. Als Beispiel daf"ur wird das Einbinden eines Zitates genannt: Dieses sollte nicht mit \emph{Stylesheets} oder Einr"ucken gekennzeichnet werden, sondern mit dem \emph{<blockquote>} Element. \cite[Abschnitt 6.3]{wcag1}
 
 \subsubsection{Tabellen sollten korrekt verwendet werden}
 Diese Richtlinie hilft vor allem Personen mit Sehschw"achen. Tabellen sollten nicht als Layoutwerkzeug missbraucht werden, sondern mit Informationen gef"ullt werden, die auch am besten in eine Tabellenform passen. Wird das Layout z. B. mit Tabellen erstellt, haben unter anderem Screen-Reader massive Schwierigkeiten damit, auf der Webseite zu navigieren. Auch das inkorrekte Verwenden oder Weglassen von Tabellen"uberschriften macht die Navigation f"ur Screen-Reader unn"otig kompliziert. \cite[Abschnitt 6.5]{wcag1}
 
 \subsubsection{Webseiten sollten abw"artskompatibel sein}
-Sollten neue Technologien eingesetzt werden, muss dabei auch die Abw"artskompabilit"at mitbeachtet werden. Erw"ahnt werden unter anderem das Einsetzen von \emph{<noscript>} oder \emph{<noframes>} Elementen. Am Wichtigsten ist jedoch, dass die Seite auch ohne JavaScript und Stylesheets korrekt funktioniert, was vor allem f"ur dynamische Seiten ein Problem darstellen kann. Sollte dies nicht m"oglich sein, muss eine Alternative bereitstehen. \cite[Abschnitt 6.6]{wcag1}
+Sollten neue Technologien eingesetzt werden, muss dabei auch die Abw"artskompabilit"at mitbeachtet werden. Erw"ahnt werden unter anderem das Einsetzen von \emph{<noscript>} oder \emph{<noframes>} Elementen. Am Wichtigsten ist jedoch, dass die Seite auch ohne \emph{JavaScript} und \emph{Stylesheets} korrekt funktioniert, was vor allem f"ur dynamische Seiten ein Problem darstellen kann. Sollte dies nicht m"oglich sein, muss eine Alternative bereitstehen. \cite[Abschnitt 6.6]{wcag1}
 
 \subsubsection{Webseiten sollten abw"artskompatibel zu "alteren assistiven Technologien sein}
 Diese Richtlinie schl"agt in die gleiche Kerbe wie Richtlinie 6.6, aber bezieht sich mehr auf die Abw"artskompabilit"at zu "alteren assistiven Technologien. Da diese oft teuer sind, k"onnen sie nicht so oft durch aktuellere Ger"ate ersetzt werden \cite[S. 48]{barr_webd}. "Altere Ger"ate haben vor allem Probleme mit leeren Eingabeelementen und Popups. Diese Probleme m"ussen bei der Abw"artskompabilit"at mitber"ucksichtigt werden. \cite[Abschnitt 6.10]{wcag1}
@@ -335,7 +332,7 @@ Diese Richtlinie schl"agt in die gleiche Kerbe wie Richtlinie 6.6, aber bezieht 
 Wann immer es m"oglich ist, sollten standardkonforme Techniken zum Einsatz kommen oder entsprechende Alternativen zur Verf"ugung stehen. Die Richtlinie listet unter den problematischen Technologien explizit PDF und Shockwave auf (das heutige Adobe Flash) und empfiehlt diese nur zu verwenden, wenn es unausweichlich ist. \cite[Abschnitt 6.11]{wcag1}
 
 \section{WCAG Version 2.0}
-Version 2.0 wurde ver"offentlicht, um die Anforderungen allgemeiner und testbarer zu gestalten \cite[S. 20]{tool_acc}. Daraus folgt jedoch, dass sie schwieriger zu verstehen und anzuwenden sind als die Richtlinien der vorige Version \cite[S. 24]{mod_software}.
+Version 2.0 wurde ver"offentlicht, um die Anforderungen allgemeiner und testbarer zu gestalten \cite[S. 20]{tool_acc}. Daraus folgt jedoch, dass sie schwieriger zu verstehen und anzuwenden sind als die Richtlinien der vorigen Version \cite[S. 24]{mod_software}.
 
 Im Gegensatz zu den WCAG der Version 1.0 ist die Version 2.0 in vier Kategorien gegliedert: Wahrnehmbarkeit, Bedienbarkeit, Verst"andlichkeit und Robustheit \cite[S. 23-24]{mod_software}. Um beide Dokumente jedoch besser vergleichen zu k"onnen, wurde in dieser Arbeit versucht, die WCAG 1.0 in eine ann"ahernd gleiche Struktur zu bringen. 
 
@@ -373,10 +370,10 @@ Unter diese Richtlinie fallen Kriterien zur Pr"asentation und Wahrnehmbarkeit vo
 Diese Richtlinie beinhaltet Hinweise zur Verwendung von Medien. Darunter fallen sowohl Bilder als auch Audio-, Video- oder Eingabeelemente. Eingabeelemente sollten immer durch ein \emph{name} Attribut beschrieben sein und f"ur Bilder, Videos, Audio sollte eine Textalternative bereitstehen (alle Level A). \cite[Abschnitt 1.1 und 1.2]{wcag2}
 
 \subsubsection{Adaptierf"ahigkeit des Layouts und der Struktur}
-In dieser Richtlinie werden Kriterien zur Erstellung und Validierung einer flexiblen Struktur aufgelistet. Darunter fallen folgende Punkte: Die Beziehungen der pr"asentierten Inhalte und deren Reihung sollte nicht nur von der Formatierung und Form abh"angig sein (Level A).\cite[Abschnitt 1.3]{wcag2}
+In dieser Richtlinie werden Kriterien zur Erstellung und Validierung einer flexiblen Struktur aufgelistet. Darunter f"allt folgender Punkt: Die Beziehungen der pr"asentierten Inhalte und deren Reihung sollte nicht nur von der Formatierung und Form abh"angig sein (Level A).\cite[Abschnitt 1.3]{wcag2}
 
 \subsubsection{Unterscheidbarkeit des Inhaltes}
-Diese Richtlinie besch"aftigt sich mit dem Kontrast und der Farbe des Inhaltes. Farbe sollte nicht als alleiniges Merkmal verwendet werden, um Information zu transportieren (Level A). Musik oder T"one sollten pausier- oder stoppbar sein und deren Lautst"arker sollte anpassbar sein (Level A). Der Kontrast sollte sowohl f"ur Bilder, Logos und Audio ausreichend sein (Level AA und AAA): Audio sollte keine Hintergrundger"ausche haben und lauter als 20dB sein, der Text sollte nicht mehr als 80 Zeichen in einer Zeile haben und nicht als Blocktext formatiert sein, der Zeilenabstand sollte mehr als 1,5 betragen und Hintergrundfarben sollten vom Inhalt unterschieden werden k"onnen. Des Weiteren sollte der Text ohne Probleme auf das zweifache vergr"o"sert werden k"onnen (Level AAA). Sollte der Text jemals in Bildern vorkommen, sollte dies nur einen dekorativen Zweck haben (Level AAA). \cite[Abschnitt 1.4]{wcag2}
+Diese Richtlinie besch"aftigt sich mit dem Kontrast und der Farbe des Inhaltes. Farbe sollte nicht als alleiniges Merkmal verwendet werden, um Information zu transportieren (Level A). Musik oder T"one sollten pausier- oder stoppbar sein und deren Lautst"arke sollte anpassbar sein (Level A). Der Kontrast sollte sowohl f"ur Bilder, Logos und Audio ausreichend sein (Level AA und AAA): Audio sollte keine Hintergrundger"ausche haben und lauter als 20dB sein, der Text sollte nicht mehr als 80 Zeichen in einer Zeile haben und nicht als Blocktext formatiert sein, der Zeilenabstand sollte mehr als 1,5 betragen und Hintergrundfarben sollten vom Inhalt unterschieden werden k"onnen. Des Weiteren sollte der Text ohne Probleme auf das Zweifache vergr"o"sert werden k"onnen (Level AAA). Sollte Text jemals in Bildern vorkommen, sollte dies nur einen dekorativen Zweck haben (Level AAA). \cite[Abschnitt 1.4]{wcag2}
 
 
 
@@ -394,13 +391,13 @@ Diese Richtlinie beinhaltet Kriterien zur Bedienbarkeit der Webseite \cite[Absch
 Diese Richtlinie besagt, dass die Webseite komplett und ohne gro"sen Aufwand mit der Tastatur bedienbar sein sollte (Level AAA). Au"serdem sollte es nie passieren, dass aus einem Block nicht mehr heraus navigiert werden kann (Level A). \cite[Abschnitt 2.1]{wcag2}
 
 \subsubsection{Bedienbarkeit von zeitkritischen Elementen}
-Unter diese Richtlinie fallen Kriterien zum Umgang mit zeitkritischen Elementen. Unter diesen Begriff fallen Elemente, die abh"angig vom jetzigen Zeitpunkt sind, beispielsweise sich bewegende, sich automatisch updatende oder blinkende Elemente. F"ur diese sollte eine M"oglichkeit zur Pausierung, Abschaltung oder Anpassung des Zeitrahmens bestehen (Level A). Des Weiteren sollte der Inhalt der Webseite nicht von zeitkritischen Aktionen abh"angen (Level AAA), Unterbrechungen sollten abschaltbar oder aufschiebbar sein (Level AAA) und ein Verlust der Session sollte nicht zu Datenverlust beim erneuten Einloggen f"uhren. \cite[Abschnitt 2.2]{wcag2}
+Unter diese Richtlinie fallen Kriterien zum Umgang mit zeitkritischen Elementen. Unter diesen Begriff fallen Elemente, die abh"angig vom jetzigen Zeitpunkt sind, beispielsweise sich bewegende, sich automatisch updatende oder blinkende Elemente. F"ur diese sollte eine M"oglichkeit zur Pausierung, Abschaltung oder Anpassung des Zeitrahmens bestehen (Level A). Des Weiteren sollte der Inhalt der Webseite nicht von zeitkritischen Aktionen abh"angen (Level AAA), Unterbrechungen sollten abschaltbar oder aufschiebbar sein (Level AAA) und ein Verlust der \emph{Session} sollte nicht zu Datenverlust beim erneuten Einloggen f"uhren. \cite[Abschnitt 2.2]{wcag2}
 
 \subsubsection{Vermeidung von Ursachen von Epilepsieanf"allen}
 Diese Richtlinie beinhaltet Richtlinien, um Epilepsieanf"allen vorzubeugen. Dazu sollte der Inhalt im Rahmen einer Sekunde nicht mehr als drei mal Flackern (Level AAA) oder das Flackern sollte sich unter dem Grenzwert befinden (Level A). \cite[Abschnitt 2.3]{wcag2}
 
 \subsubsection{Navigierbarkeit}
-Diese Richtlinie vereint Kriterien zur Navigation der Seite. Darunter fallen unter anderem: Vorhandensein eines Titels der Webseite (Level A), Vorhandensein von mehr als einer M"oglichkeit zum Auffinden von Informationen (Level AA), Informationen zum aktuellen Aufenthaltsort auf der Seite, Erkennen des Zweckes von Links anhand des Textes oder des Kontextes (Level AAA und A) und Vorhandensein von "Uberschriften, Labels (Level AA) und Abschnitts"uberschriften (Level AAA). Au"serdem sollte die Seite gut mit Eingabeger"aten navigierbar sein: Dies inkludiert einen sichtbaren Fokus des aktuellen Elementes (Level AA), eine logische Fokusordnung (Level A) und eine M"oglichkeit zum "Uberspringen von wiederholenden Inhalten, z. B. Werbungsbl"ocken. \cite[Abschnitt 2.4]{wcag2}
+Diese Richtlinie vereint Kriterien zur Navigation der Seite. Darunter fallen unter anderem: Vorhandensein eines Titels der Webseite (Level A), Vorhandensein von mehr als einer M"oglichkeit zum Auffinden von Informationen (Level AA), Informationen zum aktuellen Aufenthaltsort auf der Seite, Erkennen des Zweckes von Links anhand des Textes oder des Kontextes (Level AAA und A) und Vorhandensein von "Uberschriften, Labels (Level AA) und Abschnitts"uberschriften (Level AAA). Au"serdem sollte die Seite gut mit Eingabeger"aten navigierbar sein: Dies inkludiert einen sichtbaren Fokus des aktuellen Elementes (Level AA), eine logische Fokusordnung (Level A) und eine M"oglichkeit zum "Uberspringen von sich wiederholenden Inhalten, z. B. Werbungsbl"ocken. \cite[Abschnitt 2.4]{wcag2}
 
 
 
@@ -420,7 +417,7 @@ Dieses Kriterium besch"aftigt sich mit der generellen Verst"andlichkeit und Pr"a
 Dieses Kriterium beschreibt Regeln f"ur ein vorhersehbares Verhalten der Webseite. Eingabeelemente sollten den Kontext nicht ver"andern, weder bei Eingabe noch bei Erhalten des Fokus (Level A). Sollte ein Kontextwechsel geschehen, ist dies explizit von dem/der NutzerIn herbeizuf"uhren oder zumindest abschaltbar (Level AAA). Au"serdem sollte die Konsistenz der Webseite gew"ahrleistet sein, was vor allem die Navigation und Identifizierung von Komponenten betrifft (Level AA). \cite[Abschnitt 3.2]{wcag2}
 
 \subsubsection{Eingabehilfen}
-Dieses Kriterium befasst sich vor mit der Behandlung von Fehlern, die durch Eingaben auftreten k"onnen. Tritt bei einer Eingabe z. B. ein Fehler auf, sollte der/die NutzerIn mittels eines Textes verst"andigt werden (Level A); ist der Fehler bekannt, sollten daf"ur Verbesserungsvorschl"age angezeigt werden (Level AA). Um diese Fehler g"anzlich zu vermeiden sollte eine M"oglichkeit bestehen, Eingaben r"uckg"angig zu machen, zu korrigieren oder in einer zus"atzlichen "Ubersicht zu best"atigen (Level AA und AAA). Des Weiteren sollten Eingabeelemente mit Labeln oder Anweisungen versehen werden (Level A) und eine kontextsensitive Hilfe angeboten werden (Level AAA). \cite[Abschnitt 3.3]{wcag2}
+Dieses Kriterium befasst sich vor mit der Behandlung von Fehlern, die durch Eingaben auftreten k"onnen. Tritt bei einer Eingabe z. B. ein Fehler auf, sollte der/die NutzerIn mittels eines Textes verst"andigt werden (Level A); ist der Fehler bekannt, sollten daf"ur Verbesserungsvorschl"age angezeigt werden (Level AA). Au"serdem sollte eine M"oglichkeit bestehen, Eingaben r"uckg"angig zu machen, zu korrigieren oder in einer zus"atzlichen "Ubersicht zu best"atigen (Level AA und AAA). Des Weiteren sollten Eingabeelemente mit Labeln oder Anweisungen versehen werden (Level A) und eine kontextsensitive Hilfe angeboten werden (Level AAA). \cite[Abschnitt 3.3]{wcag2}
 
 \subsection{Robustheit}
 Diese Richtlinie beinhaltet Kriterien f"ur eine korrekte, ger"ate- und software"ubergreifende Darstellung und Interpretation der Webseite \cite[Abschnitt 4.1]{wcag2}. Darunter fallen folgende 2 Level A Kriterien: 
@@ -440,7 +437,7 @@ Diese Kriterium besagt, dass alle Userinterface-Komponenten korrekt ausgelesen w
 Die Spezifikation hat sich in den neun Jahren seit der Ver"offentlichung der Version 1.0 stetig weiterentwickelt. Die WCAG 2.0 unterscheiden sich von der Version 1.0 nicht nur in der Struktur sondern auch im Umfang und der Testbarkeit. Wo in 1.0 noch eher allgemeine Hinweise gegeben wurden, sind in Version 2.0 klare und testbare Anleitungen und Richtlinien vorhanden. Auch die Umbenennung der Kriterien von Priorit"at zu Konformit"atslevel zeigt den Wunsch nach einer besseren automatisierten Testbarkeit der Kriterien. \cite[Abschnitt Introduction]{wcag2}
 
 \subsection{Success Criteria}
-Die Success Criteria wurden von ihrer Struktur praktisch "ubernommen und anders benannt. Anstatt Priorit"at wird jetzt der Begriff Konformit"atslevel verwendet. Die Bezeichnungen der Stufen (A, AA, und AAA) und auch deren Erf"ullungskriterien wurden jedoch nicht ver"andert.
+Die Success Criteria wurden von ihrer Struktur praktisch "ubernommen und anders benannt. Anstatt Priorit"at wird jetzt der Begriff Konformit"atslevel verwendet. Die Bezeichnungen der Stufen (A, AA, und AAA) und auch die Art, wie sie erf"ullt werden, wurden jedoch nicht ver"andert.
 
 \subsection{Wahrnehmbarkeit}
 Die WCAG 2.0 geben im Gegensatz zu den WCAG 1.0 klare, testbare Hinweise, wie die Wahrnehmbarkeit des Inhaltes verbessert werden kann. Statt Hinweisen, die sich nur mit HTML Elementen und Attributen besch"aftigen werden jetzt auch konkrete Pr"asentationsrichtlinien genannt: Beispielsweise wird eine maximale Zeilenl"ange und eine exakte Definition des Kontrastes erw"ahnt. Auch die Beschreibung der Audio und Video Alternativen ist wesentlich umfangreicher als die der WCAG 1.0 aus dem Jahre 1999.
@@ -450,30 +447,30 @@ Die Hinweise zur Bedienbarkeit haben sich im Wesentlichen in folgenden Punkten g
 
 
 \subsection{Verst"andlichkeit}
-Die Richtlinien im Bereich Verst"andlichkeit wurden vor allem im Bezug auf Eingabeelemente erweitert, was der st"arkeren Verwendung von JavaScript geschuldet ist. Beispielsweise werden in der Version 2.0 mehre Richtlinien angegeben, wie und wann der Kontext der Seite ver"andert werden darf, z. B. sollte der Kontext nie durch blo"sen Fokus eines Eingabeelementes ver"andert werden. Zudem wird auch erw"ahnt, dass sichtbarere Hinweise auf Eingabefehler angezeigt werden sollten. F"ur die Lesbarkeit und Verst"andlichkeit der Webseite wird jetzt ein Kriterium, n"amlich das Leselevel der ersten Sekundarschulstufe, angegeben.
+Die Richtlinien im Bereich Verst"andlichkeit wurden vor allem im Bezug auf Eingabeelemente erweitert, was der st"arkeren Verwendung von \emph{JavaScript} geschuldet ist. Beispielsweise werden in der Version 2.0 mehre Richtlinien angegeben, wie und wann der Kontext der Seite ver"andert werden darf, z. B. sollte der Kontext nie durch blo"sen Fokus eines Eingabeelementes ver"andert werden. Zudem wird auch erw"ahnt, dass sichtbarere Hinweise auf Eingabefehler angezeigt werden sollten. F"ur die Lesbarkeit und Verst"andlichkeit der Webseite wird jetzt ein Kriterium, n"amlich das Leselevel der ersten Sekundarschulstufe, angegeben.
 
 \subsection{Robustheit}
 Diese Sektion hat im Gegensatz zur Version 1.0 massiv an Inhalt eingeb"u"st. Es scheint, dass eine korrekte Verwendung von HTML vorausgesetzt wird und dass der Fokus nicht mehr so stark auf die Abw"artskompabilit"at, sondern mehr auf die Aufw"artskompabilit"at gelegt wird.
 
 \chapter{ARIA}
-Im Web werden heutzutage vermehrt AJAX und JavaScript eingesetzt, nicht nur um eine immersive Erfahrung zu bieten, sondern auch um ganze Applikationen umzusetzen. Diese Technik erm"oglicht es, bestimmte Inhalte auf der Seite nachzuladen, ohne die ganze Seite neu zu laden oder eigene Eingabekomponenten zu erstellen \cite[S.26]{mod_software}. Viele vom Desktop bekannte Paradigmen k"onnen mittlerweile umgesetzt werden, z. B. \glqq Drag and Drop \grqq. Einige dieser Aktionen funktionieren jedoch nur mit speziellen Eingabeger"aten. So muss f"ur Drag and Drop zwingend eine Maus vorhanden sein. F"ur Nutzer eines Screen-Readers oder anderen assistiven Technologien wird es daher zunehmend schwieriger, mit der Webseite zu interagieren. \cite{aria_intro}
+Im Web werden heutzutage vermehrt \emph{AJAX} und \emph{JavaScript} eingesetzt, nicht nur um eine immersive Erfahrung zu bieten, sondern auch um ganze Applikationen umzusetzen. Diese Technik erm"oglicht es, bestimmte Inhalte auf der Seite nachzuladen, ohne die ganze Seite neu zu laden oder eigene Eingabekomponenten zu erstellen \cite[S.26]{mod_software}. Viele vom Desktop bekannte Paradigmen k"onnen mittlerweile umgesetzt werden, z. B. \glqq Drag and Drop \grqq. Einige dieser Aktionen funktionieren jedoch nur mit speziellen Eingabeger"aten. So muss f"ur Drag and Drop zwingend eine Maus vorhanden sein. F"ur Nutzer eines Screen-Readers oder anderen assistiven Technologien wird es daher zunehmend schwieriger, mit der Webseite zu interagieren. \cite{aria_intro}
 
-ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht dieses Problem mit zus"atzlichen semantischen HTML Attributen zu l"osen. Es erlaubt den ProgrammiererInnen zus"atzliche Meta-Informationen "uber die Funktionsweise und den gerade aktiven Status der Seite bereitzustellen. Zu diesen Meta-Informationen geh"oren: Roles, States und Properties \cite{aria_intro}. 
+ARIA, eine Abk"urzung f"ur Accessible Rich Internet Applications Suite, versucht dieses Problem mit zus"atzlichen HTML Attributen zu l"osen. Es erlaubt den ProgrammiererInnen zus"atzliche Meta-Informationen "uber die Funktionsweise und den gerade aktiven Status der Seite bereitzustellen. Zu diesen Meta-Informationen geh"oren: \emph{Roles}, \emph{States} und \emph{Properties} \cite{aria_intro}. 
 
 
 \section{Roles}
-Die Aufgaben der ARIA Role Attributes ist es, die Struktur der Seite und Interaktionsm"oglichkeiten zu beschreiben. Dies ist zum Teil auch schon mit den neuen HTML5 Elementen m"oglich, wie z. B. <nav> \cite[Abschnitt 4.4.3]{html5} vgl. \emph{role="navigation"} \cite[Abschnitt 3.1]{xhtml_vocab}, jedoch verwenden viele Personen noch "altere Browser, die diese neuen Funktionen noch nicht unterst"utzen. Daher werden oft neue Elemente mit "alterer Technologie umgesetzt, was die Nutzung f"ur k"orperlich eingeschr"ankte Personen deutlich erschwert. Auch bietet das Role Attribut zus"atzliches Markup, welches in der jetzigen HTML5 Version noch nicht umgesetzt ist. Au"serdem ist HTML5 auch noch vollkommen standardisiert \cite{html5}. Das soll jedoch kein Freibrief f"ur Entwickler sein, alle semantischen HTML Elemente durch nicht semantische Elemente mit Role Attributen ersetzen \cite[Abschnitt 3]{roles}. 
+Die Aufgaben der ARIA Role Attributes ist es, die Struktur der Seite und deren Interaktionsm"oglichkeiten zu beschreiben. Dies ist zum Teil auch schon mit den neuen HTML5 Elementen m"oglich, wie z. B. \emph{<nav>} \cite[Abschnitt 4.4.3]{html5} vgl. \emph{role="navigation"} \cite[Abschnitt 3.1]{xhtml_vocab}, jedoch verwenden viele Personen noch "altere Browser, die diese neuen Funktionen noch nicht unterst"utzen. Daher werden oft neue Elemente mit "alterer Technologie umgesetzt, was die Nutzung f"ur k"orperlich eingeschr"ankte Personen deutlich erschwert. Auch bietet das Role Attribut zus"atzliche Informationen, welche in der jetzigen HTML5 Version noch nicht vorhanden sind\cite{html5}. Das soll jedoch kein Freibrief f"ur Entwickler sein, alle semantischen HTML Elemente durch nicht semantische Elemente mit Role Attributen zu ersetzen \cite[Abschnitt 3]{roles}. 
 
-F"ur das Role Attribut k"onnen ein oder mehrere durch Leerzeichen getrennte Werte gesetzt werden. Der Wert des Role Attributes darf sich nicht ver"andern. Sollte dies jemals gefordert sein, muss das HTML Element zuerst komplett entfernt werden und mit einem neuen Element mit der dementsprechenden Role ersetzt werden.\cite[Abschnitt 5]{aria_roles}
+F"ur das Role Attribut k"onnen ein oder mehrere durch Leerzeichen getrennte Werte gesetzt werden. Der Wert des Role Attributes darf sich nicht ver"andern. Sollte dies jemals erforderlich sein, muss das HTML Element zuerst komplett entfernt werden und mit einem neuen Element mit der dementsprechenden Role ersetzt werden.\cite[Abschnitt 5]{aria_roles}
 
-Die Werte die ein Role Element annehmen kann, gliedert sich in vier verschiedene Kategorien: Abstract Roles, Widget Roles, Document Structure und Landmark Roles. \cite[Abschnitt 5.2]{aria_states}
+Die Werte, die ein Role Element annehmen kann, gliedern sich in vier verschiedene Kategorien: \emph{Abstract Roles}, \emph{Widget Roles}, \emph{Document Structure} und \emph{Landmark Roles}. \cite[Abschnitt 5.2]{aria_states}
 
 
 \subsection{Abstract Roles}
-Abstract Roles sind f"ur die semantische Aufgabe des Elements gedacht und d"urfen nicht im Inhalt vorkommen. Ein Beispiel f"ur eine Abstract Role w"are z. B. \emph{widget} oder \emph{window}.\cite[Abschnitt 5.3.1]{aria_roles}
+Abstract Roles sind f"ur die Beschreibung der Aufgabe des Elementes gedacht und d"urfen nicht im Inhalt vorkommen. Ein Beispiel f"ur eine Abstract Role w"are z. B. \emph{widget} oder \emph{window}.\cite[Abschnitt 5.3.1]{aria_roles}
 
 \subsection{Widget Roles}
-Widget Roles sind f"ur die Beschreibung von Widgets gedacht. Widgets sind Elemente, die den User mit der Seite interagieren lassen\cite[Abschnitt 5.4, widget]{aria_roles}. Ein Beispiel f"ur eine Widget Role w"are z. B. \emph{dialog} oder \emph{progressbar}.\cite[Abschnitt 5.3.2]{aria_roles}
+Widget Roles sind f"ur die Beschreibung von \emph{Widgets} gedacht. Widgets sind Elemente, die den User mit der Seite interagieren lassen\cite[Abschnitt 5.4, widget]{aria_roles}. Ein Beispiel f"ur eine Widget Role w"are z. B. \emph{dialog} oder \emph{progressbar}.\cite[Abschnitt 5.3.2]{aria_roles}
 
 \subsection{Document Structure}
 Die Document Structure beschreibt die Struktur der Seite. Ein Beispiel f"ur eine Document Structure Role w"are z. B. \emph{article} oder \emph{list}.\cite[Abschnitt 5.3.3]{aria_roles}
@@ -485,23 +482,23 @@ Landmark Roles beschreiben wichtige Navigationselemente und Bereiche. Ein Beispi
 Die nachfolgenden genannten Werte stellen nur eine kleine Auswahl aller verf"ugbaren Roles dar und sollen ein besseres Verst"andnis ihres Sinnes und  Einsatzgebietes vermitteln:
 
 \begin{itemize}
-\item \emph{banner}: Am Anfang einer Seite befindet sich oft der sogenannte \glqq Header \grqq, welcher ein Bild oder den Titel der Seite enth"alt. Dieser Bereich enth"alt auch oft zus"atzliche Informationen, die sich auf die gesamte Seite beziehen. \cite[Abschnitt 5.4, banner]{aria_roles}
+\item \emph{banner}: Am Anfang einer Seite befindet sich oft der \emph{Header}, welcher ein Bild oder den Titel der Seite enth"alt. Dieser Bereich enth"alt auch oft zus"atzliche Informationen, die sich auf die gesamte Seite beziehen. \cite[Abschnitt 5.4, banner]{aria_roles}
 
-\item \emph{dialog}: Viele JavaScript Frameworks wie z. B. jQuery-UI \cite{jquery_ui} bieten eine M"oglichkeit an, Dialoge mit JavaScript zu simulieren. Diese Dialoge sind verwenden beispielsweise HTML <div> Elemente und sind f"ur NutzerInnen assistiver Technologien oft nicht als solche erkennbar. \cite[Abschnitt 5.4, dialog]{aria_roles}
+\item \emph{dialog}: Viele JavaScript Frameworks wie z. B. \emph{jQuery-UI} \cite{jquery_ui} bieten eine M"oglichkeit an, Dialoge mit \emph{JavaScript} zu simulieren. Diese Dialoge sind verwenden beispielsweise HTML \emph{<div>} Elemente und sind f"ur NutzerInnen assistiver Technologien oft nicht als solche erkennbar. \cite[Abschnitt 5.4, dialog]{aria_roles}
 
 \item \emph{main}: Beinhaltet den eigentlich Inhalt der Seite. Durch eine Kennzeichnung mit dieser Role k"onnen assistive Technologien z. B. einen eigenen Shortcut anbieten, der bei der Aktivierung direkt zum eigentlichen Inhalt springt. \cite[Abschnitt 5.4, main]{aria_roles}
 
-\item \emph{math}: Durch fehlende M"oglichkeiten zur Darstellung mathematischer Funktionen wurden und werden oft Bilder oder Markup Sprachen wie MathML oder Latex verwendet, um diese korrekt im Browser darzustellen. Diese Role hilft dem Browser die entsprechende Sektion in ein f"ur NutzerInnen verst"andliches Format umzuwandeln und darzustellen. \cite[Abschnitt 5.4, math]{aria_roles}
+\item \emph{math}: Durch fehlende M"oglichkeiten zur Darstellung mathematischer Funktionen wurden und werden oft Bilder oder Markup Sprachen wie \emph{MathML} oder \emph{LaTex} verwendet, um diese korrekt im Browser darzustellen. Diese Role hilft dem Browser die entsprechende Sektion in ein f"ur NutzerInnen verst"andliches Format umzuwandeln und darzustellen. \cite[Abschnitt 5.4, math]{aria_roles}
 
 \item \emph{menu} und \emph{menuitem}: Wird verwendet um Men"us und deren Eintr"age zu beschreiben und kann am besten mit den vom Desktop bekannten Men"us in Applikationen verglichen werden. Die Men"us sollten die M"oglichkeit bieten, direkt mit der Tastatur bedient zu werden. \cite[Abschnitt 5.4, menu, menuitem]{aria_roles}
 
-\item \emph{navigation}: Wird verwendet um Elemente der Navigation zu beschreiben. In "alteren HTML Versionen wird meistens ein <div> mit der id \emph{nav} verwendet. Dieses <div> Element kann mit der navigation role gekennzeichnet werden. \cite[Abschnitt 5.4, navigation]{aria_roles}
+\item \emph{navigation}: Wird verwendet um Elemente der Navigation zu beschreiben. In "alteren HTML Versionen wird meistens ein \emph{<div>} mit der ID \emph{nav} verwendet. Dieses \emph{<div>} Element kann mit der \emph{navigation} Role gekennzeichnet werden. \cite[Abschnitt 5.4, navigation]{aria_roles}
 
-\item \emph{progressbar}: Durch die fehlende Unterst"utzung der neuen HTML5 input Elemente in einigen aktuell verwendeten Browsern bieten Frameworks wie jQuery-UI\cite{jquery_ui} einen dementsprechenden, nicht semantisch eindeutigen, Ersatz an. \cite[Abschnitt 5.4, progressbar]{aria_roles}
+\item \emph{progressbar}: Durch die fehlende Unterst"utzung der neuen HTML5 \emph{<input>} Elemente in einigen aktuell verwendeten Browsern bieten Frameworks wie \emph{jQuery-UI}\cite{jquery_ui} einen dementsprechenden, nicht semantisch eindeutigen, Ersatz an. \cite[Abschnitt 5.4, progressbar]{aria_roles}
 
-\item \emph{search}: Oft wird eine seitenweite Suche in Form eines normalen HTML <input> Elementes angeboten. Dieses Element kann mit dieser Role als Suche deklariert werden. \cite[Abschnitt 5.4, search]{aria_roles}
+\item \emph{search}: Oft wird eine seitenweite Suche in Form eines normalen HTML \emph{<input>} Elementes angeboten. Dieses Element kann mit dieser Role als Suche deklariert werden. \cite[Abschnitt 5.4, search]{aria_roles}
 
-\item \emph{tooltip}: Wird verwendet um Tooltips zu kennzeichnen, die durch eventuell verwendete JavaScript Frameworks generiert werden k"onnen. \cite[Abschnitt 5.4, tooltip]{aria_roles}
+\item \emph{tooltip}: Wird verwendet um Tooltips zu kennzeichnen, die durch eventuell verwendete \emph{JavaScript Frameworks} generiert werden k"onnen. \cite[Abschnitt 5.4, tooltip]{aria_roles}
 \end{itemize}
 
 
@@ -533,7 +530,7 @@ Eine "Ubersicht "uber alle m"oglichen States und Properties kann auf der Spezifi
 Personen mit k"orperlichen Einschr"ankungen oder Lernschwierigkeiten sind nicht nur im allt"aglichen sondern auch im digitalen Leben in der Erstellung und Wahrnehmung von Inhalten beintr"achtigt. Beachtet der/die WebentwicklerIn jedoch die Empfehlungen und Richtlinien der W3C, die WCAG 2.0 und ARIA, kann diesen Personen eine hinreichend annehmbare Erfahrung im Netz geboten werden. Die dadurch durchgef"uhrten Anpassungen bieten nicht nur eine bessere Erfahrung f"ur Personen mit k"orperlichen Einschr"ankungen oder Lernschwierigkeiten, sondern auch f"ur alle anderen NutzerInnen des Webs. Auch f"ur die ProgrammiererInnen selbst kann eine Beachtung dieser Richtlinien einen positiven Effekt haben: durch die Trennung von Pr"asentation und Inhalt wird die Wartung und Weiterentwicklung der Webseite vereinfacht. 
 
 \chapter{Ausblick}
-Weitere Empfehlungen des W3C, die sich im Moment in der Entwicklung befinden und nicht in dieser Arbeit erw"ahnt wurden, behandeln vor allem zus"atzliche Dokumente zu ARIA und Empfehlungen f"ur Werkzeuge zur Erstellung (z. B. Editoren) und Darstellung (z. B. Browsern) von Webinhalten. Aus Diesen wird ersichtlich, dass der Fokus von Accessibility zuk"unftig nicht nur auf den reinen Konsum von Inhalten beschr"ankt wird, sondern dass Personen mit k"orperlichen Einschr"ankungen oder Lernschwierigkeiten aktiv an der Weiterentwicklung des Internets und dessen Inhalten beteiligt und somit komplett in die digitale Gesellschaft integriert werden. \cite{acc_all}
+Weitere Empfehlungen des W3C, die sich im Moment in der Entwicklung befinden und nicht in dieser Arbeit erw"ahnt wurden, behandeln vor allem zus"atzliche Dokumente zu ARIA und Empfehlungen f"ur Werkzeuge zur Erstellung (z. B. Editoren) und Darstellung (z. B. Browsern) von Webinhalten. Aus Diesen wird ersichtlich, dass der Fokus von Accessibility zuk"unftig nicht nur auf den reinen Konsum von Inhalten beschr"ankt wird, sondern dass Personen mit k"orperlichen Einschr"ankungen oder Lernschwierigkeiten aktiv an der Weiterentwicklung des Webs und dessen Inhalten beteiligt und somit komplett in die digitale Gesellschaft integriert werden. \cite{acc_all}
 
 %\section[Erster Abschnitt]{"Uberschrift des ersten Abschnitts}
 
