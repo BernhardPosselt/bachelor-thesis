@@ -398,7 +398,7 @@ Unter diese Richtlinie fallen Kriterien zum Umgang mit zeitkritischen Elementen.
 Diese Richtlinie beinhaltet Richtlinien, um Epilepsieanf"allen vorzubeugen: Der Inhalt sollte im Rahmen einer Sekunde nicht mehr als drei mal Flackern (Level AAA) oder das Flackern sollte sich unter dem Grenzwert befinden (Level A). \cite[Abschnitt 2.3]{wcag2}
 
 \subsubsection{Navigierbarkeit}
-Diese Richtlinie vereint Kriterien, welche sich mit der Navigierbarkeit der Seite auseinander setzen. Darunter fallen unter anderem: das Vorhandensein eines Titels der Webseite (Level A), mehr als einer M"oglichkeit zum Auffinden von Informationen (Level AA), Informationen zum aktuellen Aufenthaltsort auf der Seite (beispielsweise durch den Einsatz von \emph{Breadcrumbs}), Erkennen des Zweckes von Links anhand deren Linktexte oder deren Kontext (Level AAA und A) und der Einsatz von "Uberschriften, Labels (Level AA) und Abschnitts"uberschriften (Level AAA). Au"serdem sollte die Seite gut mit der Tastatur navigierbar sein: Dies inkludiert einen sichtbaren Fokus des aktuellen Elementes (Level AA), eine logische Fokusordnung (Level A) und eine M"oglichkeit zum "Uberspringen von sich wiederholenden Inhalten, z. B. Werbungsbl"ocken. \cite[Abschnitt 2.4]{wcag2}
+Diese Richtlinie vereint Kriterien, welche sich mit der Navigierbarkeit der Seite auseinander setzen. Darunter fallen unter anderem: das Vorhandensein eines Titels der Webseite (Level A), mehr als einer M"oglichkeit zum Auffinden von Informationen (Level AA), Informationen zum aktuellen Aufenthaltsort auf der Seite (beispielsweise durch den Einsatz von \emph{Breadcrumbs}), Erkennen des Zweckes von Links anhand deren Linktexte oder Kontext (Level AAA und A) und der Einsatz von "Uberschriften, Labels (Level AA) und Abschnitts"uberschriften (Level AAA). Au"serdem sollte die Seite gut mit der Tastatur navigierbar sein: Dies inkludiert einen sichtbaren Fokus des aktuellen Elementes (Level AA), eine logische Fokusordnung (Level A) und eine M"oglichkeit zum "Uberspringen von sich wiederholenden Inhalten, z. B. Werbungsbl"ocken. \cite[Abschnitt 2.4]{wcag2}
 
 
 
@@ -485,23 +485,23 @@ Landmark Roles beschreiben wichtige Navigationselemente und Bereiche. Ein Beispi
 Die nachfolgenden genannten Werte stellen nur eine kleine Auswahl aller verf"ugbaren Roles dar und sollen ein besseres Verst"andnis ihres Sinnes und  Einsatzgebietes vermitteln:
 
 \begin{itemize}
-\item \emph{banner}: Am Anfang einer Seite befindet sich oft der \emph{Header}, welcher ein Bild oder den Titel der Seite enth"alt. Dieser Bereich enth"alt auch oft zus"atzliche Informationen, die sich auf die gesamte Seite beziehen. \cite[Abschnitt 5.4, banner]{aria_roles}
+\item \emph{banner}: Am Anfang einer Seite befindet sich oft der \emph{Header}, welcher ein Bild, den Titel der Seite, oder zus"atzliche Informationen zur Seite beinhaltet. Dieser sollte mit der \emph{banner} Role versehen werden. \cite[Abschnitt 5.4, banner]{aria_roles}
 
-\item \emph{dialog}: Viele \emph{JavaScript Frameworks} wie z. B. \emph{jQuery-UI} \cite{jquery_ui} bieten eine M"oglichkeit an, Dialoge mit \emph{JavaScript} zu simulieren. Diese Dialoge verwenden beispielsweise HTML \emph{<div>} Elemente und sind f"ur NutzerInnen assistiver Technologien oft nicht als Dialoge erkennbar. \cite[Abschnitt 5.4, dialog]{aria_roles}
+\item \emph{dialog}: Viele \emph{JavaScript Frameworks} wie z. B. \emph{jQuery-UI} \cite{jquery_ui} bieten eine M"oglichkeit an, Dialoge mit \emph{JavaScript} und \emph{CSS} zu simulieren. Diese Dialoge sind f"ur NutzerInnen assistiver Technologien oft nicht als solche erkennbar und sollten deshalb mit der \emph{dialog} Role gekennzeichnet werden. \cite[Abschnitt 5.4, dialog]{aria_roles}
 
-\item \emph{main}: Ein durch die \emph{main} Role gekennzeichnetes HTML Element sollte den eigentlich Inhalt der Seite beinhalten. Dadurch k"onnen assistive Technologien z. B. einen eigenen Shortcut anbieten, der bei der Aktivierung direkt zum eigentlichen Inhalt springt. \cite[Abschnitt 5.4, main]{aria_roles}
+\item \emph{main}: Ein durch die \emph{main} Role gekennzeichnetes HTML Element sollte den eigentlich Inhalt der Seite beinhalten. Dadurch k"onnen assistive Technologien z. B. einen eigenen Shortcut anbieten, der bei der Aktivierung direkt zum Inhalt springt. \cite[Abschnitt 5.4, main]{aria_roles}
 
 \item \emph{math}: Durch fehlende M"oglichkeiten zur Darstellung mathematischer Funktionen wurden und werden oft Bilder oder \emph{Markup Sprachen} wie \emph{MathML} oder \emph{LaTex} verwendet. Die \emph{math} Role hilft dem Browser die entsprechende Sektion in ein f"ur NutzerInnen assistiver Technologien verst"andliches Format umzuwandeln und darzustellen. \cite[Abschnitt 5.4, math]{aria_roles}
 
-\item \emph{menu} und \emph{menuitem}: Wird verwendet um Men"us und deren Eintr"age zu beschreiben und kann am besten mit den vom Desktop bekannten Men"us in Applikationen verglichen werden. Die Men"us sollten au"serdem mit der Tastatur bedient werden k"onnen. \cite[Abschnitt 5.4, menu, menuitem]{aria_roles}
+\item \emph{menu} und \emph{menuitem}: Wird verwendet, um Men"us und deren Eintr"age als solche zu kennzeichnen. Die Men"us sollten zudem mit der Tastatur bedient werden k"onnen. \cite[Abschnitt 5.4, menu, menuitem]{aria_roles}
 
-\item \emph{navigation}: Wird verwendet, um Navigationselemente zu kennzeichnen. In "alteren HTML Versionen wird meistens ein \emph{<div>} mit der ID \emph{nav} verwendet. Dieses \emph{<div>} Element sollte mit der \emph{navigation} Role gekennzeichnet werden. \cite[Abschnitt 5.4, navigation]{aria_roles}
+\item \emph{navigation}: Wird verwendet, um Navigationselemente zu kennzeichnen. In "alteren HTML Versionen wird meistens ein \emph{<div>} Element mit der \emph{ID} \emph{nav} oder \emph{navigation} verwendet. Dieses \emph{<div>} Element sollte mit der \emph{navigation} Role gekennzeichnet werden. \cite[Abschnitt 5.4, navigation]{aria_roles}
 
-\item \emph{progressbar}: Durch die fehlende Unterst"utzung der neuen HTML5 \emph{<input>} Elemente in einigen aktuell verwendeten Browsern, bieten Frameworks wie \emph{jQuery-UI}\cite{jquery_ui} eine abw"artskompatible, f"ur assistive Ger"ate unbrauchbare Alternative an. Diese Alternativen sollten mit der \emph{progressbar} Rule gekennzeichnet werden. \cite[Abschnitt 5.4, progressbar]{aria_roles}
+\item \emph{progressbar}: Durch die fehlende Unterst"utzung der neuen HTML5 \emph{<input>} Elemente in einigen aktuell verwendeten Browsern, bieten Frameworks wie \emph{jQuery-UI}\cite{jquery_ui} eine abw"artskompatible, f"ur assistive Ger"ate meist unbrauchbare Alternative an. Diese Alternativen sollten mit der \emph{progressbar} Role gekennzeichnet werden. \cite[Abschnitt 5.4, progressbar]{aria_roles}
 
 \item \emph{search}: Oft wird eine seitenweite Suche in Form eines normalen HTML \emph{<input>} Elementes angeboten. Dieses Element kann mit dieser Role als Suche deklariert werden. \cite[Abschnitt 5.4, search]{aria_roles}
 
-\item \emph{tooltip}: Diese Rule sollte verwendet werden, um \emph{Tooltips} zu kennzeichnen, die von manchen \emph{JavaScript Frameworks} generiert werden. \cite[Abschnitt 5.4, tooltip]{aria_roles}
+\item \emph{tooltip}: Diese Role sollte verwendet werden, um \emph{Tooltips} zu kennzeichnen, die von manchen \emph{JavaScript Frameworks} generiert werden. \cite[Abschnitt 5.4, tooltip]{aria_roles}
 \end{itemize}
 
 
@@ -509,7 +509,7 @@ Die nachfolgenden genannten Werte stellen nur eine kleine Auswahl aller verf"ugb
 \section{States and Properties}
 \emph{States und Properties} werden verwendet, um Zust"ande von HTML Elementen zu beschreiben bzw. um Roles mit zus"atzlichen Informationen zu versehen. Die Role \emph{dialog} kann beispielsweise mit einem Label versehen werden, um den Dialog zu beschreiben (\emph{aria-label} oder \emph{aria-labelledby})\cite[Abschnitt 5.4, dialog]{aria_roles}. Alle States und Properties Attribute werden mit einem vorangestellten \emph{aria-} gekennzeichnet. \cite[Abschnitt 6.1]{aria_states}
 
-Im Gegensatz zu Roles k"onnen \emph{States} und \emph{Properties} im Laufe der Webseitennutzung ihre Werte "andern \cite[S. 29]{mod_software}. Ein Beispiel daf"ur ist \emph{aria-grabbed}, welches sich im Zustand \emph{true} bzw. \emph{false} befinden kann, je nachdem ob gerade eine \emph{Drag and Drop Operation} durchgef"uhrt wird \cite[Abschnitt 6.6, aria-grabbed]{aria_states}.
+Im Gegensatz zu Roles k"onnen \emph{States} und \emph{Properties} im Laufe der Webseitennutzung ihre Werte "andern \cite[S. 29]{mod_software}. Ein Beispiel daf"ur ist \emph{aria-grabbed}, welches sich im Zustand \emph{true} bzw. \emph{false} befinden kann, je nachdem, ob gerade eine \emph{Drag and Drop Operation} durchgef"uhrt wird \cite[Abschnitt 6.6, aria-grabbed]{aria_states}.
 
 \emph{State Attribute} stellen jedoch nicht nur neue Funktionen bereit, sondern duplizieren zum Teil auch Information, die in HTML5 schon vorhanden sind und ausgelesen werden k"onnen, z. B. \emph{aria-disabled} oder \emph{aria-checked} \cite[States and Properties]{aria} (vgl. \emph{<input>} Element Attribute \emph{checked} und \emph{disabled}). \cite[Abschnitt Forms, Input Element]{html4} 
 
