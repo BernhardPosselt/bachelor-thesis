@@ -169,7 +169,7 @@ Dazu soll eine "Ubersicht "uber die vom W3C bereitgestellten Spezifikationen, de
 Zus"atzlich wird kurz auf die verschiedenen Arten von Einschr"ankungen eingegangen und die Probleme und verwendeten Hilfsger"ate werden aufgezeigt.
 
 \section{Aufbau}
-In Kapitel 2 wird ein kurzer "Uberblick "uber die h"aufigsten Einschr"ankungen gegeben und erkl"art, welche assistiven Technologien verwendet werden k"onnen, um k"orperlich eingeschr"ankten Personen und Personen mit Lernschwierigkeiten beim Zugriff auf das Web zu helfen. Dies soll veranschaulichen, warum  Webseiten f"ur diese Ger"ate optimieren werden sollen.
+In Kapitel 2 wird ein kurzer "Uberblick "uber die h"aufigsten Einschr"ankungen gegeben und erkl"art, welche assistiven Technologien verwendet werden k"onnen, um k"orperlich eingeschr"ankten Personen und Personen mit Lernschwierigkeiten beim Zugriff auf das Web zu helfen. Dies soll veranschaulichen, warum  Webseiten f"ur diese Ger"ate optimiert werden sollen.
 
 In Kapitel 3 wird auf die Richtlinien des W3C, die WCAG, eingegangen und Entwicklung und Unterschiede zwischen der Version 1 und Version 2 betrachtet.
 
@@ -437,7 +437,7 @@ Diese Kriterium besagt, dass alle Userinterface-Komponenten korrekt ausgelesen w
 Die Spezifikation hat sich in den neun Jahren seit der Ver"offentlichung der Version 1.0 stetig weiterentwickelt. Die WCAG 2.0 unterscheiden sich von der Version 1.0 nicht nur in der Struktur sondern auch im Umfang und der Testbarkeit. Wo in 1.0 noch eher allgemeine Hinweise gegeben wurden, sind in Version 2.0 klare und testbare Anleitungen und Richtlinien vorhanden. Auch die Umbenennung der Kriterien von Priorit"at zu Konformit"atslevel zeigt den Wunsch nach einer besseren automatisierten Testbarkeit der Kriterien. \cite[Abschnitt Introduction]{wcag2}
 
 \subsection{Success Criteria}
-Die Success Criteria wurden von ihrer Struktur praktisch "ubernommen und anders benannt. Anstatt Priorit"at wird jetzt der Begriff Konformit"atslevel verwendet. Die Bezeichnungen der Stufen (A, AA, und AAA) und auch die Art, wie sie erf"ullt werden, wurden jedoch nicht ver"andert.
+Die Success Criteria wurden von ihrer Struktur praktisch "ubernommen und anders benannt. Anstatt Priorit"at wird jetzt der Begriff Konformit"atslevel verwendet. Die Bezeichnungen der Stufen (A, AA, und AAA) und auch deren Erf"ullung - jede Stufe schlie"st automatisch alle Kriterien der ihr untergeordneten Stufen mit ein - wurden jedoch nicht ver"andert.
 
 \subsection{Wahrnehmbarkeit}
 Die WCAG 2.0 geben im Gegensatz zu den WCAG 1.0 klare, testbare Hinweise, wie die Wahrnehmbarkeit des Inhaltes verbessert werden kann. Statt Hinweisen, die sich nur mit HTML Elementen und Attributen besch"aftigen werden jetzt auch konkrete Pr"asentationsrichtlinien genannt: Beispielsweise wird eine maximale Zeilenl"ange und eine exakte Definition des Kontrastes erw"ahnt. Auch die Beschreibung der Audio und Video Alternativen ist wesentlich umfangreicher als die der WCAG 1.0 aus dem Jahre 1999.
@@ -466,16 +466,16 @@ F"ur das Role Attribut k"onnen ein oder mehrere durch Leerzeichen getrennte Wert
 Die Werte, die ein Role Element annehmen kann, gliedern sich in vier verschiedene Kategorien: \emph{Abstract Roles}, \emph{Widget Roles}, \emph{Document Structure} und \emph{Landmark Roles}. \cite[Abschnitt 5.2]{aria_states}
 
 
-\subsection{Abstract Roles}
+\subsubsection{Abstract Roles}
 Abstract Roles sind f"ur die Beschreibung der Aufgabe des Elementes gedacht und d"urfen nicht im Inhalt vorkommen. Ein Beispiel f"ur eine Abstract Role w"are z. B. \emph{widget} oder \emph{window}.\cite[Abschnitt 5.3.1]{aria_roles}
 
-\subsection{Widget Roles}
+\subsubsection{Widget Roles}
 Widget Roles sind f"ur die Beschreibung von \emph{Widgets} gedacht. Widgets sind Elemente, die den User mit der Seite interagieren lassen\cite[Abschnitt 5.4, widget]{aria_roles}. Ein Beispiel f"ur eine Widget Role w"are z. B. \emph{dialog} oder \emph{progressbar}.\cite[Abschnitt 5.3.2]{aria_roles}
 
-\subsection{Document Structure}
+\subsubsection{Document Structure}
 Die Document Structure beschreibt die Struktur der Seite. Ein Beispiel f"ur eine Document Structure Role w"are z. B. \emph{article} oder \emph{list}.\cite[Abschnitt 5.3.3]{aria_roles}
 
-\subsection{Landmark Roles}
+\subsubsection{Landmark Roles}
 Landmark Roles beschreiben wichtige Navigationselemente und Bereiche. Ein Beispiel f"ur eine Landmark Role w"are z. B. \emph{banner} oder \emph{navigation}.\cite[Abschnitt 5.3.4]{aria_roles}
 
 \subsection{ARIA Roles Beispiele}
