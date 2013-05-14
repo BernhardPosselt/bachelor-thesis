@@ -131,6 +131,57 @@ und auch noch nicht ver"offentlicht. Ich versichere, dass die abgegebene Version
 % \chapter[Kurzform]{Lange "Uberschrift}
 \chapter{Einf"uhrung}
 
+\chapter{Warum Testen}
+\cite{test_large_systems}[S. 10]
+
+\chapter{Unterschiede zu klassischer Software}
+Andere Umgebung als normale Applikationen: testen von datenbanken, web servern und clientside verschiedene browser, alles über netzwerk, nicht eine technologie sondern verschiedene (JavaScript, Flash, HTML, CSS, Serverside sprache, SQL)
+\cite{testing_apps_on_web}[Foreword]
+
+Server client model früher nur terminal server die zum anzeigen von server response genutzt wurden \cite{testing_apps_on_web}[S. 13] heute mehr logik auf dem client (JavaScript)
+Event handling is komplexer weil verschiedene events in unterschiedlicher reihenfolge auftreten können \cite{testing_apps_on_web}[S. 18]
+Mehrere laufende Instanzen sind komplex wg. sync \cite{testing_apps_on_web}[S. 20]
+
+Web UI implementation
+System integration
+server + client installation
+configuration + compability
+database
+security
+performance/load/stress
+\cite{testing_apps_on_web}[S. 29]
+
+Planning + Documentation, testplan\cite{testing_apps_on_web}[S. 34]
+
+
+
+\chapter{Testplan}
+\chapter{Unit Test}
+\chapter{Integration Test}
+\chapter{Acceptance Test}
+
+Development acceptance tests:
+* Release acceptance tests (smoke tests): mainstream data + mainstream funktionen \cite{testing_apps_on_web}[S. 36]
+* Functional acceptance simple test: each dev release to test accessibility of key features on minimum configuration, no full functionality test (file saving example) \cite{testing_apps_on_web}[S. 37-38]
+
+Deployment acceptance tests:
+Full installation + configurations
+* Task-Oriented Functional Test: Features test (gherkin) against requirements, specs + design docs \cite{testing_apps_on_web}[S. 42]
+* Forced Error Test: testing for failures 
+* boundary test: test extreme inputs
+* system level test: test whole application \cite{testing_apps_on_web}[S. 43]
+* real world user level test: echte leute testen um fehler zu finden die man sonst übersieht
+* exploratory test: überlegen wo es probleme geben könnte und dort testen
+* stress test: limited resource conditions (memory, diskspace, network bandwidth)
+* Performance tests: testen wieviel das system verträgt
+* Regression tests: für bugs die schonmal aufgetreten sind \cite{testing_apps_on_web}[S. 44]
+* Compability + config tests: testen auf unterschiedlichen platformen
+* documentation test: testen von zb shortcuts \cite{testing_apps_on_web}[S. 45]
+* install uninstall test
+* UX tests
+* External beta tests \cite{testing_apps_on_web}[S. 46]
+* Secuirty tests
+* Unit tests
 
 %\section[Erster Abschnitt]{"Uberschrift des ersten Abschnitts}
 
