@@ -3,7 +3,7 @@ Bachelorarbeit Konzept
 
 **Version**: 0.1
 
-**Datum**: 14. May 2013
+**Datum**: 16. May 2013
 
 Dokument Informationen
 ----------------------
@@ -19,23 +19,39 @@ Softwaretest von Web-Applikationen
 
 Aufgabestellung
 ---------------
+
 Umfeld
 ^^^^^^
 HTML, Web, Browser
 
 Nichtziele
 ^^^^^^^^^^
-* Keine erläuterung von TDD
-* 
+* Keine Erläuterung von TDD
+* Kein Beispielprojekt das komplett durchgetested wird
 
 Problemstellung
 ^^^^^^^^^^^^^^^
-TBD
+Software Test von Web Applikationen ist durch die Client-Server Architektur und die verschiedenen Webbrowser weitaus komplizierter und aufwendiger als der Software Test von traditionellen Applikationen
 
 Fragestellungen
 ---------------
 * Was sind die Unterschiede zw. web app test und normalen tests
-* Was für verschiedene tests kann man durchführen
+* Warum sollte man seine Webapplikationen testen
+* Was für verschiedene arten von tests kann man durchführen
+* Wie organisiert man den Test? Wie schreibt man den Testplan
+* Gibt es spezielle Tools (soll man darauf auch eingehen? z.B. Selenium/Cucumber/Gherkin für Acceptance tests, Jasmine für JavaScript Unittests)
+
+
+Derzeitiges Inhaltsverzeichnis
+------------------------------
+* Einführung
+* Warum testen
+* Unterschiede zu klassicher Software
+* Testplan
+* Unittest
+* Integration Test
+* Acceptance Test
+* Schluss
 
 Literaturquellen
 ----------------
