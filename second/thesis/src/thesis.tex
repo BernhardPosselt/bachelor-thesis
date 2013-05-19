@@ -103,7 +103,7 @@ und auch noch nicht veröffentlicht. Ich versichere, dass die abgegebene Version
 
 
 \section*{Kurzfassung}\thispagestyle{empty}
-Durchführung und Erstellen von automatisierten Tests für Web-Applikationen unterscheidet sich von klassichen Applikationen. Aufgrund der komplexeren Infrastruktur und Modularisierung werden zusätzliche Testfälle und Strategien benötigt um Web-Applikationen ausreichend abzudecken und eine fortwährende Qualität zu gewährleisten. Diese Arbeit soll Möglichkeiten für den Test von Web-Applikationen aufzeigen.
+Die Durchführung und Erstellen von automatisierten Tests für Web-Applikationen unterscheidet sich von klassischen Applikationen. Aufgrund der komplexeren Infrastruktur und Modularisierung werden zusätzliche Testfälle und Strategien benötigt um Web-Applikationen ausreichend abzudecken und eine fortwährende Qualität zu gewährleisten. Diese Arbeit soll Möglichkeiten für den Test von Web-Applikationen aufzeigen.
 
 \vfill
 \paragraph*{Schlagwörter:} Webapplikationen, automatisierte Tests, Webtest
@@ -135,7 +135,7 @@ Creation and execution of automatic web application tests is different from test
 \chapter{Einführung}
 
 
-\section{Warum Testen}
+\section{Vorteile von automatisierten Tests}
 
 \cite{test_large_systems}[S. 10]
 
@@ -165,7 +165,7 @@ Creation and execution of automatic web application tests is different from test
 
 
 \section{Unterschiede zu klassischer Software}
-Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server Architektur immer aus mehreren Modulen, die meist über Netzwerk miteinander verbunden sind, beispielsweise: 
+Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server-Architektur immer aus mehreren Modulen, die meist über ein Netzwerk miteinander verbunden sind, beispielsweise: 
 
 \begin{itemize}
 \item Datenbank-Server
@@ -175,7 +175,7 @@ Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Appli
 \item Web-Browser
 \end{itemize}
 
-Durch diesen Modularen Aufbau ist es besonders schwer einen Fehler zu lokalisieren. Der Fehler könnte sich z.B. im Applikations-Code befinden aber auch durch ein Netzwerkproblem entstehen. \cite{testing_apps_on_web}[Foreword]
+Durch diesen modularen Aufbau ist es besonders schwer einen Fehler zu lokalisieren. Der Fehler z.B. durch einen Fehler im Quellcode des Applikations-Servers oder durch ein Netzwerkproblem entstanden sein. \cite{testing_apps_on_web}[Foreword]
 
 Außerdem gibt es eine größere Vielfalt an Plattformen, auf welchen die Web-Applikation ausgeführt wird: Auf der Serverseite sind diese Plattformen noch vom/von der BetreiberIn festlegbar, sprich welches Betriebssystem und welche Datenbank eingesetzt wird, auf der Clientseite ist dies aber schon nicht mehr möglich. Die BesucherInnen der Webseite verwenden verschiedene Web-Browser auf verschiedenen Betriebssystemen, welche beide in unterschiedlichen Versionen vorliegen können. Auch können unterschiedliche Plugins und Fonts in unterschiedlichen Versionen installiert sein. \cite{testing_apps_on_web}[Foreword]
 
