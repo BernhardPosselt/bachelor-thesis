@@ -1,12 +1,12 @@
-% !TEX encoding = IsoLatin2  % notwendige Zeile f"ur Mac-Benutzer (muss als Kommentar stehen); Windows-Benutzer k"onnen die Zeile l"oschen.
+% !TEX encoding = IsoLatin2  % notwendige Zeile für Mac-Benutzer (muss als Kommentar stehen); Windows-Benutzer können die Zeile löschen.
 
 % LaTeX-Vorlage Version 3.1,  Juli 2011
 % erstellt von Dr. Andreas Drauschke (andreas.drauschke@technikum-wien.at) und Dr. Susanne Teschl (susanne.teschl@technikum-wien.at)
-% geringf"ugig adaptiert von Harald Stockinger (harald.stockinger@technikum-wien.at)
+% geringfügig adaptiert von Harald Stockinger (harald.stockinger@technikum-wien.at)
 
  
 \documentclass[a4paper,bibtotoc,oneside]{scrbook} 
-% F"ur kurze Arbeiten w"are auch die Dokumentklasse "scrartcl" ausreichend. In diesem Fall ist "section" die h"ochste Ebene ("chapter" gibt es dann nicht).
+% Für kurze Arbeiten wäre auch die Dokumentklasse "scrartcl" ausreichend. In diesem Fall ist "section" die höchste Ebene ("chapter" gibt es dann nicht).
 % \documentclass[a4paper,bibtotoc,oneside]{scrartcl}
 
 %\usepackage{cclicenses}
@@ -15,9 +15,10 @@
 \usepackage{hyperref}
 
 % deutsche Anpassungen
-\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+
 
 % mathematische Symbole
 \usepackage{amsmath,amssymb,amsfonts,amstext}
@@ -31,27 +32,27 @@
 \chead{}
 \rhead[\fancyplain{}{}]{\fancyplain{}{\footnotesize\nouppercase\sc\leftmark}} 
 
-% Farben im Dokument m"oglich
+% Farben im Dokument möglich
 \usepackage{color}
 
 % Schriftart Helvetica
 \usepackage{helvet}
 \renewcommand{\familydefault}{cmss} 
 
-% Graphiken einbinden: hier f"ur pdflatex
+% Graphiken einbinden: hier für pdflatex
 \usepackage[pdftex]{graphicx}
 
 \usepackage{array}
 
-% H"ohe und Breite des Textk"orpers etwas gr"osser definieren
+% Höhe und Breite des Textkörpers etwas grösser definieren
 \setlength{\textheight}{225mm}
 \setlength{\textwidth}{1.05\textwidth}
 
-% weniger Warnungen wegen "uberf"ullter Boxen
+% weniger Warnungen wegen überfüllter Boxen
 \tolerance = 9999
 \sloppy
 
-% Anpassung einiger "Uberschriften 
+% Anpassung einiger überschriften 
 \renewcommand\figurename{Abbildung}
 \renewcommand\tablename{Tabelle}
 
@@ -68,17 +69,17 @@
 \put(-101,-749){\includegraphics[width=1.002\paperwidth, height=\paperheight]{BM_2011.pdf}}
 \put(220,-670){\includegraphics[width=0.5\textwidth]{FHTW_Logo_4c.pdf}}
 \put(-30, -20){\bfseries\huge BACHELORARBEIT}
-% Titel des Studienganges einf"ugen:
+% Titel des Studienganges einfügen:
 \put(-30,-50){\Large im Studiengang Bachelor Informatik}
-% Titel der Arbeit einf"ugen:
-% Die Minipage wird gesetzt, damit auch mehrzeilige Titel m"oglich werden.
+% Titel der Arbeit einfügen:
+% Die Minipage wird gesetzt, damit auch mehrzeilige Titel möglich werden.
 \put(-32,-150){
 \begin{minipage}{14cm}
 \bfseries\huge Software-Test von Web-Applikationen
 \end{minipage}
 }
 % Name der Autorin/des Autors eingeben:
-\put(-30,-250){\large Ausgef"uhrt von: Bernhard Posselt}
+\put(-30,-250){\large Ausgeführt von: Bernhard Posselt}
 % Personenkennzeichen der Autorin/des Autors eingeben:
 \put(-30,-270){\large Personenkennzeichen: 1010257029}
 % Name der Begutachterin/des Begutachters eingeben:
@@ -90,11 +91,11 @@
 \newpage
 
 
-\section*{Eidesstattliche Erkl"arung}\thispagestyle{empty}
-\glqq Ich erkl"are hiermit an Eides statt, dass ich die vorliegende Arbeit selbst"andig angefertigt habe. 
-Die aus fremden Quellen direkt oder indirekt "ubernommenen Gedanken sind als solche kenntlich gemacht. 
-Die Arbeit wurde bisher weder in gleicher noch in "ahnlicher Form einer anderen Pr"ufungsbeh"orde vorgelegt
-und auch noch nicht ver"offentlicht. Ich versichere, dass die abgegebene Version jener im Uploadtool entspricht.\grqq\\[5\baselineskip]
+\section*{Eidesstattliche Erklärung}\thispagestyle{empty}
+\glqq Ich erkläre hiermit an Eides statt, dass ich die vorliegende Arbeit selbständig angefertigt habe. 
+Die aus fremden Quellen direkt oder indirekt übernommenen Gedanken sind als solche kenntlich gemacht. 
+Die Arbeit wurde bisher weder in gleicher noch in ähnlicher Form einer anderen Prüfungsbehörde vorgelegt
+und auch noch nicht veröffentlicht. Ich versichere, dass die abgegebene Version jener im Uploadtool entspricht.\grqq\\[5\baselineskip]
 \rule{5cm}{0.2pt}\hfill\rule{5cm}{0.2pt}\\
 \phantom{Datum }Ort, Datum\hfill Unterschrift\hspace{15mm}
 
@@ -102,10 +103,10 @@ und auch noch nicht ver"offentlicht. Ich versichere, dass die abgegebene Version
 
 
 \section*{Kurzfassung}\thispagestyle{empty}
-Durchf"uhrung und Erstellen von automatisierten Tests f"ur Web-Applikationen unterscheidet sich von klassichen Applikationen. Durch die komplexere Infrastruktur und Modularisierung werden zus"atzliche Testf"alle und Strategien ben"otigt um Web-Applikationen ausreichend abzudecken und eine fortw"ahrende Qualit"at zu gew"ahrleisten. Diese Arbeit soll M"oglichkeiten f"ur den Test von Web-Applikationen aufzeigen.
+Durchführung und Erstellen von automatisierten Tests für Web-Applikationen unterscheidet sich von klassichen Applikationen. Aufgrund der komplexeren Infrastruktur und Modularisierung werden zusätzliche Testfälle und Strategien benötigt um Web-Applikationen ausreichend abzudecken und eine fortwährende Qualität zu gewährleisten. Diese Arbeit soll Möglichkeiten für den Test von Web-Applikationen aufzeigen.
 
 \vfill
-\paragraph*{Schlagw"orter:} Webapplikationen, automatisierte Tests, Webtest
+\paragraph*{Schlagwörter:} Webapplikationen, automatisierte Tests, Webtest
 
 
 \newpage
@@ -128,16 +129,15 @@ Creation and execution of automatic web application tests is different from test
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-% Falls die Kapitel"uberschriften zu lang f"ur die Kopfzeile oder das Inhaltsverzeichnis sind, so erzielt man
+% Falls die Kapitelüberschriften zu lang für die Kopfzeile oder das Inhaltsverzeichnis sind, so erzielt man
 % dort Kurzformen der Kapitelbezeichnungen mittels:
-% \chapter[Kurzform]{Lange "Uberschrift}
-\chapter{Einf"uhrung}
+% \chapter[Kurzform]{Lange überschrift}
+\chapter{Einführung}
 
 
 \section{Warum Testen}
 
 \cite{test_large_systems}[S. 10]
-
 
 %testen wichtig weil vieles in unserem leben von software gesteuert wird und man darauf verlassen muss
 %Hohe kosten, bsp ariane 5 raketen absturz wegen software fehler weil code von ariane 4 übernommen und nicht getestet wurde \cite{eval_regression}[S. 9]
@@ -148,9 +148,9 @@ Creation and execution of automatic web application tests is different from test
 
 %Im Jahr 2000 Auto + Flugzeug industrie Schaden von 1,8 Milliarden US-Dollar durch Software Fehler -> 16\% des Umsatzes \cite{betrieb}[S. 15]
 
-%Qualit"at muss bestandteil des prozesses sein \cite{betrieb}[S. 16] entsteht w"ahrend der entwicklung, sehr selten bis unmöglich am ende einzubauen \cite{betrieb}[S. 11] 
+%Qualität muss bestandteil des prozesses sein \cite{betrieb}[S. 16] entsteht während der entwicklung, sehr selten bis unmöglich am ende einzubauen \cite{betrieb}[S. 11] 
 
-%fr"uh gefundene Fehler l"asst sich mit weniger resourcen beheben als wenn sp"ater \cite{betrieb}[S. 17] 
+%früh gefundene Fehler lässt sich mit weniger resourcen beheben als wenn später \cite{betrieb}[S. 17] 
 
 %direktes feedback an den entwickler ob es funktioniert \cite{test_auto}[S. 2]
 
@@ -165,7 +165,7 @@ Creation and execution of automatic web application tests is different from test
 
 
 \section{Unterschiede zu klassischer Software}
-Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server Architektur immer aus mehreren Modulen, die meist "uber Netzwerk miteinander verbunden sind, beispielsweise: 
+Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server Architektur immer aus mehreren Modulen, die meist über Netzwerk miteinander verbunden sind, beispielsweise: 
 
 \begin{itemize}
 \item Datenbank-Server
@@ -175,15 +175,15 @@ Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Appli
 \item Web-Browser
 \end{itemize}
 
-Durch diesen Modularen Aufbau ist es besonders schwer einen Fehler zu lokalisieren. Der Fehler k"onnte sich z.B. im Applikations-Code befinden aber auch durch ein Netzwerkproblem entstehen. \cite{testing_apps_on_web}[Foreword]
+Durch diesen Modularen Aufbau ist es besonders schwer einen Fehler zu lokalisieren. Der Fehler könnte sich z.B. im Applikations-Code befinden aber auch durch ein Netzwerkproblem entstehen. \cite{testing_apps_on_web}[Foreword]
 
-Au"serdem gibt es eine gr"o"sere Vielfalt an Plattformen, auf welchen die Web-Applikation ausgef"uhrt wird: Auf der Serverseite sind diese Plattformen noch vom/von der BetreiberIn festlegbar, sprich welches Betriebssystem und welche Datenbank eingesetzt wird, auf der Clientseite ist dies aber schon nicht mehr m"oglich. Die BesucherInnen der Webseite verwenden verschiedene Web-Browser auf verschiedenen Betriebssystemen, welche beide in unterschiedlichen Versionen vorliegen k"onnen. Auch k"onnen unterschiedliche Plugins und Fonts in unterschiedlichen Versionen installiert sein. \cite{testing_apps_on_web}[Foreword]
+Außerdem gibt es eine größere Vielfalt an Plattformen, auf welchen die Web-Applikation ausgeführt wird: Auf der Serverseite sind diese Plattformen noch vom/von der BetreiberIn festlegbar, sprich welches Betriebssystem und welche Datenbank eingesetzt wird, auf der Clientseite ist dies aber schon nicht mehr möglich. Die BesucherInnen der Webseite verwenden verschiedene Web-Browser auf verschiedenen Betriebssystemen, welche beide in unterschiedlichen Versionen vorliegen können. Auch können unterschiedliche Plugins und Fonts in unterschiedlichen Versionen installiert sein. \cite{testing_apps_on_web}[Foreword]
 
-Zudem verlagert sich auch immer mehr Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13]. Durch das Verwenden von \emph{Events}, welche unter anderem durch BenutzerInnen-Eingaben ausgel"ost werden k"onnen, stellt clientseitiger Code eine gr"o"sere Herausforderung f"ur den/die TesterIn dar als Serverseitiger: Events k"onnen in unterschiedlicher Reihenfolge und Kombination auftreten, manche Aktionen l"osen sogar mehrere Events aus. \cite{testing_apps_on_web}[S. 18]
+Zudem verlagert sich auch immer mehr Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13]. Durch das Verwenden von \emph{Events}, welche unter anderem durch BenutzerInnen-Eingaben ausgelöst werden können, stellt clientseitiger Code eine größere Herausforderung für den/die TesterIn dar als Serverseitiger: Events können in unterschiedlicher Reihenfolge und Kombination auftreten, manche Aktionen lösen sogar mehrere Events aus. \cite{testing_apps_on_web}[S. 18]
 
-Eine weitere Herausforderung stellt das Instanzmodell von Web-Applikationen dar: die meisten Web-Applikationen erlauben durch das Verwenden von \emph{Cookies} mehrere Instanzen der Applikation, die jedoch unter der gleichen Session ausgef"uhrt werden. Dies kann zu Synchronisationsproblemen zwischen den einzelnen Instanzen f"uhren, z.B. kann in einer Instanz ein Eintrag gel"oscht werden, der durch eine fehlerhafte Synchronisation f"ur die andere Instanz jedoch noch immer existiert und in weiterer Folge zu Fehlern f"uhren kann. \cite{testing_apps_on_web}[S. 20]
+Eine weitere Herausforderung stellt das Instanzmodell von Web-Applikationen dar: die meisten Web-Applikationen erlauben durch das Verwenden von \emph{Cookies} mehrere Instanzen der Applikation, die jedoch unter der gleichen Session ausgeführt werden. Dies kann zu Synchronisationsproblemen zwischen den einzelnen Instanzen führen, z.B. kann in einer Instanz ein Eintrag gelöscht werden, der durch eine fehlerhafte Synchronisation für die andere Instanz jedoch noch immer existiert und in weiterer Folge zu Fehlern führen kann. \cite{testing_apps_on_web}[S. 20]
 
-Diese Vielfalt an verschiedenen, m"oglichen Konfigurationen und Herausforderungen erfordert eine neue Herangehensweise an das Thema Software-Test: Die bestehenden Techniken sind \glqq zwar auch notwendig, aber nicht ausreichend, um die Qualit"at der Applikation sicherzustellen\grqq\ \cite{eval_automat_webapp_test}[S. 18]
+Diese Vielfalt an verschiedenen, möglichen Konfigurationen und Herausforderungen erfordert eine neue Herangehensweise an das Thema Software-Test: Die bestehenden Techniken sind \glqq zwar auch notwendig, aber nicht ausreichend, um die Qualität der Applikation sicherzustellen\grqq\ \cite{eval_automat_webapp_test}[S. 18]
 
 \section{Aufbau}
 
@@ -232,11 +232,11 @@ Diese Vielfalt an verschiedenen, m"oglichen Konfigurationen und Herausforderunge
 % * Secuirty tests
 % * Unit tests
 
-%\section[Erster Abschnitt]{"Uberschrift des ersten Abschnitts}
+%\section[Erster Abschnitt]{überschrift des ersten Abschnitts}
 
 
 
-%\subsection[Erster Unterabschnitt]{"Uberschrift des ersten Unterabschnitts}
+%\subsection[Erster Unterabschnitt]{überschrift des ersten Unterabschnitts}
 
 
 
@@ -248,10 +248,10 @@ Diese Vielfalt an verschiedenen, m"oglichen Konfigurationen und Herausforderunge
 %\begin{figure}[htbp]
 %\centering
 %\includegraphics[width=75mm]{Buchruecken}
-%\caption[Beschriftung eines Buchr"uckens.]{Beispiel f"ur die Beschriftung eines
-%Buchr"uckens.}\label{Abb1}
+%\caption[Beschriftung eines Buchrückens.]{Beispiel für die Beschriftung eines
+%Buchrückens.}\label{Abb1}
 %\end{figure}
-%%Tabelle~\ref{Tab1} ist ein Beispiel daf"ur, wie eine Tabelle aussehen k"onnte.
+%%Tabelle~\ref{Tab1} ist ein Beispiel dafür, wie eine Tabelle aussehen könnte.
 %\begin{table}[htbp]
 %\centering
 %\begin{tabular}{ | c | c | c | }\hline
@@ -260,12 +260,12 @@ Diese Vielfalt an verschiedenen, m"oglichen Konfigurationen und Herausforderunge
 %20. 08. 2008 & Graphentheorie & HS 3.13\\ \hline
 %01. 10. 2008 & Biomathematik & HS 1.05\\ \hline
 %\end{tabular}
-%\caption[Semesterplan "`Angewandte Mathematik"'.]{Beispiel f"ur einen
+%\caption[Semesterplan "`Angewandte Mathematik"'.]{Beispiel für einen
 %Semesterplan "`Angewandte Mathematik"'.}\label{Tab1}
 %\end{table}
 
 %\noindent
-%Nun ein Beispiel f"ur eine abgesetzte Formel:
+%Nun ein Beispiel für eine abgesetzte Formel:
 %\begin{equation}
 %x =  - \frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}.
 %\end{equation}
@@ -284,33 +284,33 @@ Diese Vielfalt an verschiedenen, m"oglichen Konfigurationen und Herausforderunge
 
 %\noindent
 %Hier ist ein Hyperlink auf die  \href{http://www.technikum-wien.at}{Homepage}
-%der FH Technikum Wien. Email-Adressen k"onnen so verlinkt werden:
+%der FH Technikum Wien. Email-Adressen können so verlinkt werden:
 %\href{mailto:homer.simpson@springfield.com}{\texttt{
 %homer.simpson@springfield.com}}\\
 
 %\noindent
 %In der Bibliothek der Fachhochschule Technikum Wien gibt es verschiedene
-%einf"uhrende B"ucher zum Thema \glqq \LaTeX \grqq, zum Beispiel \cite{kop05},
+%einführende Bücher zum Thema \glqq \LaTeX \grqq, zum Beispiel \cite{kop05},
 %\cite{wil06} oder \cite{mgb+05d} (deutsche Version) bzw. \cite{mgb+04e}
-%(englische Version). Empfehlenswerte Skripten f"ur \LaTeX-Einsteiger sind z.B.
-%\cite{mj00} und \cite{mj95}. Sie sind frei im Internet verf"ugbar.
+%(englische Version). Empfehlenswerte Skripten für \LaTeX-Einsteiger sind z.B.
+%\cite{mj00} und \cite{mj95}. Sie sind frei im Internet verfügbar.
 
 
 
 % Literaturverzeichnis
-% Das Literaturverzeichnis kann auch nach einem allf"alligen Anhang positiioniert werden (siehe "`Leitfaden f"ur Bachelor- und Diplomarbeiten"', Version 2.0, Abschnitt 2.9).
+% Das Literaturverzeichnis kann auch nach einem allfälligen Anhang positiioniert werden (siehe "`Leitfaden für Bachelor- und Diplomarbeiten"', Version 2.0, Abschnitt 2.9).
 
-% M"oglichkeit 1: Erzeugung des Literaturverzeichnisses mit BibTeX:
+% Möglichkeit 1: Erzeugung des Literaturverzeichnisses mit BibTeX:
 % Die Quellen sind in der Datei *.bib (hier Literatur.bib) einzugeben. Danach muss diese Vorlage einmal geTeXt werden, dann BibTeX angewendet werden und 
 % anschliessend nochmals zweimal geTeXt werden.
-% Im Text erfolgt die Zitierung mit dem Anker-Schl"usselwort, z.B. \cite{kop05}.
+% Im Text erfolgt die Zitierung mit dem Anker-Schlüsselwort, z.B. \cite{kop05}.
 \bibliographystyle{IEEEtran}
 \bibliography{Literatur}
 
-% M"oglichkeit 2: Erzeugung eines Literaturverzeichnisses ohne BibTeX:
+% Möglichkeit 2: Erzeugung eines Literaturverzeichnisses ohne BibTeX:
 %\begin{thebibliography}{99}
 %\bibitem[kop05]{kop05}
-%H.~Kopka, {\em LaTeX, Band 1: Einf"uhrung}, Pearson Studium, M"unchen, 3.~Auflage, 2005.
+%H.~Kopka, {\em LaTeX, Band 1: Einführung}, Pearson Studium, München, 3.~Auflage, 2005.
 %\bibitem[knu98]{knu98}
 %F.~Mittelbach, M.~Goossens, J.~Braams, D.~Carlisle, and Ch. Rowley, {\em The LaTeX Companion}, 
 %Addison-Wesley, 2nd edition, 2004.
@@ -318,28 +318,28 @@ Diese Vielfalt an verschiedenen, m"oglichen Konfigurationen und Herausforderunge
 
 % Abbildungsverzeichnis
 \listoffigures
-\addcontentsline{toc}{chapter}{Abbildungsverzeichnis} % f"ugt den Eintrag "Abbildungsverzeichnis" im Inhaltsverzeichnis hinzu
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis} % fügt den Eintrag äbbildungsverzeichnis" im Inhaltsverzeichnis hinzu
 \newpage
 
 % Tabellenverzeichnis
 %\listoftables 
-%\addcontentsline{toc}{chapter}{Tabellenverzeichnis} % f"ugt den Eintrag
+%\addcontentsline{toc}{chapter}{Tabellenverzeichnis} % fügt den Eintrag
 %"Tabellenverzeichnis" im Inhaltsverzeichnis hinzu
 %\newpage
 
-% Abk"urzungsverzeichnis
-% Bei Verwendung der Dokumentklasse "scrartcl" ist der Befehlt \addchap{Abk"urzungsverzeichnis} durch 
-% \addsec{Abk"urzungsverzeichnis} zu ersetzen
-\addchap{Abk"urzungsverzeichnis}
+% Abkürzungsverzeichnis
+% Bei Verwendung der Dokumentklasse "scrartcl" ist der Befehlt \addchap{Abkürzungsverzeichnis} durch 
+% \addsec{Abkürzungsverzeichnis} zu ersetzen
+\addchap{Abkürzungsverzeichnis}
 \hspace{-17mm}\begin{tabular}{>{\raggedleft}p{0.2\linewidth} p{0.75\linewidth} p{0.1\linewidth}}
 
 % www & World Wide Web\\
 
 \end{tabular}
 
-% Anh"ange
+% Anhänge
 %\begin{appendix}
-%\chapter[Erster Anhang]{"Uberschrift des ersten Anhangs}
+%\chapter[Erster Anhang]{überschrift des ersten Anhangs}
 
 %Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
 %\end{appendix}
