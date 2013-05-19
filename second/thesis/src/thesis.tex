@@ -74,7 +74,7 @@
 % Die Minipage wird gesetzt, damit auch mehrzeilige Titel m"oglich werden.
 \put(-32,-150){
 \begin{minipage}{14cm}
-\bfseries\huge Softwaretest von Web-Applikationen
+\bfseries\huge Software-Test von Web-Applikationen
 \end{minipage}
 }
 % Name der Autorin/des Autors eingeben:
@@ -132,33 +132,45 @@ und auch noch nicht ver"offentlicht. Ich versichere, dass die abgegebene Version
 \chapter{Einf"uhrung}
 
 \chapter{Warum Testen}
+\cite{eval_automat_webapp_test}[S. 17]
+\cite{eval_automat_webapp_test}[S. 35]
 \cite{test_large_systems}[S. 10]
+\cite{test_auto}[S. 22]
+\cite{betrieb}[S. 15]
+\cite{eval_regression}[S. 9]
 
 \chapter{Unterschiede zu klassischer Software}
-Andere Umgebung als normale Applikationen: testen von datenbanken, web servern und clientside verschiedene browser, alles über netzwerk, nicht eine technologie sondern verschiedene (JavaScript, Flash, HTML, CSS, Serverside sprache, SQL)
-\cite{testing_apps_on_web}[Foreword]
+Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server Architektur immer aus mehreren Modulen, die meist "uber Netzwerk miteinander verbunden sind, beispielsweise: 
 
-Server client model früher nur terminal server die zum anzeigen von server response genutzt wurden \cite{testing_apps_on_web}[S. 13] heute mehr logik auf dem client (JavaScript)
-Event handling is komplexer weil verschiedene events in unterschiedlicher reihenfolge auftreten können \cite{testing_apps_on_web}[S. 18]
-Mehrere laufende Instanzen sind komplex wg. sync \cite{testing_apps_on_web}[S. 20]
+\begin{itemize}
+\item Datenbank-Server
+\item Web-Server
+\item Applikations-Server
+\item Authentifizierungs-Server
+\item Web-Browser
+\end{itemize}
 
-Web UI implementation
-System integration
-server + client installation
-configuration + compability
-database
-security
-performance/load/stress
-\cite{testing_apps_on_web}[S. 29]
+Durch diesen Modularen Aufbau ist es besonders schwer einen Fehler zu lokalisieren. Der Fehler k"onnte sich z.B. im Applikations-Code befinden aber auch durch ein Netzwerkproblem entstehen. \cite{testing_apps_on_web}[Foreword]
 
-Planning + Documentation, testplan\cite{testing_apps_on_web}[S. 34]
+Au"serdem gibt es eine gr"o"sere Vielfalt an Plattformen, auf welchen die Web-Applikation ausgef"uhrt wird: Auf der Serverseite sind diese Plattformen noch vom/von der BetreiberIn festlegbar, sprich welches Betriebssystem und welche Datenbank eingesetzt wird, auf der Clientseite ist dies aber schon nicht mehr m"oglich. Die BesucherInnen der Webseite verwenden verschiedene Web-Browser auf verschiedenen Betriebssystemen, welche beide in unterschiedlichen Versionen vorliegen k"onnen. Auch k"onnen unterschiedliche Plugins und Fonts in unterschiedlichen Versionen installiert sein. \cite{testing_apps_on_web}[Foreword]
+
+Zudem verlagert sich auch immer mehr Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13]. Durch das Verwenden von \emph{Events}, welche unter anderem durch BenutzerInnen-Eingaben ausgel"ost werden k"onnen, stellt clientseitiger Code eine gr"o"sere Herausforderung f"ur den/die TesterIn dar als Serverseitiger: Events k"onnen in unterschiedlicher Reihenfolge und Kombination auftreten, manche Aktionen l"osen sogar mehrere Events aus. \cite{testing_apps_on_web}[S. 18]
+
+Eine weitere Herausforderung stellt das Instanzmodell von Web-Applikationen dar: die meisten Web-Applikationen erlauben durch das Verwenden von \emph{Cookies} mehrere Instanzen der Applikation, die jedoch unter der gleichen Session ausgef"uhrt werden. Dies kann zu Synchronisationsproblemen zwischen den einzelnen Instanzen f"uhren, z.B. kann in einer Instanz ein Eintrag gel"oscht werden, der durch eine fehlerhafte Synchronisation f"ur die andere Instanz jedoch noch immer existiert und in weiterer Folge zu Fehlern f"uhren kann. \cite{testing_apps_on_web}[S. 20]
+
+Diese Vielfalt an verschiedenen, m"oglichen Konfigurationen und Herausforderungen erfordert eine neue Herangehensweise an das Thema Software-Test: Die bestehenden Techniken sind \glqq zwar auch notwendig, aber nicht ausreichend, um die Qualit"at der Applikation sicherzustellen\glqq\\ \cite{eval_automat_webapp_test}[S. 18]
 
 
 
 \chapter{Testplan}
+Planning + Documentation, testplan\cite{testing_apps_on_web}[S. 34]
+\cite{test_auto}[S. 3]
 \chapter{Unit Test}
 \chapter{Integration Test}
+\cite{process_oop}[S. 30]
 \chapter{Acceptance Test}
+
+\cite{test_auto}[S. 11]
 
 Development acceptance tests:
 * Release acceptance tests (smoke tests): mainstream data + mainstream funktionen \cite{testing_apps_on_web}[S. 36]
