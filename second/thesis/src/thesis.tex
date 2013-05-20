@@ -134,9 +134,16 @@ Creation and execution of automatic web application tests is different from test
 % \chapter[Kurzform]{Lange überschrift}
 \chapter{Einführung}
 
-Durch die zunehmende Verbreitung von Smartphones und anderen mobilen Geräten erfährt der Markt für Software-Applikationen eine zunehmende Fragmentierung \cite{smartphone}[S. 1]. Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Toolkits und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
+Durch die zunehmende Verbreitung von Smartphones und anderen mobilen Geräten erfährt der Markt für Software-Applikationen eine zunehmende Fragmentierung \cite{smartphone}[S. 1]. Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
 
-Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikationsplattform immer attraktiver und bestimmte Software-Tools wie PhoneGap \cite{phonegap} erlauben dem/der EntwicklerIn sogar eine plattformübergreifende Mobil-Applikationen auf Basis von Web-Technoligien zu erstellen, welche sich nahtlos in das System integrieren. Durch die Verwendung unterschiedlicher Web-Browser erhöht sich jedoch auch die Fehler-Rate der Applikation. 
+Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikations-Plattform immer attraktiver. Zudem erlauben Software-Tools wie PhoneGap \cite{phonegap} dem/der EntwicklerIn eine plattformübergreifende Mobil-Applikationen auf Basis von Web-Technoligien zu erstellen, welche sich nahtlos in das System integrieren. 
+
+\section{Problemstellung}
+Durch die Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch der Testaufwand der Applikation. Die Browser implementieren die vom W3C vorgeschlagenen Standards ab und zu anders und in unterschiedlicher Geschwindigkeit. Nicht selten kommt es vor, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erfordern. \cite{caniuse}
+
+Ein weiteres Problem ist das verhaltene Upgradeverhalten der NutzerInnen. Im Falle des Internet Explorers 7 brauchte es z.B. nach dem Release 19 Monate bis die hälfte der NutzerInnen des Internet Explorers die neue Version verwendeten. \cite{insecure}[S. 3]
+
+Durch diese Fragmentierung entsteht bei Web-Applikationen ein erhöhter Testbedarf.
 
 \section{Lösungsansatz}
 Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um die höhere Komplexität von Web-Applikationen ausreichend abdecken zu können. 
@@ -351,7 +358,8 @@ chapter{Testplan}
 \addchap{Abkürzungsverzeichnis}
 \hspace{-17mm}\begin{tabular}{>{\raggedleft}p{0.2\linewidth} p{0.75\linewidth} p{0.1\linewidth}}
 
-% www & World Wide Web\\
+www & World Wide Web\\
+W3C & World Wide Web Consortium\\
 
 \end{tabular}
 
