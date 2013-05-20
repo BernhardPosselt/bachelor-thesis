@@ -155,21 +155,25 @@ Die implementierten Testfälle müssen auch regelmäßig gewartet und aktualisie
 Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementation zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden. \cite{test_auto}[S. 2]
 
 \section{Vorteile von automatisierten Tests}
+Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann sich durch das manuelle Testen der immer gleichen Tests schnell eine gewisse Eintönigkeit einstellen. Das wiederum kann unter anderem dazu führen, dass Tester bestimmte Tests nicht korrekt oder ineffizient ausführen. 
+
+Dieses Problem kann durch eine Automatisierung des Testprozesses gelöst werden. Die Automatisierung erlaubt zudem bei zukünftigen Testdurchläufen eine Reduzierung auf ein Minimum des ursprünglichen Zeitaufwandes. Daher sollte versucht werden, möglichst viele dieser Tests zu automatisieren. \cite{test_auto}[S. 22-23]
 
 
-
-\cite{test_large_systems}[S. 10]
+%\cite{test_large_systems}[S. 10]
 
 
 %test ist mehr als simples aufnehmen und abspielen von inputs: ist redundant und eintönig, muss automatisiert werden muss geplant werden und auch generisch sein ansonsten braucht wartung der test skripte mehr aufwand und reibereien mit kollegen wenn sie etwas ändern
-%automatisiertes monkey testing findet nur absturz bugs aber keine funktionalen bugs \cite{test_auto}[S. 22-23]
+%automatisiertes monkey testing findet nur absturz bugs aber keine funktionalen bugs 
 
-%Vorbereitung ca doppelt so hoch für automatisierten test reduziert sich aber auf minimum wenn mehrmals\cite{eval_automat_webapp_test}[S. 35]
+%Vorbereitung ca doppelt so hoch für automatisierten test reduziert sich aber auf minimum wenn mehrmals 
+
 %Tests sind über nahct möglich brauchen aber höheren wissensstand zum erstellen\cite{eval_automat_webapp_test}[S. 37]
 
+\section{Aufbau}
 
 
-\section{Unterschiede zu klassischer Software}
+\chapter{Unterschiede zu klassischer Software}
 Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server-Architektur immer aus mehreren Modulen, die meist über ein Netzwerk miteinander verbunden sind, beispielsweise: 
 
 \begin{itemize}
@@ -190,7 +194,7 @@ Eine weitere Herausforderung stellt das Session Modell von Web-Applikationen dar
 
 Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen erfordert eine neue Herangehensweise an das Thema Software-Test: Die bestehenden Techniken sind \glqq zwar auch notwendig, aber nicht ausreichend, um die Qualität der Applikation sicherzustellen\grqq\ \cite{eval_automat_webapp_test}[S. 18]
 
-\section{Aufbau}
+
 
 %\chapter{Testplan}
 %was und wo testen (hardware/software)
