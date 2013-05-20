@@ -133,12 +133,33 @@ Creation and execution of automatic web application tests is different from test
 % dort Kurzformen der Kapitelbezeichnungen mittels:
 % \chapter[Kurzform]{Lange überschrift}
 \chapter{Einführung}
+
+
+\section{Problemstellung}
 Durch die zunehmende Verbreitung von Smartphones und anderen mobilen Geräten erfährt der Markt für Software-Applikationen eine zunehmende Fragmentierung \cite{smartphone}[S. 1]. Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Toolkits und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
 
 Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikationsplattform immer attraktiver und bestimmte Software-Tools wie PhoneGap \cite{phonegap} erlauben dem/der EntwicklerIn sogar eine plattformübergreifende Mobil-Applikationen auf Basis von Web-Technoligien zu erstellen, welche sich nahtlos in das System integrieren. Durch die Verwendung unterschiedlicher Web-Browser erhöht sich jedoch auch die Fehler-Rate der Applikation. 
 
-\section{Fehler in Software-Applikationen}
-Keine Applikation ist fehlerfrei\cite{empiric_invest}[S. 9]. Diese Fehler  führen nicht nur zu unzufriedenen Kunden, sondern auch zu hohen Kosten: \glqq Im Jahr 2000 wurde in den USA ein Schaden durch Softwarefehler in der Auto- und Flugzeugindustrie von 1,8 Milliarden US-Dollar errechnet. Dies entspricht ca. 16 \% des Softwareumsatzes\grqq\\\cite{betrieb}[S. 15]
+\section{Lösungsansatz}
+Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um die höhere Komplexität von Web-Applikationen ausreichend abdecken zu können. 
+
+Diese Bachelorarbeit soll die zusätzlichen Herausforderungen beim Testen von Web-Applikationen aufzeigen. Des Weiteren soll sie einen Überblick über die Anwendung und Anpassung der drei häufigsten Testarten, den Acceptance Test, Integration Test und Unit Test im Bereich der Web-Applikationen geben.
+
+
+\section{Aufbau}
+Kapitel 2 behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt.
+
+In Kapitel 3 wird auf die Unterschiede zwischen klassischen Applikationen und Web-Applikationen und deren Einfluss auf den Testvorgang eingegangen.
+
+Kapitel 4 beschäftigt sich mit dem Thema des Acceptance Tests und wie dieser bei Web-Applikationen umgesetzt werden kann.
+
+Kaptitel 5  den Integration Test.
+
+Kapitel 6 beschäftigt sich näher mit Unit Tests von serverseitigen und clientseitigen Quellcode.
+
+
+\chapter{Warum testen}
+Keine Applikation ist fehlerfrei\cite{empiric_invest}[S. 9]. Diese Fehler  führen nicht nur zu unzufriedenen Kunden, sondern auch zu hohen Kosten: \glqq Im Jahr 2000 wurde in den USA ein Schaden durch Softwarefehler in der Auto- und Flugzeugindustrie von 1,8 Milliarden US-Dollar errechnet. Dies entspricht ca. 16 \% des Softwareumsatzes.\grqq\cite{betrieb}[S. 15]
 
 Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer aufwendigeren Applikation mit 100 Millionen Zeilen Quellcode eine durchschnittliche Anzahl von von 300.000 Fehlern ergibt \cite{eval_regression}[S. 10]. 
 
@@ -151,26 +172,20 @@ Außerdem ist es nicht erstrebenswert, die ganze Applikation mit Tests abzudecke
 
 Die implementierten Testfälle müssen auch regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\\\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und neue mögliche Fehlerfälle nicht berücksichtigen. \cite{eval_regression}[S. 12-13]
 
-\section{Testen im Projektmanagement}
-Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementation zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden. \cite{test_auto}[S. 2]
-
 \section{Vorteile von automatisierten Tests}
 Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann sich durch das manuelle Testen der immer gleichen Tests schnell eine gewisse Eintönigkeit einstellen. Das wiederum kann unter anderem dazu führen, dass Tester bestimmte Tests nicht korrekt oder ineffizient ausführen. 
 
 Dieses Problem kann durch eine Automatisierung des Testprozesses gelöst werden. Die Automatisierung erlaubt zudem bei zukünftigen Testdurchläufen eine Reduzierung auf ein Minimum des ursprünglichen Zeitaufwandes. Daher sollte versucht werden, möglichst viele dieser Tests zu automatisieren. \cite{test_auto}[S. 22-23]
 
 
-%\cite{test_large_systems}[S. 10]
+\section{Testen im Projektmanagement}
+Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementation zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden. \cite{test_auto}[S. 2]
 
+
+%\cite{test_large_systems}[S. 10]
 
 %test ist mehr als simples aufnehmen und abspielen von inputs: ist redundant und eintönig, muss automatisiert werden muss geplant werden und auch generisch sein ansonsten braucht wartung der test skripte mehr aufwand und reibereien mit kollegen wenn sie etwas ändern
 %automatisiertes monkey testing findet nur absturz bugs aber keine funktionalen bugs 
-
-%Vorbereitung ca doppelt so hoch für automatisierten test reduziert sich aber auf minimum wenn mehrmals 
-
-%Tests sind über nahct möglich brauchen aber höheren wissensstand zum erstellen\cite{eval_automat_webapp_test}[S. 37]
-
-\section{Aufbau}
 
 
 \chapter{Unterschiede zu klassischer Software}
