@@ -133,28 +133,34 @@ Creation and execution of automatic web application tests is different from test
 % dort Kurzformen der Kapitelbezeichnungen mittels:
 % \chapter[Kurzform]{Lange überschrift}
 \chapter{Einführung}
+Durch die zunehmende Verbreitung von Smartphones und anderen mobilen Geräten erfährt der Markt für Software-Applikationen eine zunehmende Fragmentierung \cite{smartphone}[S. 1]. Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Toolkits und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
 
+Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikationsplattform immer attraktiver und bestimmte Software-Tools wie PhoneGap \cite{phonegap} erlauben dem/der EntwicklerIn sogar eine plattformübergreifende Mobil-Applikationen auf Basis von Web-Technoligien zu erstellen, welche sich nahtlos in das System integrieren. Durch die Verwendung unterschiedlicher Web-Browser erhöht sich jedoch auch die Fehler-Rate der Applikation. 
+
+\section{Fehler in Software-Applikationen}
+Keine Applikation ist fehlerfrei\cite{empiric_invest}[S. 9]. Diese Fehler  führen nicht nur zu unzufriedenen Kunden, sondern auch zu hohen Kosten: \glqq Im Jahr 2000 wurde in den USA ein Schaden durch Softwarefehler in der Auto- und Flugzeugindustrie von 1,8 Milliarden US-Dollar errechnet. Dies entspricht ca. 16 \% des Softwareumsatzes\grqq\\\cite{betrieb}[S. 15]
+
+Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer aufwendigeren Applikation mit 100 Millionen Zeilen Quellcode eine durchschnittliche Anzahl von von 300.000 Fehlern ergibt \cite{eval_regression}[S. 10]. 
+
+Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und es in den Software-Entwicklungsprozess zu integrieren \cite{betrieb}[S. 16]. 
+
+\section{Vorteile von Tests}
+Das Vorhandensein von Tests kann jedoch niemals eine komplett fehlerfreie Software garantieren, denn: Nur eine Abwesenheit von bestimmten Fehlern kann garantiert werden, nämlich jenen, die explizit mit Tests abgedeckt werden. \cite{eval_regression}[S. 12]
+
+Außerdem ist es nicht erstrebenswert, die ganze Applikation mit Tests abzudecken, da dies zu hohen Entwicklungskosten führen kann. Idealerweise werden daher nur jene kritischen Fälle mit Tests abgedeckt, deren Fehlerkosten die Kosten für die Erstellung der Tests übertreffen. \cite{eval_regression}[S. 12]
+
+Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementation zu gewinnen: Sie geben dem/der EntwicklerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation.
 
 \section{Vorteile von automatisierten Tests}
 
+
+
 \cite{test_large_systems}[S. 10]
 
-%testen wichtig weil vieles in unserem leben von software gesteuert wird und man darauf verlassen muss
-%Hohe kosten, bsp ariane 5 raketen absturz wegen software fehler weil code von ariane 4 übernommen und nicht getestet wurde \cite{eval_regression}[S. 9]
-
-%fehler für behebung von ausgelieferter software rund 13h, fehlerrate ca 3 pro 1000 anweisungen, 3000 fehler bei projekt mit 1 million loc \cite{eval_regression}[S. 10]
-
-%abwesenheit von fehlern kann nicht geprüft werden sondern zeigt nur anwesenheit von fehlern, vollstandiges testen unmöblich daher immer auswahl, auswahl so treffen dass testen weniger kostet als beheben der auftretenden fehler\cite{eval_regression}[S. 12-13]
-
-%Im Jahr 2000 Auto + Flugzeug industrie Schaden von 1,8 Milliarden US-Dollar durch Software Fehler -> 16\% des Umsatzes \cite{betrieb}[S. 15]
-
-%Qualität muss bestandteil des prozesses sein \cite{betrieb}[S. 16] entsteht während der entwicklung, sehr selten bis unmöglich am ende einzubauen \cite{betrieb}[S. 11] 
-
-%früh gefundene Fehler lässt sich mit weniger resourcen beheben als wenn später \cite{betrieb}[S. 17] 
 
 %direktes feedback an den entwickler ob es funktioniert \cite{test_auto}[S. 2]
 
-%testen um produkt qualität zu messen, testen ob alle anforderungen korrekt funtkionieren, fehler erkennen bevor kunde in fehler rennt \cite{test_auto}[S. 3]
+%testen um produkt qualität zu messen, testen ob alle anforderungen korrekt funtkionieren, fehler erkennen bevor kunde in fehler rennt 
 
 %test ist mehr als simples aufnehmen und abspielen von inputs: ist redundant und eintönig, muss automatisiert werden muss geplant werden und auch generisch sein ansonsten braucht wartung der test skripte mehr aufwand und reibereien mit kollegen wenn sie etwas ändern
 %automatisiertes monkey testing findet nur absturz bugs aber keine funktionalen bugs \cite{test_auto}[S. 22-23]
@@ -181,9 +187,9 @@ Außerdem gibt es eine größere Vielfalt an Plattformen, auf welchen Web-Applik
 
 Zudem verlagert sich auch immer mehr Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13]. Durch das Verwenden von \emph{Events}, welche unter anderem durch BenutzerInnen-Eingaben ausgelöst werden können, stellt clientseitiger Code eine größere Herausforderung für den/die TesterIn dar als Serverseitiger: Events können in unterschiedlicher Reihenfolge und Kombination auftreten, manche Aktionen lösen sogar mehrere Events aus. \cite{testing_apps_on_web}[S. 18]
 
-Eine weitere Herausforderung stellt das Session Modell von Web-Applikationen dar: viele Web-Applikationen verwenden nur eine Session pro NutzerIn, erlauben aber mehrere aktive Logins. Werden mehrere Instanzen der Applikation gestartet - z.B. loggt sich der/die NutzerIn auf dem Handy und dem Laptop auf der Webseite ein - kann dies zu Synchronisationsproblemen zwischen den einzelnen Instanzen führen: Wird in einer Instanz ein Eintrag gelöscht, kann dieser durch eine fehlerhafte Synchronisation in einer andere Instanz immer noch existieren und in weiterer Folge zu Fehlern führen. \cite{testing_apps_on_web}[S. 20]
+Eine weitere Herausforderung stellt das Session Modell von Web-Applikationen dar: viele Web-Applikationen verwenden nur eine Session pro NutzerIn, erlauben aber mehrere gleichzeitige Logins. Werden mehrere Instanzen der Applikation gestartet - z.B. loggt sich der/die NutzerIn auf dem Mobiltelefon und dem Laptop auf der Webseite ein - kann dies zu Synchronisationsproblemen zwischen den einzelnen Instanzen führen: Wird in einer Instanz ein Eintrag gelöscht, kann dieser durch eine fehlerhafte Synchronisation in einer andere Instanz immer noch existieren und in weiterer Folge zu Fehlern führen. \cite{testing_apps_on_web}[S. 20]
 
-Diese Vielfalt an verschiedenen, möglichen Konfigurationen und Herausforderungen erfordert eine neue Herangehensweise an das Thema Software-Test: Die bestehenden Techniken sind \glqq zwar auch notwendig, aber nicht ausreichend, um die Qualität der Applikation sicherzustellen\grqq\ \cite{eval_automat_webapp_test}[S. 18]
+Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen erfordert eine neue Herangehensweise an das Thema Software-Test: Die bestehenden Techniken sind \glqq zwar auch notwendig, aber nicht ausreichend, um die Qualität der Applikation sicherzustellen\grqq\ \cite{eval_automat_webapp_test}[S. 18]
 
 \section{Aufbau}
 
