@@ -136,19 +136,18 @@ Creation and execution of automatic web application tests is different from test
 
 Durch die zunehmende Verbreitung von Smartphones und anderen mobilen Geräten erfährt der Markt für Software-Applikationen eine zunehmende Fragmentierung \cite{smartphone}[S. 1]. Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
 
-Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikations-Plattform immer attraktiver. Zudem erlauben Software-Tools wie PhoneGap \cite{phonegap} dem/der EntwicklerIn eine plattformübergreifende Mobil-Applikation auf Basis von Web-Technoligien zu erstellen, welche sich nahtlos in das System integrieren. 
+Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikations-Plattform immer attraktiver. Zudem erlauben Frameworks wie PhoneGap \cite{phonegap} dem/der EntwicklerIn eine plattformübergreifende Mobil-Applikation auf Basis von Web-Technologien zu erstellen, welche sich nahtlos in das System integrieren. 
 
 \section{Problemstellung}
-Durch die Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch der Testaufwand der Applikation. Die Browser implementieren die vom W3C vorgeschlagenen Standards ab und zu anders und in unterschiedlicher Geschwindigkeit. Nicht selten kommt es vor, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erfordern. \cite{caniuse}
+Aufgrund der Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch der Testaufwand der Applikation. Die Browser implementieren die vom W3C vorgeschlagenen Standards ab und zu anders und in unterschiedlicher Geschwindigkeit. Nicht selten kommt es vor, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erfordern. \cite{caniuse}
 
-Ein weiteres Problem ist das verhaltene Upgradeverhalten der NutzerInnen. Im Falle des Internet Explorers 7 brauchte es z.B. nach dem Release 19 Monate bis die hälfte der NutzerInnen des Internet Explorers die neue Version verwendeten. \cite{insecure}[S. 3]
+Ein weiteres Problem ist das verhaltene Upgradeverhalten der NutzerInnen. Im Falle des Internet Explorers 7 dauerte es mehr als 19 Monate bis rund die Hälfte der NutzerInnen auf die neue Version umgestiegen sind. \cite{insecure}[S. 3]
 
-Durch diese Fragmentierung entsteht bei Web-Applikationen ein erhöhter Testbedarf.
 
 \section{Lösungsansatz}
-Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um die höhere Komplexität von Web-Applikationen ausreichend abdecken zu können. 
+Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um der höheren Komplexität von Web-Applikationen gerecht zu werden. 
 
-Diese Bachelorarbeit soll die zusätzlichen Herausforderungen beim Testen von Web-Applikationen aufzeigen. Des Weiteren soll sie einen Überblick über die Anwendung und Anpassung der drei häufigsten Testarten - den Acceptance Test, Integration Test und Unit Test - im Bereich der Web-Applikationen geben.
+Diese Bachelorarbeit soll die zusätzlichen Herausforderungen beim Testen von Web-Applikationen aufzeigen. Des Weiteren soll sie einen Überblick über mögliche Anwendungen und Anpassungen der drei häufigsten Testarten - den Acceptance Tests, Integration Tests und Unit Tests - im Bereich der Web-Applikationen geben.
 
 
 \section{Aufbau}
@@ -162,18 +161,18 @@ Kapitel 5 beschäftigt sich mit dem Thema des Acceptance Tests und wie dieser be
 
 Kaptitel 6 nimmt sich des Themas des Integration Tests an und zeigt dessen Einsatzzweck bei Web-Applikationen.
 
-Kapitel 7 beschäftigt sich näher mit der Verwendung von Unit Tests, welche serverseitigen und clientseitigen Quellcode abdecken.
+Kapitel 7 beschäftigt sich näher mit dem praktischen Einsatz von Unit Tests, welche serverseitigen und clientseitigen Quellcode abdecken.
 
 
 \chapter{Warum testen}
 Keine Applikation ist fehlerfrei\cite{empiric_invest}[S. 9]. Diese Fehler  führen nicht nur zu unzufriedenen Kunden, sondern auch zu hohen Kosten: \glqq Im Jahr 2000 wurde in den USA ein Schaden durch Softwarefehler in der Auto- und Flugzeugindustrie von 1,8 Milliarden US-Dollar errechnet. Dies entspricht ca. 16 \% des Softwareumsatzes.\grqq\cite{betrieb}[S. 15]
 
-Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer aufwendigeren Applikation mit 100 Millionen Zeilen Quellcode eine durchschnittliche Anzahl von von 300.000 Fehlern ergibt \cite{eval_regression}[S. 10]. 
+Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer aufwendigeren Applikation mit 100 Millionen Zeilen Quellcode eine durchschnittliche Anzahl von 300.000 Fehlern ergibt \cite{eval_regression}[S. 10]. 
 
-Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und es in den Software-Entwicklungsprozess zu integrieren \cite{betrieb}[S. 16]. 
+Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und den Software-Entwicklungsprozess dementsprechend anzupassen \cite{betrieb}[S. 16]. 
 
 \section{Grenzen von Software-Tests}
-Das Vorhandensein von Tests kann jedoch niemals eine komplett fehlerfreie Software garantieren, nur eine Abwesenheit von bestimmten Fehlern kann garantiert werden, nämlich jenen, die explizit mit Tests abgedeckt werden. \cite{eval_regression}[S. 12]
+Das Vorhandensein von Tests kann niemals eine komplett fehlerfreie Software garantieren, nur eine Abwesenheit von bestimmten Fehlern kann garantiert werden, nämlich jenen, die explizit mit Tests abgedeckt werden. \cite{eval_regression}[S. 12]
 
 Außerdem ist es nicht erstrebenswert, die ganze Applikation mit Tests abzudecken, da dies zu zu hohen Entwicklungskosten führen kann. Idealerweise werden daher nur jene kritischen Fälle mit Tests abgedeckt, deren Fehlerkosten die Kosten für die Erstellung der Tests übertreffen. \cite{eval_regression}[S. 12]
 
