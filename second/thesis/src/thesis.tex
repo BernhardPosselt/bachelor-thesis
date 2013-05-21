@@ -249,9 +249,61 @@ Da die Entwicklung der Applikation meistens mit einem hohen Zeitdruck verbunden 
 
 
 \chapter{Unit Test}
+% Tested module und komponenten kleinste teile und routinen der software
+% erlaubt eine reduzierung der komplexität und aufspalten in kleinere probleme
+% erlaubt frühes testen da keine kompletten module da sein müssen
+% zeigt schwer zu verwendende interfaces auf
+% Schnell und genau ausführbar
+% Isoliert und unabhängigkeit von einander ausführbar erlaubt paralellisierung
+% wird vom entwickler der daran arbeitet selbst durchgeführt
+% überprüft die spezifikation einer methoden/funktion
+% kann keine kommunikation testen, abhängigkeiten werden mit mocks ersetzt
+%\cite{test_large_systems}[S. 52]
+
+
+% whitebox test sprich quellcode und implementation ist bekannt
+%\cite{betrieb}[S. 26]
+
+% todo: beispiel phpunit test, jasmine test
+
 \chapter{Integration Test}
+% Tested Subsysteme (beinhaltet merhere module), Diese Subsysteme werden dann auch zusammengesetzt und zusammengetestet
+% da unittest schon genauen funktionen getestet hat richtet sich der integration test eher an die kommunikation zw. den elementen und deren interfaces
+% kann in inkrementelle tests und nicht inkrementelle tests (vorgehensorientierte, zieldefinierte) aufgespaltet werden (sprich ob jedes modul einzeln getestet wird oder die module auf die vorigen getestet module a)
+%\cite{test_large_systems}[S. 53-54]
+
+% kann nicht durch unittests ersetzt werden
+%\cite{betrieb}[S. 28]
+
+% Gibt keine allgemeingültige strategie, hängt von projekt ab
+%\cite{betrieb}[S. 29]
+
+% todo: phpunit integration test, jasmine integration test
+
 \chapter{System Test}
+
+% testet das gesamtsystem 
+% funktionale und nicht funktionale tests aber eher nicht funktionale \cite{test_large_systems}[S. 60]
+% auf installationsumgebung getestet
+% oft schwierig weil es auf produktivsystem des kunden läuft
+% testet abläufe auf unterschiedlichen betriebssystemen + configs
+% installation
+% security
+% 
+%\cite{betrieb}[S. 30-31]
+
+% manueller test möglich, die dokumentation kann auch damit durchgetestet werden
+%
+%\cite{test_large_systems}[S. 60]
+
+
+% todo: gherkin + chef beispiele
+
 \chapter{Acceptance Test}
+
+% test von kunden auf vertragliche richtlinien, oft stark kunde miteinbezogen
+% benutzbarkeit
+
 %\cite{eval_regression}[S. 28]
 %
 %\cite{test_auto}[S. 11]
