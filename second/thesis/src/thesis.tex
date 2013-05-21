@@ -147,7 +147,7 @@ Ein weiteres Problem ist das verhaltene Upgradeverhalten der NutzerInnen. Im Fal
 \section{Lösungsansatz}
 Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um der höheren Komplexität von Web-Applikationen gerecht zu werden. 
 
-Diese Bachelorarbeit soll die zusätzlichen Herausforderungen beim Testen von Web-Applikationen aufzeigen. Des Weiteren soll sie einen Überblick über mögliche Anwendungen und Anpassungen der drei häufigsten Testarten - den Acceptance Tests, Integration Tests und Unit Tests - im Bereich der Web-Applikationen geben.
+Diese Bachelorarbeit soll die zusätzlichen Herausforderungen beim Testen von Web-Applikationen aufzeigen. Des Weiteren soll sie einen Überblick über mögliche Anwendungen und Anpassungen der drei häufigsten Testarten - den Unit Tests, Integration Tests, System Tests und Acceptance Tests - im Bereich der Web-Applikationen geben.
 
 
 \section{Aufbau}
@@ -157,12 +157,14 @@ In Kapitel 3 wird auf die Unterschiede zwischen klassischen Applikationen und We
 
 Kapitel 4 beschreibt die Planung und den Ablauf des Testprozesses durch die Verwendung eines Testplanes.
 
-Kapitel 5 beschäftigt sich mit dem Thema des Acceptance Tests und wie dieser bei Web-Applikationen umgesetzt werden kann.
+
+Kapitel 5 beschäftigt sich näher mit dem praktischen Einsatz von Unit Tests, welche serverseitigen und clientseitigen Quellcode abdecken.
 
 Kaptitel 6 nimmt sich des Themas des Integration Tests an und zeigt dessen Einsatzzweck bei Web-Applikationen.
 
-Kapitel 7 beschäftigt sich näher mit dem praktischen Einsatz von Unit Tests, welche serverseitigen und clientseitigen Quellcode abdecken.
+Kaptitel 7 behandelt den Systemtest und dem Test der verschiedenen Plattformen.
 
+Kapitel 8 beschäftigt sich mit dem Thema des Acceptance Tests und wie dieser bei Web-Applikationen umgesetzt werden kann.
 
 \chapter{Warum testen}
 Keine Applikation ist fehlerfrei\cite{empiric_invest}[S. 9]. Diese Fehler  führen nicht nur zu unzufriedenen Kunden, sondern auch zu hohen Kosten: \glqq Im Jahr 2000 wurde in den USA ein Schaden durch Softwarefehler in der Auto- und Flugzeugindustrie von 1,8 Milliarden US-Dollar errechnet. Dies entspricht ca. 16 \% des Softwareumsatzes.\grqq\cite{betrieb}[S. 15]
@@ -246,8 +248,9 @@ Da die Entwicklung der Applikation meistens mit einem hohen Zeitdruck verbunden 
 \end{itemize}
 
 
-
-
+\chapter{Unit Test}
+\chapter{Integration Test}
+\chapter{System Test}
 \chapter{Acceptance Test}
 %\cite{eval_regression}[S. 28]
 %
@@ -281,8 +284,7 @@ Da die Entwicklung der Applikation meistens mit einem hohen Zeitdruck verbunden 
 %test ist mehr als simples aufnehmen und abspielen von inputs: ist redundant und eintönig, muss automatisiert werden muss geplant werden und auch generisch sein ansonsten braucht wartung der test skripte mehr aufwand und reibereien mit kollegen wenn sie etwas ändern
 %automatisiertes monkey testing findet nur absturz bugs aber keine funktionalen bugs 
 
-\chapter{Integration Test}
-\chapter{Unit Test}
+
 \chapter{Zusammenfassung}
 % \cite{process_oop}[S. 30]
 
