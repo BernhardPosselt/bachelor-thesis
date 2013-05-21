@@ -172,9 +172,9 @@ Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer 
 Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und den Software-Entwicklungsprozess dementsprechend anzupassen \cite{betrieb}[S. 16]. 
 
 \section{Grenzen von Software-Tests}
-Das Vorhandensein von Tests kann niemals eine komplett fehlerfreie Software garantieren, nur eine Abwesenheit von bestimmten Fehlern kann garantiert werden, nämlich jenen, die explizit mit Tests abgedeckt werden. \cite{eval_regression}[S. 12]
+Das Vorhandensein von Tests kann niemals eine komplett fehlerfreie Software garantieren, nur eine Abwesenheit von bestimmten Fehlern kann garantiert werden, nämlich jenen, die explizit mit Tests abgedeckt werden \cite{eval_regression}[S. 12]. Dies resultiert unter anderem daraus, dass die Anforderungen an die Software oft nicht komplett spezifiziert oder ungenau sind und die Komplexität der Applikation im Laufe der Entwicklung stark ansteigt. Zusätzlich können die Testfälle durch die vielen möglichen Eingaben lediglich einen kleinen Bereich der Funktionsweise abdecken \cite{software_qual}[S. 243].
 
-Außerdem ist es nicht erstrebenswert, die ganze Applikation mit Tests abzudecken, da dies zu zu hohen Entwicklungskosten führen kann. Idealerweise werden daher nur jene kritischen Fälle mit Tests abgedeckt, deren Fehlerkosten die Kosten für die Erstellung der Tests übertreffen. \cite{eval_regression}[S. 12]
+Es ist jedoch nicht erstrebenswert, die ganze Applikation mit Tests abzudecken, da dies zu zu hohen Entwicklungskosten führen kann. Idealerweise werden daher nur jene kritischen Fälle mit Tests abgedeckt, deren Fehlerkosten die Kosten für die Erstellung der Tests übertreffen. \cite{eval_regression}[S. 12]
 
 Die implementierten Testfälle müssen auch regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\\\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und neue mögliche Fehlerfälle nicht berücksichtigen. \cite{eval_regression}[S. 12-13]
 
@@ -183,15 +183,10 @@ Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters
 
 Dieses Problem kann durch eine Automatisierung des Testprozesses gelöst werden. Die Automatisierung erlaubt zudem bei zukünftigen Testdurchläufen eine Reduzierung auf ein Minimum des ursprünglichen Zeitaufwandes. Daher sollte versucht werden, möglichst viele dieser Tests zu automatisieren. \cite{test_auto}[S. 22-23]
 
+Auch können automatisierte Tests rund um die Uhr ausgeführt werden, was eine effizientere Nutzung der Zeit garantiert.
 
 \section{Testen im Projektmanagement}
 Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementation zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden. \cite{test_auto}[S. 2]
-
-
-%\cite{test_large_systems}[S. 10]
-
-%test ist mehr als simples aufnehmen und abspielen von inputs: ist redundant und eintönig, muss automatisiert werden muss geplant werden und auch generisch sein ansonsten braucht wartung der test skripte mehr aufwand und reibereien mit kollegen wenn sie etwas ändern
-%automatisiertes monkey testing findet nur absturz bugs aber keine funktionalen bugs 
 
 
 \chapter{Unterschiede zu klassischer Software}
@@ -216,25 +211,44 @@ Eine weitere Herausforderung stellt das Session Modell von Web-Applikationen dar
 Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen erfordert eine neue Herangehensweise an das Thema Software-Test: Die bestehenden Techniken sind \glqq zwar auch notwendig, aber nicht ausreichend, um die Qualität der Applikation sicherzustellen\grqq\ \cite{eval_automat_webapp_test}[S. 18]
 
 
-
 \chapter{Testplan}
+Mit dem Erstellen des Projektplanes sollte gleichzeitig auch ein Testplan erstellt werden \cite{eval_automat_webapp_test}[S. 24]. Dieser erlaubt, den Testprozess näher zu spezifizieren, den erforderlichen Aufwand besser abschätzbar zu machen \cite{test_large_systems}[S. 18] und den Testprozess eventuell an ein externes Team auszlagern. Zusätzlich kann der Plan auch dazu verwendet werden, die Abnahmekriterien exakt zu definieren, um das Projektrisiko zu verringern. \cite{eval_automat_webapp_test}[S. 26]
+
+Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3]:
+
+\begin{itemize}
+	\item Was wird getestet, Welche Bereiche haben eine höhere Priorität als andere
+	\item Wo wird getestet, mit welchen Konfigurationen, Soft- und Hardware Plattformen respektive Versionen werden getestet
+	\item Wie wird getestet, mit welchen Tools wird getestet
+	\item Wer testet
+	\item Wie lange wird getestet, Bis wann muss ein Test erfolgreich absolviert werden
+	\item Was wird nicht getestet
+\end{itemize}
+
+Der Testplan wächst mit dem Projekt und muss demensprechend regelmäßig auf Korrektheit und Angemessenheit überprüft werden. \cite{eval_regression}[S. 25] 
+
+Um den Ablauf der Tests zu beschleunigen, sollten unnötige Testdurchläufe vermieden werden. Dies wird mit der Erstellung eines Smoke-Tests erreicht der essentielle Testszenarien durchtestet. Schlagen diese fehl, sind weitere Testdurchläufe nicht notwendig und der Testdurchlauf kann abgebrochen werden. \cite{eval_regression}[S. 25-26]
 
 
-%was und wo testen (hardware/software)
-%wann 
-%wer
+\section{Vorteile eines Testplans}
 
-%testinputs identifizieren (alles was validiert werden muss und von was die sw abhängt) auch wichtig für änderungen
-%dann testplan: ziele + sinn der tests und strategien wie man es umsetzt
-%der beinhaltet testfälle
-%dann spezifizieren wann jeder testfall funktionieren muss sprich bei welchem milestone und config spezifizieren \cite{test_auto}[S. 3-4]
+Da die Entwicklung der Applikation meistens mit einem hohen Zeitdruck verbunden ist\cite{software_qual}[S. 244], ist es wichtig, bestimmte Testfälle höher zu priorisieren als andere \cite{testing_apps_on_web}[S. 34]. Dazu werden alle essentiellen Testfälle herausgearbeitet und dokumentiert. Aufgrund der Dokumentation der Testfälle, ergeben sich zusätzlich folgende Vorteile:
+
+\begin{itemize}
+	\item Noch fehlende Testfälle können schnell erkannt werden \cite{test_large_systems}[S. 18]
+	\item Redundante Testfälle werden identifziert, Testfälle können zusammegelegt werden um Zeit zu sparen \cite{testing_apps_on_web}[S. 34]
+	\item Verschiedene Testbereiche können an mehrere Personen mit unterschiedlichen Kenntnissen verteilt werden um Personalengpässe zu vermeiden \cite{test_large_systems}[S. 19]
+	\item Ineffiziente Test-Tools und Test-Strategien können erkannt und verbessert werden \cite{eval_regression}[S. 25]
+	\item Bereiche mit einem hohen Risiko und hoher Fehleranfälligkeit werden offensichtlich \cite{testing_apps_on_web}[S. 34]. Dies ist vor allem wichtig, da Fehler ungleich verteilt sind und in bestimmten Bereichen häufiger vorkommen als in anderen \cite{eval_regression}[S. 12]
+	\item Sinnlose Testfälle und Testbereiche können aussortiert werden 
+	\item Abhängigkeiten der Testfälle untereinander und der Implementation werden transparent und erlauben schnell auf Änderungen zu reagieren\cite{test_auto}[S. 4]
+\end{itemize}
 
 
 
-%Planning + Documentation, testplan\cite{testing_apps_on_web}[S. 34]
-%\cite{test_auto}[S. 3]
 
 \chapter{Acceptance Test}
+%\cite{eval_regression}[S. 28]
 %
 %\cite{test_auto}[S. 11]
 %
@@ -261,6 +275,10 @@ Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen
 % * External beta tests \cite{testing_apps_on_web}[S. 46]
 % * Secuirty tests
 % * Unit tests
+%\cite{test_large_systems}[S. 10]
+
+%test ist mehr als simples aufnehmen und abspielen von inputs: ist redundant und eintönig, muss automatisiert werden muss geplant werden und auch generisch sein ansonsten braucht wartung der test skripte mehr aufwand und reibereien mit kollegen wenn sie etwas ändern
+%automatisiertes monkey testing findet nur absturz bugs aber keine funktionalen bugs 
 
 \chapter{Integration Test}
 \chapter{Unit Test}
