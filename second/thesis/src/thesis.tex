@@ -133,16 +133,22 @@ Creation and execution of automatic web application tests is different from test
 % dort Kurzformen der Kapitelbezeichnungen mittels:
 % \chapter[Kurzform]{Lange überschrift}
 \chapter{Einführung}
-
-Durch die zunehmende Verbreitung von Smartphones und anderen mobilen Geräten erfährt der Markt für Software-Applikationen eine zunehmende Fragmentierung \cite{smartphone}[S. 1]. Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
+Der Markt für elektronische Geräte hat in den letzten Jahren ein rasantes Wachstum erlebt, vor allem im Bereich der mobilen Geräte. Im Jahr 2011 wurden erstmals mehr mobile Geräte verkauft als PCs \ref{Abb1}.
+Durch dieses Wachstum dehnt sich auch der Markt für Software-Applikationen auch auf mobile Geräte aus, welche zum Großteil andere Betriebssysteme und Applikations-Frameworks verwenden als traditionelle Computer \ref{Abb2}. Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=120mm]{img/globaldevicesales.png}
-\caption[Entwicklung der PC und Mobilgerätverkäufe]{Entwicklung der PC und Mobilgerätverkäufe, Quelle: The Future Of Mobile, Henry Blodget. Zahlen von Gartner, IDC, Strategy Analytics, company filings, BI Intelligence estimates}\label{Abb1}
+\includegraphics[width=130mm]{img/globaldevicesales.png}
+\caption[Entwicklung der PC und Mobilgerätverkäufe]{Entwicklung der PC und Mobilgerätverkäufe \cite{devicesales}[S. 6]}\label{Abb1}
 \end{figure}
 
 Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikations-Plattform immer attraktiver. Zudem erlauben Frameworks wie PhoneGap \cite{phonegap} dem/der EntwicklerIn eine plattformübergreifende Mobil-Applikation auf Basis von Web-Technologien zu erstellen, welche sich nahtlos in das System integrieren. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=100mm]{img/operatingsystems.png}
+\caption[Marktanteil mobiler Betriebssysteme]{Marktanteil mobiler Betriebssysteme \cite{smartphone}[S. 22]}\label{Abb2}
+\end{figure}
 
 % TODO: grafik mit verteilung der OS, prognose? 
 
@@ -152,13 +158,13 @@ Aufgrund der Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch
 Ein weiteres Problem ist das verhaltene Upgradeverhalten der NutzerInnen. Im Falle des Internet Explorers 7 dauerte es mehr als 19 Monate bis rund die Hälfte der NutzerInnen auf die neue Version umgestiegen sind. \cite{insecure}[S. 3]
 
 
-
 \section{Lösungsansatz}
 Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um der höheren Komplexität von Web-Applikationen gerecht zu werden. 
 
-Diese Bachelorarbeit soll die zusätzlichen Herausforderungen beim Testen von Web-Applikationen aufzeigen. Des Weiteren soll sie einen Überblick über mögliche Anwendungen und Anpassungen der drei häufigsten Testarten - den Unit Tests, Integration Tests, System Tests und Acceptance Tests - im Bereich der Web-Applikationen geben.
+Diese Bachelorarbeit soll die zusätzlichen Herausforderungen beim Testen von Web-Applikationen aufzeigen. Des Weiteren soll sie einen Überblick über mögliche Anwendungen und Anpassungen der vier häufigsten Testarten - den Unit Tests, Integration Tests, System Tests und Acceptance Tests - im Bereich der Web-Applikationen geben.
 
-%innovationsfaktor reinbringen der arbeit
+Dazu wird anhand eines Projektes eine Test-Strategie erarbeitet und Beispiele für Tests gegeben.
+
 
 \section{Aufbau}
 % TODO: mehr text, nicht immer mit kapitel X anfangen
@@ -214,10 +220,11 @@ Es ist jedoch nicht erstrebenswert, die ganze Applikation mit Tests abzudecken, 
 Die implementierten Testfälle müssen auch regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\\\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und neue mögliche Fehlerfälle nicht berücksichtigen. \cite{eval_regression}[S. 12-13]
 
 \chapter{Testplan}
-% TODO: 4.1 ohne 4.2 gibt es nicht, besser strukturieren, PDCA reinbringen? ablauf des testplans stärker hervorheben
+% TODO: PDCA reinbringen? ablauf des testplans stärker hervorheben
 
 Mit dem Erstellen des Projektplanes sollte gleichzeitig auch ein Testplan erstellt werden \cite{eval_automat_webapp_test}[S. 24]. Dieser erlaubt, den Testprozess näher zu spezifizieren und somit den erforderlichen Aufwand besser abschätzen zu können \cite{test_large_systems}[S. 18] und den Testprozess eventuell an ein externes Team auszulagern. Zusätzlich kann der Plan auch dazu verwendet werden, die Abnahmekriterien exakt zu definieren, um das Projektrisiko zu verringern. \cite{eval_automat_webapp_test}[S. 26]
 
+\section{Aufbau}
 Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3]:
 
 \begin{itemize}
