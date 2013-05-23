@@ -207,7 +207,25 @@ Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikati
 
 Zudem ist eine Abschätzung riskanter Bereiche möglich, die durch eine erhöhten Testbedarf bestimmter Bereiche offensichtlich wird. \cite{testing_apps_on_web}[S. 34]
 
-% TODO: ablauf reinbringen + grafik
+
+\section{Einteilung der Tests anhand des V-Modells}
+Eines der bekanntesten Testmodelle stellt das V-Modell dar \ref{Abb3}. Dies unterteilt die verschiedenen Testbereiche in vier Kategorien: 
+
+\begin{itemize}
+	\item Unit Test
+	\item Integration Test
+	\item System Test
+	\item Acceptance Test
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=120mm]{img/vmodel.png}
+\caption[Schematische Darstellung des V-Modells]{Schematische Darstellung des V-Modells \cite{vmodel}[S. 3]}\label{Abb3}
+\end{figure}
+
+Im linken Berech befinden sich die jeweiligen Schritte zur Erstellung der Applikation. Diesen gegenübergestellt werden die jeweiligen Testarten. Damit soll veranschaulicht werden, dass der Testprozess kein in sich geschlossener Abschnitt ist, sondern sich stark in den Entwicklungsprozess integriert \cite{betrieb}[S. 23]
+
 
 
 \section{Grenzen von Software-Tests}
@@ -273,14 +291,14 @@ Eine Web-Applikationen unterscheidet sich an mehreren Stellen von einer klassich
 
 \section{Modularer Aufbau}
 
-Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server-Architektur immer aus mehreren Modulen \ref{Abb3}, die meist über ein Netzwerk miteinander verbunden sind.
+Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server-Architektur immer aus mehreren Modulen \ref{Abb4}, die meist über ein Netzwerk miteinander verbunden sind.
 
 Durch diesen modularen Aufbau ist es besonders schwer einen Fehler zu lokalisieren. Ein Fehler kann z.B. durch einen Fehler im Quellcode des Applikations-Servers oder durch ein Netzwerkproblem entstanden sein. \cite{testing_apps_on_web}[Foreword]
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=50mm]{img/webstack.png}
-\caption[Schematischer Aufbau einer Web-Applikation]{Schematischer Aufbau einer Web-Applikation}\label{Abb3}
+\caption[Schematischer Aufbau einer Web-Applikation]{Schematischer Aufbau einer Web-Applikation}\label{Abb4}
 \end{figure}
 
 \section{Unterstützung mehrerer Plattformen}
