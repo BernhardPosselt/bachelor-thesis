@@ -215,14 +215,13 @@ Das Vorhandensein von Tests kann niemals eine komplett fehlerfreie Software gara
 
 Es ist jedoch nicht erstrebenswert, die ganze Applikation mit Tests abzudecken, da dies zu zu hohen Entwicklungskosten führen kann. Idealerweise werden daher nur jene kritischen Fälle mit Tests abgedeckt, deren Fehlerkosten die Kosten für die Erstellung der Tests übertreffen. \cite{eval_regression}[S. 12]
 
-Die implementierten Testfälle müssen auch regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\\\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und neue mögliche Fehlerfälle nicht berücksichtigen. \cite{eval_regression}[S. 12-13]
+Die implementierten Testfälle müssen auch regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und neue mögliche Fehlerfälle nicht berücksichtigen. \cite{eval_regression}[S. 12-13]
 
 \chapter{Testplan}
-% TODO: PDCA reinbringen? ablauf des testplans stärker hervorheben
 
 Mit dem Erstellen des Projektplanes sollte gleichzeitig auch ein Testplan erstellt werden \cite{eval_automat_webapp_test}[S. 24]. Dieser erlaubt, den Testprozess näher zu spezifizieren und somit den erforderlichen Aufwand besser abschätzen zu können \cite{test_large_systems}[S. 18] und den Testprozess eventuell an ein externes Team auszulagern. Zusätzlich kann der Plan auch dazu verwendet werden, die Abnahmekriterien exakt zu definieren, um das Projektrisiko zu verringern. \cite{eval_automat_webapp_test}[S. 26]
 
-\section{Aufbau}
+\section{Inhalt}
 Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3]:
 
 \begin{itemize}
@@ -234,14 +233,22 @@ Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3
 	\item Was wird nicht getestet?
 \end{itemize}
 
-Der Testplan wächst mit dem Projekt und muss demensprechend regelmäßig auf Korrektheit und Angemessenheit überprüft werden. \cite{eval_regression}[S. 25] 
 
-Um den Ablauf der Tests zu beschleunigen, sollten unnötige Testdurchläufe vermieden werden. Dies wird mit der Erstellung eines Smoke-Tests erreicht der essentielle Testszenarien durchtestet. Schlagen diese fehl, sind weitere Testdurchläufe nicht notwendig und der Testdurchlauf kann abgebrochen werden. \cite{eval_regression}[S. 25-26]
+\section{Ablauf}
+Da die Entwicklung der Applikation meistens mit einem hohen Zeitdruck verbunden ist\cite{software_qual}[S. 244] und der Testprozess zudem teuer ist \cite{eval_regression}[S. 24], ist es wichtig, die Testfälle heraus zu arbeiten, zu priorisieren und effektiv zu verteilen. Des Weiteren werden Endkriterien für die Tests veranschlagt und die optimale Teststrategie gewählt.
+
+Danach folgt die Überprüfung des Testplans. Hier wird überprüft ob die einzelnen Testfälle genau genug beschrieben worden sind, um daraus die jeweiligen Testfälle erstellen zu können und ob die Teststrategien angemessen sind. Da die gesamten Anforderungen an die Applikation oft erst im Laufe des Projektes klar werden, muss der Testplan regelmäßig auf Korrektheit und Angemessenheit überprüft und dementsprechend angepasst werden. \cite{eval_regression}[S. 25] 
+
+Ist der Testplan soweit fertig, kann ein Zeitplan für die einzelnen Testfälle festgelegt werden. In weiterer Folge werden die einzelnen Tests an die TesterInnen vergeben, welche dann mit der Erstellung der dazu gehörigen Testfälle beginnen können.
+
+Um den Ablauf der Tests zu beschleunigen, sollten unnötige Testdurchläufe vermieden werden. Dies wird mit der Erstellung eines Smoke-Tests erreicht, dessen Aufgabe es ist, essentielle Testszenarien durchzutesten. Schlagen diese fehl, sind weitere Testdurchläufe nicht notwendig und der Testdurchlauf kann abgebrochen werden. 
+
+Nach dem Ausführen der Tests wird ein Bericht erstellt. Je nach Ausgang der Tests muss der Testplan angepasst werden. Verliefen alle Tests positiv, kann das Testen für die jeweilige Phase beendet werden. \cite{eval_regression}[S. 26]
 
 
 \section{Vorteile eines Testplans}
 
-Da die Entwicklung der Applikation meistens mit einem hohen Zeitdruck verbunden ist\cite{software_qual}[S. 244], ist es wichtig, bestimmte Testfälle höher zu priorisieren als andere \cite{testing_apps_on_web}[S. 34]. Dazu werden alle essentiellen Testfälle herausgearbeitet und dokumentiert. Aufgrund der Dokumentation der Testfälle, ergeben sich zusätzlich folgende Vorteile:
+Aufgrund der Dokumentation der Testfälle, ergeben sich zusätzlich folgende Vorteile:
 
 \begin{itemize}
 	\item Fehlende Testfälle können schnell erkannt werden \cite{test_large_systems}[S. 18]
@@ -283,16 +290,14 @@ Während auf der Serverseite die jeweilig zu verwendenden Plattformen noch vom/v
 
 Die BesucherInnen der Webseite verwenden unterschiedliche Web-Browser auf verschiedenen Betriebssystemen, welche beide in unterschiedlichen Versionen vorliegen können. Auch können unterschiedliche Plugins und Fonts in unterschiedlichen Versionen installiert sein \cite{testing_apps_on_web}[Foreword]. Dies erhöht den Testaufwand, da bestimmte Funktionen nicht vorhanden sein bzw. anders funktionieren können \cite{caniuse}.
 
-Zudem verlagert sich auch immer mehr Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13], was dieses Problem noch verstärkt. Zusätzlich stellt diese Verschiebung den/die EntwicklerIn vor noch größere Herausforderungen: Web-Browser setzen stark auf asynchrone und eventbasierte Programmierung. 
+Zudem verlagert sich auch immer mehr Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13], was dieses Problem noch verstärkt. Außerdem stellt diese Verschiebung den/die EntwicklerIn vor noch größere Herausforderungen.
 
-Dies erschwehrt nicht nur die Erstellung von Testfällen sondern erhöht auch die möglichen Kombinationen, in der die Events eintreten können. Die Möglichkeit, dass durch eine Aktion, z.B. ein Mausklick auf einen Link, mehrere Events ausgelöst werden können erhöht die Komplexität noch mehr. \cite{testing_apps_on_web}[S. 18]
+Web-Browser setzen stark auf asynchrone und eventbasierte Programmierung. Dies erschwehrt nicht nur die Erstellung von Testfällen sondern erhöht auch die möglichen Kombinationen, in der die Events eintreten können. Die Möglichkeit, dass durch eine Aktion, z.B. ein Mausklick auf einen Link, mehrere Events ausgelöst werden können erhöht die Komplexität noch mehr. \cite{testing_apps_on_web}[S. 18]
 
 \section{Session Modell}
 Eine weitere Herausforderung stellt das Session Modell von Web-Applikationen dar: viele Web-Applikationen verwenden nur eine Session pro NutzerIn, erlauben aber mehrere gleichzeitige Logins. Werden mehrere Instanzen der Applikation gestartet - z.B. loggt sich der/die NutzerIn auf dem Mobiltelefon und dem Laptop auf der Webseite ein - kann dies zu Synchronisationsproblemen zwischen den einzelnen Instanzen führen: Wird in einer Instanz ein Eintrag gelöscht, kann dieser durch eine fehlerhafte Synchronisation in einer andere Instanz immer noch existieren und in weiterer Folge zu Fehlern führen. \cite{testing_apps_on_web}[S. 20]
 
 Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen erfordert eine neue Herangehensweise an das Thema Software-Test: Die bestehenden Techniken sind \glqq zwar auch notwendig, aber nicht ausreichend, um die Qualität der Applikation sicherzustellen\grqq\ \cite{eval_automat_webapp_test}[S. 18]
-
-
 
 
 \chapter{Projektumfeld}
