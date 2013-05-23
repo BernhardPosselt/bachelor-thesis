@@ -138,7 +138,7 @@ Durch dieses Wachstum dehnt sich auch der Markt für Software-Applikationen auch
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=130mm]{img/globaldevicesales.png}
+\includegraphics[width=150mm]{img/globaldevicesales.png}
 \caption[Entwicklung der PC und Mobilgerätverkäufe]{Entwicklung der PC und Mobilgerätverkäufe \cite{devicesales}[S. 6]}\label{Abb1}
 \end{figure}
 
@@ -150,7 +150,6 @@ Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als
 \caption[Marktanteil mobiler Betriebssysteme]{Marktanteil mobiler Betriebssysteme \cite{smartphone}[S. 22]}\label{Abb2}
 \end{figure}
 
-% TODO: grafik mit verteilung der OS, prognose? 
 
 \section{Problemstellung}
 Aufgrund der Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch der Testaufwand der Applikation. Die Browser implementieren die vom W3C vorgeschlagenen Standards ab und zu anders und in unterschiedlicher Geschwindigkeit. Nicht selten kommt es vor, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erfordern. \cite{caniuse}
@@ -167,18 +166,15 @@ Dazu wird anhand eines Projektes eine Test-Strategie erarbeitet und Beispiele f�
 
 
 \section{Aufbau}
-% TODO: mehr text, nicht immer mit kapitel X anfangen
-
 Kapitel 2 behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt.
 
 In Kapitel 3 wird auf die Unterschiede zwischen klassischen Applikationen und Web-Applikationen eingegangen. Dadurch sollen zusätzliche Probleme, die sich durch das Applikations-Modell ergeben, aufgezeigt werden.
 
-Kapitel 4 beschreibt die Planung und den Ablauf des Testprozesses durch die Verwendung eines Testplanes.
-
+Die Planung und der Ablauf des Testprozesses durch die Verwendung eines Testplanes Kapitel 4 beschrieben.
 
 Kapitel 5 beschäftigt sich näher mit dem praktischen Einsatz von Unit Tests, welche serverseitigen und clientseitigen Quellcode abdecken.
 
-Kaptitel 6 nimmt sich des Themas des Integration Tests an und zeigt dessen Einsatzzweck bei Web-Applikationen.
+Das Thema des Integration Tests wird in Kaptitel 6 behandelt und zeigt dessen Einsatzzweck bei Web-Applikationen.
 
 Kaptitel 7 behandelt den Systemtest und dem Test der verschiedenen Plattformen.
 
@@ -191,16 +187,18 @@ Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer 
 
 Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und den Software-Entwicklungsprozess dementsprechend anzupassen \cite{betrieb}[S. 16]. 
 
-% TODO: auch reinbringen dass man beide braucht
+Es kann sowohl automatisch als auch manuell getestet werden.
 
 \section{Manuelle Tests}
+Manuelle Tests eignen sich vor allem im Bereich des System-Tests und Acceptance-Tests, da sich diese Bereiche oft schwer komplett automatisch testen lassen. Diese Tests umfassen z.B. das Kontrollieren von Übersetzungen und der Dokumentation. Auch die dazu gehörenden Usability-Tests lassen sich schwer bis überhaupt nicht automatisieren und erfordern zum Großteil manuelle Tests. \cite{test_large_systems}[S. 61]
 
-% TODO:
 
 \section{Automatisierten Tests}
 Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann sich durch das manuelle Testen der immer gleichen Tests schnell eine gewisse Eintönigkeit einstellen. Das wiederum kann unter anderem dazu führen, dass Tester bestimmte Tests nicht korrekt oder ineffizient ausführen. 
 
-Dieses Problem kann durch eine Automatisierung des Testprozesses gelöst werden. Die Automatisierung erlaubt zudem bei zukünftigen Testdurchläufen eine Reduzierung auf ein Minimum des ursprünglichen Zeitaufwandes. Daher sollte versucht werden, möglichst viele dieser Tests zu automatisieren. \cite{test_auto}[S. 22-23]
+Dieses Problem kann durch eine Automatisierung des Testprozesses gelöst werden. Die Automatisierung erlaubt zudem bei zukünftigen Testdurchläufen eine Reduzierung auf ein Minimum des ursprünglichen Zeitaufwandes. Daher sollte versucht werden, möglichst viele dieser Tests zu automatisieren. \cite{test_auto}[S. 22-23]. 
+
+Automatisierte Tests eignen sich besonders für Bereiche, die gut automatisiert getestet werden können. Dies betrifft vor allem die Unit-Tests und Integration-Tests, jedoch können auch System- und Acceptance Tests zum Teil automatisiert getestet werden, beispielsweise kann der Installationsprozess automatisch geprüft werden. Zudem kann es vorkommen, dass nicht genügend geschultes Personal für automatische Tests vorhanden ist. \cite{eval_automat_webapp_test}[S. 37]
 
 Auch können automatisierte Tests rund um die Uhr ausgeführt werden, was eine effizientere Nutzung der Zeit garantiert.
 
@@ -287,6 +285,8 @@ Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen
 % TODO: warum spannend, aufbau des projektes
 
 \chapter{Unit Test}
+
+
 % Tested module und komponenten kleinste teile und routinen der software
 % erlaubt eine reduzierung der komplexität und aufspalten in kleinere probleme
 % erlaubt frühes testen da keine kompletten module da sein müssen
