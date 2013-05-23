@@ -187,29 +187,8 @@ Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer 
 
 Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und den Software-Entwicklungsprozess dementsprechend anzupassen \cite{betrieb}[S. 16]. 
 
-Es kann sowohl automatisch als auch manuell getestet werden.
-
-\section{Manuelle Tests}
-Manuelle Tests eignen sich vor allem im Bereich des System-Tests und Acceptance-Tests, da sich diese Bereiche oft schwer komplett automatisch testen lassen. Diese Tests umfassen z.B. das Kontrollieren von Übersetzungen und der Dokumentation. Auch die dazu gehörenden Usability-Tests lassen sich schwer bis überhaupt nicht automatisieren und erfordern zum Großteil manuelle Tests. \cite{test_large_systems}[S. 61]
-
-
-\section{Automatisierten Tests}
-Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann sich durch das manuelle Testen der immer gleichen Tests schnell eine gewisse Eintönigkeit einstellen. Das wiederum kann unter anderem dazu führen, dass Tester bestimmte Tests nicht korrekt oder ineffizient ausführen. 
-
-Dieses Problem kann durch eine Automatisierung des Testprozesses gelöst werden. Die Automatisierung erlaubt zudem bei zukünftigen Testdurchläufen eine Reduzierung auf ein Minimum des ursprünglichen Zeitaufwandes. Daher sollte versucht werden, möglichst viele dieser Tests zu automatisieren. \cite{test_auto}[S. 22-23]. 
-d
-Automatisierte Tests eignen sich besonders für Bereiche, die gut automatisiert getestet werden können. Dies betrifft vor allem die Unit-Tests und Integration-Tests, jedoch können auch System- und Acceptance Tests zum Teil automatisiert getestet werden, beispielsweise kann der Installationsprozess automatisch geprüft werden. Zudem kann es vorkommen, dass nicht genügend geschultes Personal für automatische Tests vorhanden ist. \cite{eval_automat_webapp_test}[S. 37]
-
-Auch können automatisierte Tests rund um die Uhr ausgeführt werden, was eine effizientere Nutzung der Zeit garantiert.
-
-\section{Testen im Projektzyklus}
-Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementation zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden. \cite{test_auto}[S. 2]
-
-Zudem ist eine Abschätzung riskanter Bereiche möglich, die durch eine erhöhten Testbedarf bestimmter Bereiche offensichtlich wird. \cite{testing_apps_on_web}[S. 34]
-
-
-\section{Einteilung der Tests anhand des V-Modells}
-Eines der bekanntesten Testmodelle stellt das V-Modell dar \ref{Abb3}. Dies unterteilt die verschiedenen Testbereiche in vier Kategorien: 
+\section{Verschiedene Testarten}
+Eines der bekanntesten Testmodelle stellt das V-Modell dar \ref{Abb3}. Dieses unterteilt die verschiedenen Testbereiche in vier Kategorien: 
 
 \begin{itemize}
 	\item Unit Test
@@ -226,6 +205,25 @@ Eines der bekanntesten Testmodelle stellt das V-Modell dar \ref{Abb3}. Dies unte
 
 Im linken Berech befinden sich die jeweiligen Schritte zur Erstellung der Applikation. Diesen gegenübergestellt werden die jeweiligen Testarten. Damit soll veranschaulicht werden, dass der Testprozess kein in sich geschlossener Abschnitt ist, sondern sich stark in den Entwicklungsprozess integriert \cite{betrieb}[S. 23]
 
+Diese vier verschiedenen Testarten lassen sich unterschiedlich gut manuell und automatisch testen.
+
+\section{Manuelle Tests}
+Manuelle Tests eignen sich vor allem im Bereich des System-Tests und Acceptance-Tests, da sich diese Bereiche oft schwer komplett automatisch testen lassen. Diese Tests umfassen unter anderem die Kontrolle der Übersetzungen und der Dokumentation. Auch die dazu gehörenden Usability-Tests lassen sich schwer bis überhaupt nicht automatisieren und erfordern zum Großteil manuelle Tests. \cite{test_large_systems}[S. 61]
+
+
+\section{Automatisierten Tests}
+Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann sich durch das manuelle Testen der immer gleichen Tests schnell eine gewisse Eintönigkeit einstellen. Das wiederum kann unter anderem dazu führen, dass Tester bestimmte Tests nicht korrekt oder ineffizient ausführen. 
+
+Dieses Problem kann durch eine Automatisierung des Testprozesses gelöst werden. Die Automatisierung erlaubt zudem bei zukünftigen Testdurchläufen eine Reduzierung auf ein Minimum des ursprünglichen Zeitaufwandes. Daher sollte versucht werden, möglichst viele dieser Tests zu automatisieren. \cite{test_auto}[S. 22-23]. 
+d
+Automatisierte Tests eignen sich besonders für Bereiche, die gut automatisiert getestet werden können. Dies betrifft vor allem die Unit-Tests und Integration-Tests, jedoch können auch System- und Acceptance Tests zum Teil automatisiert getestet werden, beispielsweise kann der Installationsprozess automatisch geprüft werden. Zudem kann es vorkommen, dass nicht genügend geschultes Personal für automatische Tests vorhanden ist. \cite{eval_automat_webapp_test}[S. 37]
+
+Auch können automatisierte Tests rund um die Uhr ausgeführt werden, was eine effizientere Nutzung der Zeit garantiert.
+
+\section{Testen im Projektzyklus}
+Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementation zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden. \cite{test_auto}[S. 2]
+
+Zudem ist eine Abschätzung riskanter Bereiche möglich, die durch eine erhöhten Testbedarf bestimmter Bereiche offensichtlich wird. \cite{testing_apps_on_web}[S. 34]
 
 
 \section{Grenzen von Software-Tests}
