@@ -405,7 +405,7 @@ In JavaScript macht es einfach, globale Variablen zu verwenden. Es unterstützt 
 
 Dadurch werden ProgrammiererInnen absichtlich oder unabsichtlich dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit von diese globalen Variablen und Objekten ensteht, die für den Tester nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
 
-\subsection{Lösungsansatze}
+\subsection{Lösungsansatz}
 Die vorher aufgezeigten Probleme können mit durch folgende Techniken gelöst werden:
 
 \begin{itemize}
@@ -435,7 +435,7 @@ Für das oben aufgeführte Beispiel kann nun ein dazugehöriger Unit Test erstel
 
 \lstinputlisting[language=JavaScript]{src/angularunit.js}
 
-Für den AJAX request wird das \emph{\_\$httpBackend\_} Mock verwendet, um den asynchronen synchron zu machen.
+Für den AJAX request wird das \emph{\_\$httpBackend\_} Mock verwendet, um den asynchronen synchron zu machen. Auch das scope wird ausgetauscht, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
 
 
 \chapter{Integration Test}
