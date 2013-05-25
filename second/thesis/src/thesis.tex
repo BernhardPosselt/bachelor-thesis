@@ -11,6 +11,43 @@
 
 %\usepackage{cclicenses}
 
+% javascript highlightning support
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
 % verlinkte Querverweise im pdf
 \usepackage{hyperref}
 
@@ -337,6 +374,22 @@ Viele dieser Vorteile resultieren daraus, dass Unit Tests nicht auf andere Kompo
 
 Nur Unit Tests alleine reichen jedoch nicht aus, um das Projekt komplett abzudecken, da sie keine Kommunikation zwischen den einzelnen Komponenten testen. Auch Tests für verschiedene Datenbanken können dadurch nicht abgedeckt werden. \cite{test_large_systems}[S. 52]\cite{betrieb}[S. 28]
 
+\section{Serverseitige Unit Tests}
+Serverseitige Unit Tests werden wie traditionelle Unit Tests erstellt.
+
+
+
+\section{Clientseitige Unit Tests}
+Die mit Abstand am Beliebtesten Clientseitige JavaScript Library ist jQuery. Im Jahr 2011 verwendeten laut Alexa 45\% der Top 100.000 Webseiten eine JavaScript Library. Von diesen 45\% entfielen 63\% auf jQuery. \cite{jquery}[S. 107-108]
+
+jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch durch ihre Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass jQuery als ersten Parameter einen Selektor erwartet. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
+
+\newpage
+Folgender Code soll dieses Problem verdeutlichen: Der angeführte Code führt einen AJAX Request aus und schreibt abhängig von der zurückgegebenen Datenstruktur einen Text in ein Element mit der id \emph{field}:
+
+\lstinputlisting[language=JavaScript]{src/jquery.js}
+
+
 
 % todo: beispiel phpunit test, jasmine test
 
@@ -519,6 +572,9 @@ Dies eignet sich vor allem dann, wenn es bestimmte Module mit einer hohen Komple
 \hspace{-17mm}\begin{tabular}{>{\raggedleft}p{0.2\linewidth} p{0.75\linewidth} p{0.1\linewidth}}
 
 www & World Wide Web\\
+CSS & Cascading Style Sheets\\
+AJAX & Asynchron JavaScript And XML\\
+DOM & Document Object Model\\
 W3C & World Wide Web Consortium\\
 
 \end{tabular}
