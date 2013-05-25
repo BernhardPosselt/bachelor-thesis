@@ -1,15 +1,18 @@
+var angular.module('MyApp', ['ngMock']); // inject test mocks into the container
+
 describe('RequestController', function() {
 
   var $controller,
       $scope,
       $http;
 
-  beforeEach(module('MyApp', ['ngMock']));
+  beforeEach(module('MyApp')); // tell inject to use the MyApp container
 
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
-    $http = _$httpBackend_;
-    $scope = $rootScope.$new();
-    $controller = $controller;
+    $http = _$httpBackend_; // $http mock provided by angular
+    $scope = $rootScope.$new(); // create a new scope 
+    $controller = $controller; // used to newly create controllers and allows
+                               // to replace parameters with mocks
   }));
 
 
@@ -18,11 +21,11 @@ describe('RequestController', function() {
       isValid: true
     });
 
-    $controller('RequestController', {
+    $controller('RequestController', { // instantiate a new controller instance
       $scope: scope
     });
 
-    $http.flush();
+    $http.flush(); // resolve open AJAX requests
 
     expect($scope.text).toBe('The request was successful');
   });
