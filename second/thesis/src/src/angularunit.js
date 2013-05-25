@@ -1,30 +1,30 @@
 describe('RequestController', function() {
 
-  var controller,
-      scope,
-      http;
+  var $controller,
+      $scope,
+      $http;
 
   beforeEach(module('MyApp', ['ngMock']));
 
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
-    http = _$httpBackend_;
-    scope = $rootScope.$new();
-    controller = $controller;
+    $http = _$httpBackend_;
+    $scope = $rootScope.$new();
+    $controller = $controller;
   }));
 
 
   it('should set the success message if the result is valid', function () {
-    http.expectGET('http://myurl.com/request.php').respond(200, {
+    $http.expectGET('http://myurl.com/request.php').respond(200, {
       isValid: true
     });
 
-    controller = $controller('RequestController', {
+    $controller('RequestController', {
       $scope: scope
     });
 
-    http.flush();
+    $http.flush();
 
-    expect(scope.text).toBe('The request was successful');
+    expect($scope.text).toBe('The request was successful');
   });
 
 
