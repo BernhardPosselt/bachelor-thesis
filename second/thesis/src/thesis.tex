@@ -377,10 +377,11 @@ Nur Unit Tests alleine reichen jedoch nicht aus, um das Projekt komplett abzudec
 \section{Serverseitige Unit Tests}
 Serverseitige Unit Tests unterscheiden sich nicht nur anhand des eingesetzten Test-Frameworks, sondern auch anhand der gewählten Programmiersprache. 
 
+%todo
 
 \section{Clientseitige Unit Tests}
-Im Gegensatz zum serverseitigen Code gibt es nur eine mögliche Programmiersprache, um Logik plattformübergreifend zu implementieren: JavaScript. Für JavaScript gibt es mehrere Test-Frameworks, darunter Jasmine \cite{jasmine}, QUnit \cite{qunit} und Mocha \cite{mocha}.
-In dieser Arbeit wird Jasmine verwendet, um clientseitige Unit Tests zu schreiben.
+Im Gegensatz zum serverseitigen Code gibt es auf der Clientseite nur eine mögliche Programmiersprache, um Logik plattformübergreifend zu implementieren: \emph{JavaScript}. Für JavaScript gibt es mehrere Test-Frameworks, darunter Jasmine \cite{jasmine}, QUnit \cite{qunit} und Mocha \cite{mocha}.
+In dieser Arbeit wird für die Implementation der clienseitigen Unit Tests Jasmine eingesetzt.
 
 \subsection{Häufige Probleme bei clientseitigem Code}
 Das Web ist noch recht jung und wurde bis zur Entstehung des Begriffes \emph{Web 2.0} oft nur für einfache Webseiten verwendet. Die erste Web 2.0 Konferenz wurde im Oktober 2004 abgehalten mit dem Ziel, das Web als Plattform zu stärken. \cite{web2}[S. 19]
@@ -388,9 +389,9 @@ Das Web ist noch recht jung und wurde bis zur Entstehung des Begriffes \emph{Web
 Viele der Probleme beim Testen von clientseitigem Code entstehen daher dadurch, dass die EntwicklerInnen noch nicht so sehr mit der Technologie vertraut sind und anfälliger für Architektur-Fehler sind.
 
 \subsubsection{Fehlende Trennung von Logik und Präsentation}
-Die mit Abstand am Beliebtesten Clientseitige JavaScript Library ist jQuery. Im Jahr 2011 verwendeten laut Alexa 45\% der Top 100.000 Webseiten eine JavaScript Library. Von diesen 45\% entfielen 63\% auf jQuery. \cite{jquery}[S. 107-108]
+Die mit Abstand am beliebtesten Clientseitige JavaScript Library ist jQuery. Im Jahr 2011 verwendeten laut Alexa 45\% der Top 100.000 Webseiten eine JavaScript Library. Von diesen 45\% entfielen 63\% auf jQuery. \cite{jquery}[S. 107-108]
 
-jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch durch ihre Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass jQuery als ersten Parameter einen Selektor erwartet. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
+jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch aufgrund der Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass jQuery als ersten Parameter einen Selektor erwartet. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
 
 Folgender Code soll dieses Problem verdeutlichen: Der angeführte Code führt einen AJAX Request aus und gibt abhängig von der zurückgegebenen Datenstruktur einen unterschiedlichen Text aus:
 
@@ -398,7 +399,10 @@ Folgender Code soll dieses Problem verdeutlichen: Der angeführte Code führt ei
 
 Durch das verwenden des Selektors \emph{\#field .info div} ist der JavaScript Code nun abhänig von der HTML Struktur der Webseite. Verändert ein Designer  die Struktur des HTML-Codes, beispielsweise um die Ausgabe an einen anderen Ort zu verschieben, besteht die Gefahr, dass der Selektor nicht mehr die gewollten Elemente selektiert und damit der JavaScript-Code nicht mehr funktioniert.
 
-\subsubsection{Verwendung von Globalen Objekten}
+\subsubsection{Verwendung von Globalen Objekten und Variablen}
+In JavaScript macht es einfach, globale Variablen zu verwenden. Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13].
+
+Dies verleitet Programmierer absichtlich oder unabsichtlich dazu, globale Variablen und Objekte zu benutzen, was nicht nur die Testbarkeit erschwert, sondern auch zu Konflikten mit anderen Libraries führen kann.
 
 
 
