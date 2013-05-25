@@ -424,10 +424,18 @@ Mit AngularJS würde das vorige jQuery Beispiel in etwa so aussehen:
 \lstinputlisting[language=Html]{src/angular.html}
 \lstinputlisting[language=JavaScript]{src/angular.js}
 
-Präsentation und Logik sind nun sauber voneinander getrennt: Der JavaScript Code referenziert keine DOM-Elemente mehr und so kann so isoliert getestet werden. Außerdem ist es nicht mehr möglich, durch bloßes Verschieben des HTML-Codes Fehler in der JavaScript Logik auszulösen.
+Das \emph{Scope} dient als Schnittstelle zwischen der Logik und der Präsentation und erlaubt bidirektionalen Datenaustausch. Beide Layer sind nun sauber voneinander getrennt: Der JavaScript Code referenziert keine DOM-Elemente mehr und so kann so isoliert getestet werden. Außerdem ist es nicht mehr möglich, durch bloßes Verschieben des HTML-Codes Fehler in der JavaScript Logik auszulösen.
+
 
 \subsubsection{Injecten von Globalen Objekten und Variablen}
+AngularJS bietet einen eingebauten Inversion of Control Container um dynamisch Abhängigkeiten unter den Objekten und Funktionen aufzulösen. Häufig benutzte globale Objekte sind bereits verfügbar: das \emph{window} Objekt etwa kann durch den service \emph{\$window} injected werden. Dadurch können die Abhängigkeiten einfach in den Tests durch Mocks ausgetauscht werden.
 
+\subsubsection{Unit Test}
+Für das oben aufgeführte Beispiel kann nun ein dazugehöriger Unit Test erstellt werden.
+
+\lstinputlisting[language=JavaScript]{src/angularunit.js}
+
+Für den AJAX request wird das \emph{\_\$httpBackend\_} Mock verwendet, um den asynchronen synchron zu machen.
 
 
 \chapter{Integration Test}
