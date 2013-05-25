@@ -1,13 +1,15 @@
 describe('RequestController', function() {
 
-  var scope,
-    http;
+  var controller,
+      scope,
+      http;
 
   beforeEach(module('MyApp', ['ngMock']));
 
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     http = _$httpBackend_;
     scope = $rootScope.$new();
+    controller = $controller;
   }));
 
 
@@ -15,7 +17,7 @@ describe('RequestController', function() {
     http.expectGET('http://myurl.com/request.php').respond(200, {
       isValid: true
     });
-    
+
     controller = $controller('RequestController', {
       $scope: scope
     });
