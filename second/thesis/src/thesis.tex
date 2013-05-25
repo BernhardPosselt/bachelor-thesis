@@ -417,11 +417,18 @@ Die vorher aufgezeigten Probleme können mit durch folgende Techniken gelöst we
 Um dies zu erreichen wird das JavaScript Framework \emph{AngularJS}\cite{angular} eingesetzt.
 
 \subsubsection{Trennung von Logik und Präsentation}
+AngularJS verfügt über eine eigene Template-Sprache, die durch selbst definierte HTML-Attribute umgesetzt ist. Dies erlaubt eine tiefe Integration in den vorhandenen HTML Code.
+
+Mit AngularJS würde das vorige jQuery Beispiel in etwa so aussehen:
+
+\lstinputlisting[language=Html]{src/angular.html}
+\lstinputlisting[language=JavaScript]{src/angular.js}
+
+Präsentation und Logik sind nun sauber voneinander getrennt: Der JavaScript Code referenziert keine DOM-Elemente mehr und so kann so isoliert getestet werden. Außerdem ist es nicht mehr möglich, durch bloßes Verschieben des HTML-Codes Fehler in der JavaScript Logik auszulösen.
 
 \subsubsection{Injecten von Globalen Objekten und Variablen}
 
 
-% todo: beispiel phpunit test, jasmine test
 
 \chapter{Integration Test}
 Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten zu testen. Dadurch, dass sie auf einander aufbauen, können sie meistens nicht direkt von Anfang an erstellt werden. Zudem müssen jedoch nicht mehr Implementationsdetails getestet werden, da dies schon von den Unit Tests erledigt wurde. \cite{test_large_systems}[S. 53-54]
