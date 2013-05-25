@@ -395,6 +395,7 @@ jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch auf
 
 Folgender Code soll dieses Problem verdeutlichen: Der angeführte Code führt einen AJAX Request aus und gibt abhängig von der zurückgegebenen Datenstruktur einen unterschiedlichen Text aus:
 
+\lstinputlisting[language=Html]{src/jquery.html}
 \lstinputlisting[language=JavaScript]{src/jquery.js}
 
 Durch das verwenden des Selektors \emph{\#field .info div} ist der JavaScript Code nun abhänig von der HTML Struktur der Webseite. Verändert ein Designer  die Struktur des HTML-Codes, beispielsweise um die Ausgabe an einen anderen Ort zu verschieben, besteht die Gefahr, dass der Selektor nicht mehr die gewollten Elemente selektiert und damit der JavaScript-Code nicht mehr funktioniert.
@@ -402,8 +403,22 @@ Durch das verwenden des Selektors \emph{\#field .info div} ist der JavaScript Co
 \subsubsection{Verwendung von Globalen Objekten und Variablen}
 In JavaScript macht es einfach, globale Variablen zu verwenden. Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13].
 
-Dies verleitet Programmierer absichtlich oder unabsichtlich dazu, globale Variablen und Objekte zu benutzen, was nicht nur die Testbarkeit erschwert, sondern auch zu Konflikten mit anderen Libraries führen kann.
+Dadurch werden ProgrammiererInnen absichtlich oder unabsichtlich dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit von diese globalen Variablen und Objekten ensteht, die für den Tester nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
 
+\subsection{Lösungsansatze}
+Die vorher aufgezeigten Probleme können mit durch folgende Techniken gelöst werden:
+
+\begin{itemize}
+	\item Trennung der Logik und Präsentation durch Templates
+	\item Vermeidung von globalen Objekten und Variablen
+	\item Verwendung der Software-Patterns Dependency Injection und Inversion of Control, um Abhängigkeiten von Objekten und Funktionen offensichtlich zu machen
+\end{itemize}
+
+Um dies zu erreichen wird das JavaScript Framework \emph{AngularJS}\cite{angular} eingesetzt.
+
+\subsubsection{Trennung von Logik und Präsentation}
+
+\subsubsection{Injecten von Globalen Objekten und Variablen}
 
 
 % todo: beispiel phpunit test, jasmine test
