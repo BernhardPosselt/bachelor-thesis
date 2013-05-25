@@ -391,7 +391,7 @@ Viele der Probleme beim Testen von clientseitigem Code entstehen daher dadurch, 
 \subsubsection{Fehlende Trennung von Logik und Präsentation}
 Die mit Abstand am beliebtesten Clientseitige JavaScript Library ist jQuery. Im Jahr 2011 verwendeten laut Alexa 45\% der Top 100.000 Webseiten eine JavaScript Library. Von diesen 45\% entfielen 63\% auf jQuery. \cite{jquery}[S. 107-108]
 
-jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch aufgrund der Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass jQuery als ersten Parameter einen Selektor erwartet. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
+jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch den/die ProgrammierIn aufgrund der Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass die meisten jQuery methoden einen Selektor als ersten Parameter erwartet. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
 
 Folgender Code soll dieses Problem verdeutlichen: Der angeführte Code führt einen AJAX Request aus und gibt abhängig von der zurückgegebenen Datenstruktur einen unterschiedlichen Text aus:
 
