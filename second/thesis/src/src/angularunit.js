@@ -1,4 +1,3 @@
-// Test
 var angular.module('MyApp', ['ngMock']); // inject test mocks into the container
 
 describe('RequestController', function() {

@@ -1,4 +1,3 @@
-// Implementation
 (function ($, angular, undefined) {
 
   // instantiate a new container named MyApp

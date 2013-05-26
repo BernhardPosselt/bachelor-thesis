@@ -171,7 +171,7 @@ Creation and execution of automatic web application tests is different from test
 % \chapter[Kurzform]{Lange überschrift}
 \chapter{Einführung}
 Der Markt für elektronische Geräte hat in den letzten Jahren ein rasantes Wachstum erlebt, vor allem im Bereich der mobilen Geräte. Im Jahr 2011 wurden erstmals mehr mobile Geräte verkauft als PCs \ref{Abb1}.
-Durch dieses Wachstum dehnt sich auch der Markt für Software-Applikationen auch auf mobile Geräte aus, welche zum Großteil andere Betriebssysteme und Applikations-Frameworks verwenden als traditionelle Computer \ref{Abb2}. Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
+Aufgrund des starken Wachstums dehnt sich der Markt für Software-Applikationen auch auf mobile Geräte aus, welche zum Großteil andere Betriebssysteme und Applikations-Frameworks verwenden als traditionelle Computer \ref{Abb2}. Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
 
 \begin{figure}[h!]
 \centering
@@ -179,7 +179,7 @@ Durch dieses Wachstum dehnt sich auch der Markt für Software-Applikationen auch
 \caption[Entwicklung der PC und Mobilgerätverkäufe]{Entwicklung der PC und Mobilgerätverkäufe \cite{devicesales}[S. 6]}\label{Abb1}
 \end{figure}
 
-Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikations-Plattform immer attraktiver. Zudem erlauben Frameworks wie PhoneGap \cite{phonegap} dem/der EntwicklerIn eine plattformübergreifende Mobil-Applikation auf Basis von Web-Technologien zu erstellen, welche sich nahtlos in das System integrieren. 
+Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikations-Plattform immer attraktiver. Zudem erlauben Frameworks wie PhoneGap \cite{phonegap} dem/der EntwicklerIn eine plattformübergreifende Mobil-Applikation auf Web-Technologie-Basis zu erstellen, welche sich nahtlos in das System integrieren. 
 
 \begin{figure}[h!]
 \centering
@@ -191,7 +191,9 @@ Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als
 \section{Problemstellung}
 Aufgrund der Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch der Testaufwand der Applikation. Die Browser implementieren die vom W3C vorgeschlagenen Standards ab und zu anders und in unterschiedlicher Geschwindigkeit. Nicht selten kommt es vor, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erfordern. \cite{caniuse}
 
-Ein weiteres Problem ist das verhaltene Upgradeverhalten der NutzerInnen. Im Falle des Internet Explorers 7 dauerte es mehr als 19 Monate bis rund die Hälfte der NutzerInnen auf die neue Version umgestiegen sind. \cite{insecure}[S. 3]
+Ein weiteres Problem ist das verhaltene Upgradeverhalten der NutzerInnen. Im Falle des Internet Explorers 7 dauerte es beispielsweise länger als 19 Monate, bis rund die Hälfte der NutzerInnen auf die neue Version umgestiegen sind. \cite{insecure}[S. 3]
+
+All dies zwingt Web-EntwicklerInnen eine Vielzahl an unterschiedlichen Browsern und Browser-Versionen zu unterstützen.
 
 
 \section{Lösungsansatz}
@@ -201,19 +203,20 @@ Diese Bachelorarbeit soll die zusätzlichen Herausforderungen beim Testen von We
 
 Dazu wird anhand eines Projektes eine Test-Strategie erarbeitet und Beispiele für Tests gegeben.
 
+\newpage
 
 \section{Aufbau}
-Kapitel 2 behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt.
+Kapitel 2 behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen.
 
 In Kapitel 3 wird auf die Unterschiede zwischen klassischen Applikationen und Web-Applikationen eingegangen. Dadurch sollen zusätzliche Probleme, die sich durch das Applikations-Modell ergeben, aufgezeigt werden.
 
-Die Planung und der Ablauf des Testprozesses durch die Verwendung eines Testplanes Kapitel 4 beschrieben.
+Die Planung und der Ablauf des Testprozesses durch die Verwendung eines Testplanes Kapitel 4 beschrieben. 
 
-Kapitel 5 beschäftigt sich näher mit dem praktischen Einsatz von Unit Tests, welche serverseitigen und clientseitigen Quellcode abdecken.
+Kapitel 5 beschäftigt sich näher mit dem praktischen Einsatz von client- und serverseitigen Unit Tests. Es werden für beide Seiten Beispiele eines Unit Tests gezeigt und auf klassiche Probleme bei clientseitigen Unit Tests und deren Lösungen eingangen.
 
-Das Thema des Integration Tests wird in Kaptitel 6 behandelt und zeigt dessen Einsatzzweck bei Web-Applikationen.
+Das Thema des Integration Tests wird in Kaptitel 6 behandelt. Außerdem wird auf die verschiedenen Test-Ansätze eingegangen.
 
-Kaptitel 7 behandelt den Systemtest und dem Test der verschiedenen Plattformen.
+Kaptitel 7 behandelt den Systemtest. Es wird anhand von Beispielen gezeigt, wie die verschiedenen Server- und Client-Plattformen automatisch getestet werden können.
 
 Kapitel 8 beschäftigt sich mit dem Thema des Acceptance Tests und wie dieser bei Web-Applikationen umgesetzt werden kann.
 
@@ -225,13 +228,13 @@ Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer 
 Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und den Software-Entwicklungsprozess dementsprechend anzupassen \cite{betrieb}[S. 16]. 
 
 \section{Verschiedene Testarten}
-Eines der bekanntesten Testmodelle stellt das V-Modell dar \ref{Abb3}. Dieses unterteilt die verschiedenen Testbereiche in vier Kategorien: 
+Laut dem V-Modell \ref{Abb3} ist der Software-Test kein seperater Abschnitt im Projektplan. Vielmehr ist er ein Prozess, der die verschiedenen Entwicklungsabschnitte ergänzt. Das V-Model unterscheidet zwischen vier verschiedenen Testarten:
 
 \begin{itemize}
-	\item Unit Test
-	\item Integration Test
-	\item System Test
-	\item Acceptance Test
+	\item Unit Test: Wird paralell zur Implementation erstellt
+	\item Integration Test: Wird erstellt, um den Designprozess zu überprüfen
+	\item System Test: Testet die konkreten Anforderungen an die Software
+	\item Acceptance Test: Testet die Anforderungen des Kunden
 \end{itemize}
 
 \begin{figure}[h!]
@@ -354,7 +357,7 @@ Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen
 
 
 \chapter{Projektumfeld}
-
+TBD
 % TODO: warum spannend, aufbau des projektes
 
 \chapter{Unit Test}
@@ -444,6 +447,7 @@ Für den AJAX request wird das \emph{\_\$httpBackend\_} Mock verwendet, um den a
 
 \chapter{Integration Test}
 Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten zu testen. Dadurch, dass sie auf einander aufbauen, können sie meistens nicht direkt von Anfang an erstellt werden. Zudem müssen jedoch nicht mehr Implementationsdetails getestet werden, da dies schon von den Unit Tests erledigt wurde. \cite{test_large_systems}[S. 53-54]
+
 Auf ein Integration Test Beispiel wird deshalb verzichtet.
 
 Durch die vielen möglichen Kombinationen der einzelnen Module gibt es keine allgemein gültige Implementations-Strategie \cite{betrieb}[S. 29]. Die zwei häufigsten verwendeten Methoden zur Erstellung der Testfälle sind:
@@ -466,7 +470,7 @@ Dies eignet sich vor allem dann, wenn es bestimmte Module mit einer hohen Komple
 
 
 \chapter{System Test}
-
+TBD
 % testet das gesamtsystem 
 % funktionale und nicht funktionale tests aber eher nicht funktionale \cite{test_large_systems}[S. 60]
 % auf installationsumgebung getestet
@@ -485,7 +489,7 @@ Dies eignet sich vor allem dann, wenn es bestimmte Module mit einer hohen Komple
 % todo: gherkin + chef beispiele
 
 \chapter{Acceptance Test}
-
+TBD
 % TODO: verheiraten mit system test? erklären warum
 
 % test von kunden auf vertragliche richtlinien, oft stark kunde miteinbezogen
@@ -525,6 +529,7 @@ Dies eignet sich vor allem dann, wenn es bestimmte Module mit einer hohen Komple
 
 
 \chapter{Zusammenfassung}
+TBD
 % \cite{process_oop}[S. 30]
 
 % TODO: Vergleich zu klassischen apps nochmal erläutern, vor + nachteile vllt auch tabellarisch, abkürzungsverzeichnis weglassen bei nur 2 abkürzungen, mehr abbildungen
