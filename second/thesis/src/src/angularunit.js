@@ -1,3 +1,4 @@
+// Test
 var angular.module('MyApp', ['ngMock']); // inject test mocks into the container
 
 describe('RequestController', function() {
@@ -11,7 +12,7 @@ describe('RequestController', function() {
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $http = _$httpBackend_; // $http mock provided by angular
     $scope = $rootScope.$new(); // create a new scope 
-    $controller = $controller; // used to newly create controllers and allows
+    $controller = $controller; // used to instantiate controllers and allows
                                // to replace parameters with mocks
   }));
 

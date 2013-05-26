@@ -377,7 +377,11 @@ Nur Unit Tests alleine reichen jedoch nicht aus, um das Projekt komplett abzudec
 \section{Serverseitige Unit Tests}
 Serverseitige Unit Tests unterscheiden sich nicht nur anhand des eingesetzten Test-Frameworks, sondern auch anhand der gewählten Programmiersprache. 
 
-%todo
+In dieser Arbeit wird für die Serverseite PHPUnit eingesetzt. Ein Beispiel für einen Serverseitigen Unit Test würde so aussehen:
+
+\lstinputlisting[language=java]{src/phpunit.php}
+\lstinputlisting[language=java]{src/phpunittest.php}
+
 
 \section{Clientseitige Unit Tests}
 Im Gegensatz zum serverseitigen Code gibt es auf der Clientseite nur eine mögliche Programmiersprache, um Logik plattformübergreifend zu implementieren: \emph{JavaScript}. Für JavaScript gibt es mehrere Test-Frameworks, darunter Jasmine \cite{jasmine}, QUnit \cite{qunit} und Mocha \cite{mocha}.
@@ -440,6 +444,7 @@ Für den AJAX request wird das \emph{\_\$httpBackend\_} Mock verwendet, um den a
 
 \chapter{Integration Test}
 Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten zu testen. Dadurch, dass sie auf einander aufbauen, können sie meistens nicht direkt von Anfang an erstellt werden. Zudem müssen jedoch nicht mehr Implementationsdetails getestet werden, da dies schon von den Unit Tests erledigt wurde. \cite{test_large_systems}[S. 53-54]
+Auf ein Integration Test Beispiel wird deshalb verzichtet.
 
 Durch die vielen möglichen Kombinationen der einzelnen Module gibt es keine allgemein gültige Implementations-Strategie \cite{betrieb}[S. 29]. Die zwei häufigsten verwendeten Methoden zur Erstellung der Testfälle sind:
 
@@ -459,7 +464,6 @@ Bei der inkrementellen Testfallerstellung werden alle vorher erstellten Module i
 Dies eignet sich vor allem dann, wenn es bestimmte Module mit einer hohen Komplexität und Fehlerdichte gibt und das Erstellen von Mocks sehr schwer und aufwendig ist. \cite{test_large_systems}[S. 59]
 
 
-% todo: phpunit integration test, jasmine integration test
 
 \chapter{System Test}
 
