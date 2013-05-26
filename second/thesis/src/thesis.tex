@@ -274,7 +274,7 @@ Die implementierten Testfälle müssen auch regelmäßig gewartet und aktualisie
 
 \chapter{Testplan}
 
-Mit dem Erstellen des Projektplanes sollte gleichzeitig auch ein Testplan erstellt werden \cite{eval_automat_webapp_test}[S. 24]. Dieser erlaubt, den Testprozess näher zu spezifizieren und somit den erforderlichen Aufwand besser abschätzen zu können \cite{test_large_systems}[S. 18] und den Testprozess eventuell an ein externes Team auszulagern. Zusätzlich kann der Plan auch dazu verwendet werden, die Abnahmekriterien exakt zu definieren, um das Projektrisiko zu verringern. \cite{eval_automat_webapp_test}[S. 26]
+Mit dem Erstellen des Projektplanes sollte gleichzeitig auch ein Testplan erstellt werden \cite{eval_automat_webapp_test}[S. 24]. Dieser erlaubt, den Testprozess näher zu spezifizieren und somit den erforderlichen Aufwand besser abschätzbar zu machen \cite{test_large_systems}[S. 18]. Sollte es notwendig sein, kann damit der Testprozess auch an ein externes Team ausgelagert werden. Wird der Testplan zudem in den Abnahmenkriterien verankert, reduziert sich das Projektrisiko durch klar definierte Kriterien. \cite{eval_automat_webapp_test}[S. 26]
 
 \section{Inhalt}
 Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3]:
@@ -290,15 +290,15 @@ Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3
 
 
 \section{Ablauf}
-Da die Entwicklung der Applikation meistens mit einem hohen Zeitdruck verbunden ist\cite{software_qual}[S. 244] und der Testprozess zudem teuer ist \cite{eval_regression}[S. 24], ist es wichtig, die Testfälle heraus zu arbeiten, zu priorisieren und effektiv zu verteilen. Des Weiteren werden Endkriterien für die Tests veranschlagt und die optimale Teststrategie gewählt.
+Da die Entwicklung der Applikation meistens unter einem hohen Zeitdruck abläuft\cite{software_qual}[S. 244] und der Testprozess zudem teuer ist \cite{eval_regression}[S. 24], ist es wichtig, Testfälle heraus zu arbeiten, zu priorisieren und effektiv zu verteilen. Auch Endkriterien sollten für die Tests veranschlagt und eine optimale Teststrategie gewählt werden.
 
-Danach folgt die Überprüfung des Testplans. Hier wird überprüft ob die einzelnen Testfälle genau genug beschrieben worden sind, um daraus die jeweiligen Testfälle erstellen zu können und ob die Teststrategien angemessen sind. Da die gesamten Anforderungen an die Applikation oft erst im Laufe des Projektes klar werden, muss der Testplan regelmäßig auf Korrektheit und Angemessenheit überprüft und dementsprechend angepasst werden. \cite{eval_regression}[S. 25] 
+Danach folgt die Überprüfung des Testplans. Hier wird überprüft, ob die einzelnen Testfälle genau genug beschrieben worden sind, um daraus die jeweiligen Testfälle erstellen zu können. Auch die Effiktivität der Teststrategien wird überprüft. Diese Prüfung findet nicht nur einmal statt, sondern wiederholt sich mehrfach im Testprozess. Dies hängt damit zusammen, dass die Anforderungen an die Software im Laufe der Implementation immer konkreter werden und somit auch neue, mögliche Fehlerfälle enstehen können.\cite{eval_regression}[S. 25] 
 
-Ist der Testplan soweit fertig, kann ein Zeitplan für die einzelnen Testfälle festgelegt werden. In weiterer Folge werden die einzelnen Tests an die TesterInnen vergeben, welche dann mit der Erstellung der dazu gehörigen Testfälle beginnen können.
+Ist der Testplan soweit fertig, kann ein Zeitplan für die einzelnen Testfälle erstellt werden. In weiterer Folge werden die einzelnen Tests an die TesterInnen vergeben. Diese können nun mit der Erstellung der konkreten Testfälle beginnen können.
 
-Um den Ablauf der Tests zu beschleunigen, sollten unnötige Testdurchläufe vermieden werden. Dies wird mit der Erstellung eines Smoke-Tests erreicht, dessen Aufgabe es ist, essentielle Testszenarien durchzutesten. Schlagen diese fehl, sind weitere Testdurchläufe nicht notwendig und der Testdurchlauf kann abgebrochen werden. 
+Manche Tests haben eine sehr hohe Laufzeit. Um den Ablauf daher zu beschleunigen, wird ein Smoke-Tests erstellt. Der Smoke-Test testet grobe Szenarien der Applikation. Schlagen diese fehl, sind weitere Testdurchläufe nicht notwendig und der Testdurchlauf kann abgebrochen werden. 
 
-Nach dem Ausführen der Tests wird ein Bericht erstellt. Je nach Ausgang der Tests muss der Testplan angepasst werden. Verliefen alle Tests positiv, kann das Testen für die jeweilige Phase beendet werden. \cite{eval_regression}[S. 26]
+Nach dem Ausführen der Tests wird ein Bericht erstellt. Je nach Ausgang der Tests muss der Testplan angepasst werden. Verliefen alle Tests positiv, kann das die jeweilige Phase abgeschlossen werden. \cite{eval_regression}[S. 26]
 
 
 \section{Vorteile eines Testplans}
@@ -328,14 +328,14 @@ Eine Web-Applikationen unterscheidet sich an mehreren Stellen von einer klassich
 
 \section{Modularer Aufbau}
 
-Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server-Architektur immer aus mehreren Modulen \ref{Abb4}, die meist über ein Netzwerk miteinander verbunden sind.
+Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server-Architektur immer aus mehreren Modulen \ref{Abb4}. Diese Module sind meist über ein Netzwerk miteinander verbunden.
 
 Durch diesen modularen Aufbau ist es besonders schwer einen Fehler zu lokalisieren. Ein Fehler kann z.B. durch einen Fehler im Quellcode des Applikations-Servers oder durch ein Netzwerkproblem entstanden sein. \cite{testing_apps_on_web}[Foreword]
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=50mm]{img/webstack.png}
-\caption[Schematischer Aufbau einer Web-Applikation]{Schematischer Aufbau einer Web-Applikation}\label{Abb4}
+\caption[Typischer Aufbau einer Web-Applikation]{Typischer Aufbau einer Web-Applikation}\label{Abb4}
 \end{figure}
 
 \section{Unterstützung mehrerer Plattformen}
@@ -343,14 +343,15 @@ Web-Applikationen laufen auf einer Vielzahl verschiedener Plattformen, Server- u
 
 Während auf der Serverseite die jeweilig zu verwendenden Plattformen noch vom/von der BetreiberIn festlegbar sind, sprich welches Betriebssystem und welche Datenbank eingesetzt wird, ist dies auf der Clientseite schon nicht mehr möglich. 
 
-Die BesucherInnen der Webseite verwenden unterschiedliche Web-Browser auf verschiedenen Betriebssystemen, welche beide in unterschiedlichen Versionen vorliegen können. Auch können unterschiedliche Plugins und Fonts in unterschiedlichen Versionen installiert sein \cite{testing_apps_on_web}[Foreword]. Dies erhöht den Testaufwand, da bestimmte Funktionen nicht vorhanden sein bzw. anders funktionieren können \cite{caniuse}.
+Die BesucherInnen der Webseite verwenden unterschiedliche Web-Browser auf verschiedenen Betriebssystemen in unterschiedlichen Versionen. Auch können unterschiedliche Plugins und Fonts in unterschiedlichen Versionen installiert sein \cite{testing_apps_on_web}[Foreword]. Dies erhöht den Testaufwand, da bestimmte Funktionen nicht vorhanden sein bzw. anders funktionieren können \cite{caniuse}.
 
-Zudem verlagert sich auch immer mehr Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13], was dieses Problem noch verstärkt. Außerdem stellt diese Verschiebung den/die EntwicklerIn vor noch größere Herausforderungen.
+Eine weitere Herausforderung von clientseitigem Code stellt die asynchrone und eventbasierte Programmierung dar. Dies erschwehrt nicht nur die Erstellung von Testfällen sondern erhöht auch die möglichen Kombinationen, in der die Events eintreten können. Die Möglichkeit, dass durch eine Aktion, z.B. ein Mausklick auf einen Link, mehrere Events ausgelöst werden können erhöht die Komplexität noch weiter. \cite{testing_apps_on_web}[S. 18]
 
-Web-Browser setzen stark auf asynchrone und eventbasierte Programmierung. Dies erschwehrt nicht nur die Erstellung von Testfällen sondern erhöht auch die möglichen Kombinationen, in der die Events eintreten können. Die Möglichkeit, dass durch eine Aktion, z.B. ein Mausklick auf einen Link, mehrere Events ausgelöst werden können erhöht die Komplexität noch mehr. \cite{testing_apps_on_web}[S. 18]
+All diese Probleme werden durch eine zunehmende Verlagerung der Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13] noch weiter verstärkt. 
 
 \section{Session Modell}
 Eine weitere Herausforderung stellt das Session Modell von Web-Applikationen dar: viele Web-Applikationen verwenden nur eine Session pro NutzerIn, erlauben aber mehrere gleichzeitige Logins. Werden mehrere Instanzen der Applikation gestartet - z.B. loggt sich der/die NutzerIn auf dem Mobiltelefon und dem Laptop auf der Webseite ein - kann dies zu Synchronisationsproblemen zwischen den einzelnen Instanzen führen: Wird in einer Instanz ein Eintrag gelöscht, kann dieser durch eine fehlerhafte Synchronisation in einer andere Instanz immer noch existieren und in weiterer Folge zu Fehlern führen. \cite{testing_apps_on_web}[S. 20]
+
 
 Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen erfordert eine neue Herangehensweise an das Thema Software-Test: Die bestehenden Techniken sind \glqq zwar auch notwendig, aber nicht ausreichend, um die Qualität der Applikation sicherzustellen\grqq\ \cite{eval_automat_webapp_test}[S. 18]
 
@@ -372,32 +373,30 @@ Zu den Vorteilen von Unit Tests zählen:
 	\item Zeigt schwer zu verwendende Interfaces auf
 \end{itemize}
 
-Viele dieser Vorteile resultieren daraus, dass Unit Tests nicht auf andere Komponenten angewiesen sind, da diese üblicherweise durch Mocks bereitgestellt werden. 
+Viele dieser Vorteile werden durch den Einsatz von Mocks erreicht, die die konkreten Implementationen ersetzen.
 
 Nur Unit Tests alleine reichen jedoch nicht aus, um das Projekt komplett abzudecken, da sie keine Kommunikation zwischen den einzelnen Komponenten testen. Auch Tests für verschiedene Datenbanken können dadurch nicht abgedeckt werden. \cite{test_large_systems}[S. 52]\cite{betrieb}[S. 28]
 
 \section{Serverseitige Unit Tests}
 Serverseitige Unit Tests unterscheiden sich nicht nur anhand des eingesetzten Test-Frameworks, sondern auch anhand der gewählten Programmiersprache. 
 
-In dieser Arbeit wird für die Serverseite PHPUnit eingesetzt. Ein  Serverseitiger Unit Test könnte so aussehen:
+In dieser Arbeit wird das Test-Framework PHPUnit eingesetzt. Ein konkreter Unit Test könnte so aussehen:
 
 \lstinputlisting[language=java]{src/phpunit.php}
 \lstinputlisting[language=java]{src/phpunittest.php}
 
 
 \section{Clientseitige Unit Tests}
-Im Gegensatz zum serverseitigen Code gibt es auf der Clientseite nur eine mögliche Programmiersprache, um Logik plattformübergreifend zu implementieren: \emph{JavaScript}. Für JavaScript gibt es mehrere Test-Frameworks, darunter Jasmine \cite{jasmine}, QUnit \cite{qunit} und Mocha \cite{mocha}.
+Im Gegensatz zum serverseitigen Code gibt es auf der Clientseite nur eine mögliche Programmiersprache, um Logik plattformübergreifend zu implementieren: \emph{JavaScript}. Für JavaScript gibt es mehrere Test-Frameworks, unter anderem Jasmine \cite{jasmine}, QUnit \cite{qunit} und Mocha \cite{mocha}.
 In dieser Arbeit wird für die Implementation der clienseitigen Unit Tests Jasmine eingesetzt.
 
 \subsection{Häufige Probleme bei clientseitigem Code}
-Das Web ist noch recht jung und wurde bis zur Entstehung des Begriffes \emph{Web 2.0} oft nur für einfache Webseiten verwendet. Die erste Web 2.0 Konferenz wurde im Oktober 2004 abgehalten mit dem Ziel, das Web als Plattform zu stärken. \cite{web2}[S. 19]
-
-Viele der Probleme beim Testen von clientseitigem Code entstehen daher dadurch, dass die EntwicklerInnen noch nicht so sehr mit der Technologie vertraut sind und anfälliger für Architektur-Fehler sind.
+Das Web ist noch recht jung und entwickelt sich rasant. Wurde es früher nur für Webseiten eingesetzt, sollen nun auf einmal komplette Applikationen entstehen. Dies überfordert viele Entwickler und resultiert oft in halbgaren Architekturen und schlampigen Umsetzungen. 
 
 \subsubsection{Fehlende Trennung von Logik und Präsentation}
 Die mit Abstand am beliebtesten Clientseitige JavaScript Library ist jQuery. Im Jahr 2011 verwendeten laut Alexa 45\% der Top 100.000 Webseiten eine JavaScript Library. Von diesen 45\% entfielen 63\% auf jQuery. \cite{jquery}[S. 107-108]
 
-jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch den/die ProgrammierIn aufgrund der Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass die meisten jQuery methoden einen Selektor als ersten Parameter erwartet. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
+jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch den/die ProgrammierIn aufgrund der Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass die meisten jQuery-Methoden einen Selektor als ersten Parameter erwartet. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
 
 Folgender Code soll dieses Problem verdeutlichen: Der angeführte Code führt einen AJAX Request aus und gibt abhängig von der zurückgegebenen Datenstruktur einen unterschiedlichen Text aus:
 
@@ -409,15 +408,15 @@ Durch das verwenden des Selektors \emph{\#field .info span} ist der JavaScript C
 \subsubsection{Verwendung von Globalen Objekten und Variablen}
 JavaScript macht es einfach, globale Variablen zu verwenden: Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13].
 
-Dadurch werden ProgrammiererInnen absichtlich oder unabsichtlich dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit von diese globalen Variablen und Objekten ensteht, die für den Tester nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
+Dadurch werden ProgrammiererInnen dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit ensteht, die für den Tester nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
 
 \subsection{Lösungsansatz}
-Die vorher aufgezeigten Probleme können mit durch folgende Techniken gelöst werden:
+Die vorher aufgezeigten Probleme können mit Hilfe folgende Techniken gelöst werden:
 
 \begin{itemize}
 	\item Trennung der Logik und Präsentation durch Templates
 	\item Vermeidung von globalen Objekten und Variablen
-	\item Verwendung der Software-Patterns Dependency Injection und Inversion of Control, um Abhängigkeiten von Objekten und Funktionen offensichtlich zu machen
+	\item Verwendung der Software-Patterns Dependency Injection und Inversion of Control, um Abhängigkeiten von Objekten und Funktionen offensichtlich und konfigurierbar zu machen
 \end{itemize}
 
 Um dies zu erreichen wird das JavaScript Framework \emph{AngularJS}\cite{angular} eingesetzt.
@@ -430,24 +429,28 @@ Mit AngularJS würde das vorige jQuery Beispiel in etwa so aussehen:
 \lstinputlisting[language=Html]{src/angular.html}
 \lstinputlisting[language=JavaScript]{src/angular.js}
 
-Das \emph{Scope} dient als Schnittstelle zwischen der Logik und der Präsentation und erlaubt bidirektionalen Datenaustausch. Beide Layer sind nun sauber voneinander getrennt: Der JavaScript Code referenziert keine DOM-Elemente mehr und so kann so isoliert getestet werden. Außerdem ist es nicht mehr möglich, durch bloßes Verschieben des HTML-Codes Fehler in der JavaScript Logik auszulösen.
+Das \emph{Scope} dient als Schnittstelle zwischen der Logik und der Präsentation und erlaubt einen bidirektionalen Datenaustausch. Beide Layer sind nun sauber voneinander getrennt: Der JavaScript Code referenziert keine DOM-Elemente mehr und so kann so isoliert getestet werden. Außerdem ist es nicht mehr möglich, durch bloßes Verschieben des HTML-Codes Fehler in der JavaScript Logik auszulösen.
 
 
 \subsubsection{Injecten von Globalen Objekten und Variablen}
-AngularJS bietet einen eingebauten Inversion of Control Container um dynamisch Abhängigkeiten unter den Objekten und Funktionen aufzulösen. Häufig benutzte globale Objekte sind bereits verfügbar: das \emph{window} Objekt etwa kann durch den service \emph{\$window} injected werden. Dadurch können die Abhängigkeiten einfach in den Tests durch Mocks ausgetauscht werden.
+AngularJS bietet zudem einen Inversion of Control Container um dynamisch Abhängigkeiten unter den Objekten und Funktionen aufzulösen. Häufig benutzte globale Objekte werden schon fertig konfiguriert mitgeliefert: das \emph{window} Objekt etwa kann durch den Service \emph{\$window} injected werden. Dadurch können die Abhängigkeiten einfach in den Tests durch Mocks ausgetauscht werden.
 
 \subsubsection{Unit Test}
 Für das oben aufgeführte Beispiel kann nun ein dazugehöriger Unit Test erstellt werden.
 
+Für den AJAX Request wird das \emph{\_\$httpBackend\_} Mock injected. Dies erlaubt den asynchronen Request in einen synchronen umzuwandeln. Auch ein neues Scope wird erstellt, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
+
+\newpage 
+
 \lstinputlisting[language=JavaScript]{src/angularunit.js}
 
-Für den AJAX request wird das \emph{\_\$httpBackend\_} Mock verwendet, um den asynchronen synchron zu machen. Auch das scope wird ausgetauscht, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
 
 
 \chapter{Integration Test}
-Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten zu testen. Dadurch, dass sie auf einander aufbauen, können sie meistens nicht direkt von Anfang an erstellt werden. Zudem müssen jedoch nicht mehr Implementationsdetails getestet werden, da dies schon von den Unit Tests erledigt wurde. \cite{test_large_systems}[S. 53-54]
+Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten und den Programm-Fluss zu testen. Sie funktionieren ähnlich wie Unit Tests, verwenden jedoch je nach Implementations-Strategie wenig bis keine Mocks und testen weniger Implementationsdetails. \cite{test_large_systems}[S. 53-54]
 
 Auf ein Integration Test Beispiel wird deshalb verzichtet.
+
 
 Durch die vielen möglichen Kombinationen der einzelnen Module gibt es keine allgemein gültige Implementations-Strategie \cite{betrieb}[S. 29]. Die zwei häufigsten verwendeten Methoden zur Erstellung der Testfälle sind:
 
@@ -457,12 +460,12 @@ Durch die vielen möglichen Kombinationen der einzelnen Module gibt es keine all
 \end{itemize}
 
 \section{Nicht Inkrementelle Testfallerstellung}
-Wird die nicht inkrementelle Testfallerstellung genutzt, werden die nicht vorhandenen Module mit Mocks ersetzt. Ist das gemockte Modul implementiert, wird das Mock dadurch ersetzt. 
+Wird die nicht inkrementelle Testfallerstellung genutzt, werden die nicht vorhandenen Module mit Mocks ersetzt. Diese werden am Schluss dann durch die aktuelle Implementation ausgetauscht.
 
-Dies mag vor allem am Anfang sehr aufwendig erscheinen, erlaubt jedoch schon von Anfang die Kommunikation zwischen den einzelnen Bereichen komplett zu testen. Auf diese Weise kann sehr schnell ein Überblick über den Implementationsstand der Software erlangt werden. Deshalb eignet sich diese Methode besonders für Agile Entwicklung. \cite{test_large_systems}[S. 54-59] 
+Dies mag vor allem am Anfang sehr aufwendig erscheinen, erlaubt jedoch schon früh die Kommunikation zwischen den einzelnen Bereichen zu testen. Auf diese Weise kann sehr schnell ein Überblick über den Implementationsstand der Software erlangt werden. Diese Methode eignet sich daher besonders für Agile Software-Entwicklung. \cite{test_large_systems}[S. 54-59] 
 
 \section{Inkrementelle Testfallerstellung}
-Bei der inkrementellen Testfallerstellung werden alle vorher erstellten Module in die neuesten Tests miteinbezogen. Dadurch werden die zuerst erstellten Module am Besten getestet.\cite{test_large_systems}[S. 54-59]
+Bei der inkrementellen Testfallerstellung werden wenig bis gar keine Mocks erstellt. Stattdessen wird immer versucht, auf den bisherig erstellten Modulen aufzubauen. Dadurch werden die zuerst erstellten Module am Besten getestet.\cite{test_large_systems}[S. 54-59]
 
 Dies eignet sich vor allem dann, wenn es bestimmte Module mit einer hohen Komplexität und Fehlerdichte gibt und das Erstellen von Mocks sehr schwer und aufwendig ist. \cite{test_large_systems}[S. 59]
 

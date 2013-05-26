@@ -7,7 +7,7 @@ class ItemBusinessLayerTest extends PHPUnit_Framework_TestCase {
     $itemDatabaseLayer = $this->getMockBuilder('ItemDatabaseLayer')
       ->disableOriginalConstructor()
       ->getMock();
-    $item = new Item(); // this item is valid. This is a simple data object
+    $item = new Item();
 
     $itemBusinessLayer = new ItemBusinessLayer($itemDatabaseLayer);
 
