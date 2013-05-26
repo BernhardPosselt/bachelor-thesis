@@ -228,7 +228,7 @@ Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer 
 Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und den Software-Entwicklungsprozess dementsprechend anzupassen \cite{betrieb}[S. 16]. 
 
 \section{Verschiedene Testarten}
-Laut dem V-Modell \ref{Abb3} ist der Software-Test kein seperater Abschnitt im Projektplan. Vielmehr ist er ein Prozess, der die verschiedenen Entwicklungsabschnitte ergänzt. Das V-Model unterscheidet zwischen vier verschiedenen Testarten:
+Laut dem V-Modell \ref{Abb3} ist der Software-Test kein seperater Abschnitt im Projektplan. Vielmehr ist er ein Prozess, der die verschiedenen Entwicklungsabschnitte ergänzt \cite{betrieb}[S. 23]. Das V-Model unterscheidet zwischen vier verschiedenen Testarten:
 
 \begin{itemize}
 	\item Unit Test: Wird paralell zur Implementation erstellt
@@ -243,35 +243,34 @@ Laut dem V-Modell \ref{Abb3} ist der Software-Test kein seperater Abschnitt im P
 \caption[Schematische Darstellung des V-Modells]{Schematische Darstellung des V-Modells \cite{vmodel}[S. 3]}\label{Abb3}
 \end{figure}
 
-Im linken Berech befinden sich die jeweiligen Schritte zur Erstellung der Applikation. Diesen gegenübergestellt werden die jeweiligen Testarten. Damit soll veranschaulicht werden, dass der Testprozess kein in sich geschlossener Abschnitt ist, sondern sich stark in den Entwicklungsprozess integriert \cite{betrieb}[S. 23]
-
-Diese vier verschiedenen Testarten lassen sich unterschiedlich gut manuell und automatisch testen.
-
-\section{Manuelle Tests}
-Manuelle Tests eignen sich vor allem im Bereich des System-Tests und Acceptance-Tests, da sich diese Bereiche oft schwer komplett automatisch testen lassen. Diese Tests umfassen unter anderem die Kontrolle der Übersetzungen und der Dokumentation. Auch die dazu gehörenden Usability-Tests lassen sich schwer bis überhaupt nicht automatisieren und erfordern zum Großteil manuelle Tests. \cite{test_large_systems}[S. 61]
-
-
-\section{Automatisierten Tests}
-Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann sich durch das manuelle Testen der immer gleichen Tests schnell eine gewisse Eintönigkeit einstellen. Das wiederum kann unter anderem dazu führen, dass Tester bestimmte Tests nicht korrekt oder ineffizient ausführen. 
-
-Dieses Problem kann durch eine Automatisierung des Testprozesses gelöst werden. Die Automatisierung erlaubt zudem bei zukünftigen Testdurchläufen eine Reduzierung auf ein Minimum des ursprünglichen Zeitaufwandes. Daher sollte versucht werden, möglichst viele dieser Tests zu automatisieren. \cite{test_auto}[S. 22-23]. 
-d
-Automatisierte Tests eignen sich besonders für Bereiche, die gut automatisiert getestet werden können. Dies betrifft vor allem die Unit-Tests und Integration-Tests, jedoch können auch System- und Acceptance Tests zum Teil automatisiert getestet werden, beispielsweise kann der Installationsprozess automatisch geprüft werden. Zudem kann es vorkommen, dass nicht genügend geschultes Personal für automatische Tests vorhanden ist. \cite{eval_automat_webapp_test}[S. 37]
-
-Auch können automatisierte Tests rund um die Uhr ausgeführt werden, was eine effizientere Nutzung der Zeit garantiert.
-
-\section{Testen im Projektzyklus}
 Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementation zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden. \cite{test_auto}[S. 2]
 
 Zudem ist eine Abschätzung riskanter Bereiche möglich, die durch eine erhöhten Testbedarf bestimmter Bereiche offensichtlich wird. \cite{testing_apps_on_web}[S. 34]
 
 
+\section{Manuelle Tests}
+Manuelle Tests eignen sich vor allem im Bereich des System Tests und Acceptance Tests, da sich diese Bereiche oft schwer komplett automatisch testen lassen. Darunter fallen z.B. Kontrollen der Übersetzungen und der Dokumentation, Usability Tests, externe Beta Tests, Security Tests und explorative Tests. \cite{test_large_systems}[S. 61]
+
+
+\section{Automatisierten Tests}
+Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann durch das repetetive Durchführen immergleicher Prozesse beim/bei der TesterIn schnell eine gewisse Eintönigkeit und Genervtheit entstehen. Das wiederum kann unter anderem dazu führen, dass TesterInnen im Laufe der Zeit bestimmte Tests nicht korrekt oder ineffizient ausführen. 
+
+Die Lösung des Problems ist die teilweise Automatisierung des Testprozesses. Diese erlaubt bei zukünftigen Testdurchläufen nicht nur eine starke Reduzierung des Zeitaufwandes pro Durchlauf, sondern ermöglicht es auch, die Tests rund um die Uhr durchzuführen. Oft werden am Abend alle zeitintensiven Tests gestartet, damit die EntwicklerInnen am nächsten Morgen einen guten Überblick darüber haben, was nicht oder nicht mehr funktioniert. \cite{test_auto}[S. 22-23]
+
+Es gibt mehrere Faktoren, die bei der Entscheidung der Automatisierung berücksichtigt werden müssen. 
+
+Erstens muss klar sein, dass der Aufwand der Testerstellung einen wirtschaftlichen Nutzen hat. Bei einer sehr kleinen und unkritischen Applikation kann es sich z.B. nicht lohnen, Tests zu automatisieren. Dies liegt unter anderem daran, dass Tests erst über einen längeren Zeitraum ihre volle Stärke ausspielen. \cite{eval_regression}[S. 12]
+
+Zweitens muss das Personal über eine dementsprechende Ausbildung verfügen, die Tests zu automatisieren. \cite{eval_automat_webapp_test}[S. 37]
+
+Drittens eignet sich nicht jede Testart zur vollkommenen Automatisierung. Währen Unit-Tests und Integration-Tests sehr gut automatisiert werden können, ist es schon schwieriger System- und Acceptance Tests zu automatisieren. 
+
 \section{Grenzen von Software-Tests}
-Das Vorhandensein von Tests kann niemals eine komplett fehlerfreie Software garantieren, nur eine Abwesenheit von bestimmten Fehlern kann garantiert werden, nämlich jenen, die explizit mit Tests abgedeckt werden \cite{eval_regression}[S. 12]. Dies resultiert unter anderem daraus, dass die Anforderungen an die Software oft nicht komplett spezifiziert oder ungenau sind und die Komplexität der Applikation im Laufe der Entwicklung stark ansteigt. Zusätzlich können die Testfälle durch die vielen möglichen Eingaben lediglich einen kleinen Bereich der Funktionsweise abdecken \cite{software_qual}[S. 243].
+Software-Tests können nie eine komplett fehlerfreie Software garantieren. Es kann höchstens eine Fehlerabwesenheit für jene Fälle garantiert werden, welche mit Tests abgedeckt wurden. \cite{eval_regression}[S. 12]. 
 
-Es ist jedoch nicht erstrebenswert, die ganze Applikation mit Tests abzudecken, da dies zu zu hohen Entwicklungskosten führen kann. Idealerweise werden daher nur jene kritischen Fälle mit Tests abgedeckt, deren Fehlerkosten die Kosten für die Erstellung der Tests übertreffen. \cite{eval_regression}[S. 12]
+Dies resultiert unter anderem daraus, dass die Anforderungen an die Software oft nicht komplett spezifiziert oder zu ungenau formuliert sind. Zusätzlich steigt die Komplexität der Applikation im Laufe der Entwicklung stark an. Ein weiterer Grund stellt die oft schier unbegrenzten Möglichkeiten an unterschiedlichen Eingaben dar. \cite{software_qual}[S. 243].
 
-Die implementierten Testfälle müssen auch regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und neue mögliche Fehlerfälle nicht berücksichtigen. \cite{eval_regression}[S. 12-13]
+Die implementierten Testfälle müssen auch regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und keine neuen, mögliche Fehlerfälle berücksichtigen. \cite{eval_regression}[S. 12-13]
 
 \chapter{Testplan}
 
