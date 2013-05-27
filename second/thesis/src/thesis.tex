@@ -143,8 +143,7 @@ und auch noch nicht veröffentlicht. Ich versichere, dass die abgegebene Version
 Die Durchführung und Erstellung von automatisierten Tests für Web-Applikationen unterscheidet sich von klassischen Applikationen: Aufgrund der komplexeren Infrastruktur und Modularisierung werden zusätzliche Testfälle und Strategien benötigt um Web-Applikationen ausreichend abzudecken und eine fortwährende Qualität zu gewährleisten. Diese Arbeit soll Möglichkeiten für den Test von Web-Applikationen anhand eines Projektes aufzeigen und Anpassungen und Anwendung der vier Testformen des V-Modells: Unit Test, Integration Test, System Test und Acceptance Test. 
 
 \vfill
-\paragraph*{Schlagwörter:} Webapplikationen, automatisierte Tests, Webtest
-% TODO: http://opus.bsz-bw.de/xgnd/index.php schlagwörter checken
+\paragraph*{Schlagwörter:} Softwaretest, Web
 
 \newpage
 
@@ -188,7 +187,6 @@ Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als
 \includegraphics[width=130mm]{img/operatingsystems.png}
 \caption[Marktanteil mobiler Betriebssysteme]{Marktanteil mobiler Betriebssysteme \cite{smartphone}[S. 22]}\label{Abb2}
 \end{figure}
-% TODO: legende
 
 \section{Problemstellung}
 Aufgrund der Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch der Testaufwand der Applikation. Die Browser implementieren die vom W3C vorgeschlagenen Standards ab und zu anders und in unterschiedlicher Geschwindigkeit. Nicht selten kommt es vor, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erfordern. \cite{caniuse}
@@ -267,7 +265,7 @@ Erstens muss klar sein, dass der Aufwand der Testerstellung einen wirtschaftlich
 
 Zweitens muss das Personal über eine dementsprechende Ausbildung verfügen, die Tests zu automatisieren. \cite{eval_automat_webapp_test}[S. 37]
 
-Drittens eignet sich nicht jede Testart zur vollkommenen Automatisierung. Währen Unit-Tests und Integration-Tests sehr gut automatisiert werden können, ist es schon schwieriger System- und Acceptance Tests zu automatisieren. 
+Drittens eignet sich nicht jede Testart zur vollkommenen Automatisierung. Währen Unit-Tests und Integration Tests sehr gut automatisiert werden können, ist es schon schwieriger System und Acceptance Tests zu automatisieren. 
 
 \section{Grenzen von Software-Tests}
 Software-Tests können nie eine komplett fehlerfreie Software garantieren. Es kann höchstens eine Fehlerabwesenheit für jene Fälle garantiert werden, welche mit Tests abgedeckt wurden. \cite{eval_regression}[S. 12]. 
@@ -370,22 +368,6 @@ TBD
 
 Unit Tests werden verwendet, um Klassen, Module oder einzelne Komponenten zu testen. Sie sind Whitebox Tests, sprich die Implementationsdetails sind bekannt\cite{betrieb}[S. 26], und werden üblicherweise vom ProgrammiererInnen selbst erstellt. 
 
-Zu den Vorteilen von Unit Tests zählen:
-
-\begin{itemize}
-	\item Gute Paralellisierbarkeit
-	\item Sehr schnell ausführbar
-	\item Früh einsetzbar
-	\item Erlaubt die Aufteilung in kleine Teilprobleme
-	\item Zeigt schwer zu verwendende Interfaces auf
-\end{itemize}
-
-% TODO: nachteile gleich formatieren, an den schluss versetzen mit zusammenfassung
-
-Viele dieser Vorteile werden durch den Einsatz von Mocks erreicht, die die konkreten Implementationen ersetzen.
-
-Nur Unit Tests alleine reichen jedoch nicht aus, um das Projekt komplett abzudecken, da sie keine Kommunikation zwischen den einzelnen Komponenten testen. Auch Tests für verschiedene Datenbanken können dadurch nicht abgedeckt werden. \cite{test_large_systems}[S. 52]\cite{betrieb}[S. 28]
-
 \section{Serverseitige Unit Tests}
 % TODO: auch DI und IOC und trennung von Logik/Darstellung
 Serverseitige Unit Tests unterscheiden sich nicht nur anhand des eingesetzten Test-Frameworks, sondern auch anhand der gewählten Programmiersprache. 
@@ -450,18 +432,31 @@ Für das oben aufgeführte Beispiel kann nun ein dazugehöriger Unit Test erstel
 
 Für den AJAX Request wird das \emph{\_\$httpBackend\_} Mock injected. Dies erlaubt den asynchronen Request in einen synchronen umzuwandeln. Auch ein neues Scope wird erstellt, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
 
-\newpage 
-
 \lstinputlisting[language=JavaScript]{src/angularunit.js}
 
+\section{Vor- und Nachteile von Unit Tests}
 
+Zu den Vorteilen von Unit Tests zählen:
+
+\begin{itemize}
+  \item Gute Paralellisierbarkeit
+  \item Sehr schnell ausführbar
+  \item Früh einsetzbar
+  \item Erlaubt die Aufteilung in kleine Teilprobleme
+  \item Zeigt schwer zu verwendende Interfaces auf
+\end{itemize}
+
+Viele dieser Vorteile werden durch den Einsatz von Mocks erreicht, die die konkreten Implementationen ersetzen.
+
+Nur Unit Tests alleine reichen jedoch nicht aus, um das Projekt komplett abzudecken, denn Unit Tests\cite{test_large_systems}[S. 52]\cite{betrieb}[S. 28]:
+
+\begin{itemize}
+  \item testen keine Kommunikation zwichen den Modulen
+  \item testen keine Systemschnittstellen wie z.B. Datenbanken
+\end{itemize}
 
 \chapter{Integration Test}
-Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten und den Programm-Fluss zu testen. Sie funktionieren ähnlich wie Unit Tests, verwenden jedoch je nach Implementations-Strategie wenig bis keine Mocks und testen weniger Implementationsdetails. \cite{test_large_systems}[S. 53-54]
-
-Auf ein Integration Test Beispiel wird deshalb verzichtet. %verharmlosen, ned dazupacken, keine neuen Codebeispiele
-
-% TODO: auch vorteile + nachteile
+Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten und den Programm-Fluss zu testen. Sie funktionieren ähnlich wie Unit Tests, verwenden jedoch je nach Implementations-Strategie wenig bis keine Mocks und testen weniger Implementationsdetails\cite{test_large_systems}[S. 53-54]. Auf ein Integration Test Quellcode Beispiel wird deshalb verzichtet. 
 
 Durch die vielen möglichen Kombinationen der einzelnen Module gibt es keine allgemein gültige Implementations-Strategie \cite{betrieb}[S. 29]. Die zwei häufigsten verwendeten Methoden zur Erstellung der Testfälle sind:
 
@@ -475,10 +470,43 @@ Wird die nicht inkrementelle Testfallerstellung genutzt, werden die nicht vorhan
 
 Dies mag vor allem am Anfang sehr aufwendig erscheinen, erlaubt jedoch schon früh die Kommunikation zwischen den einzelnen Bereichen zu testen. Auf diese Weise kann sehr schnell ein Überblick über den Implementationsstand der Software erlangt werden. Diese Methode eignet sich daher besonders für Agile Software-Entwicklung. \cite{test_large_systems}[S. 54-59] 
 
+Typische Strategien der nicht inkrementellen Testfallerstellung beinhalten\cite{test_large_systems}[S. 54]:
+
+\begin{itemize}
+  \item Big-Bang Testing: Möglichst viele fertige Module werden in einen Test integriert
+  \item Transaction Testing: Alle Module die zu einer Transaktion gehören werden in einem Test vereint
+\end{itemize}
+
+\cite{eval_regression}[S. 15]
 \section{Inkrementelle Testfallerstellung}
 Bei der inkrementellen Testfallerstellung werden wenig bis gar keine Mocks erstellt. Stattdessen wird immer versucht, auf den bisherig erstellten Modulen aufzubauen. Dadurch werden die zuerst erstellten Module am Besten getestet.\cite{test_large_systems}[S. 54-59]
-% TODO: verschiedene arten aufzeigen und eventuell verweisen
+
 Dies eignet sich vor allem dann, wenn es bestimmte Module mit einer hohen Komplexität und Fehlerdichte gibt und das Erstellen von Mocks sehr schwer und aufwendig ist. \cite{test_large_systems}[S. 59]
+
+Typische Vertreter der inkrementellen Testfallerstellung sind\cite{test_large_systems}[S. 54-55]:
+
+\begin{itemize}
+  \item Top-Down: Die Module auf dem höchsten Level werden zuerst erstellt
+  \item Bottom-Up: Die Module auf dem niedrigsten Level werden zuerst erstellt
+  \item Hardest First: Die schwierigsten oder kritischten Module werden zuerst erstellt
+  \item Thread Testing: Es wird versucht, einen zusammenhängenden Strang an Funktionen zu erstellen, welcher dann komplett getestet werden kann
+  \item Availability Testing: Nur Module, welche schon durch Unit Tests getestet worden sind, werden integriert
+\end{itemize}
+
+\section{Vorteile und Nachteile}
+Integration Tests haben folgende Vorteile:
+
+\begin{itemize}
+  \item Testen die Kommunikation und das Zusammenspiel der Komponenten
+  \item Testen wichtige Szenarien der einzelnen Module
+\end{itemize}
+
+Zu den Nachteilen gehören:
+
+\begin{itemize}
+  \item Langsamer als Unit Tests, da ganze Sub-Systeme getestet werden
+  \item Kein Test der Systemschnittstellen
+\end{itemize}
 
 
 % TODO: einzelne absätze stärken, aufzähl
