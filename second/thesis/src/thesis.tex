@@ -120,7 +120,7 @@
 % Personenkennzeichen der Autorin/des Autors eingeben:
 \put(-30,-270){\large Personenkennzeichen: 1010257029}
 % Name der Begutachterin/des Begutachters eingeben:
-\put(-30,-310){\large Begutachter: MSc Benedikt Salzbrunn}
+\put(-30,-310){\large Begutachter: Benedikt Salzbrunn, MSc}
 \put(-30,-350){\large Wien, \today} % das Datum des letzten Kompilierens wird automatisch eingesetzt
 \color{black}
 \end{picture}
@@ -140,11 +140,11 @@ und auch noch nicht veröffentlicht. Ich versichere, dass die abgegebene Version
 
 
 \section*{Kurzfassung}\thispagestyle{empty}
-Die Durchführung und Erstellung von automatisierten Tests für Web-Applikationen unterscheidet sich von klassischen Applikationen. Aufgrund der komplexeren Infrastruktur und Modularisierung werden zusätzliche Testfälle und Strategien benötigt um Web-Applikationen ausreichend abzudecken und eine fortwährende Qualität zu gewährleisten. Diese Arbeit soll Möglichkeiten für den Test von Web-Applikationen anhand eines Projektes aufzeigen und Anpassungen und Anwendung der vier Testformen des V-Modells: Unit Test, Integration Test, System Test und Acceptance Test. 
+Die Durchführung und Erstellung von automatisierten Tests für Web-Applikationen unterscheidet sich von klassischen Applikationen: Aufgrund der komplexeren Infrastruktur und Modularisierung werden zusätzliche Testfälle und Strategien benötigt um Web-Applikationen ausreichend abzudecken und eine fortwährende Qualität zu gewährleisten. Diese Arbeit soll Möglichkeiten für den Test von Web-Applikationen anhand eines Projektes aufzeigen und Anpassungen und Anwendung der vier Testformen des V-Modells: Unit Test, Integration Test, System Test und Acceptance Test. 
 
 \vfill
 \paragraph*{Schlagwörter:} Webapplikationen, automatisierte Tests, Webtest
-
+% TODO: http://opus.bsz-bw.de/xgnd/index.php schlagwörter checken
 
 \newpage
 
@@ -170,23 +170,25 @@ Creation and execution of automatic web application tests is different from test
 % dort Kurzformen der Kapitelbezeichnungen mittels:
 % \chapter[Kurzform]{Lange überschrift}
 \chapter{Einführung}
-Der Markt für elektronische Geräte hat in den letzten Jahren ein rasantes Wachstum erlebt, vor allem im Bereich der mobilen Geräte. Im Jahr 2011 wurden erstmals mehr mobile Geräte verkauft als PCs \ref{Abb1}.
-Aufgrund des starken Wachstums dehnt sich der Markt für Software-Applikationen auch auf mobile Geräte aus, welche zum Großteil andere Betriebssysteme und Applikations-Frameworks verwenden als traditionelle Computer \ref{Abb2}. Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
+Der Markt für elektronische Geräte hat in den letzten Jahren ein rasantes Wachstum erlebt, vor allem im Bereich der mobilen Geräte. Im Jahr 2011 wurden erstmals mehr mobile Geräte verkauft als PCs (Abbildung \ref{Abb1}).
+Aufgrund des starken Wachstums dehnt sich der Markt für Software-Applikationen auch auf mobile Geräte aus, welche zum Großteil andere Betriebssysteme und Applikations-Frameworks verwenden als traditionelle Computer (Abbildung \ref{Abb2}). Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=150mm]{img/globaldevicesales.png}
 \caption[Entwicklung der PC und Mobilgerätverkäufe]{Entwicklung der PC und Mobilgerätverkäufe \cite{devicesales}[S. 6]}\label{Abb1}
 \end{figure}
+% TODO: grafik verbessern, klarer machen
+% TODO: formulieren, mehr plattformübergreifender, weniger mobilbereich
 
 Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikations-Plattform immer attraktiver. Zudem erlauben Frameworks wie PhoneGap \cite{phonegap} dem/der EntwicklerIn eine plattformübergreifende Mobil-Applikation auf Web-Technologie-Basis zu erstellen, welche sich nahtlos in das System integrieren. 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=100mm]{img/operatingsystems.png}
+\includegraphics[width=130mm]{img/operatingsystems.png}
 \caption[Marktanteil mobiler Betriebssysteme]{Marktanteil mobiler Betriebssysteme \cite{smartphone}[S. 22]}\label{Abb2}
 \end{figure}
-
+% TODO: legende
 
 \section{Problemstellung}
 Aufgrund der Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch der Testaufwand der Applikation. Die Browser implementieren die vom W3C vorgeschlagenen Standards ab und zu anders und in unterschiedlicher Geschwindigkeit. Nicht selten kommt es vor, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erfordern. \cite{caniuse}
@@ -199,13 +201,13 @@ All dies zwingt Web-EntwicklerInnen eine Vielzahl an unterschiedlichen Browsern 
 \section{Lösungsansatz}
 Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um der höheren Komplexität von Web-Applikationen gerecht zu werden. 
 
-Diese Bachelorarbeit soll die zusätzlichen Herausforderungen beim Testen von Web-Applikationen aufzeigen. Des Weiteren soll sie einen Überblick über mögliche Anwendungen und Anpassungen der vier häufigsten Testarten - den Unit Tests, Integration Tests, System Tests und Acceptance Tests - im Bereich der Web-Applikationen geben.
-
-Dazu wird anhand eines Projektes eine Test-Strategie erarbeitet und Beispiele für Tests gegeben.
+% Lösungsansatz: herausforderungen kein ansatz, überblick auch nicht, mehr auf beispiele eingehen
+Diese Bachelorarbeit zeigt zusätzlichen Herausforderungen beim Testen von Web-Applikationen aufzeigen. Des Weiteren soll sie einen Überblick über mögliche Anwendungen und Anpassungen der vier häufigsten Testarten - den Unit Tests, Integration Tests, System Tests und Acceptance Tests - im Bereich der Web-Applikationen geben. Dazu wird anhand eines Projektes eine Test-Strategie erarbeitet und Beispiele für Tests gegeben.
 
 \newpage
 
 \section{Aufbau}
+% nicht nur auf kapitel eingehen, sondern inhaltlich gruppieren
 Kapitel 2 behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen.
 
 In Kapitel 3 wird auf die Unterschiede zwischen klassischen Applikationen und Web-Applikationen eingegangen. Dadurch sollen zusätzliche Probleme, die sich durch das Applikations-Modell ergeben, aufgezeigt werden.
@@ -228,7 +230,7 @@ Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer 
 Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und den Software-Entwicklungsprozess dementsprechend anzupassen \cite{betrieb}[S. 16]. 
 
 \section{Verschiedene Testarten}
-Laut dem V-Modell \ref{Abb3} ist der Software-Test kein seperater Abschnitt im Projektplan. Vielmehr ist er ein Prozess, der die verschiedenen Entwicklungsabschnitte ergänzt \cite{betrieb}[S. 23]. Das V-Model unterscheidet zwischen vier verschiedenen Testarten:
+Laut dem V-Modell (Abbildung \ref{Abb3}) ist der Software-Test kein seperater Abschnitt im Projektplan. Vielmehr ist er ein Prozess, der die verschiedenen Entwicklungsabschnitte ergänzt \cite{betrieb}[S. 23]. Das V-Model unterscheidet zwischen vier verschiedenen Testarten:
 
 \begin{itemize}
 	\item Unit Test: Wird paralell zur Implementation erstellt
@@ -252,12 +254,14 @@ Zudem ist eine Abschätzung riskanter Bereiche möglich, die durch eine erhöhte
 Manuelle Tests eignen sich vor allem im Bereich des System Tests und Acceptance Tests, da sich diese Bereiche oft schwer komplett automatisch testen lassen. Darunter fallen z.B. Kontrollen der Übersetzungen und der Dokumentation, Usability Tests, externe Beta Tests, Security Tests und explorative Tests. \cite{test_large_systems}[S. 61]
 
 
-\section{Automatisierten Tests}
+\section{Automatisierte Tests}
 Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann durch das repetetive Durchführen immergleicher Prozesse beim/bei der TesterIn schnell eine gewisse Eintönigkeit und Genervtheit entstehen. Das wiederum kann unter anderem dazu führen, dass TesterInnen im Laufe der Zeit bestimmte Tests nicht korrekt oder ineffizient ausführen. 
 
 Die Lösung des Problems ist die teilweise Automatisierung des Testprozesses. Diese erlaubt bei zukünftigen Testdurchläufen nicht nur eine starke Reduzierung des Zeitaufwandes pro Durchlauf, sondern ermöglicht es auch, die Tests rund um die Uhr durchzuführen. Oft werden am Abend alle zeitintensiven Tests gestartet, damit die EntwicklerInnen am nächsten Morgen einen guten Überblick darüber haben, was nicht oder nicht mehr funktioniert. \cite{test_auto}[S. 22-23]
 
 Es gibt mehrere Faktoren, die bei der Entscheidung der Automatisierung berücksichtigt werden müssen. 
+
+% TODO: klarer trennen, absätze checken, bulletpoints?
 
 Erstens muss klar sein, dass der Aufwand der Testerstellung einen wirtschaftlichen Nutzen hat. Bei einer sehr kleinen und unkritischen Applikation kann es sich z.B. nicht lohnen, Tests zu automatisieren. Dies liegt unter anderem daran, dass Tests erst über einen längeren Zeitraum ihre volle Stärke ausspielen. \cite{eval_regression}[S. 12]
 
@@ -315,7 +319,7 @@ Aufgrund der Dokumentation der Testfälle, ergeben sich zusätzlich folgende Vor
 	\item Abhängigkeiten der Testfälle untereinander und der Implementation werden transparent und erlauben schnell auf Änderungen zu reagieren\cite{test_auto}[S. 4]
 \end{itemize}
 
-
+% geht um unterschiede im tests, unterschieden von klassischer noch nicht da
 \chapter{Unterschiede zu klassischer Software}
 Eine Web-Applikationen unterscheidet sich an mehreren Stellen von einer klassichen Applikation, was das Testen und das Auffinden von Fehlern zusätzlich erschwert. Die Hauptunterschiede sind:
 
@@ -328,7 +332,7 @@ Eine Web-Applikationen unterscheidet sich an mehreren Stellen von einer klassich
 
 \section{Modularer Aufbau}
 
-Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server-Architektur immer aus mehreren Modulen \ref{Abb4}. Diese Module sind meist über ein Netzwerk miteinander verbunden.
+Im Gegensatz zu klassischen Desktop- oder Mobil-Applikationen bestehen Web-Applikationen wegen ihrer Client-Server-Architektur immer aus mehreren Modulen (Abbildung \ref{Abb4}). Diese Module sind meist über ein Netzwerk miteinander verbunden.
 
 Durch diesen modularen Aufbau ist es besonders schwer einen Fehler zu lokalisieren. Ein Fehler kann z.B. durch einen Fehler im Quellcode des Applikations-Servers oder durch ein Netzwerkproblem entstanden sein. \cite{testing_apps_on_web}[Foreword]
 
@@ -358,10 +362,13 @@ Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen
 
 \chapter{Projektumfeld}
 TBD
+% welche umgebung, systemlandschaft, testlandschaft
 % TODO: warum spannend, aufbau des projektes
 
 \chapter{Unit Test}
-Unit Tests werden verwendet, um Klassen, Module oder einzelne Komponenten zu testen. Sie sind Whitebox Tests, sprich die Implementationsdetails sind bekannt\cite{betrieb}[S. 26], und werden üblicherweise vom Programmierer selbst erstellt. 
+%TODO: mocks erklären, kleines code beispiel
+
+Unit Tests werden verwendet, um Klassen, Module oder einzelne Komponenten zu testen. Sie sind Whitebox Tests, sprich die Implementationsdetails sind bekannt\cite{betrieb}[S. 26], und werden üblicherweise vom ProgrammiererInnen selbst erstellt. 
 
 Zu den Vorteilen von Unit Tests zählen:
 
@@ -373,11 +380,14 @@ Zu den Vorteilen von Unit Tests zählen:
 	\item Zeigt schwer zu verwendende Interfaces auf
 \end{itemize}
 
+% TODO: nachteile gleich formatieren, an den schluss versetzen mit zusammenfassung
+
 Viele dieser Vorteile werden durch den Einsatz von Mocks erreicht, die die konkreten Implementationen ersetzen.
 
 Nur Unit Tests alleine reichen jedoch nicht aus, um das Projekt komplett abzudecken, da sie keine Kommunikation zwischen den einzelnen Komponenten testen. Auch Tests für verschiedene Datenbanken können dadurch nicht abgedeckt werden. \cite{test_large_systems}[S. 52]\cite{betrieb}[S. 28]
 
 \section{Serverseitige Unit Tests}
+% TODO: auch DI und IOC und trennung von Logik/Darstellung
 Serverseitige Unit Tests unterscheiden sich nicht nur anhand des eingesetzten Test-Frameworks, sondern auch anhand der gewählten Programmiersprache. 
 
 In dieser Arbeit wird das Test-Framework PHPUnit eingesetzt. Ein konkreter Unit Test könnte so aussehen:
@@ -449,8 +459,9 @@ Für den AJAX Request wird das \emph{\_\$httpBackend\_} Mock injected. Dies erla
 \chapter{Integration Test}
 Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten und den Programm-Fluss zu testen. Sie funktionieren ähnlich wie Unit Tests, verwenden jedoch je nach Implementations-Strategie wenig bis keine Mocks und testen weniger Implementationsdetails. \cite{test_large_systems}[S. 53-54]
 
-Auf ein Integration Test Beispiel wird deshalb verzichtet.
+Auf ein Integration Test Beispiel wird deshalb verzichtet. %verharmlosen, ned dazupacken, keine neuen Codebeispiele
 
+% TODO: auch vorteile + nachteile
 
 Durch die vielen möglichen Kombinationen der einzelnen Module gibt es keine allgemein gültige Implementations-Strategie \cite{betrieb}[S. 29]. Die zwei häufigsten verwendeten Methoden zur Erstellung der Testfälle sind:
 
@@ -466,11 +477,11 @@ Dies mag vor allem am Anfang sehr aufwendig erscheinen, erlaubt jedoch schon fr�
 
 \section{Inkrementelle Testfallerstellung}
 Bei der inkrementellen Testfallerstellung werden wenig bis gar keine Mocks erstellt. Stattdessen wird immer versucht, auf den bisherig erstellten Modulen aufzubauen. Dadurch werden die zuerst erstellten Module am Besten getestet.\cite{test_large_systems}[S. 54-59]
-
+% TODO: verschiedene arten aufzeigen und eventuell verweisen
 Dies eignet sich vor allem dann, wenn es bestimmte Module mit einer hohen Komplexität und Fehlerdichte gibt und das Erstellen von Mocks sehr schwer und aufwendig ist. \cite{test_large_systems}[S. 59]
 
 
-
+% TODO: einzelne absätze stärken, aufzähl
 \chapter{System Test}
 TBD
 % testet das gesamtsystem 
