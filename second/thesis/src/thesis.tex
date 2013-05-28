@@ -359,31 +359,30 @@ Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen
 
 
 \chapter{Projektumfeld}
-TBD
-% welche umgebung, systemlandschaft, testlandschaft
-% TODO: warum spannend, aufbau des projektes
+Die Tests wurden im Rahmen eines Praktikums bei onwCloud Inc. erstellt, um die News Reader App \emph{News} zu testen. Die App setzt auf die ownCloud\cite{owncloud} Plattform auf.
+
+ownCloud ist eine Open Source Web-Applikations-Plattform, welche oft genutzte Cloud Dienste wie z.B. Kalendar, Kontakte, Dateiupload und Synchronisation zur Verfügung stellt. Sie ist in PHP und JavaScript geschrieben, und kann von jedem/jeder NutzerIn auf seinem/ihren privaten Server installiert und verwendet werden. Um Unterschied zu anderen großen Cloud-Service-Anbietern wie Google und Microsoft liegt die Kontrolle der Daten damit beim/bei der NutzerIn. 
+
+\section{Setup auf der Serverseite}
+Auf der Serverseite wird PHP in der Version 5.3 eingesetzt. Als Inversion of Control Container kommt Pimple\cite{pimple} zum Einsatz. Als Test-Framwork wird PHPUnit\cite{phpunit} in der Version 3.8 eingesetzt.
+
+\section{Setup auf der Clientseite}
+Die Clientseitige Logik ist mit JavaScript und dem JavaScript Framework AngularJS\cite{angular} in Version 1.0 umgesetzt. Da AngularJS bereits einen Inversion of Control Container mitliefert, wird dieser verwendet. Die JavaScript Tests werden mithilfe von Karma\cite{karma}(früher Testacular) ausgeführt und basieren auf dem JavaScript Unit Test Framework Jasmine\cite{jasmine}. 
+Die Acceptance und System Tests wurden mit Cucumber\cite{cucumber} erstellt.
+
 
 \chapter{Unit Test}
-%TODO: mocks erklären, kleines code beispiel
-
 Unit Tests werden verwendet, um Klassen, Module oder einzelne Komponenten zu testen. Sie sind Whitebox Tests, sprich die Implementationsdetails sind bekannt\cite{betrieb}[S. 26], und werden üblicherweise vom ProgrammiererInnen selbst erstellt. 
 
-\section{Serverseitige Unit Tests}
-% TODO: auch DI und IOC und trennung von Logik/Darstellung
-Serverseitige Unit Tests unterscheiden sich nicht nur anhand des eingesetzten Test-Frameworks, sondern auch anhand der gewählten Programmiersprache. 
+Da Unit Tests eine Komponente isoliert von anderen Komponenten testet, werden Abhängigkeiten oft mit Mocks (auch Stubs genannt) ersetzt. Dieses Mocks implementieren die Methoden und Attribute, von denen die geteste Komponente abhängt. 
 
-In dieser Arbeit wird das Test-Framework PHPUnit eingesetzt. Ein konkreter Unit Test könnte so aussehen:
+Viele Test-Framworks wie PHPUnit oder Jasmine liefern eigene Mock-Frameworks, mit welchen die Erstellung vereinfacht wird. Ein Mock in PHPUnit sieht in etwa so aus:
 
-\lstinputlisting[language=java]{src/phpunit.php}
-\lstinputlisting[language=java]{src/phpunittest.php}
+\lstinputlisting[language=java]{src/mock.php}
 
-
-\section{Clientseitige Unit Tests}
-Im Gegensatz zum serverseitigen Code gibt es auf der Clientseite nur eine mögliche Programmiersprache, um Logik plattformübergreifend zu implementieren: \emph{JavaScript}. Für JavaScript gibt es mehrere Test-Frameworks, unter anderem Jasmine \cite{jasmine}, QUnit \cite{qunit} und Mocha \cite{mocha}.
-In dieser Arbeit wird für die Implementation der clienseitigen Unit Tests Jasmine eingesetzt.
-
-\subsection{Häufige Probleme bei clientseitigem Code}
+\section{Häufige Testprobleme}
 Das Web ist noch recht jung und entwickelt sich rasant. Wurde es früher nur für Webseiten eingesetzt, sollen nun auf einmal komplette Applikationen entstehen. Dies überfordert viele Entwickler und resultiert oft in halbgaren Architekturen und schlampigen Umsetzungen. 
+
 
 \subsubsection{Fehlende Trennung von Logik und Präsentation}
 Die mit Abstand am beliebtesten Clientseitige JavaScript Library ist jQuery. Im Jahr 2011 verwendeten laut Alexa 45\% der Top 100.000 Webseiten eine JavaScript Library. Von diesen 45\% entfielen 63\% auf jQuery. \cite{jquery}[S. 107-108]
@@ -397,10 +396,14 @@ Folgender Code soll dieses Problem verdeutlichen: Der angeführte Code führt ei
 
 Durch das verwenden des Selektors \emph{\#field .info span} ist der JavaScript Code nun abhänig von der HTML Struktur der Webseite. Verändert ein Designer  die Struktur des HTML-Codes, beispielsweise um die Ausgabe an einen anderen Ort zu verschieben, besteht die Gefahr, dass der Selektor nicht mehr die gewollten Elemente selektiert und damit der JavaScript-Code nicht mehr funktioniert.
 
+Auch Serverseitig kann durch eine Verwebung von Präsentation von Logik schwer zu testender Code entstehen.
+
 \subsubsection{Verwendung von Globalen Objekten und Variablen}
 JavaScript macht es einfach, globale Variablen zu verwenden: Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13].
 
 Dadurch werden ProgrammiererInnen dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit ensteht, die für den Tester nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
+
+Jedoch nicht nur JavaScript sondern auch PHP setzt auf globale Variablen: Durch den Einsatz von \emph{Super-Globals} (\$\_POST oder \$\_SERVER) ist es schwer, eine komplette Isolation von globalen Variablen zu erreichen.
 
 \subsection{Lösungsansatz}
 Die vorher aufgezeigten Probleme können mit Hilfe folgende Techniken gelöst werden:
@@ -411,23 +414,33 @@ Die vorher aufgezeigten Probleme können mit Hilfe folgende Techniken gelöst we
 	\item Verwendung der Software-Patterns Dependency Injection und Inversion of Control, um Abhängigkeiten von Objekten und Funktionen offensichtlich und konfigurierbar zu machen
 \end{itemize}
 
-Um dies zu erreichen wird das JavaScript Framework \emph{AngularJS}\cite{angular} eingesetzt.
+Um dies zu erreichen wird auf der Clientseite das JavaScript Framework \emph{AngularJS}\cite{angular}, auf der Serverseite der Inversion of Control Container Pimple\cite{pimple} und ownCloud Templates eingesetzt.
 
-\subsubsection{Trennung von Logik und Präsentation}
-AngularJS erlaubt das Erstellen eigener HTML-Attribute und HTML-Elemente. Diese werden \emph{Directives} genannt und werden für die Darstellungslogik verwendet.
 
-Mit AngularJS würde das vorige jQuery Beispiel in etwa so aussehen:
+\section{Serverseitige Unit Tests}
+Durch die Verwendung von Pimple lässt sich nun die Konstruktion der Klassen konfigurieren, indem die Abhängigkeiten im Container definiert werden. Auch Super-Globals können hier injectbar gemacht werden, damit der Code unabhängig von globalen Variablen wird. 
+
+Ein Beispiel für die Container Konfiguration könnte so aussehen:
+\lstinputlisting[language=java]{src/pimple.php}
+
+Dazu lassen sich nun einfach Unit Tests erstellen, da die Klasse komplett vom globalen Zustand isoliert wurde. Ein konkreter Unit Test könnte so aussehen:
+
+\lstinputlisting[language=java]{src/phpunit.php}
+\lstinputlisting[language=java]{src/phpunittest.php}
+
+
+\section{Clientseitige Unit Tests}
+Auf der Clientseite wird als JavaScript Framework AngularJS eingesetzt. AngularJS erlaubt das Erstellen eigener HTML-Attribute und HTML-Elemente. Diese werden \emph{Directives} genannt und werden für die Darstellungslogik verwendet.
+
+Mit AngularJS würde das vorige jQuery Beispiel in 6.1 in etwa so aussehen:
 
 \lstinputlisting[language=Html]{src/angular.html}
 \lstinputlisting[language=JavaScript]{src/angular.js}
 
 Das \emph{Scope} dient als Schnittstelle zwischen der Logik und der Präsentation und erlaubt einen bidirektionalen Datenaustausch. Beide Layer sind nun sauber voneinander getrennt: Der JavaScript Code referenziert keine DOM-Elemente mehr und so kann so isoliert getestet werden. Außerdem ist es nicht mehr möglich, durch bloßes Verschieben des HTML-Codes Fehler in der JavaScript Logik auszulösen.
 
-
-\subsubsection{Injecten von Globalen Objekten und Variablen}
 AngularJS bietet zudem einen Inversion of Control Container um dynamisch Abhängigkeiten unter den Objekten und Funktionen aufzulösen. Häufig benutzte globale Objekte werden schon fertig konfiguriert mitgeliefert: das \emph{window} Objekt etwa kann durch den Service \emph{\$window} injected werden. Dadurch können die Abhängigkeiten einfach in den Tests durch Mocks ausgetauscht werden.
 
-\subsubsection{Unit Test}
 Für das oben aufgeführte Beispiel kann nun ein dazugehöriger Unit Test erstellt werden.
 
 Für den AJAX Request wird das \emph{\_\$httpBackend\_} Mock injected. Dies erlaubt den asynchronen Request in einen synchronen umzuwandeln. Auch ein neues Scope wird erstellt, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
