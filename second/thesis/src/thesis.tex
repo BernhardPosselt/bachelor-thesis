@@ -534,8 +534,19 @@ Da die Tests auf einem dem/der Kunden/Kundin ähnlichen System ausgeführt werde
 Um die Web-Applikationen sowohl Server- als auch Clientseitig testen zu können, muss eine Entsprechende Möglichkeit bestehen, die verschiedenen System zu simulieren. Dazu werden verschiedenen VMs mit den unterstützten Systemen erstellt. Dann werden die automatisierbaren Tests auf den jeweiligen Systemen ausgeführt, nicht automatisierbare Tests wie etwa die Korrektur der Übersetzungen wird an Test-Teams ausgelagert.
 
 \section{Serverseitige System Tests}
+Es ist schwierig, die Tests in Server- und Clientseitige Tests zu spalten, da das ganze System getestet wird. Clientseitige Tests testen somit auch Serverseitige Funktionalitäten. Bestimmte Tests wie Performance Tests müssen z.B. in Kombination durchgeführt werden.
 
+Die Serverseitigen Tests reduzieren sich deshalb auf das Erstellen und Einrichten der jeweiligen VMs für den Serverseitigen Code und auf das Testen von\cite{test_large_systems}[S. 60-66]:
 
+\begin{itemize}
+  \item Security
+  \item Konfiguration
+  \item Kompatibiltät der Applikation mit dem Server Betriebssystem und den serverseitigen Applikationen
+  \item Recovery Funktionen
+  \item Performance und Speicherverbrauch
+  \item Installation
+  \item Zuverlässigkeit
+\end{itemize}
 
 \section{Clientseitige System Tests}
 Die Clientseitigen System Tests werden auf unterschiedlichen Web-Browsern ausgeführt. Auch zusätzliche VMs für Windows und Mac OS X sind notwendig um verschiedene Versionen des Internet Explorers respektive Safari zu testen. Die restlichen Tests können unter Linux VMs durchgeführt werden.
