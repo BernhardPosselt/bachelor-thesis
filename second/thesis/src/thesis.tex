@@ -384,7 +384,7 @@ Viele Test-Framworks wie PHPUnit oder Jasmine liefern eigene Mock-Frameworks, mi
 Das Web ist noch recht jung und entwickelt sich rasant. Wurde es früher nur für Webseiten eingesetzt, sollen nun auf einmal komplette Applikationen entstehen. Dies überfordert viele Entwickler und resultiert oft in halbgaren Architekturen und schlampigen Umsetzungen. 
 
 
-\subsubsection{Fehlende Trennung von Logik und Präsentation}
+\subsection{Fehlende Trennung von Logik und Präsentation}
 Die mit Abstand am beliebtesten Clientseitige JavaScript Library ist jQuery. Im Jahr 2011 verwendeten laut Alexa 45\% der Top 100.000 Webseiten eine JavaScript Library. Von diesen 45\% entfielen 63\% auf jQuery. \cite{jquery}[S. 107-108]
 
 jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch den/die ProgrammierIn aufgrund der Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass die meisten jQuery-Methoden einen Selektor als ersten Parameter erwartet. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
@@ -398,14 +398,14 @@ Durch das verwenden des Selektors \emph{\#field .info span} ist der JavaScript C
 
 Auch Serverseitig kann durch eine Verwebung von Präsentation von Logik schwer zu testender Code entstehen.
 
-\subsubsection{Verwendung von Globalen Objekten und Variablen}
+\subsection{Verwendung von Globalen Objekten und Variablen}
 JavaScript macht es einfach, globale Variablen zu verwenden: Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13].
 
 Dadurch werden ProgrammiererInnen dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit ensteht, die für den Tester nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
 
-Jedoch nicht nur JavaScript sondern auch PHP setzt auf globale Variablen: Durch den Einsatz von \emph{Super-Globals} (\$\_POST oder \$\_SERVER) ist es schwer, eine komplette Isolation von globalen Variablen zu erreichen.
+Jedoch nicht nur JavaScript sondern auch PHP setzt auf globale Variablen: Durch den Einsatz von \emph{Super-Globals} (z.B. \$\_POST oder \$\_SERVER) ist es schwer, eine komplette Isolation von globalen Variablen zu erreichen.
 
-\subsection{Lösungsansatz}
+\section{Lösungsansatz}
 Die vorher aufgezeigten Probleme können mit Hilfe folgende Techniken gelöst werden:
 
 \begin{itemize}
@@ -441,9 +441,7 @@ Das \emph{Scope} dient als Schnittstelle zwischen der Logik und der Präsentatio
 
 AngularJS bietet zudem einen Inversion of Control Container um dynamisch Abhängigkeiten unter den Objekten und Funktionen aufzulösen. Häufig benutzte globale Objekte werden schon fertig konfiguriert mitgeliefert: das \emph{window} Objekt etwa kann durch den Service \emph{\$window} injected werden. Dadurch können die Abhängigkeiten einfach in den Tests durch Mocks ausgetauscht werden.
 
-Für das oben aufgeführte Beispiel kann nun ein dazugehöriger Unit Test erstellt werden.
-
-Für den AJAX Request wird das \emph{\_\$httpBackend\_} Mock injected. Dies erlaubt den asynchronen Request in einen synchronen umzuwandeln. Auch ein neues Scope wird erstellt, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
+Für das oben aufgeführte Beispiel kann nun ein dazugehöriger Unit Test erstellt werden: Für den AJAX Request wird das \emph{\_\$httpBackend\_} Mock injected. Dies erlaubt den asynchronen Request in einen synchronen umzuwandeln. Auch ein neues Scope wird erstellt, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
 
 \lstinputlisting[language=JavaScript]{src/angularunit.js}
 

@@ -1,4 +1,4 @@
-var angular.module('MyApp', ['ngMock']); // inject test mocks into the container
+var angular.module('MyApp', ['ngMock']); // inject angular provided mocks
 
 describe('RequestController', function() {
 
@@ -21,7 +21,7 @@ describe('RequestController', function() {
       isValid: true
     });
 
-    $controller('RequestController', { // instantiate a new controller instance
+    $controller('RequestController', { // instantiate a new controller
       $scope: scope
     });
 
