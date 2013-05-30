@@ -221,7 +221,7 @@ Kaptitel 7 behandelt den Systemtest. Es wird anhand von Beispielen gezeigt, wie 
 Kapitel 8 beschäftigt sich mit dem Thema des Acceptance Tests und wie dieser bei Web-Applikationen umgesetzt werden kann.
 
 \chapter{Warum testen}
-Keine Applikation ist fehlerfrei\cite{empiric_invest}[S. 9]. Diese Fehler  führen nicht nur zu unzufriedenen Kunden, sondern auch zu hohen Kosten: \glqq Im Jahr 2000 wurde in den USA ein Schaden durch Softwarefehler in der Auto- und Flugzeugindustrie von 1,8 Milliarden US-Dollar errechnet. Dies entspricht ca. 16 \% des Softwareumsatzes.\grqq\cite{betrieb}[S. 15]
+Keine Applikation ist fehlerfrei\cite{empiric_invest}[S. 9]. Diese Fehler  führen nicht nur zu unzufriedenen Kunden/Kundinnen, sondern auch zu hohen Kosten: \glqq Im Jahr 2000 wurde in den USA ein Schaden durch Softwarefehler in der Auto- und Flugzeugindustrie von 1,8 Milliarden US-Dollar errechnet. Dies entspricht ca. 16 \% des Softwareumsatzes.\grqq\cite{betrieb}[S. 15]
 
 Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer aufwendigeren Applikation mit 100 Millionen Zeilen Quellcode eine durchschnittliche Anzahl von 300.000 Fehlern ergibt \cite{eval_regression}[S. 10]. 
 
@@ -234,7 +234,7 @@ Laut dem V-Modell (Abbildung \ref{Abb3}) ist der Software-Test kein seperater Ab
 	\item Unit Test: Wird paralell zur Implementation erstellt
 	\item Integration Test: Wird erstellt, um den Designprozess zu überprüfen
 	\item System Test: Testet die konkreten Anforderungen an die Software
-	\item Acceptance Test: Testet die Anforderungen des Kunden
+	\item Acceptance Test: Testet die Anforderungen des/der Kunden/Kundin
 \end{itemize}
 
 \begin{figure}[h!]
@@ -257,15 +257,14 @@ Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters
 
 Die Lösung des Problems ist die teilweise Automatisierung des Testprozesses. Diese erlaubt bei zukünftigen Testdurchläufen nicht nur eine starke Reduzierung des Zeitaufwandes pro Durchlauf, sondern ermöglicht es auch, die Tests rund um die Uhr durchzuführen. Oft werden am Abend alle zeitintensiven Tests gestartet, damit die EntwicklerInnen am nächsten Morgen einen guten Überblick darüber haben, was nicht oder nicht mehr funktioniert. \cite{test_auto}[S. 22-23]
 
-Es gibt mehrere Faktoren, die bei der Entscheidung der Automatisierung berücksichtigt werden müssen. 
+Es gibt mehrere Faktoren, die bei der Entscheidung der Automatisierung berücksichtigt werden müssen: 
 
-% TODO: klarer trennen, absätze checken, bulletpoints?
+\begin{itemize}
+  \item Es muss klar sein, dass der Aufwand der Testerstellung einen wirtschaftlichen Nutzen hat. Bei einer sehr kleinen und unkritischen Applikation kann es sich z.B. nicht lohnen, Tests zu automatisieren. Dies liegt unter anderem daran, dass Tests erst über einen längeren Zeitraum ihre volle Stärke ausspielen. \cite{eval_regression}[S. 12]
+  \item Das Personal muss über eine dementsprechende Ausbildung verfügen, die Tests zu automatisieren. \cite{eval_automat_webapp_test}[S. 37]
+  \item Es eignet sich nicht jede Testart zur vollkommenen Automatisierung. Währen Unit-Tests und Integration Tests sehr gut automatisiert werden können, ist es schon schwieriger System und Acceptance Tests zu automatisieren. 
+\end{itemize}
 
-Erstens muss klar sein, dass der Aufwand der Testerstellung einen wirtschaftlichen Nutzen hat. Bei einer sehr kleinen und unkritischen Applikation kann es sich z.B. nicht lohnen, Tests zu automatisieren. Dies liegt unter anderem daran, dass Tests erst über einen längeren Zeitraum ihre volle Stärke ausspielen. \cite{eval_regression}[S. 12]
-
-Zweitens muss das Personal über eine dementsprechende Ausbildung verfügen, die Tests zu automatisieren. \cite{eval_automat_webapp_test}[S. 37]
-
-Drittens eignet sich nicht jede Testart zur vollkommenen Automatisierung. Währen Unit-Tests und Integration Tests sehr gut automatisiert werden können, ist es schon schwieriger System und Acceptance Tests zu automatisieren. 
 
 \section{Grenzen von Software-Tests}
 Software-Tests können nie eine komplett fehlerfreie Software garantieren. Es kann höchstens eine Fehlerabwesenheit für jene Fälle garantiert werden, welche mit Tests abgedeckt wurden. \cite{eval_regression}[S. 12]. 
@@ -317,8 +316,8 @@ Aufgrund der Dokumentation der Testfälle, ergeben sich zusätzlich folgende Vor
 	\item Abhängigkeiten der Testfälle untereinander und der Implementation werden transparent und erlauben schnell auf Änderungen zu reagieren\cite{test_auto}[S. 4]
 \end{itemize}
 
-% geht um unterschiede im tests, unterschieden von klassischer noch nicht da
-\chapter{Unterschiede zu klassischer Software}
+
+\chapter{Zusätzliche Herausforderungen beim Testen von Web-Applikationen}
 Eine Web-Applikationen unterscheidet sich an mehreren Stellen von einer klassichen Applikation, was das Testen und das Auffinden von Fehlern zusätzlich erschwert. Die Hauptunterschiede sind:
 
 \begin{itemize}
@@ -406,7 +405,7 @@ Auch Serverseitig kann durch eine Verwebung von Präsentation von Logik schwer z
 \subsection{Verwendung von Globalen Objekten und Variablen}
 JavaScript macht es einfach, globale Variablen zu verwenden: Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13].
 
-Dadurch werden ProgrammiererInnen dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit ensteht, die für den Tester nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
+Dadurch werden ProgrammiererInnen dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit ensteht, die für den/die TesterIn nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
 
 Jedoch nicht nur JavaScript sondern auch PHP setzt auf globale Variablen: Durch den Einsatz von \emph{Super-Globals} (z.B. \$\_POST oder \$\_SERVER) ist es schwer, eine komplette Isolation von globalen Variablen zu erreichen.
 
@@ -528,7 +527,7 @@ Zu den Nachteilen gehören:
 \chapter{System Test}
 System Tests werden verwendet um das Zusammenspiel zwischen dem System und der Applikation zu testen. Sie beinhalten sowohl funktionale (z.B. Installations Tests) als auch nicht funktionale Tests (z.B. Security, Usability oder Performance Tests)\cite{betrieb}[S. 30]. Diese Tests \glqq werden meistens nicht mehr von den Entwicklern selbst durchgeführt, sondern von unabhängigen Tester bzw. Test-Teams.\grqq\cite{eval_regression}[S. 17]
 
-Da die Tests auf einem dem/der Kunden/Kundin ähnlichen System ausgeführt werden, ist es gut, den/die Kunden/Kundin in den Test zu involvieren. Dies gestaltet sich oft als schwierig, da der Kunde meist nicht die nötige Expertise mitbringt, um die exakten Anforderungen und Testfälle zu erstellen. Als Lösungsmöglichkeit bietet sich hier die Zusammenarbeit mit einem qualifizierten Team des/der Kunden/Kundin \cite{test_large_systems}[S. 60]
+Da die Tests auf einem dem/der Kunden/Kundin ähnlichen System ausgeführt werden, ist es gut, den/die Kunden/Kundin in den Test zu involvieren. Dies gestaltet sich oft als schwierig, da der/die Kunde/Kundin meist nicht die nötige Expertise mitbringt, um die exakten Anforderungen und Testfälle zu erstellen. Als Lösungsmöglichkeit bietet sich hier die Zusammenarbeit mit einem qualifizierten Team des/der Kunden/Kundin \cite{test_large_systems}[S. 60]
 
 \section{Lösungsansatz}
 Um die Web-Applikationen sowohl Server- als auch Clientseitig testen zu können, muss eine Entsprechende Möglichkeit bestehen, die verschiedenen System zu simulieren. Dazu werden verschiedenen VMs mit den unterstützten Systemen erstellt. Dann werden die automatisierbaren Tests auf den jeweiligen Systemen ausgeführt, nicht automatisierbare Tests wie etwa die Korrektur der Übersetzungen wird an Test-Teams ausgelagert.
@@ -586,48 +585,25 @@ Da für die verschiedenen Plattformen jeweils Testumgebungen gestartet werden m�
 
 
 \chapter{Acceptance Test}
-TBD
-% TODO: verheiraten mit system test? erklären warum
+Beim Acceptance Test wird die Applikation auf die Anforderungen des/der Kunden/Kundin geprüft \cite{test_large_systems}[S. 66]. Der Test ist erforderlich, um eine erfolgreiche Abnahme durch den/die Kunden/Kundin zu erreichen. Da es vor allem im Interesse des/der Kunden/Kundin ist, eine wie im Vertrag vereinbarte funktionierende Software zu erhalten, ist er/sie meistens der HaupttesterIn.
 
-% test von kunden auf vertragliche richtlinien, oft stark kunde miteinbezogen
-% benutzbarkeit
+Zu den verschiedenen Tests zählen \cite{betrieb}[S. 33-34]:
 
-%\cite{eval_regression}[S. 28]
-%
-%\cite{test_auto}[S. 11]
-%
-%Development acceptance tests:
-% data driven \cite{test_auto}[S. 24]
-% * Release acceptance tests (smoke tests): mainstream data + mainstream funktionen \cite{testing_apps_on_web}[S. 36]
-% * Functional acceptance simple test: each dev release to test accessibility of key features on minimum configuration, no full functionality test (file saving example) \cite{testing_apps_on_web}[S. 37-38]
+\begin{itemize}
+   \item \glqq Test auf verträgliche Akzeptanz\grqq
+   \item \glqq Test der Benutzbarkeit\grqq
+   \item \glqq Akzeptanz durch den Systembetreiber\grqq
+   \item \glqq Feldrest (Alpha- und Betatest)\grqq
+ \end{itemize} 
 
-%Deployment acceptance tests:
-%Full installation + configurations
-% * Task-Oriented Functional Test: Features test (gherkin) against requirements, specs + design docs \cite{testing_apps_on_web}[S. 42]
-% * Forced Error Test: testing for failures 
-% * boundary test: test extreme inputs
-% * system level test: test whole application \cite{testing_apps_on_web}[S. 43]
-% * real world user level test: echte leute testen um fehler zu finden die man sonst übersieht
-% * exploratory test: überlegen wo es probleme geben könnte und dort testen
-% * stress test: limited resource conditions (memory, diskspace, network bandwidth)
-% * Performance tests: testen wieviel das system verträgt
-% * Regression tests: für bugs die schonmal aufgetreten sind \cite{testing_apps_on_web}[S. 44]
-% * Compability + config tests: testen auf unterschiedlichen platformen
-% * documentation test: testen von zb shortcuts \cite{testing_apps_on_web}[S. 45]
-% * install uninstall test
-% * UX tests
-% * External beta tests \cite{testing_apps_on_web}[S. 46]
-% * Secuirty tests
-% * Unit tests
-%\cite{test_large_systems}[S. 10]
+Um das Risiko einer verweigerten Abnahme im späten Stadium zu vermindern, können die Acceptance Tests bereits während der Entwicklung mit dem/der Kunden/Kundin zusammen durchgeführt werden, was sich vor allem in einem agilen Software-Projekt anbietet. \cite{eval_regression}[S. 17]
 
-%test ist mehr als simples aufnehmen und abspielen von inputs: ist redundant und eintönig, muss automatisiert werden muss geplant werden und auch generisch sein ansonsten braucht wartung der test skripte mehr aufwand und reibereien mit kollegen wenn sie etwas ändern
-%automatisiertes monkey testing findet nur absturz bugs aber keine funktionalen bugs 
+\section{Lösungsansatz}
+Dadurch, dass der/die Kunde/Kundin in diesem Fall der/die HaupttesterIn der Software ist, gestaltet es sich schwierig, diesen Prozess zu automatisieren. Es empfiehlt sich, regelmäßige Meetings mit dem/der Kunden/Kundin abzuhalten, damit das Projekt früh genug an die aufkommenden Probleme angepasst werden kann. Außerdem bietet es sich an, die in den während des System Tests erstellten User-Stories integriert werden. Wurden diese vom oder mit Hilfe des/der Kunden/Kundin erstellt, kann der/die HerstellerIn damit argumentieren, dass die verlangten Features komplett umgesetzt wurden.
 
 
 \chapter{Zusammenfassung}
-TBD
-% \cite{process_oop}[S. 30]
+
 
 % TODO: Vergleich zu klassischen apps nochmal erläutern, vor + nachteile vllt auch tabellarisch, abkürzungsverzeichnis weglassen bei nur 2 abkürzungen, mehr abbildungen
 
