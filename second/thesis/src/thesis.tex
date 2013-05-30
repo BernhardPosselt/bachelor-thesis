@@ -189,24 +189,24 @@ Dieses Problem der Fragmentierung und des damit verbundenen immer höheren Porti
 \end{figure}
 
 \section{Problemstellung}
-Aufgrund der Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch der Testaufwand der Applikation. Die Browser implementieren die vom W3C vorgeschlagenen Standards ab und zu anders und in unterschiedlicher Geschwindigkeit. Nicht selten kommt es vor, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erfordern. \cite{caniuse}
+Aufgrund der Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch der Testaufwand der Applikation. Die Browser implementieren die vom W3C vorgeschlagenen Standards ab und zu anders und in unterschiedlicher Geschwindigkeit. Nicht selten kommt es vor, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erforderlich sind. \cite{caniuse}
 
 Ein weiteres Problem ist das verhaltene Upgradeverhalten der NutzerInnen. Im Falle des Internet Explorers 7 dauerte es beispielsweise länger als 19 Monate, bis rund die Hälfte der NutzerInnen auf die neue Version umgestiegen sind. \cite{insecure}[S. 3]
 
-All dies zwingt Web-EntwicklerInnen eine Vielzahl an unterschiedlichen Browsern und Browser-Versionen zu unterstützen.
+All dies zwingt Web-EntwicklerInnen dazu, eine Vielzahl an unterschiedlichen Browsern und Browser-Versionen zu unterstützen.
 
 
 \section{Lösungsansatz}
 Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um der höheren Komplexität von Web-Applikationen gerecht zu werden. 
 
-Dazu werden die jeweiligen Testarten anhand eines Projektes an eine Web-Applikation angepasst. Sowohl client- als auch serverseitige Tests werden erstellt, um die verschiedenen Plattformen erfolgreich testen zu können. Dies wird mit dementsprechenden Code Beispielen illustriert.
+Dazu werden die jeweiligen Testarten des V-Modells - Unit Test, Integration Test, System Test und Acceptance Test - anhand eines Projektes an eine Web-Applikation angepasst. Sowohl client- als auch serverseitige Tests werden erstellt, um die verschiedenen Plattformen erfolgreich testen zu können. Dies wird mit dementsprechenden Code-Beispielen illustriert.
 
 \newpage
 
 \section{Aufbau}
-Der erste Teil der Arbeit (Kapitel 2, 3 und 4) behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt. Es werden Unterschiede im Bezug auf Software Test zu klassichen Applikationen herausgearbeitet. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen. Schlussendlich wird der Ablauf des Testprozesses mit Hilfe eines Testplanes erläutert.
+Der erste Teil der Arbeit (Kapitel 2, 3 und 4) behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt. Auf Unterschiede zwischen Software-Test von klassischen und Web-Applikationen wird eingegangen. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen. Schlussendlich wird der Ablauf des Testprozesses mit Hilfe eines Testplanes erläutert.
 
-Der zweite Teil (Kapitel 5, 6, 7, 8) beschäftigt sich mit den praktischen Anpassungen der verschiedenen Testarten des V-Modells: Kapitel 5 beschäftigt sich näher mit dem praktischen Einsatz von client- und serverseitigen Unit Tests. Es werden für beide Seiten Beispiele eines Unit Tests erstellt und auf klassiche Probleme sowhol bei clientseitigen, als auch serverseitigen Unit Tests und deren Lösungen eingangen. Das Thema des Integration Tests wird in Kaptitel 6 behandelt. Außerdem wird auf die verschiedenen Test-Ansätze eingegangen. Darauf folgt der System Test in Kapitel 7. Es wird anhand von Beispielen gezeigt, wie die verschiedenen Server- und Client-Plattformen automatisch getestet werden können. Schlussendlich wird noch der Acceptance Test in Kapitel 8 behandelt.
+Der zweite Teil (Kapitel 5, 6, 7, 8) beschäftigt sich mit den praktischen Anpassungen der verschiedenen Testarten des V-Modells. Kapitel 5 beschäftigt sich näher mit dem praktischen Einsatz von client- und serverseitigen Unit Tests. Es werden für beide Seiten Beispiele eines Unit Tests erstellt und auf klassiche Probleme sowohl bei client-, als auch serverseitigen Unit Tests und deren Lösungen eingangen. Das Thema des Integration Tests wird in Kaptitel 6 behandelt. Außerdem wird auf die verschiedenen Test-Ansätze eingegangen. Darauf folgt der System Test in Kapitel 7. Es wird anhand von Beispielen gezeigt, wie die verschiedenen Server- und Client-Plattformen automatisch getestet werden können. Schlussendlich wird noch der Acceptance Test in Kapitel 8 behandelt.
 
 \chapter{Warum testen}
 Keine Applikation ist fehlerfrei\cite{empiric_invest}[S. 9]. Diese Fehler  führen nicht nur zu unzufriedenen Kunden/Kundinnen, sondern auch zu hohen Kosten: \glqq Im Jahr 2000 wurde in den USA ein Schaden durch Softwarefehler in der Auto- und Flugzeugindustrie von 1,8 Milliarden US-Dollar errechnet. Dies entspricht ca. 16 \% des Softwareumsatzes.\grqq\cite{betrieb}[S. 15]
@@ -231,9 +231,7 @@ Laut dem V-Modell (Abbildung \ref{Abb3}) ist der Software-Test kein seperater Ab
 \caption[Schematische Darstellung des V-Modells]{Schematische Darstellung des V-Modells \cite{vmodel}[S. 3]}\label{Abb3}
 \end{figure}
 
-Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementierung zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden. \cite{test_auto}[S. 2]
-
-Zudem ist eine Abschätzung riskanter Bereiche möglich, die durch eine erhöhten Testbedarf bestimmter Bereiche offensichtlich wird. \cite{testing_apps_on_web}[S. 34]
+Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementierung zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden\cite{test_auto}[S. 2]. Zudem ist eine Abschätzung riskanter Bereiche möglich, die durch eine erhöhten Testbedarf bestimmter Bereiche offensichtlich wird. \cite{testing_apps_on_web}[S. 34]
 
 
 \section{Manuelle Tests}
@@ -249,37 +247,39 @@ Es gibt mehrere Faktoren, die bei der Entscheidung der Automatisierung berücksi
 
 \begin{itemize}
   \item Es muss klar sein, dass der Aufwand der Testerstellung einen wirtschaftlichen Nutzen hat. Bei einer sehr kleinen und unkritischen Applikation kann es sich z.B. nicht lohnen, Tests zu automatisieren. Dies liegt unter anderem daran, dass Tests erst über einen längeren Zeitraum ihre volle Stärke ausspielen. \cite{eval_regression}[S. 12]
-  \item Das Personal muss über eine dementsprechende Ausbildung verfügen, die Tests zu automatisieren. \cite{eval_automat_webapp_test}[S. 37]
-  \item Es eignet sich nicht jede Testart zur vollkommenen Automatisierung. Währen Unit-Tests und Integration Tests sehr gut automatisiert werden können, ist es schon schwieriger System und Acceptance Tests zu automatisieren. 
+  \item Das Personal muss für die Erstellung der automatischen Tests ausgebildet sein. \cite{eval_automat_webapp_test}[S. 37]
+  \item Es eignet sich nicht jede Testart zur vollkommenen Automatisierung. Währen Unit-Tests und Integration Tests sehr gut automatisiert werden können, sind System und Acceptance Tests schon schwieriger zu automatisieren. 
 \end{itemize}
 
 
 \section{Grenzen von Software-Tests}
-Software-Tests können nie eine komplett fehlerfreie Software garantieren. Es kann höchstens eine Fehlerabwesenheit für jene Fälle garantiert werden, welche mit Tests abgedeckt wurden. \cite{eval_regression}[S. 12]. 
+Software-Tests können nie eine komplett fehlerfreie Software garantieren. Es kann höchstens eine Fehlerabwesenheit für jene Fälle garantiert werden, welche mit Tests abgedeckt wurden \cite{eval_regression}[S. 12]. Dies resultiert unter anderem daraus, dass die Anforderungen an die Software oft nicht komplett spezifiziert oder zu ungenau formuliert sind. Zusätzlich steigt die Komplexität der Applikation im Laufe der Entwicklung stark an. Ein weiterer Grund stellt die oft schier unbegrenzten Möglichkeiten an unterschiedlichen Eingaben dar. \cite{software_qual}[S. 243].
 
-Dies resultiert unter anderem daraus, dass die Anforderungen an die Software oft nicht komplett spezifiziert oder zu ungenau formuliert sind. Zusätzlich steigt die Komplexität der Applikation im Laufe der Entwicklung stark an. Ein weiterer Grund stellt die oft schier unbegrenzten Möglichkeiten an unterschiedlichen Eingaben dar. \cite{software_qual}[S. 243].
-
-Die implementierten Testfälle müssen auch regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und keine neuen, mögliche Fehlerfälle berücksichtigen. \cite{eval_regression}[S. 12-13]
+Die implementierten Testfälle müssen zudem regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und keine neuen, mögliche Fehlerfälle berücksichtigen. \cite{eval_regression}[S. 12-13]
 
 \chapter{Testplan}
 
-Mit dem Erstellen des Projektplanes sollte gleichzeitig auch ein Testplan erstellt werden \cite{eval_automat_webapp_test}[S. 24]. Dieser erlaubt, den Testprozess näher zu spezifizieren und somit den erforderlichen Aufwand besser abschätzbar zu machen \cite{test_large_systems}[S. 18]. Sollte es notwendig sein, kann damit der Testprozess auch an ein externes Team ausgelagert werden. Wird der Testplan zudem in den Abnahmenkriterien verankert, reduziert sich das Projektrisiko durch klar definierte Kriterien. \cite{eval_automat_webapp_test}[S. 26]
+Mit dem Erstellen des Projektplanes wird gleichzeitig auch ein Testplan erstellt werden \cite{eval_automat_webapp_test}[S. 24]. Dieser erlaubt, den Testprozess näher zu spezifizieren und somit den erforderlichen Aufwand besser abschätzbar zu machen \cite{test_large_systems}[S. 18]. Sollte es notwendig sein, kann damit der Testprozess auch an ein externes Team ausgelagert werden. Wird der Testplan zudem in den Abnahmenkriterien verankert, reduziert sich das Projektrisiko durch klar definierte Kriterien. \cite{eval_automat_webapp_test}[S. 26]
 
 \section{Inhalt}
 Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3]:
 
 \begin{itemize}
-	\item Was wird getestet? Welche Bereiche besitzen eine höhere Priorität als andere?
-	\item Wo wird getestet? Mit welchen Konfigurationen, Soft- und Hardware Plattformen respektive Versionen werden getestet?
-	\item Wie wird getestet? mit welchen Tools wird getestet?
+	\item Was wird getestet? 
+  \item Welche Bereiche besitzen eine höhere Priorität als andere?
+	\item Wo wird getestet? 
+  \item Mit welchen Konfigurationen, Soft- und Hardware Plattformen respektive Versionen wird getestet?
+	\item Wie wird getestet? 
+  \item Mit welchen Tools wird getestet?
 	\item Wer testet?
-	\item Wie lange wird getestet? Bis wann muss ein Test erfolgreich absolviert werden?
+	\item Wie lange wird getestet? 
+  \item Bis wann muss ein Test erfolgreich absolviert werden?
 	\item Was wird nicht getestet?
 \end{itemize}
 
 
 \section{Ablauf}
-Da die Entwicklung der Applikation meistens unter einem hohen Zeitdruck abläuft\cite{software_qual}[S. 244] und der Testprozess zudem teuer ist \cite{eval_regression}[S. 24], ist es wichtig, Testfälle heraus zu arbeiten, zu priorisieren und effektiv zu verteilen. Auch Endkriterien sollten für die Tests veranschlagt und eine optimale Teststrategie gewählt werden.
+Da die Entwicklung der Applikation meistens unter einem hohen Zeitdruck abläuft\cite{software_qual}[S. 244] und der Testprozess zudem teuer ist \cite{eval_regression}[S. 24], ist es wichtig, Testfälle heraus zu arbeiten, zu priorisieren und effektiv an TesterInnen zu verteilen. Auch Endkriterien werden für die Tests veranschlagt und eine optimale Teststrategie gewählt werden.
 
 Danach folgt die Überprüfung des Testplans. Hier wird überprüft, ob die einzelnen Testfälle genau genug beschrieben worden sind, um daraus die jeweiligen Testfälle erstellen zu können. Auch die Effiktivität der Teststrategien wird überprüft. Diese Prüfung findet nicht nur einmal statt, sondern wiederholt sich mehrfach im Testprozess. Dies hängt damit zusammen, dass die Anforderungen an die Software im Laufe der Implementierung immer konkreter werden und somit auch neue, mögliche Fehlerfälle enstehen können.\cite{eval_regression}[S. 25] 
 
@@ -459,7 +459,7 @@ Nur Unit Tests alleine reichen jedoch nicht aus, um das Projekt komplett abzudec
 \end{itemize}
 
 \chapter{Integration Test}
-Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten und den Programm-Fluss zu testen. Sie funktionieren ähnlich wie Unit Tests, verwenden jedoch je nach Implementations-Strategie wenig bis keine Mocks und testen weniger Implementationsdetails\cite{test_large_systems}[S. 53-54]. Auf ein Integration Test Quellcode Beispiel wird deshalb verzichtet. 
+Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten und den Programm-Fluss zu testen. Sie funktionieren ähnlich wie Unit Tests, verwenden jedoch je nach Implementations-Strategie wenig bis keine Mocks und testen weniger Implementationsdetails\cite{test_large_systems}[S. 53-54]. Auf ein Integration Test Quellcode-Beispiel wird deshalb verzichtet. 
 
 Durch die vielen möglichen Kombinationen der einzelnen Module gibt es keine allgemein gültige Implementations-Strategie \cite{betrieb}[S. 29]. Die zwei häufigsten verwendeten Methoden zur Erstellung der Testfälle sind:
 
