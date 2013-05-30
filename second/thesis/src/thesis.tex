@@ -279,11 +279,11 @@ Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3
 
 
 \section{Ablauf}
-Da die Entwicklung der Applikation meistens unter einem hohen Zeitdruck abläuft\cite{software_qual}[S. 244] und der Testprozess zudem teuer ist \cite{eval_regression}[S. 24], ist es wichtig, Testfälle heraus zu arbeiten, zu priorisieren und effektiv an TesterInnen zu verteilen. Auch Endkriterien werden für die Tests veranschlagt und eine optimale Teststrategie gewählt werden.
+Da die Entwicklung der Applikation meistens unter einem hohen Zeitdruck abläuft\cite{software_qual}[S. 244] und der Testprozess zudem teuer ist \cite{eval_regression}[S. 24], ist es wichtig, Testfälle heraus zu arbeiten, zu priorisieren und an geeignete TesterInnen zu verteilen. Auch Endkriterien werden für die Tests veranschlagt und eine optimale Test-Strategie gewählt werden.
 
-Danach folgt die Überprüfung des Testplans. Hier wird überprüft, ob die einzelnen Testfälle genau genug beschrieben worden sind, um daraus die jeweiligen Testfälle erstellen zu können. Auch die Effiktivität der Teststrategien wird überprüft. Diese Prüfung findet nicht nur einmal statt, sondern wiederholt sich mehrfach im Testprozess. Dies hängt damit zusammen, dass die Anforderungen an die Software im Laufe der Implementierung immer konkreter werden und somit auch neue, mögliche Fehlerfälle enstehen können.\cite{eval_regression}[S. 25] 
+Danach folgt die Überprüfung des Testplans. Hier wird überprüft, ob die einzelnen Testfälle genau genug beschrieben worden sind, um daraus die jeweiligen Testfälle erstellen zu können. Auch die Effiktivität der Test-Strategien wird überprüft. Diese Prüfung findet nicht nur einmal statt, sondern wiederholt sich mehrfach im Testprozess. Dies hängt damit zusammen, dass die Anforderungen an die Software im Laufe der Implementierung immer konkreter werden und somit auch neue, mögliche Fehlerfälle erkannt werden können.\cite{eval_regression}[S. 25] 
 
-Ist der Testplan soweit fertig, kann ein Zeitplan für die einzelnen Testfälle erstellt werden. In weiterer Folge werden die einzelnen Tests an die TesterInnen vergeben. Diese können nun mit der Erstellung der konkreten Testfälle beginnen können.
+Ist der Testplan soweit fertig, kann ein Zeitplan für die einzelnen Testfälle erstellt werden. In weiterer Folge werden die einzelnen Tests an die TesterInnen vergeben. Diese können nun mit der Erstellung der konkreten Testfälle beginnen.
 
 Manche Tests haben eine sehr hohe Laufzeit. Um den Ablauf daher zu beschleunigen, wird ein Smoke-Tests erstellt. Der Smoke-Test testet grobe Szenarien der Applikation. Schlagen diese fehl, sind weitere Testdurchläufe nicht notwendig und der Testdurchlauf kann abgebrochen werden. 
 
@@ -297,9 +297,9 @@ Aufgrund der Dokumentation der Testfälle, ergeben sich zusätzlich folgende Vor
 \begin{itemize}
 	\item Fehlende Testfälle können schnell erkannt werden \cite{test_large_systems}[S. 18]
 	\item Redundante Testfälle werden identifziert, Testfälle können zusammegelegt werden um Zeit zu sparen \cite{testing_apps_on_web}[S. 34]
-	\item Verschiedene Testbereiche können an mehrere Personen mit unterschiedlichen Fachkenntnissen verteilt werden um Personalengpässe zu vermeiden \cite{test_large_systems}[S. 19]
+	\item Verschiedene Testbereiche können an mehrere Personen mit unterschiedlichen Fachkenntnissen verteilt werden, um Personalengpässe zu vermeiden \cite{test_large_systems}[S. 19]
 	\item Ineffiziente Test-Tools und Test-Strategien können erkannt und verbessert werden \cite{eval_regression}[S. 25]
-	\item Geschäftskritische Bereiche und solche mit einer erhöhten  Fehleranfälligkeit werden sichtbarer \cite{testing_apps_on_web}[S. 34]. Dies ist vor allem wichtig, da Fehler ungleich verteilt sind und in bestimmten Bereichen häufiger vorkommen als in anderen \cite{eval_regression}[S. 12]
+	\item Geschäftskritische Bereiche und solche mit einer erhöhten  Fehleranfälligkeit werden sichtbarer \cite{testing_apps_on_web}[S. 34]. Dies ist vor allem darum wichtig, weil Fehler ungleich verteilt sind und in bestimmten Bereichen häufiger vorkommen als in anderen \cite{eval_regression}[S. 12]
 	\item Sinnlose Testfälle und Testbereiche können aussortiert werden 
 	\item Abhängigkeiten der Testfälle untereinander und der Implementierung werden transparent und erlauben schnell auf Änderungen zu reagieren\cite{test_auto}[S. 4]
 \end{itemize}
@@ -328,7 +328,7 @@ Durch diesen modularen Aufbau ist es besonders schwer einen Fehler zu lokalisier
 \end{figure}
 
 \section{Unterstützung mehrerer Plattformen}
-Web-Applikationen laufen auf einer Vielzahl verschiedener Plattformen, Server- und Clientseitig. Dies ermöglicht dem/der EntwicklerIn Zeit und Aufwand zu sparen, befreit ihn/sie jedoch nicht von der Aufgabe, sicher zu stellen, dass die Applikation auf möglichst vielen Plattformen korrekt ausgeführt wird.
+Web-Applikationen laufen auf einer Vielzahl verschiedener Plattformen, server- und clientseitig. Dies ermöglicht dem/der EntwicklerIn Zeit und Aufwand zu sparen, befreit ihn/sie jedoch nicht von der Aufgabe, sicher zu stellen, dass die Applikation auf möglichst vielen Plattformen korrekt ausgeführt wird.
 
 Während auf der Serverseite die jeweilig zu verwendenden Plattformen noch vom/von der BetreiberIn festlegbar sind, sprich welches Betriebssystem und welche Datenbank eingesetzt wird, ist dies auf der Clientseite schon nicht mehr möglich. 
 
@@ -353,22 +353,18 @@ ownCloud ist eine Open Source Web-Applikations-Plattform, welche oft genutzte Cl
 \section{Setup auf der Serverseite}
 Auf der Serverseite wird PHP in der Version 5.3 eingesetzt. Als Inversion of Control Container kommt Pimple\cite{pimple} zum Einsatz. Als Test-Framwork wird PHPUnit\cite{phpunit} in der Version 3.8 eingesetzt.
 
-Für die Erstellung und Einrichtung der VMs werden Vagrant\cite{vagrant} und Chef\cite{chef} verwendet. Vagrant erlaubt das einfache Erstellen und starten von VMs. Chef erlaubt durch das Verwenden sogenannter \emph{Cookbooks} und \emph{Recipes} eine einfache Installation und Konfiguration von häufig verwendeten Software-Paketen durch Ruby Skripts.
+Für die Erstellung und Einrichtung der VMs werden Vagrant\cite{vagrant} und Chef\cite{chef} verwendet. Vagrant erlaubt das einfache Erstellen und starten von VMs. Chef erlaubt durch das Verwenden sogenannter \emph{Cookbooks} und \emph{Recipes} eine einfache Installation und Konfiguration von häufig verwendeten Software-Paketen durch Ruby Skripte.
 
 \section{Setup auf der Clientseite}
-Die Clientseitige Logik ist mit JavaScript und dem JavaScript Framework AngularJS\cite{angular} in Version 1.0 umgesetzt. AngularJS ist ein MV* Framework und erlaubt eine einfache Trennung der Präsentation und der Logik. Da AngularJS bereits einen Inversion of Control Container mitliefert, wird dieser verwendet. 
+Die Clientseitige Logik ist mit JavaScript und dem JavaScript Framework AngularJS\cite{angular} in Version 1.0 umgesetzt. AngularJS ist ein MV* Framework und erlaubt durch eine Templatesprache eine Trennung von Präsentation und Logik. Da AngularJS bereits einen Inversion of Control Container mitliefert, wird dieser verwendet. 
 
-Die JavaScript Tests werden mithilfe von Karma\cite{karma}(früher Testacular) 0.8 ausgeführt und basieren auf dem JavaScript Unit Test Framework Jasmine 1.3.1 \cite{jasmine}. 
-
-Die Acceptance und System Tests wurden mit Cucumber 1.3.2 \cite{cucumber} erstellt. Cucumber bietet die Möglichkeit, bereits erstellte User-Stories zu parsen und mit Selenium im Browser auszuführen.
+Die JavaScript Tests werden mithilfe von Karma\cite{karma}(früher Testacular) 0.8 ausgeführt und basieren auf dem JavaScript Unit Test Framework Jasmine 1.3.1 \cite{jasmine}. Die Acceptance und System Tests werden mit Cucumber 1.3.2 \cite{cucumber} erstellt. Cucumber bietet die Möglichkeit, bereits erstellte User-Stories zu parsen und mittels Selenium im Browser auszuführen.
 
 
 \chapter{Unit Test}
 Unit Tests werden verwendet, um Klassen, Module oder einzelne Komponenten zu testen. Sie sind Whitebox Tests, sprich die Implementationsdetails sind bekannt\cite{betrieb}[S. 26], und werden üblicherweise vom ProgrammiererInnen selbst erstellt. 
 
-Da Unit Tests eine Komponente isoliert von anderen Komponenten testet, werden Abhängigkeiten oft mit Mocks (auch Stubs genannt) ersetzt. Dieses Mocks implementieren die Methoden und Attribute, von denen die geteste Komponente abhängt. 
-
-Viele Test-Framworks wie PHPUnit oder Jasmine liefern eigene Mock-Frameworks, mit welchen die Erstellung vereinfacht wird. Ein Mock in PHPUnit sieht in etwa so aus:
+Da Unit Tests eine Komponente isoliert von anderen Komponenten testet, werden Abhängigkeiten oft mit Mocks (auch Stubs genannt) ersetzt. Dieses Mocks implementieren die Methoden und Attribute, von denen die geteste Komponente abhängt und erlauben es, eigene Testwerte zurückzugeben. Viele Test-Framworks wie PHPUnit oder Jasmine liefern eigene Mock-Frameworks mit, mit welchen die Erstellung vereinfacht wird. Ein Mock in PHPUnit sieht in etwa so aus:
 
 \lstinputlisting[language=java]{src/mock.php}
 
@@ -379,21 +375,17 @@ Das Web ist noch recht jung und entwickelt sich rasant. Wurde es früher nur fü
 \subsection{Fehlende Trennung von Logik und Präsentation}
 Die mit Abstand am beliebtesten Clientseitige JavaScript Library ist jQuery. Im Jahr 2011 verwendeten laut Alexa 45\% der Top 100.000 Webseiten eine JavaScript Library. Von diesen 45\% entfielen 63\% auf jQuery. \cite{jquery}[S. 107-108]
 
-jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch den/die ProgrammierIn aufgrund der Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass die meisten jQuery-Methoden einen Selektor als ersten Parameter erwartet. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
+jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch den/die ProgrammiererIn aufgrund ihrer Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass die meisten jQuery-Methoden einen Selektor als ersten Parameter erwarten. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
 
 Folgender Code soll dieses Problem verdeutlichen: Der angeführte Code führt einen AJAX Request aus und gibt abhängig von der zurückgegebenen Datenstruktur einen unterschiedlichen Text aus:
-
+\newpage
 \lstinputlisting[language=Html]{src/jquery.html}
 \lstinputlisting[language=JavaScript]{src/jquery.js}
 
-Durch das verwenden des Selektors \emph{\#field .info span} ist der JavaScript Code nun abhänig von der HTML Struktur der Webseite. Verändert ein Designer  die Struktur des HTML-Codes, beispielsweise um die Ausgabe an einen anderen Ort zu verschieben, besteht die Gefahr, dass der Selektor nicht mehr die gewollten Elemente selektiert und damit der JavaScript-Code nicht mehr funktioniert.
-
-Auch Serverseitig kann durch eine Verwebung von Präsentation von Logik schwer zu testender Code entstehen.
+Durch das verwenden des Selektors \emph{\#field .info span} ist der JavaScript Code nun abhänig von der HTML Struktur der Webseite. Verändert ein Designer  die Struktur des HTML-Codes, beispielsweise um die Ausgabe an einen anderen Ort zu verschieben, besteht die Gefahr, dass der Selektor nicht mehr die gewollten Elemente selektiert und damit der JavaScript-Code nicht mehr funktioniert. Auch Serverseitig kann durch eine Verwebung von Präsentation von Logik schwer zu testender Code entstehen.
 
 \subsection{Verwendung von Globalen Objekten und Variablen}
-JavaScript macht es einfach, globale Variablen zu verwenden: Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13].
-
-Dadurch werden ProgrammiererInnen dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit ensteht, die für den/die TesterIn nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
+JavaScript macht es einfach, globale Variablen zu verwenden: Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13]. Dadurch werden ProgrammiererInnen dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit ensteht, die für den/die TesterIn nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
 
 Jedoch nicht nur JavaScript sondern auch PHP setzt auf globale Variablen: Durch den Einsatz von \emph{Super-Globals} (z.B. \$\_POST oder \$\_SERVER) ist es schwer, eine komplette Isolation von globalen Variablen zu erreichen.
 
@@ -410,9 +402,9 @@ Um dies zu erreichen wird auf der Clientseite das JavaScript Framework \emph{Ang
 
 
 \section{Serverseitige Unit Tests}
-Durch die Verwendung von Pimple lässt sich nun die Konstruktion der Klassen konfigurieren, indem die Abhängigkeiten im Container definiert werden. Auch Super-Globals können hier injectbar gemacht werden, damit der Code unabhängig von globalen Variablen wird. 
+Durch die Verwendung von Pimple lässt sich nun die Konstruktion der Klassen konfigurieren, indem die Abhängigkeiten im Container definiert werden. Auch Super-Globals können hier konfiguriert werden, damit der Code unabhängig von globalen Variablen wird. 
 
-Ein Beispiel für die Container Konfiguration könnte so aussehen:
+Ein Beispiel für die Container-Konfiguration könnte so aussehen:
 \lstinputlisting[language=java]{src/pimple.php}
 
 Dazu lassen sich nun einfach Unit Tests erstellen, da die Klasse komplett vom globalen Zustand isoliert wurde. Ein konkreter Unit Test könnte so aussehen:
@@ -429,14 +421,14 @@ Mit AngularJS würde das vorige jQuery Beispiel in 6.1 in etwa so aussehen:
 \lstinputlisting[language=Html]{src/angular.html}
 \lstinputlisting[language=JavaScript]{src/angular.js}
 
-Das \emph{Scope} dient als Schnittstelle zwischen der Logik und der Präsentation und erlaubt einen bidirektionalen Datenaustausch. Beide Layer sind nun sauber voneinander getrennt: Der JavaScript Code referenziert keine DOM-Elemente mehr und so kann so isoliert getestet werden. Außerdem ist es nicht mehr möglich, durch bloßes Verschieben des HTML-Codes Fehler in der JavaScript Logik auszulösen.
+Das \emph{Scope} dient als Schnittstelle zwischen der Logik und der Präsentation und erlaubt einen bidirektionalen Datenaustausch. Beide Layer sind nun sauber voneinander getrennt: Der JavaScript Code referenziert keine DOM-Elemente mehr und kann so isoliert getestet werden. Außerdem ist es nicht mehr möglich, durch bloßes Verschieben des HTML-Codes Fehler in der JavaScript Logik auszulösen.
 
-AngularJS bietet zudem einen Inversion of Control Container um dynamisch Abhängigkeiten unter den Objekten und Funktionen aufzulösen. Häufig benutzte globale Objekte werden schon fertig konfiguriert mitgeliefert: das \emph{window} Objekt etwa kann durch den Service \emph{\$window} injected werden. Dadurch können die Abhängigkeiten einfach in den Tests durch Mocks ausgetauscht werden.
+AngularJS bietet zudem einen Inversion of Control Container um dynamisch Abhängigkeiten unter den Objekten und Funktionen aufzulösen. Häufig benutzte globale Objekte werden schon fertig konfiguriert mitgeliefert: das \emph{window} Objekt etwa kann durch den Service \emph{\$window} verwendet werden. Dadurch können die Abhängigkeiten einfach in den Tests durch Mocks ausgetauscht werden.
 
-Für das oben aufgeführte Beispiel kann nun ein dazugehöriger Unit Test erstellt werden: Für den AJAX Request wird das \emph{\_\$httpBackend\_} Mock injected. Dies erlaubt den asynchronen Request in einen synchronen umzuwandeln. Auch ein neues Scope wird erstellt, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
+Für das oben aufgeführte Beispiel kann nun ein dazugehöriger Unit Test erstellt werden: Für den AJAX Request wird das \emph{\_\$httpBackend\_} Mock verwendet. Dies erlaubt den asynchronen Request in einen synchronen umzuwandeln. Auch ein neues Scope wird erstellt, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
 
 \lstinputlisting[language=JavaScript]{src/angularunit.js}
-
+\newpage
 \section{Vor- und Nachteile}
 
 Zu den Vorteilen von Unit Tests zählen:
@@ -704,6 +696,7 @@ DOM & Document Object Model\\
 W3C & World Wide Web Consortium\\
 MV* & Model View - View Model\\
 VM & Virtual Machine\\
+PHP & PHP Hypertext Preprocessor\\
 
 \end{tabular}
 
