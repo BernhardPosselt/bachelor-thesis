@@ -169,7 +169,8 @@ Creation and execution of automatic web application tests is different from test
 % dort Kurzformen der Kapitelbezeichnungen mittels:
 % \chapter[Kurzform]{Lange überschrift}
 \chapter{Einführung}
-Der Markt für elektronische Geräte hat in den letzten Jahren ein rasantes Wachstum erlebt, vor allem im Bereich der mobilen Geräte. Im Jahr 2011 wurden erstmals mehr mobile Geräte verkauft als PCs (Abbildung \ref{Abb1}).
+Immer mehr unserer Alltagsgeräte ermöglichen einen Zugang zum Internet. Besonders der Markt für mobile elektronische Geräte hat in den letzten Jahren ein rasantes Wachstum erlebt: Im Jahr 2011 wurden erstmals mehr mobile Geräte verkauft als PCs (Abbildung \ref{Abb1}).
+
 Aufgrund des starken Wachstums dehnt sich der Markt für Software-Applikationen auch auf mobile Geräte aus, welche zum Großteil andere Betriebssysteme und Applikations-Frameworks verwenden als traditionelle Computer (Abbildung \ref{Abb2}). Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
 
 \begin{figure}[h!]
@@ -178,9 +179,8 @@ Aufgrund des starken Wachstums dehnt sich der Markt für Software-Applikationen 
 \caption[Entwicklung der PC und Mobilgerätverkäufe]{Entwicklung der PC und Mobilgerätverkäufe \cite{devicesales}[S. 6]}\label{Abb1}
 \end{figure}
 % TODO: grafik verbessern, klarer machen
-% TODO: formulieren, mehr plattformübergreifender, weniger mobilbereich
 
-Da viele dieser Mobilgeräte über einen Web-Browser verfügen, wird das Web als Applikations-Plattform immer attraktiver. Zudem erlauben Frameworks wie PhoneGap \cite{phonegap} dem/der EntwicklerIn eine plattformübergreifende Mobil-Applikation auf Web-Technologie-Basis zu erstellen, welche sich nahtlos in das System integrieren. 
+Dieses Problem der Fragmentierung und des damit verbundenen immer höheren Portierungsaufwandes kann mit einer Web-Applikation gelöst werden. Soll sich diese auch noch gut in das jeweilige System integerieren, können Frameworks wie z.B. PhoneGap \cite{phonegap} verwendet werden. Diese Frameworks bieten über JavaScript einen Zugriff auf native Funktionen der mobilen Betriebssysteme, womit der Portierungsaufwand deutlich reduziert werden kann. 
 
 \begin{figure}[h!]
 \centering
@@ -199,26 +199,14 @@ All dies zwingt Web-EntwicklerInnen eine Vielzahl an unterschiedlichen Browsern 
 \section{Lösungsansatz}
 Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um der höheren Komplexität von Web-Applikationen gerecht zu werden. 
 
-% Lösungsansatz: herausforderungen kein ansatz, überblick auch nicht, mehr auf beispiele eingehen
-Diese Bachelorarbeit zeigt zusätzlichen Herausforderungen beim Testen von Web-Applikationen aufzeigen. Des Weiteren soll sie einen Überblick über mögliche Anwendungen und Anpassungen der vier häufigsten Testarten - den Unit Tests, Integration Tests, System Tests und Acceptance Tests - im Bereich der Web-Applikationen geben. Dazu wird anhand eines Projektes eine Test-Strategie erarbeitet und Beispiele für Tests gegeben.
+Dazu werden die jeweiligen Testarten anhand eines Projektes an eine Web-Applikation angepasst. Sowohl client- als auch serverseitige Tests werden erstellt, um die verschiedenen Plattformen erfolgreich testen zu können. Dies wird mit dementsprechenden Code Beispielen illustriert.
 
 \newpage
 
 \section{Aufbau}
-% nicht nur auf kapitel eingehen, sondern inhaltlich gruppieren
-Kapitel 2 behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen.
+Der erste Teil der Arbeit (Kapitel 2, 3 und 4) behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt. Es werden Unterschiede im Bezug auf Software Test zu klassichen Applikationen herausgearbeitet. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen. Schlussendlich wird der Ablauf des Testprozesses mit Hilfe eines Testplanes erläutert.
 
-In Kapitel 3 wird auf die Unterschiede zwischen klassischen Applikationen und Web-Applikationen eingegangen. Dadurch sollen zusätzliche Probleme, die sich durch das Applikations-Modell ergeben, aufgezeigt werden.
-
-Die Planung und der Ablauf des Testprozesses durch die Verwendung eines Testplanes Kapitel 4 beschrieben. 
-
-Kapitel 5 beschäftigt sich näher mit dem praktischen Einsatz von client- und serverseitigen Unit Tests. Es werden für beide Seiten Beispiele eines Unit Tests gezeigt und auf klassiche Probleme bei clientseitigen Unit Tests und deren Lösungen eingangen.
-
-Das Thema des Integration Tests wird in Kaptitel 6 behandelt. Außerdem wird auf die verschiedenen Test-Ansätze eingegangen.
-
-Kaptitel 7 behandelt den Systemtest. Es wird anhand von Beispielen gezeigt, wie die verschiedenen Server- und Client-Plattformen automatisch getestet werden können.
-
-Kapitel 8 beschäftigt sich mit dem Thema des Acceptance Tests und wie dieser bei Web-Applikationen umgesetzt werden kann.
+Der zweite Teil (Kapitel 5, 6, 7, 8) beschäftigt sich mit den praktischen Anpassungen der verschiedenen Testarten des V-Modells: Kapitel 5 beschäftigt sich näher mit dem praktischen Einsatz von client- und serverseitigen Unit Tests. Es werden für beide Seiten Beispiele eines Unit Tests erstellt und auf klassiche Probleme sowhol bei clientseitigen, als auch serverseitigen Unit Tests und deren Lösungen eingangen. Das Thema des Integration Tests wird in Kaptitel 6 behandelt. Außerdem wird auf die verschiedenen Test-Ansätze eingegangen. Darauf folgt der System Test in Kapitel 7. Es wird anhand von Beispielen gezeigt, wie die verschiedenen Server- und Client-Plattformen automatisch getestet werden können. Schlussendlich wird noch der Acceptance Test in Kapitel 8 behandelt.
 
 \chapter{Warum testen}
 Keine Applikation ist fehlerfrei\cite{empiric_invest}[S. 9]. Diese Fehler  führen nicht nur zu unzufriedenen Kunden/Kundinnen, sondern auch zu hohen Kosten: \glqq Im Jahr 2000 wurde in den USA ein Schaden durch Softwarefehler in der Auto- und Flugzeugindustrie von 1,8 Milliarden US-Dollar errechnet. Dies entspricht ca. 16 \% des Softwareumsatzes.\grqq\cite{betrieb}[S. 15]
