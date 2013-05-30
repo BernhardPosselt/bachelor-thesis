@@ -441,9 +441,7 @@ Zu den Vorteilen von Unit Tests zählen:
   \item Zeigt schwer zu verwendende Interfaces auf
 \end{itemize}
 
-Viele dieser Vorteile werden durch den Einsatz von Mocks erreicht, die die konkreten Implementationen ersetzen.
-
-Nur Unit Tests alleine reichen jedoch nicht aus, um das Projekt komplett abzudecken, denn Unit Tests\cite{test_large_systems}[S. 52]\cite{betrieb}[S. 28]:
+Viele dieser Vorteile werden durch den Einsatz von Mocks erreicht, die die konkreten Implementationen ersetzen. Nur Unit Tests alleine reichen jedoch nicht aus, um das Projekt komplett abzudecken, denn Unit Tests\cite{test_large_systems}[S. 52]\cite{betrieb}[S. 28]:
 
 \begin{itemize}
   \item testen keine Kommunikation zwichen den Modulen
@@ -505,33 +503,33 @@ Zu den Nachteilen gehören:
 
 
 \chapter{System Test}
-System Tests werden verwendet um das Zusammenspiel zwischen dem System und der Applikation zu testen. Sie beinhalten sowohl funktionale (z.B. Installations Tests) als auch nicht funktionale Tests (z.B. Security, Usability oder Performance Tests)\cite{betrieb}[S. 30]. Diese Tests \glqq werden meistens nicht mehr von den Entwicklern selbst durchgeführt, sondern von unabhängigen Tester bzw. Test-Teams.\grqq\cite{eval_regression}[S. 17]
+System Tests werden verwendet, um das Zusammenspiel zwischen dem System und der Applikation zu testen. Sie beinhalten sowohl funktionale (z.B. Installations Tests) als auch nicht funktionale Tests (z.B. Security, Usability oder Performance Tests)\cite{betrieb}[S. 30]. Diese Tests \glqq werden meistens nicht mehr von den Entwicklern selbst durchgeführt, sondern von unabhängigen Tester bzw. Test-Teams.\grqq\cite{eval_regression}[S. 17]
 
 Da die Tests auf einem dem/der Kunden/Kundin ähnlichen System ausgeführt werden, ist es gut, den/die Kunden/Kundin in den Test zu involvieren. Dies gestaltet sich oft als schwierig, da der/die Kunde/Kundin meist nicht die nötige Expertise mitbringt, um die exakten Anforderungen und Testfälle zu erstellen. Als Lösungsmöglichkeit bietet sich hier die Zusammenarbeit mit einem qualifizierten Team des/der Kunden/Kundin \cite{test_large_systems}[S. 60]
 
 \section{Lösungsansatz}
-Um die Web-Applikationen sowohl Server- als auch Clientseitig testen zu können, muss eine Entsprechende Möglichkeit bestehen, die verschiedenen System zu simulieren. Dazu werden verschiedenen VMs mit den unterstützten Systemen erstellt. Dann werden die automatisierbaren Tests auf den jeweiligen Systemen ausgeführt, nicht automatisierbare Tests wie etwa die Korrektur der Übersetzungen wird an Test-Teams ausgelagert.
+Um die Web-Applikationen sowohl server- als auch clientseitig testen zu können, muss eine Entsprechende Möglichkeit bestehen, die verschiedenen System zu simulieren. Dazu werden verschiedenen VMs mit den zu testenden Systemen erstellt. Dann werden die automatisierbaren Tests auf den jeweiligen Systemen ausgeführt, nicht automatisierbare Tests wie etwa die Korrektur der Übersetzungen wird an Test-Teams ausgelagert.
 
 \section{Serverseitige System Tests}
-Es ist schwierig, die Tests in Server- und Clientseitige Tests zu spalten, da das ganze System getestet wird. Clientseitige Tests testen somit auch Serverseitige Funktionalitäten. Bestimmte Tests wie Performance Tests müssen z.B. in Kombination durchgeführt werden.
+Es ist schwierig, die Tests in server- und clientseitige Tests zu spalten, da das ganze System getestet wird. Clientseitige Tests testen somit auch Serverseitige Funktionalitäten. Bestimmte Tests wie Performance Tests müssen z.B. in Kombination durchgeführt werden.
 
-Die Serverseitigen Tests reduzieren sich deshalb auf das Erstellen und Einrichten der jeweiligen VMs für den Serverseitigen Code und auf das Testen von\cite{test_large_systems}[S. 60-66]:
+Die Serverseitigen Tests reduzieren sich deshalb auf das Erstellen und Einrichten der jeweiligen VMs für den serverseitigen Code und auf das Testen von\cite{test_large_systems}[S. 60-66]:
 
 \begin{itemize}
-  \item Security: Statische Code Analysen können mit Tools durchgeführt werden
-  \item Konfiguration: Mit einem Skript werden verschiedene Konfigurationen erstellt und getestet
+  \item Security: Statische Code Analysen können mit Tools durchgeführt werden; Security Audits von Fachkräften werden durchgeführt
+  \item Konfiguration: Mit einem Skript werden verschiedene Konfigurationen  getestet
   \item Kompatibiltät der Applikation mit dem Server Betriebssystem und den serverseitigen Applikationen: Wird mit Chef und Vagrant durchgeführt
-  \item Recovery Funktionen: Falls verfügbar mittels Skript gestartet
+  \item Recovery Funktionen: Falls verfügbar, wird dies mit einem Script getestet
   \item Performance und Speicherverbrauch: Mit einem Skript werden verschiedene, gleichzeitige Anfragen an den Server erstellt, der Arbeitsspeicher wird auf das spezifizierte Minimum reduziert
-  \item Installation: Wird durch den Clientseitigen Installationsdialog Server- und Clientseitig getestet
+  \item Installation: Wird durch den clientseitigen Installationsdialog server- und clientseitig getestet
   \item Zuverlässigkeit: Kommt darauf an, ob die Anforderungen testbar formuliert sind, z.B. mit durchschnittlicher Fehlerrate pro Stunde
 \end{itemize}
 
 \section{Clientseitige System Tests}
-Die Clientseitigen System Tests werden auf unterschiedlichen Web-Browsern ausgeführt. Auch zusätzliche VMs für Windows und Mac OS X sind notwendig um verschiedene Versionen des Internet Explorers respektive Safari zu testen. Die restlichen Tests können unter Linux VMs durchgeführt werden.
+Die clientseitigen System Tests werden auf unterschiedlichen Web-Browsern ausgeführt. Auch zusätzliche VMs für Windows und Mac OS X sind notwendig um verschiedene Versionen des Internet Explorers respektive Safari zu testen. Die restlichen Tests können unter Linux VMs durchgeführt werden.
 
 \subsection{JavaScript Tests}
-Der JavaScript Testrunner Karma erlaubt die Konfiguration verschiedener Web-Browser unter welchen die JavaScript Unit Tests ausgeführt werden können. Dadurch kann sichergestellt werden, dass der JavaScript Code auf allen Systemen wie gewünscht funktioniert.
+Der JavaScript Testrunner Karma erlaubt die Konfiguration verschiedener Web-Browser, unter welchen die JavaScript Unit Tests ausgeführt werden können. Dadurch kann sichergestellt werden, dass der JavaScript Code auf allen Systemen wie gewünscht funktioniert.
 
 \subsection{User-Interface Tests}
 Für die User-Interface Tests wird Cucumber verwendet. Die gewünschten User-Stories werden in Gherkin (der User-Story Grammatik) spezifiziert. Danach lassen sich die Methoden erstellen, die die User-Stories parsen und in den verschiedenen Browsern durchführen.
@@ -560,18 +558,18 @@ Da für die verschiedenen Plattformen jeweils Testumgebungen gestartet werden m�
   \item Dadurch langsame Entwicklung der Tests
   \item Fehler durch großen Bereich schwer lokalisierbar
   \item Sehr schwierig die exakte Testumgebung zu reproduzieren
-  \item Schwer automatisierbar vor allem bei nicht funktionalen Tests wie Usability Tests
+  \item Schwer automatisierbar, vor allem bei nicht funktionalen Tests wie Usability Tests
 \end{itemize}
 
 
 \chapter{Acceptance Test}
-Beim Acceptance Test wird die Applikation auf die Anforderungen des/der Kunden/Kundin geprüft \cite{test_large_systems}[S. 66]. Der Test ist erforderlich, um eine erfolgreiche Abnahme durch den/die Kunden/Kundin zu erreichen. Da es vor allem im Interesse des/der Kunden/Kundin ist, eine wie im Vertrag vereinbarte funktionierende Software zu erhalten, ist er/sie meistens der HaupttesterIn.
+Beim Acceptance Test wird die Applikation auf die Anforderungen des/der Kunden/Kundin geprüft \cite{test_large_systems}[S. 66]. Der Test ist erforderlich, um eine erfolgreiche Abnahme durch den/die Kunden/Kundin zu erreichen. Da es vor allem im Interesse des/der Kunden/Kundin ist, eine wie im Vertrag vereinbarte funktionierende Software zu erhalten, ist er/sie meistens der/die HaupttesterIn.
 
 \section{Bestandteile}
 Zu den verschiedenen Tests zählen \cite{betrieb}[S. 33-34]:
 
 \begin{itemize}
-   \item \glqq Test auf verträgliche Akzeptanz\grqq
+   \item \glqq Test auf vertragliche Akzeptanz\grqq
    \item \glqq Test der Benutzbarkeit\grqq
    \item \glqq Akzeptanz durch den Systembetreiber\grqq
    \item \glqq Feldrest (Alpha- und Betatest)\grqq
@@ -580,7 +578,7 @@ Zu den verschiedenen Tests zählen \cite{betrieb}[S. 33-34]:
 Um das Risiko einer verweigerten Abnahme im späten Stadium zu vermindern, können die Acceptance Tests bereits während der Entwicklung mit dem/der Kunden/Kundin zusammen durchgeführt werden, was sich vor allem in einem agilen Software-Projekt anbietet. \cite{eval_regression}[S. 17]
 
 \section{Lösungsansatz}
-Dadurch, dass der/die Kunde/Kundin in diesem Fall der/die HaupttesterIn der Software ist, gestaltet es sich schwierig, diesen Prozess zu automatisieren. Es empfiehlt sich, regelmäßige Meetings mit dem/der Kunden/Kundin abzuhalten, damit das Projekt früh genug an die aufkommenden Probleme angepasst werden kann. Außerdem bietet es sich an, die in den während des System Tests erstellten User-Stories integriert werden. Wurden diese vom oder mit Hilfe des/der Kunden/Kundin erstellt, kann der/die HerstellerIn damit argumentieren, dass die verlangten Features komplett umgesetzt wurden.
+Dadurch, dass der/die Kunde/Kundin in diesem Fall der/die HaupttesterIn der Software ist, gestaltet es sich schwierig, diesen Prozess zu automatisieren. Es empfiehlt sich, regelmäßige Meetings mit dem/der Kunden/Kundin abzuhalten, damit das Projekt früh genug an eventuell eintretbare Probleme angepasst werden kann. Außerdem bietet es sich an, die während des System Test entstandenen User-Stories zu integrieren. Wurden diese vom oder mit Hilfe des/der Kunden/Kundin erstellt, kann der/die HerstellerIn damit argumentieren, dass die verlangten Features komplett umgesetzt wurden.
 
 
 \chapter{Zusammenfassung}
