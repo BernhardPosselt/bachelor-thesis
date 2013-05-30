@@ -169,9 +169,9 @@ Creation and execution of automatic web application tests is different from test
 % dort Kurzformen der Kapitelbezeichnungen mittels:
 % \chapter[Kurzform]{Lange überschrift}
 \chapter{Einführung}
-Immer mehr unserer Alltagsgeräte ermöglichen einen Zugang zum Internet. Besonders der Markt für mobile elektronische Geräte hat in den letzten Jahren ein rasantes Wachstum erlebt: Im Jahr 2011 wurden erstmals mehr mobile Geräte verkauft als PCs (Abbildung \ref{Abb1}).
+Immer mehr unserer Alltagsgeräte ermöglichen einen Zugang zum Internet. Besonders der Markt für mobile elektronische Geräte hat in den letzten Jahren ein rasantes Wachstum erlebt: Im Jahr 2011 wurden erstmals mehr Smartphones und Tablets verkauft als PCs (Abbildung \ref{Abb1}).
 
-Aufgrund des starken Wachstums dehnt sich der Markt für Software-Applikationen auch auf mobile Geräte aus, welche zum Großteil andere Betriebssysteme und Applikations-Frameworks verwenden als traditionelle Computer (Abbildung \ref{Abb2}). Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
+Aufgrund des starken Wachstums dehnt sich der Markt für Software-Applikationen auch auf Smartphones und Tablets aus, welche zum Großteil andere Betriebssysteme und Applikations-Frameworks verwenden als traditionelle Computer (Abbildung \ref{Abb2}). Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
 
 \begin{figure}[h!]
 \centering
@@ -219,7 +219,7 @@ Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese be
 Laut dem V-Modell (Abbildung \ref{Abb3}) ist der Software-Test kein seperater Abschnitt im Projektplan. Vielmehr ist er ein Prozess, der die verschiedenen Entwicklungsabschnitte ergänzt \cite{betrieb}[S. 23]. Das V-Model unterscheidet zwischen vier verschiedenen Testarten:
 
 \begin{itemize}
-	\item Unit Test: Wird paralell zur Implementation erstellt
+	\item Unit Test: Wird paralell zur Implementierung erstellt
 	\item Integration Test: Wird erstellt, um den Designprozess zu überprüfen
 	\item System Test: Testet die konkreten Anforderungen an die Software
 	\item Acceptance Test: Testet die Anforderungen des/der Kunden/Kundin
@@ -231,7 +231,7 @@ Laut dem V-Modell (Abbildung \ref{Abb3}) ist der Software-Test kein seperater Ab
 \caption[Schematische Darstellung des V-Modells]{Schematische Darstellung des V-Modells \cite{vmodel}[S. 3]}\label{Abb3}
 \end{figure}
 
-Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementation zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden. \cite{test_auto}[S. 2]
+Tests können jedoch nicht nur dazu verwendet werden, um Fehler in der Applikation zu finden, sondern auch um einen Überblick über den derzeitigen Stand der Implementierung zu gewinnen: Sie geben dem/der EntwicklerIn und ProjektmanagerIn ein direktes Feedback über bereits korrekt implementierte Teile der Software-Spezifikation. Auch Milestones können durch Tests definiert werden. \cite{test_auto}[S. 2]
 
 Zudem ist eine Abschätzung riskanter Bereiche möglich, die durch eine erhöhten Testbedarf bestimmter Bereiche offensichtlich wird. \cite{testing_apps_on_web}[S. 34]
 
@@ -281,7 +281,7 @@ Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3
 \section{Ablauf}
 Da die Entwicklung der Applikation meistens unter einem hohen Zeitdruck abläuft\cite{software_qual}[S. 244] und der Testprozess zudem teuer ist \cite{eval_regression}[S. 24], ist es wichtig, Testfälle heraus zu arbeiten, zu priorisieren und effektiv zu verteilen. Auch Endkriterien sollten für die Tests veranschlagt und eine optimale Teststrategie gewählt werden.
 
-Danach folgt die Überprüfung des Testplans. Hier wird überprüft, ob die einzelnen Testfälle genau genug beschrieben worden sind, um daraus die jeweiligen Testfälle erstellen zu können. Auch die Effiktivität der Teststrategien wird überprüft. Diese Prüfung findet nicht nur einmal statt, sondern wiederholt sich mehrfach im Testprozess. Dies hängt damit zusammen, dass die Anforderungen an die Software im Laufe der Implementation immer konkreter werden und somit auch neue, mögliche Fehlerfälle enstehen können.\cite{eval_regression}[S. 25] 
+Danach folgt die Überprüfung des Testplans. Hier wird überprüft, ob die einzelnen Testfälle genau genug beschrieben worden sind, um daraus die jeweiligen Testfälle erstellen zu können. Auch die Effiktivität der Teststrategien wird überprüft. Diese Prüfung findet nicht nur einmal statt, sondern wiederholt sich mehrfach im Testprozess. Dies hängt damit zusammen, dass die Anforderungen an die Software im Laufe der Implementierung immer konkreter werden und somit auch neue, mögliche Fehlerfälle enstehen können.\cite{eval_regression}[S. 25] 
 
 Ist der Testplan soweit fertig, kann ein Zeitplan für die einzelnen Testfälle erstellt werden. In weiterer Folge werden die einzelnen Tests an die TesterInnen vergeben. Diese können nun mit der Erstellung der konkreten Testfälle beginnen können.
 
@@ -301,7 +301,7 @@ Aufgrund der Dokumentation der Testfälle, ergeben sich zusätzlich folgende Vor
 	\item Ineffiziente Test-Tools und Test-Strategien können erkannt und verbessert werden \cite{eval_regression}[S. 25]
 	\item Geschäftskritische Bereiche und solche mit einer erhöhten  Fehleranfälligkeit werden sichtbarer \cite{testing_apps_on_web}[S. 34]. Dies ist vor allem wichtig, da Fehler ungleich verteilt sind und in bestimmten Bereichen häufiger vorkommen als in anderen \cite{eval_regression}[S. 12]
 	\item Sinnlose Testfälle und Testbereiche können aussortiert werden 
-	\item Abhängigkeiten der Testfälle untereinander und der Implementation werden transparent und erlauben schnell auf Änderungen zu reagieren\cite{test_auto}[S. 4]
+	\item Abhängigkeiten der Testfälle untereinander und der Implementierung werden transparent und erlauben schnell auf Änderungen zu reagieren\cite{test_auto}[S. 4]
 \end{itemize}
 
 
@@ -469,7 +469,7 @@ Durch die vielen möglichen Kombinationen der einzelnen Module gibt es keine all
 \end{itemize}
 
 \section{Nicht Inkrementelle Testfallerstellung}
-Wird die nicht inkrementelle Testfallerstellung genutzt, werden die nicht vorhandenen Module mit Mocks ersetzt. Diese werden am Schluss dann durch die aktuelle Implementation ausgetauscht.
+Wird die nicht inkrementelle Testfallerstellung genutzt, werden die nicht vorhandenen Module mit Mocks ersetzt. Diese werden am Schluss dann durch die aktuelle Implementierung ausgetauscht.
 
 Dies mag vor allem am Anfang sehr aufwendig erscheinen, erlaubt jedoch schon früh die Kommunikation zwischen den einzelnen Bereichen zu testen. Auf diese Weise kann sehr schnell ein Überblick über den Implementationsstand der Software erlangt werden. Diese Methode eignet sich daher besonders für Agile Software-Entwicklung. \cite{test_large_systems}[S. 54-59] 
 
@@ -592,15 +592,15 @@ Dadurch, dass der/die Kunde/Kundin in diesem Fall der/die HaupttesterIn der Soft
 
 
 \chapter{Zusammenfassung}
-Das Web bietet sich immer mehr als Applikations-Plattform an, erfordert jedoch auch eine Anpassung der Testmethoden, um qualitativ hochwertige Applikationen zu erstellen. In dieser Arbeit anhand eines Projektes Beispiele zu den jeweiligen Testarten des V-Modells erabeitet, welche die zusätzlichen Herausforderungen adressieren:
+Das Web bietet sich immer mehr als Applikations-Plattform an, erfordert jedoch auch eine Anpassung der Testmethoden, um qualitativ hochwertige Applikationen zu erstellen. In dieser Arbeit wurde anhand eines Projektes Beispiele zu den jeweiligen Testarten des V-Modells erabeitet, welche die zusätzlichen Herausforderungen adressieren:
 
 \begin{itemize}
-  \item Der Modularität, Fragmentierung und das Session Modell kann mit einer Anpassung der System Tests begegnet werden, indem mittels VMs unterschiedliche Server- und Clientplattformen erstellt werden. Auf diesen werden dann die Tests gestartet
-  \item JavaScript Test-Frameworks erlauben, asynchrone Methoden zu testen oder, zudem können durch den Einsatz von Mocks asynchrone Methoden synchron gemacht werden
-  \item Mit sowohl Server- als auch Clientseitigen Frameworks lässt sich die Trennung von Logik und Präsentation umsetzen, um das Testen zu vereinfachen
+  \item Der Modularität, Fragmentierung und dem Session Modell kann mit einer Anpassung der System Tests begegnet werden, indem mittels VMs unterschiedliche Server- und Clientplattformen erstellt werden. Auf diesen werden dann die Tests gestartet.
+  \item JavaScript Test-Frameworks erlauben, asynchrone Methoden zu testen; zudem können durch den Einsatz von Mocks asynchrone Methoden synchron gemacht werden.
+  \item Sowohl mit server- als auch mit clientseitigen Frameworks lässt sich die Trennung von Logik und Präsentation umsetzen, um das Testen zu vereinfachen.
 \end{itemize}
 
-Zusätzlich ist es wichtig, die richtigen Testmethoden abzuwägen, da sie unterschiedliche Vor- und Nachteile mit sich bringen: Je höher das Level (Integration und System Test) der Tests, desto länger dauert es die Testfälle zu erstellen und desto schwieriger wird es, die Fehler zu finden. Je tiefer das Level (Unit Test), desto näher an der aktuellen Implementation ist der Test-Code und desto öfter muss dieser bei Änderungen angepasst werden.
+Zusätzlich ist es wichtig, die richtigen Testmethoden abzuwägen, da sie unterschiedliche Vor- und Nachteile mit sich bringen: Je höher das Level der Tests (Integration und System Test), desto länger dauert es, die Testfälle zu erstellen und desto schwieriger wird es, die Fehler zu finden. Je niedriger das Level (Unit Test), desto näher an der aktuellen Implementierung ist der Test-Code und desto öfter muss dieser bei Änderungen angepasst werden.
 
 Schlussendlich muss immer abgewägt werden, wieviel Zeit und Geld in Tests investiert werden, und vor allem, welche Tests umgesetzt werden, um das Projekt nicht unwirtschaftlich werden zu lassen.
 
