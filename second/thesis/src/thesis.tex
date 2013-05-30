@@ -575,6 +575,7 @@ Da für die verschiedenen Plattformen jeweils Testumgebungen gestartet werden m�
 \chapter{Acceptance Test}
 Beim Acceptance Test wird die Applikation auf die Anforderungen des/der Kunden/Kundin geprüft \cite{test_large_systems}[S. 66]. Der Test ist erforderlich, um eine erfolgreiche Abnahme durch den/die Kunden/Kundin zu erreichen. Da es vor allem im Interesse des/der Kunden/Kundin ist, eine wie im Vertrag vereinbarte funktionierende Software zu erhalten, ist er/sie meistens der HaupttesterIn.
 
+\section{Bestandteile}
 Zu den verschiedenen Tests zählen \cite{betrieb}[S. 33-34]:
 
 \begin{itemize}
@@ -594,10 +595,15 @@ Dadurch, dass der/die Kunde/Kundin in diesem Fall der/die HaupttesterIn der Soft
 Das Web bietet sich immer mehr als Applikations-Plattform an, erfordert jedoch auch eine Anpassung der Testmethoden, um qualitativ hochwertige Applikationen zu erstellen. In dieser Arbeit anhand eines Projektes Beispiele zu den jeweiligen Testarten des V-Modells erabeitet, welche die zusätzlichen Herausforderungen adressieren:
 
 \begin{itemize}
-  \item Der Modularität, Fragmentierung und das Session Modell kann mit einer Anpassung der System Tests begegnet werden, indem mittels VMs unterschiedliche Server- und Clientplattformen simuliert werden können
+  \item Der Modularität, Fragmentierung und das Session Modell kann mit einer Anpassung der System Tests begegnet werden, indem mittels VMs unterschiedliche Server- und Clientplattformen erstellt werden. Auf diesen werden dann die Tests gestartet
   \item JavaScript Test-Frameworks erlauben, asynchrone Methoden zu testen oder, zudem können durch den Einsatz von Mocks asynchrone Methoden synchron gemacht werden
   \item Mit sowohl Server- als auch Clientseitigen Frameworks lässt sich die Trennung von Logik und Präsentation umsetzen, um das Testen zu vereinfachen
 \end{itemize}
+
+Zusätzlich ist es wichtig, die richtigen Testmethoden abzuwägen, da sie unterschiedliche Vor- und Nachteile mit sich bringen: Je höher das Level (Integration und System Test) der Tests, desto länger dauert es die Testfälle zu erstellen und desto schwieriger wird es, die Fehler zu finden. Je tiefer das Level (Unit Test), desto näher an der aktuellen Implementation ist der Test-Code und desto öfter muss dieser bei Änderungen angepasst werden.
+
+Schlussendlich muss immer abgewägt werden, wieviel Zeit und Geld in Tests investiert werden, und vor allem, welche Tests umgesetzt werden, um das Projekt nicht unwirtschaftlich werden zu lassen.
+
 
 
 %\\[2\baselineskip]
