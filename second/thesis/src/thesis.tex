@@ -140,7 +140,7 @@ und auch noch nicht veröffentlicht. Ich versichere, dass die abgegebene Version
 
 
 \section*{Kurzfassung}\thispagestyle{empty}
-Die Durchführung und Erstellung von automatisierten Tests für Web-Applikationen unterscheidet sich von klassischen Applikationen: Aufgrund der komplexeren Infrastruktur und Modularisierung werden zusätzliche Testfälle und Strategien benötigt um Web-Applikationen ausreichend abzudecken und eine fortwährende Qualität zu gewährleisten. Diese Arbeit soll Möglichkeiten für den Test von Web-Applikationen anhand eines Projektes aufzeigen und Anpassungen und Anwendung der vier Testformen des V-Modells: Unit Test, Integration Test, System Test und Acceptance Test. 
+Die Durchführung und Erstellung von automatisierten Tests für Web-Applikationen unterscheidet sich von klassischen Applikationen: Aufgrund der komplexeren Infrastruktur und Modularisierung werden zusätzliche Testfälle und Strategien benötigt, um Web-Applikationen ausreichend abzudecken und eine fortwährende Qualität zu gewährleisten. Diese Arbeit soll Möglichkeiten für den Test von Web-Applikationen anhand eines Projektes und Anpassungen und Anwendung der vier Testformen des V-Modells aufzeigen: Unit Test, Integration Test, System Test und Acceptance Test. 
 
 \vfill
 \paragraph*{Schlagwörter:} Softwaretest, Web
@@ -169,7 +169,7 @@ Creation and execution of automatic web application tests is different from test
 % dort Kurzformen der Kapitelbezeichnungen mittels:
 % \chapter[Kurzform]{Lange überschrift}
 \chapter{Einführung}
-Immer mehr unserer Alltagsgeräte ermöglichen einen Zugang zum Internet. Besonders der Markt für mobile elektronische Geräte hat in den letzten Jahren ein rasantes Wachstum erlebt: Im Jahr 2011 wurden erstmals mehr Smartphones und Tablets verkauft als PCs (Abbildung \ref{Abb1}).
+Immer mehr unserer Alltagsgeräte ermöglichen einen Zugang zum Internet. Besonders der Markt für mobile elektronische Geräte hat in den letzten Jahren ein rasantes Wachstum erlebt: Im Jahr 2011 wurden erstmals mehr Smartphones und Tablets  als PCs verkauft(Abbildung \ref{Abb1}).
 
 Aufgrund des starken Wachstums dehnt sich der Markt für Software-Applikationen auch auf Smartphones und Tablets aus, welche zum Großteil andere Betriebssysteme und Applikations-Frameworks verwenden als traditionelle Computer (Abbildung \ref{Abb2}). Viele dieser Plattformen erfordern das Erlernen von unterschiedlichen Programmiersprachen, Frameworks und Betriebssystemen \cite{android}\cite{ios}. Will ein/eine Software-EntwicklerIn eine Applikation plattformübergreifend anbieten, erfordert dies daher einen höheren Zeit- und Kostenaufwand.
 
@@ -204,7 +204,7 @@ Dazu werden die jeweiligen Testarten des V-Modells - Unit Test, Integration Test
 \newpage
 
 \section{Aufbau}
-Der erste Teil der Arbeit (Kapitel 2, 3 und 4) behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt. Auf Unterschiede zwischen Software-Test von klassischen und Web-Applikationen wird eingegangen. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen. Schlussendlich wird der Ablauf des Testprozesses mit Hilfe eines Testplanes erläutert.
+Der erste Teil der Arbeit (Kapitel 2, 3 und 4) behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt. Es wird auf Unterschiede zwischen Software-Test von klassischen und Web-Applikationen wird eingegangen. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen. Schlussendlich wird der Ablauf des Testprozesses mit Hilfe eines Testplanes erläutert.
 
 Der zweite Teil (Kapitel 5, 6, 7, 8) beschäftigt sich mit den praktischen Anpassungen der verschiedenen Testarten des V-Modells. Kapitel 5 beschäftigt sich näher mit dem praktischen Einsatz von client- und serverseitigen Unit Tests. Es werden für beide Seiten Beispiele eines Unit Tests erstellt und auf klassiche Probleme sowohl bei client-, als auch serverseitigen Unit Tests und deren Lösungen eingangen. Das Thema des Integration Tests wird in Kaptitel 6 behandelt. Außerdem wird auf die verschiedenen Test-Ansätze eingegangen. Darauf folgt der System Test in Kapitel 7. Es wird anhand von Beispielen gezeigt, wie die verschiedenen Server- und Client-Plattformen automatisch getestet werden können. Schlussendlich wird noch der Acceptance Test in Kapitel 8 behandelt.
 
@@ -219,9 +219,9 @@ Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese be
 Laut dem V-Modell (Abbildung \ref{Abb3}) ist der Software-Test kein seperater Abschnitt im Projektplan. Vielmehr ist er ein Prozess, der die verschiedenen Entwicklungsabschnitte ergänzt \cite{betrieb}[S. 23]. Das V-Model unterscheidet zwischen vier verschiedenen Testarten:
 
 \begin{itemize}
-	\item Unit Test: Wird paralell zur Implementierung erstellt
-	\item Integration Test: Wird erstellt, um den Designprozess zu überprüfen
-	\item System Test: Testet die konkreten Anforderungen an die Software
+	\item Unit Test: Wird paralell zur Implementierung erstellt; Testet Komponenten und Klassen
+	\item Integration Test: Wird erstellt, um den Designprozess zu überprüfen. Testet die Kommunikation zwischen verschiedenen Klassen und Komponenten
+	\item System Test: Testet die konkreten Anforderungen an die Software und die Systemschnittstellen
 	\item Acceptance Test: Testet die Anforderungen des/der Kunden/Kundin
 \end{itemize}
 
@@ -255,11 +255,11 @@ Es gibt mehrere Faktoren, die bei der Entscheidung der Automatisierung berücksi
 \section{Grenzen von Software-Tests}
 Software-Tests können nie eine komplett fehlerfreie Software garantieren. Es kann höchstens eine Fehlerabwesenheit für jene Fälle garantiert werden, welche mit Tests abgedeckt wurden \cite{eval_regression}[S. 12]. Dies resultiert unter anderem daraus, dass die Anforderungen an die Software oft nicht komplett spezifiziert oder zu ungenau formuliert sind. Zusätzlich steigt die Komplexität der Applikation im Laufe der Entwicklung stark an. Ein weiterer Grund stellt die oft schier unbegrenzten Möglichkeiten an unterschiedlichen Eingaben dar. \cite{software_qual}[S. 243].
 
-Die implementierten Testfälle müssen zudem regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und keine neuen, mögliche Fehlerfälle berücksichtigen. \cite{eval_regression}[S. 12-13]
+Die implementierten Testfälle müssen zudem regelmäßig gewartet und aktualisiert werden, um ihre Effektivität zu gewährleisten, denn diese nimmt auf Dauer ab. Es ensteht eine sogenannte \glqq Testresistenz\grqq\cite{eval_regression}[S. 12], die daraus resultiert, dass die bestehenden Tests nur bekannte Fehlerfälle abdecken und keine neuen, möglichen Fehlerfälle berücksichtigen. \cite{eval_regression}[S. 12-13]
 
 \chapter{Testplan}
 
-Mit dem Erstellen des Projektplanes wird gleichzeitig auch ein Testplan erstellt werden \cite{eval_automat_webapp_test}[S. 24]. Dieser erlaubt, den Testprozess näher zu spezifizieren und somit den erforderlichen Aufwand besser abschätzbar zu machen \cite{test_large_systems}[S. 18]. Sollte es notwendig sein, kann damit der Testprozess auch an ein externes Team ausgelagert werden. Wird der Testplan zudem in den Abnahmenkriterien verankert, reduziert sich das Projektrisiko durch klar definierte Kriterien. \cite{eval_automat_webapp_test}[S. 26]
+Mit dem Erstellen des Projektplans wird gleichzeitig auch ein Testplan erstellt werden \cite{eval_automat_webapp_test}[S. 24]. Dieser erlaubt, den Testprozess näher zu spezifizieren und somit den erforderlichen Aufwand besser abschätzbar zu machen \cite{test_large_systems}[S. 18]. Sollte es notwendig sein, kann damit der Testprozess auch an ein externes Team ausgelagert werden. Wird der Testplan zudem in den Abnahmenkriterien verankert, reduziert sich das Projektrisiko durch klar definierte Kriterien. \cite{eval_automat_webapp_test}[S. 26]
 
 \section{Inhalt}
 Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3]:
@@ -285,7 +285,7 @@ Danach folgt die Überprüfung des Testplans. Hier wird überprüft, ob die einz
 
 Ist der Testplan soweit fertig, kann ein Zeitplan für die einzelnen Testfälle erstellt werden. In weiterer Folge werden die einzelnen Tests an die TesterInnen vergeben. Diese können nun mit der Erstellung der konkreten Testfälle beginnen.
 
-Manche Tests haben eine sehr hohe Laufzeit. Um den Ablauf daher zu beschleunigen, wird ein Smoke-Tests erstellt. Der Smoke-Test testet grobe Szenarien der Applikation. Schlagen diese fehl, sind weitere Testdurchläufe nicht notwendig und der Testdurchlauf kann abgebrochen werden. 
+Manche Tests haben eine sehr hohe Laufzeit. Um den Ablauf daher zu beschleunigen, wird ein Smoke-Test erstellt. Der Smoke-Test testet grobe Szenarien der Applikation. Schlagen diese fehl, sind weitere Testdurchläufe nicht notwendig und der Testdurchlauf kann abgebrochen werden. 
 
 Nach dem Ausführen der Tests wird ein Bericht erstellt. Je nach Ausgang der Tests muss der Testplan angepasst werden. Verliefen alle Tests positiv, kann das die jeweilige Phase abgeschlossen werden. \cite{eval_regression}[S. 26]
 
@@ -296,17 +296,17 @@ Aufgrund der Dokumentation der Testfälle, ergeben sich zusätzlich folgende Vor
 
 \begin{itemize}
 	\item Fehlende Testfälle können schnell erkannt werden \cite{test_large_systems}[S. 18]
-	\item Redundante Testfälle werden identifziert, Testfälle können zusammegelegt werden um Zeit zu sparen \cite{testing_apps_on_web}[S. 34]
+	\item Redundante Testfälle werden identifziert; Testfälle können zusammegelegt werden um Zeit zu sparen \cite{testing_apps_on_web}[S. 34]
 	\item Verschiedene Testbereiche können an mehrere Personen mit unterschiedlichen Fachkenntnissen verteilt werden, um Personalengpässe zu vermeiden \cite{test_large_systems}[S. 19]
 	\item Ineffiziente Test-Tools und Test-Strategien können erkannt und verbessert werden \cite{eval_regression}[S. 25]
-	\item Geschäftskritische Bereiche und solche mit einer erhöhten  Fehleranfälligkeit werden sichtbarer \cite{testing_apps_on_web}[S. 34]. Dies ist vor allem darum wichtig, weil Fehler ungleich verteilt sind und in bestimmten Bereichen häufiger vorkommen als in anderen \cite{eval_regression}[S. 12]
+	\item Geschäftskritische Bereiche und solche mit einer erhöhten  Fehleranfälligkeit werden sichtbarer \cite{testing_apps_on_web}[S. 34]. Dies ist vor allem darum wichtig, weil Fehler ungleich verteilt sind und in bestimmten Bereichen häufiger vorkommen als in Anderen \cite{eval_regression}[S. 12]
 	\item Sinnlose Testfälle und Testbereiche können aussortiert werden 
 	\item Abhängigkeiten der Testfälle untereinander und der Implementierung werden transparent und erlauben schnell auf Änderungen zu reagieren\cite{test_auto}[S. 4]
 \end{itemize}
 
 
 \chapter{Zusätzliche Herausforderungen beim Testen von Web-Applikationen}
-Eine Web-Applikationen unterscheidet sich an mehreren Stellen von einer klassichen Applikation, was das Testen und das Auffinden von Fehlern zusätzlich erschwert. Die Hauptunterschiede sind:
+Eine Web-Applikation unterscheidet sich an mehreren Stellen von einer klassichen Applikation, was das Testen und das Auffinden von Fehlern zusätzlich erschwert. Die Hauptunterschiede sind:
 
 \begin{itemize}
 	\item Modularer Aufbau
@@ -327,7 +327,7 @@ Durch diesen modularen Aufbau ist es besonders schwer einen Fehler zu lokalisier
 \caption[Typischer Aufbau einer Web-Applikation]{Typischer Aufbau einer Web-Applikation}\label{Abb4}
 \end{figure}
 
-\section{Unterstützung mehrerer Plattformen}
+\section{Plattformunabhängigkeit}
 Web-Applikationen laufen auf einer Vielzahl verschiedener Plattformen, server- und clientseitig. Dies ermöglicht dem/der EntwicklerIn Zeit und Aufwand zu sparen, befreit ihn/sie jedoch nicht von der Aufgabe, sicher zu stellen, dass die Applikation auf möglichst vielen Plattformen korrekt ausgeführt wird.
 
 Während auf der Serverseite die jeweilig zu verwendenden Plattformen noch vom/von der BetreiberIn festlegbar sind, sprich welches Betriebssystem und welche Datenbank eingesetzt wird, ist dies auf der Clientseite schon nicht mehr möglich. 
@@ -339,7 +339,7 @@ Eine weitere Herausforderung von clientseitigem Code stellt die asynchrone und e
 All diese Probleme werden durch eine zunehmende Verlagerung der Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13] noch weiter verstärkt. 
 
 \section{Session Modell}
-Eine weitere Herausforderung stellt das Session Modell von Web-Applikationen dar: viele Web-Applikationen verwenden nur eine Session pro NutzerIn, erlauben aber mehrere gleichzeitige Logins. Werden mehrere Instanzen der Applikation gestartet - z.B. loggt sich der/die NutzerIn auf dem Mobiltelefon und dem Laptop auf der Webseite ein - kann dies zu Synchronisationsproblemen zwischen den einzelnen Instanzen führen: Wird in einer Instanz ein Eintrag gelöscht, kann dieser durch eine fehlerhafte Synchronisation in einer andere Instanz immer noch existieren und in weiterer Folge zu Fehlern führen. \cite{testing_apps_on_web}[S. 20]
+Eine weitere Herausforderung stellt das Session Modell von Web-Applikationen dar: viele Web-Applikationen verwenden nur eine Session pro NutzerIn, erlauben aber mehrere gleichzeitige Logins. Werden mehrere Instanzen der Applikation gestartet - z.B. loggt sich der/die NutzerIn auf dem Mobiltelefon und dem Laptop auf der Webseite ein - kann dies zu Synchronisationsproblemen zwischen den einzelnen Instanzen führen: Wird in einer Instanz ein Eintrag gelöscht, kann dieser durch eine fehlerhafte Synchronisation in einer anderen Instanz immer noch existieren und in weiterer Folge zu Fehlern führen. \cite{testing_apps_on_web}[S. 20]
 
 
 Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen erfordert eine neue Herangehensweise an das Thema Software-Test: Die bestehenden Techniken sind \glqq zwar auch notwendig, aber nicht ausreichend, um die Qualität der Applikation sicherzustellen\grqq\ \cite{eval_automat_webapp_test}[S. 18]
@@ -348,15 +348,15 @@ Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen
 \chapter{Projektumfeld}
 Die Tests wurden im Rahmen eines Praktikums bei onwCloud Inc. erstellt, um die News Reader App \emph{News} zu testen. Die App setzt auf die ownCloud\cite{owncloud} Plattform auf.
 
-ownCloud ist eine Open Source Web-Applikations-Plattform, welche oft genutzte Cloud Dienste wie z.B. Kalendar, Kontakte, Dateiupload und Synchronisation zur Verfügung stellt. Sie ist in PHP und JavaScript geschrieben, und kann von jedem/jeder NutzerIn auf seinem/ihren privaten Server installiert und verwendet werden. Um Unterschied zu anderen großen Cloud-Service-Anbietern wie Google und Microsoft liegt die Kontrolle der Daten damit beim/bei der NutzerIn. 
+ownCloud ist eine Open Source Web-Applikations-Plattform, welche oft genutzte Cloud Dienste wie z.B. Kalendar, Kontakte, Dateiupload und Synchronisation zur Verfügung stellt. Sie ist in PHP und JavaScript geschrieben, und kann von jedem/jeder NutzerIn auf seinem/ihren privaten Server installiert und verwendet werden. Im Unterschied zu anderen großen Cloud-Service-Anbietern wie Google und Microsoft liegt die Kontrolle der Daten damit beim/bei der NutzerIn. 
 
 \section{Setup auf der Serverseite}
 Auf der Serverseite wird PHP in der Version 5.3 eingesetzt. Als Inversion of Control Container kommt Pimple\cite{pimple} zum Einsatz. Als Test-Framwork wird PHPUnit\cite{phpunit} in der Version 3.8 eingesetzt.
 
-Für die Erstellung und Einrichtung der VMs werden Vagrant\cite{vagrant} und Chef\cite{chef} verwendet. Vagrant erlaubt das einfache Erstellen und starten von VMs. Chef erlaubt durch das Verwenden sogenannter \emph{Cookbooks} und \emph{Recipes} eine einfache Installation und Konfiguration von häufig verwendeten Software-Paketen durch Ruby Skripte.
+Für die Erstellung und Einrichtung der virtuellen Maschinen werden Vagrant\cite{vagrant} und Chef\cite{chef} verwendet. Vagrant erlaubt das einfache Erstellen und starten von Virtuellen Maschinen. Chef erlaubt durch das Verwenden sogenannter \emph{Cookbooks} und \emph{Recipes} eine einfache Installation und Konfiguration von häufig verwendeten Software-Paketen durch Ruby Skripte.
 
 \section{Setup auf der Clientseite}
-Die Clientseitige Logik ist mit JavaScript und dem JavaScript Framework AngularJS\cite{angular} in Version 1.0 umgesetzt. AngularJS ist ein MV* Framework und erlaubt durch eine Templatesprache eine Trennung von Präsentation und Logik. Da AngularJS bereits einen Inversion of Control Container mitliefert, wird dieser verwendet. 
+Die clientseitige Logik ist mit JavaScript und dem JavaScript Framework AngularJS\cite{angular} in Version 1.0 umgesetzt. AngularJS ist ein MV* Framework und erlaubt durch eine Templatesprache eine Trennung von Präsentation und Logik. Da AngularJS bereits einen Inversion of Control Container mitliefert, wird dieser verwendet. 
 
 Die JavaScript Tests werden mithilfe von Karma\cite{karma}(früher Testacular) 0.8 ausgeführt und basieren auf dem JavaScript Unit Test Framework Jasmine 1.3.1 \cite{jasmine}. Die Acceptance und System Tests werden mit Cucumber 1.3.2 \cite{cucumber} erstellt. Cucumber bietet die Möglichkeit, bereits erstellte User-Stories zu parsen und mittels Selenium im Browser auszuführen.
 
@@ -364,7 +364,7 @@ Die JavaScript Tests werden mithilfe von Karma\cite{karma}(früher Testacular) 0
 \chapter{Unit Test}
 Unit Tests werden verwendet, um Klassen, Module oder einzelne Komponenten zu testen. Sie sind Whitebox Tests, sprich die Implementationsdetails sind bekannt\cite{betrieb}[S. 26], und werden üblicherweise vom ProgrammiererInnen selbst erstellt. 
 
-Da Unit Tests eine Komponente isoliert von anderen Komponenten testet, werden Abhängigkeiten oft mit Mocks (auch Stubs genannt) ersetzt. Dieses Mocks implementieren die Methoden und Attribute, von denen die geteste Komponente abhängt und erlauben es, eigene Testwerte zurückzugeben. Viele Test-Framworks wie PHPUnit oder Jasmine liefern eigene Mock-Frameworks mit, mit welchen die Erstellung vereinfacht wird. Ein Mock in PHPUnit sieht in etwa so aus:
+Da Unit Tests eine Komponente isoliert von anderen Komponenten testet, werden Abhängigkeiten oft mit Mocks (auch Stubs genannt) ersetzt. Diese Mocks implementieren die Methoden und Attribute, von denen die geteste Komponente abhängt und erlauben es, eigene Testwerte zurückzugeben. Viele Test-Framworks wie PHPUnit oder Jasmine liefern eigene Mock-Frameworks mit, mit welchen die Erstellung vereinfacht wird. Ein Mock in PHPUnit sieht in etwa so aus:
 
 \lstinputlisting[language=java]{src/mock.php}
 
@@ -373,7 +373,7 @@ Das Web ist noch recht jung und entwickelt sich rasant. Wurde es früher nur fü
 
 
 \subsection{Fehlende Trennung von Logik und Präsentation}
-Die mit Abstand am beliebtesten Clientseitige JavaScript Library ist jQuery. Im Jahr 2011 verwendeten laut Alexa 45\% der Top 100.000 Webseiten eine JavaScript Library. Von diesen 45\% entfielen 63\% auf jQuery. \cite{jquery}[S. 107-108]
+Die mit Abstand am beliebtesten clientseitige JavaScript Library ist jQuery. Im Jahr 2011 verwendeten laut Alexa 45\% der Top 100.000 Webseiten eine JavaScript Library. Von diesen 45\% entfielen 63\% auf jQuery. \cite{jquery}[S. 107-108]
 
 jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch den/die ProgrammiererIn aufgrund ihrer Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass die meisten jQuery-Methoden einen Selektor als ersten Parameter erwarten. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
 
@@ -382,15 +382,15 @@ Folgender Code soll dieses Problem verdeutlichen: Der angeführte Code führt ei
 \lstinputlisting[language=Html]{src/jquery.html}
 \lstinputlisting[language=JavaScript]{src/jquery.js}
 
-Durch das verwenden des Selektors \emph{\#field .info span} ist der JavaScript Code nun abhänig von der HTML Struktur der Webseite. Verändert ein Designer  die Struktur des HTML-Codes, beispielsweise um die Ausgabe an einen anderen Ort zu verschieben, besteht die Gefahr, dass der Selektor nicht mehr die gewollten Elemente selektiert und damit der JavaScript-Code nicht mehr funktioniert. Auch Serverseitig kann durch eine Verwebung von Präsentation von Logik schwer zu testender Code entstehen.
+Durch das Verwenden des Selektors \emph{\#field .info span} ist der JavaScript Code nun abhänig von der HTML Struktur der Webseite. Verändert ein Designer  die Struktur des HTML-Codes, beispielsweise um die Ausgabe an einen anderen Ort zu verschieben, besteht die Gefahr, dass der Selektor nicht mehr die gewollten Elemente selektiert und damit der JavaScript-Code nicht mehr funktioniert. Auch serverseitig kann durch eine Verwebung von Präsentation und Logik schwer zu testender Code entstehen.
 
 \subsection{Verwendung von Globalen Objekten und Variablen}
-JavaScript macht es einfach, globale Variablen zu verwenden: Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13]. Dadurch werden ProgrammiererInnen dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die die Testbarkeit, da eine implizite Abhängigkeit ensteht, die für den/die TesterIn nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
+JavaScript macht es einfach, globale Variablen zu verwenden: Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13]. Dadurch werden ProgrammiererInnen dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die Testbarkeit, da eine implizite Abhängigkeit ensteht, die für den/die TesterIn nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
 
 Jedoch nicht nur JavaScript sondern auch PHP setzt auf globale Variablen: Durch den Einsatz von \emph{Super-Globals} (z.B. \$\_POST oder \$\_SERVER) ist es schwer, eine komplette Isolation von globalen Variablen zu erreichen.
 
 \section{Lösungsansatz}
-Die vorher aufgezeigten Probleme können mit Hilfe folgende Techniken gelöst werden:
+Die vorher aufgezeigten Probleme können mit Hilfe folgender Techniken gelöst werden:
 
 \begin{itemize}
 	\item Trennung der Logik und Präsentation durch Templates
@@ -425,7 +425,7 @@ Das \emph{Scope} dient als Schnittstelle zwischen der Logik und der Präsentatio
 
 AngularJS bietet zudem einen Inversion of Control Container um dynamisch Abhängigkeiten unter den Objekten und Funktionen aufzulösen. Häufig benutzte globale Objekte werden schon fertig konfiguriert mitgeliefert: das \emph{window} Objekt etwa kann durch den Service \emph{\$window} verwendet werden. Dadurch können die Abhängigkeiten einfach in den Tests durch Mocks ausgetauscht werden.
 
-Für das oben aufgeführte Beispiel kann nun ein dazugehöriger Unit Test erstellt werden: Für den AJAX Request wird das \emph{\_\$httpBackend\_} Mock verwendet. Dies erlaubt den asynchronen Request in einen synchronen umzuwandeln. Auch ein neues Scope wird erstellt, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
+Für das oben angeführte Beispiel kann nun ein dazugehöriger Unit Test erstellt werden: Für den AJAX Request wird das \emph{\_\$httpBackend\_} Mock verwendet. Dies erlaubt den asynchronen Request in einen synchronen umzuwandeln. Auch ein neues Scope wird erstellt, um das korrekte Binding zwischen Präsentation und Logik testen zu können.
 
 \lstinputlisting[language=JavaScript]{src/angularunit.js}
 \newpage
@@ -467,7 +467,7 @@ Typische Strategien der nicht inkrementellen Testfallerstellung beinhalten\cite{
 
 \begin{itemize}
   \item Big-Bang Testing: Möglichst viele fertige Module werden in einen Test integriert
-  \item Transaction Testing: Alle Module die zu einer Transaktion gehören werden in einem Test vereint
+  \item Transaction Testing: Alle Module, die zu einer Transaktion gehören, werden in einem Test vereint
 \end{itemize}
 
 
@@ -481,7 +481,7 @@ Typische Vertreter der inkrementellen Testfallerstellung sind\cite{test_large_sy
 \begin{itemize}
   \item Top-Down: Die Module auf dem höchsten Level werden zuerst erstellt
   \item Bottom-Up: Die Module auf dem niedrigsten Level werden zuerst erstellt
-  \item Hardest First: Die schwierigsten oder kritischten Module werden zuerst erstellt
+  \item Hardest First: Die schwierigsten oder kritischsten Module werden zuerst erstellt
   \item Thread Testing: Es wird versucht, einen zusammenhängenden Strang an Funktionen zu erstellen, welcher dann komplett getestet werden kann
   \item Availability Testing: Nur Module, welche schon durch Unit Tests getestet worden sind, werden integriert
 \end{itemize}
@@ -505,22 +505,22 @@ Zu den Nachteilen gehören:
 \chapter{System Test}
 System Tests werden verwendet, um das Zusammenspiel zwischen dem System und der Applikation zu testen. Sie beinhalten sowohl funktionale (z.B. Installations Tests) als auch nicht funktionale Tests (z.B. Security, Usability oder Performance Tests)\cite{betrieb}[S. 30]. Diese Tests \glqq werden meistens nicht mehr von den Entwicklern selbst durchgeführt, sondern von unabhängigen Tester bzw. Test-Teams.\grqq\cite{eval_regression}[S. 17]
 
-Da die Tests auf einem dem/der Kunden/Kundin ähnlichen System ausgeführt werden, ist es gut, den/die Kunden/Kundin in den Test zu involvieren. Dies gestaltet sich oft als schwierig, da der/die Kunde/Kundin meist nicht die nötige Expertise mitbringt, um die exakten Anforderungen und Testfälle zu erstellen. Als Lösungsmöglichkeit bietet sich hier die Zusammenarbeit mit einem qualifizierten Team des/der Kunden/Kundin \cite{test_large_systems}[S. 60]
+Da die Tests auf einem dem/der Kunden/Kundin ähnlichen System ausgeführt werden, ist es gut, den/die Kunden/Kundin in den Test zu involvieren. Dies gestaltet sich oft als schwierig, da der/die Kunde/Kundin meist nicht die nötige Expertise mitbringt, um die exakten Anforderungen zu spezifizieren und Testfälle zu erstellen. Als Lösungsmöglichkeit bietet sich hier die Zusammenarbeit mit einem qualifizierten Team des/der Kunden/Kundin \cite{test_large_systems}[S. 60]
 
 \section{Lösungsansatz}
-Um die Web-Applikationen sowohl server- als auch clientseitig testen zu können, muss eine Entsprechende Möglichkeit bestehen, die verschiedenen System zu simulieren. Dazu werden verschiedenen VMs mit den zu testenden Systemen erstellt. Dann werden die automatisierbaren Tests auf den jeweiligen Systemen ausgeführt, nicht automatisierbare Tests wie etwa die Korrektur der Übersetzungen wird an Test-Teams ausgelagert.
+Um die Web-Applikationen sowohl server- als auch clientseitig testen zu können, muss eine entsprechende Möglichkeit bestehen, die verschiedenen System zu simulieren. Dazu werden verschiedenen virtuelle Maschinen mit den zu testenden Systemen erstellt. Dann werden die automatisierbaren Tests auf den jeweiligen Systemen ausgeführt, nicht automatisierbare Tests wie etwa die Korrektur der Übersetzungen wird an Test-Teams ausgelagert.
 
 \section{Serverseitige System Tests}
-Es ist schwierig, die Tests in server- und clientseitige Tests zu spalten, da das ganze System getestet wird. Clientseitige Tests testen somit auch Serverseitige Funktionalitäten. Bestimmte Tests wie Performance Tests müssen z.B. in Kombination durchgeführt werden.
+Es ist schwierig, die Tests in server- und clientseitige Tests zu spalten, da das ganze System getestet wird. Clientseitige Tests testen somit auch serverseitige Funktionalitäten. Bestimmte Tests wie Performance Tests müssen z.B. in Kombination durchgeführt werden.
 
-Die Serverseitigen Tests reduzieren sich deshalb auf das Erstellen und Einrichten der jeweiligen VMs für den serverseitigen Code und auf das Testen von\cite{test_large_systems}[S. 60-66]:
+Die serverseitigen Tests reduzieren sich deshalb auf das Erstellen und Einrichten der jeweiligen VMs für den serverseitigen Code und auf das Testen von\cite{test_large_systems}[S. 60-66]:
 
 \begin{itemize}
   \item Security: Statische Code Analysen können mit Tools durchgeführt werden; Security Audits von Fachkräften werden durchgeführt
-  \item Konfiguration: Mit einem Skript werden verschiedene Konfigurationen  getestet
+  \item Konfiguration: Mit einem Skript werden verschiedene Konfigurationen getestet
   \item Kompatibiltät der Applikation mit dem Server Betriebssystem und den serverseitigen Applikationen: Wird mit Chef und Vagrant durchgeführt
   \item Recovery Funktionen: Falls verfügbar, wird dies mit einem Script getestet
-  \item Performance und Speicherverbrauch: Mit einem Skript werden verschiedene, gleichzeitige Anfragen an den Server erstellt, der Arbeitsspeicher wird auf das spezifizierte Minimum reduziert
+  \item Performance und Speicherverbrauch: Mit einem Skript werden verschiedene, gleichzeitige Anfragen an den Server erstellt; der Arbeitsspeicher wird auf das spezifizierte Minimum reduziert
   \item Installation: Wird durch den clientseitigen Installationsdialog server- und clientseitig getestet
   \item Zuverlässigkeit: Kommt darauf an, ob die Anforderungen testbar formuliert sind, z.B. mit durchschnittlicher Fehlerrate pro Stunde
 \end{itemize}
@@ -546,7 +546,7 @@ Die User-Story lässt sich nun mit folgenden Schritten parsen und testen:
 Durch die Simulation der verschiedenen Umgebungen ergeben sich folgende Vorteile \cite{test_large_systems}[S. 60-66]:
 
 \begin{itemize}
-  \item Sicherheit, dass die Applikation auf unterschiedlichen Plattformen funktionert
+  \item Sicherheit, dass die Applikation auf unterschiedlichen Plattformen funktioniert
   \item Auch nicht funktionale, aber manchmal projektkritische Anforderungen wie Performance testbar
 \end{itemize}
 
