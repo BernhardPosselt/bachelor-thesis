@@ -204,7 +204,7 @@ Dazu werden die jeweiligen Testarten des V-Modells - Unit Test, Integration Test
 \newpage
 
 \section{Aufbau}
-Der erste Teil der Arbeit (Kapitel 2, 3 und 4) behandelt den Sinn und die Grenzen des Software-Tests und wie er sich in den Entwicklungsprozess einbinden lässt. Es wird auf Unterschiede zwischen Software-Test von klassischen und Web-Applikationen wird eingegangen. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen. Schlussendlich wird der Ablauf des Testprozesses mit Hilfe eines Testplanes erläutert.
+Der erste Teil der Arbeit (Kapitel 2, 3 und 4) behandelt den Sinn und die Grenzen des Software-Tests und wie das Testen sich in den Entwicklungsprozess einbinden lässt. Es wird auf Unterschiede zwischen Software-Test von klassischen und Web-Applikationen wird eingegangen. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen. Schlussendlich wird der Ablauf des Testprozesses mit Hilfe eines Testplanes erläutert.
 
 Der zweite Teil (Kapitel 5, 6, 7, 8) beschäftigt sich mit den praktischen Anpassungen der verschiedenen Testarten des V-Modells. Kapitel 5 beschäftigt sich näher mit dem praktischen Einsatz von client- und serverseitigen Unit Tests. Es werden für beide Seiten Beispiele eines Unit Tests erstellt und auf klassiche Probleme sowohl bei client-, als auch serverseitigen Unit Tests und deren Lösungen eingangen. Das Thema des Integration Tests wird in Kaptitel 6 behandelt. Außerdem wird auf die verschiedenen Test-Ansätze eingegangen. Darauf folgt der System Test in Kapitel 7. Es wird anhand von Beispielen gezeigt, wie die verschiedenen Server- und Client-Plattformen automatisch getestet werden können. Schlussendlich wird noch der Acceptance Test in Kapitel 8 behandelt.
 
@@ -239,7 +239,7 @@ Manuelle Tests eignen sich vor allem im Bereich des System Tests und Acceptance 
 
 
 \section{Automatisierte Tests}
-Da die vorhandenen Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann durch das repetetive Durchführen immergleicher Prozesse beim/bei der TesterIn schnell eine gewisse Eintönigkeit und Genervtheit entstehen. Das wiederum kann unter anderem dazu führen, dass TesterInnen im Laufe der Zeit bestimmte Tests nicht korrekt oder ineffizient ausführen. 
+Da Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann durch das repetetive Durchführen immergleicher Prozesse beim/bei der TesterIn schnell eine gewisse Eintönigkeit und Genervtheit entstehen. Das wiederum kann unter anderem dazu führen, dass TesterInnen im Laufe der Zeit bestimmte Tests nicht korrekt oder ineffizient ausführen. 
 
 Die Lösung des Problems ist die teilweise Automatisierung des Testprozesses. Diese erlaubt bei zukünftigen Testdurchläufen nicht nur eine starke Reduzierung des Zeitaufwandes pro Durchlauf, sondern ermöglicht es auch, die Tests rund um die Uhr durchzuführen. Oft werden am Abend alle zeitintensiven Tests gestartet, damit die EntwicklerInnen am nächsten Morgen einen guten Überblick darüber haben, was nicht oder nicht mehr funktioniert. \cite{test_auto}[S. 22-23]
 
@@ -585,7 +585,7 @@ Dadurch, dass der/die Kunde/Kundin in diesem Fall der/die HaupttesterIn der Soft
 Das Web bietet sich immer mehr als Applikations-Plattform an, erfordert jedoch auch eine Anpassung der Testmethoden, um qualitativ hochwertige Applikationen zu erstellen. In dieser Arbeit wurde anhand eines Projektes Beispiele zu den jeweiligen Testarten des V-Modells erabeitet, welche die zusätzlichen Herausforderungen adressieren:
 
 \begin{itemize}
-  \item Der Modularität, Fragmentierung und dem Session Modell kann mit einer Anpassung der System Tests begegnet werden, indem mittels VMs unterschiedliche Server- und Clientplattformen erstellt werden. Auf diesen werden dann die Tests gestartet.
+  \item Der Modularität, Fragmentierung und dem Session Modell kann mit einer Anpassung der System Tests begegnet werden, indem mittels virtuellen Maschinen unterschiedliche Server- und Clientplattformen erstellt werden. Auf diesen werden dann die Tests gestartet.
   \item JavaScript Test-Frameworks erlauben, asynchrone Methoden zu testen; zudem können durch den Einsatz von Mocks asynchrone Methoden synchron gemacht werden.
   \item Sowohl mit server- als auch mit clientseitigen Frameworks lässt sich die Trennung von Logik und Präsentation umsetzen, um das Testen zu vereinfachen.
 \end{itemize}
