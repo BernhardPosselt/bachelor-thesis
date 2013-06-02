@@ -4,8 +4,8 @@
 % erstellt von Dr. Andreas Drauschke (andreas.drauschke@technikum-wien.at) und Dr. Susanne Teschl (susanne.teschl@technikum-wien.at)
 % geringfügig adaptiert von Harald Stockinger (harald.stockinger@technikum-wien.at)
 
- 
-\documentclass[a4paper,bibtotoc,oneside]{scrbook} 
+
+\documentclass[a4paper,bibtotoc,oneside]{scrbook}
 % Für kurze Arbeiten wäre auch die Dokumentklasse "scrartcl" ausreichend. In diesem Fall ist "section" die höchste Ebene ("chapter" gibt es dann nicht).
 % \documentclass[a4paper,bibtotoc,oneside]{scrartcl}
 
@@ -67,14 +67,14 @@
 \cfoot[\fancyplain{}{\footnotesize\thepage}]{\fancyplain{}{\footnotesize\thepage}}
 \lhead[\fancyplain{}{\footnotesize\nouppercase\leftmark}]{\fancyplain{}{}}
 \chead{}
-\rhead[\fancyplain{}{}]{\fancyplain{}{\footnotesize\nouppercase\sc\leftmark}} 
+\rhead[\fancyplain{}{}]{\fancyplain{}{\footnotesize\nouppercase\sc\leftmark}}
 
 % Farben im Dokument möglich
 \usepackage{color}
 
 % Schriftart Helvetica
 \usepackage{helvet}
-\renewcommand{\familydefault}{cmss} 
+\renewcommand{\familydefault}{cmss}
 
 % Graphiken einbinden: hier für pdflatex
 \usepackage[pdftex]{graphicx}
@@ -89,7 +89,7 @@
 \tolerance = 9999
 \sloppy
 
-% Anpassung einiger überschriften 
+% Anpassung einiger überschriften
 \renewcommand\figurename{Abbildung}
 \renewcommand\tablename{Tabelle}
 
@@ -129,8 +129,8 @@
 
 
 \section*{Eidesstattliche Erklärung}\thispagestyle{empty}
-\glqq Ich erkläre hiermit an Eides statt, dass ich die vorliegende Arbeit selbständig angefertigt habe. 
-Die aus fremden Quellen direkt oder indirekt übernommenen Gedanken sind als solche kenntlich gemacht. 
+\glqq Ich erkläre hiermit an Eides statt, dass ich die vorliegende Arbeit selbständig angefertigt habe.
+Die aus fremden Quellen direkt oder indirekt übernommenen Gedanken sind als solche kenntlich gemacht.
 Die Arbeit wurde bisher weder in gleicher noch in ähnlicher Form einer anderen Prüfungsbehörde vorgelegt
 und auch noch nicht veröffentlicht. Ich versichere, dass die abgegebene Version jener im Uploadtool entspricht.\grqq\\[5\baselineskip]
 \rule{5cm}{0.2pt}\hfill\rule{5cm}{0.2pt}\\
@@ -140,10 +140,10 @@ und auch noch nicht veröffentlicht. Ich versichere, dass die abgegebene Version
 
 
 \section*{Kurzfassung}\thispagestyle{empty}
-Die Durchführung und Erstellung von automatisierten Tests für Web-Applikationen unterscheidet sich von klassischen Applikationen: Aufgrund der komplexeren Infrastruktur und Modularisierung werden zusätzliche Testfälle und Strategien benötigt, um Web-Applikationen ausreichend abzudecken und eine fortwährende Qualität zu gewährleisten. Diese Arbeit soll Möglichkeiten für den Test von Web-Applikationen anhand eines Projektes und Anpassungen und Anwendung der vier Testformen des V-Modells aufzeigen: Unit Test, Integration Test, System Test und Acceptance Test. 
+Die Durchführung und Erstellung von automatisierten Tests für Web-Applikationen unterscheidet sich von klassischen Applikationen: Aufgrund der komplexeren Infrastruktur und Modularisierung werden zusätzliche Testfälle und Strategien benötigt, um Web-Applikationen ausreichend abzudecken und eine fortwährende Qualität zu gewährleisten. Diese Arbeit soll Möglichkeiten für den Test von Web-Applikationen anhand eines Projektes und Anpassungen und Anwendung der vier Testformen des V-Modells aufzeigen: Unit Test, Integration Test, System Test und Acceptance Test.
 
 \vfill
-\paragraph*{Schlagwörter:} Softwaretest, Web
+\paragraph*{Schlagwörter:} Softwaretest, Web-Applikation
 
 \newpage
 
@@ -151,7 +151,7 @@ Die Durchführung und Erstellung von automatisierten Tests für Web-Applikatione
 Creation and execution of automatic web application tests is different from tests of classic applications. A more complex infrastructure and modularisation require additional testcases and strategies to guarantee a good enough test coverage which in return ensures constant quality. This thesis highlights various possibilities to test web applications based on a real world project and shows how to use and adjust the V-Model's four test methods: Unit Test, Integration Test, System Test and Acceptance Test.
 
 \vfill
-\paragraph*{Keywords:} web applications, automatic tests, webtest
+\paragraph*{Keywords:} software test, web applications
 \newpage
 
 %\section*{Danksagung}
@@ -180,7 +180,7 @@ Aufgrund des starken Wachstums dehnt sich der Markt für Software-Applikationen 
 \end{figure}
 % TODO: grafik verbessern, klarer machen
 
-Dieses Problem der Fragmentierung und des damit verbundenen immer höheren Portierungsaufwandes kann mit einer Web-Applikation gelöst werden. Soll sich diese auch noch gut in das jeweilige System integerieren, können Frameworks wie z.B. PhoneGap \cite{phonegap} verwendet werden. Diese Frameworks bieten über JavaScript einen Zugriff auf native Funktionen der mobilen Betriebssysteme, womit der Portierungsaufwand deutlich reduziert werden kann. 
+Dieses Problem der Fragmentierung und des damit verbundenen immer höheren Portierungsaufwandes kann mit einer Web-Applikation gelöst werden. Soll sich diese auch noch gut in das jeweilige System integerieren, können Frameworks wie z.B. PhoneGap \cite{phonegap} verwendet werden. Diese Frameworks bieten über JavaScript einen Zugriff auf native Funktionen der mobilen Betriebssysteme, womit der Portierungsaufwand deutlich reduziert werden kann.
 
 \begin{figure}[h!]
 \centering
@@ -189,7 +189,7 @@ Dieses Problem der Fragmentierung und des damit verbundenen immer höheren Porti
 \end{figure}
 
 \section{Problemstellung}
-Aufgrund der Vielfalt an unterschiedlichen Web-Browsern erhöht sich jedoch auch der Testaufwand der Applikation. Die Browser implementieren die vom W3C vorgeschlagenen Standards ab und zu anders und in unterschiedlicher Geschwindigkeit. Nicht selten kommt es vor, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erforderlich sind. \cite{caniuse}
+Eine Web-Applikation wird innerhalb eines Web-Browsers ausgeführt. Da mehrere unterschiedliche Browser existieren, erhöht sich damit der Testaufwand der Web-Applikation. Zudem implementieren die Browser die vom W3C vorgeschlagenen Standards nicht immer gleich und in unterschiedlicher Geschwindigkeit: Ein Beispiel dafür ist der Internet Explorer 8, der über einen eigenen Quirks Modus verfügt, um älteres, nicht standardkonformes Markup zu rendern, welches für frühere Internet Explorer Versionen geschrieben wurde \cite{iexpl}[S. 41]. Daher kann es vorkommen, dass gewisse Funktionen nur in einer eingeschränkten Auswahl von Web-Browsern voll funktionsfähig sind und zusätzliche Anpassungen erforderlich sind. \cite{caniuse}
 
 Ein weiteres Problem ist das verhaltene Upgradeverhalten der NutzerInnen. Im Falle des Internet Explorers 7 dauerte es beispielsweise länger als 19 Monate, bis rund die Hälfte der NutzerInnen auf die neue Version umgestiegen sind. \cite{insecure}[S. 3]
 
@@ -197,7 +197,7 @@ All dies zwingt Web-EntwicklerInnen dazu, eine Vielzahl an unterschiedlichen Bro
 
 
 \section{Lösungsansatz}
-Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um der höheren Komplexität von Web-Applikationen gerecht zu werden. 
+Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um der höheren Komplexität von Web-Applikationen gerecht zu werden.
 
 Dazu werden die jeweiligen Testarten des V-Modells - Unit Test, Integration Test, System Test und Acceptance Test - anhand eines Projektes an eine Web-Applikation angepasst. Sowohl client- als auch serverseitige Tests werden erstellt, um die verschiedenen Plattformen erfolgreich testen zu können. Dies wird mit dementsprechenden Code-Beispielen illustriert.
 
@@ -211,9 +211,9 @@ Der zweite Teil (Kapitel 5, 6, 7, 8) beschäftigt sich mit den praktischen Anpas
 \chapter{Warum testen}
 Keine Applikation ist fehlerfrei\cite{empiric_invest}[S. 9]. Diese Fehler  führen nicht nur zu unzufriedenen Kunden/Kundinnen, sondern auch zu hohen Kosten: \glqq Im Jahr 2000 wurde in den USA ein Schaden durch Softwarefehler in der Auto- und Flugzeugindustrie von 1,8 Milliarden US-Dollar errechnet. Dies entspricht ca. 16 \% des Softwareumsatzes.\grqq\cite{betrieb}[S. 15]
 
-Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer aufwendigeren Applikation mit 100 Millionen Zeilen Quellcode eine durchschnittliche Anzahl von 300.000 Fehlern ergibt \cite{eval_regression}[S. 10]. 
+Die Fehler-Rate wird auf ungefähr 3 pro 1.000 Zeilen geschätzt, was bei einer aufwendigeren Applikation mit 100 Millionen Zeilen Quellcode eine durchschnittliche Anzahl von 300.000 Fehlern ergibt \cite{eval_regression}[S. 10].
 
-Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und den Software-Entwicklungsprozess dementsprechend anzupassen \cite{betrieb}[S. 16]. 
+Je früher diese Fehler entdeckt werden, desto kostengünstiger können diese beseitigt werden \cite{betrieb}[S. 17]. Daher ist es wichtig, möglichst früh mit dem Testen zu beginnen und den Software-Entwicklungsprozess dementsprechend anzupassen \cite{betrieb}[S. 16].
 
 \section{Verschiedene Testarten}
 Laut dem V-Modell (Abbildung \ref{Abb3}) ist der Software-Test kein seperater Abschnitt im Projektplan. Vielmehr ist er ein Prozess, der die verschiedenen Entwicklungsabschnitte ergänzt \cite{betrieb}[S. 23]. Das V-Model unterscheidet zwischen vier verschiedenen Testarten:
@@ -239,16 +239,16 @@ Manuelle Tests eignen sich vor allem im Bereich des System Tests und Acceptance 
 
 
 \section{Automatisierte Tests}
-Da Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann durch das repetetive Durchführen immergleicher Prozesse beim/bei der TesterIn schnell eine gewisse Eintönigkeit und Genervtheit entstehen. Das wiederum kann unter anderem dazu führen, dass TesterInnen im Laufe der Zeit bestimmte Tests nicht korrekt oder ineffizient ausführen. 
+Da Tests durch die Einbindung in den Entwicklungsprozess öfters durchgeführt werden müssen, kann durch das repetetive Durchführen immergleicher Prozesse beim/bei der TesterIn schnell eine gewisse Eintönigkeit und Genervtheit entstehen. Das wiederum kann unter anderem dazu führen, dass TesterInnen im Laufe der Zeit bestimmte Tests nicht korrekt oder ineffizient ausführen.
 
 Die Lösung des Problems ist die teilweise Automatisierung des Testprozesses. Diese erlaubt bei zukünftigen Testdurchläufen nicht nur eine starke Reduzierung des Zeitaufwandes pro Durchlauf, sondern ermöglicht es auch, die Tests rund um die Uhr durchzuführen. Oft werden am Abend alle zeitintensiven Tests gestartet, damit die EntwicklerInnen am nächsten Morgen einen guten Überblick darüber haben, was nicht oder nicht mehr funktioniert. \cite{test_auto}[S. 22-23]
 
-Es gibt mehrere Faktoren, die bei der Entscheidung der Automatisierung berücksichtigt werden müssen: 
+Es gibt mehrere Faktoren, die bei der Entscheidung der Automatisierung berücksichtigt werden müssen:
 
 \begin{itemize}
   \item Es muss klar sein, dass der Aufwand der Testerstellung einen wirtschaftlichen Nutzen hat. Bei einer sehr kleinen und unkritischen Applikation kann es sich z.B. nicht lohnen, Tests zu automatisieren. Dies liegt unter anderem daran, dass Tests erst über einen längeren Zeitraum ihre volle Stärke ausspielen. \cite{eval_regression}[S. 12]
   \item Das Personal muss für die Erstellung der automatischen Tests ausgebildet sein. \cite{eval_automat_webapp_test}[S. 37]
-  \item Es eignet sich nicht jede Testart zur vollkommenen Automatisierung. Währen Unit-Tests und Integration Tests sehr gut automatisiert werden können, sind System und Acceptance Tests schon schwieriger zu automatisieren. 
+  \item Es eignet sich nicht jede Testart zur vollkommenen Automatisierung. Währen Unit-Tests und Integration Tests sehr gut automatisiert werden können, sind System und Acceptance Tests schon schwieriger zu automatisieren.
 \end{itemize}
 
 
@@ -265,14 +265,14 @@ Mit dem Erstellen des Projektplans wird gleichzeitig auch ein Testplan erstellt 
 Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3]:
 
 \begin{itemize}
-	\item Was wird getestet? 
+	\item Was wird getestet?
   \item Welche Bereiche besitzen eine höhere Priorität als andere?
-	\item Wo wird getestet? 
+	\item Wo wird getestet?
   \item Mit welchen Konfigurationen, Soft- und Hardware Plattformen respektive Versionen wird getestet?
-	\item Wie wird getestet? 
+	\item Wie wird getestet?
   \item Mit welchen Tools wird getestet?
 	\item Wer testet?
-	\item Wie lange wird getestet? 
+	\item Wie lange wird getestet?
   \item Bis wann muss ein Test erfolgreich absolviert werden?
 	\item Was wird nicht getestet?
 \end{itemize}
@@ -281,11 +281,11 @@ Im Testplan werden unter anderem folgende Punkte behandelt \cite{test_auto}[S. 3
 \section{Ablauf}
 Da die Entwicklung der Applikation meistens unter einem hohen Zeitdruck abläuft\cite{software_qual}[S. 244] und der Testprozess zudem teuer ist \cite{eval_regression}[S. 24], ist es wichtig, Testfälle heraus zu arbeiten, zu priorisieren und an geeignete TesterInnen zu verteilen. Auch Endkriterien werden für die Tests veranschlagt und eine optimale Test-Strategie gewählt werden.
 
-Danach folgt die Überprüfung des Testplans. Hier wird überprüft, ob die einzelnen Testfälle genau genug beschrieben worden sind, um daraus die jeweiligen Testfälle erstellen zu können. Auch die Effiktivität der Test-Strategien wird überprüft. Diese Prüfung findet nicht nur einmal statt, sondern wiederholt sich mehrfach im Testprozess. Dies hängt damit zusammen, dass die Anforderungen an die Software im Laufe der Implementierung immer konkreter werden und somit auch neue, mögliche Fehlerfälle erkannt werden können.\cite{eval_regression}[S. 25] 
+Danach folgt die Überprüfung des Testplans. Hier wird überprüft, ob die einzelnen Testfälle genau genug beschrieben worden sind, um daraus die jeweiligen Testfälle erstellen zu können. Auch die Effiktivität der Test-Strategien wird überprüft. Diese Prüfung findet nicht nur einmal statt, sondern wiederholt sich mehrfach im Testprozess. Dies hängt damit zusammen, dass die Anforderungen an die Software im Laufe der Implementierung immer konkreter werden und somit auch neue, mögliche Fehlerfälle erkannt werden können.\cite{eval_regression}[S. 25]
 
 Ist der Testplan soweit fertig, kann ein Zeitplan für die einzelnen Testfälle erstellt werden. In weiterer Folge werden die einzelnen Tests an die TesterInnen vergeben. Diese können nun mit der Erstellung der konkreten Testfälle beginnen.
 
-Manche Tests haben eine sehr hohe Laufzeit. Um den Ablauf daher zu beschleunigen, wird ein Smoke-Test erstellt. Der Smoke-Test testet grobe Szenarien der Applikation. Schlagen diese fehl, sind weitere Testdurchläufe nicht notwendig und der Testdurchlauf kann abgebrochen werden. 
+Manche Tests haben eine sehr hohe Laufzeit. Um den Ablauf daher zu beschleunigen, wird ein Smoke-Test erstellt. Der Smoke-Test testet grobe Szenarien der Applikation. Schlagen diese fehl, sind weitere Testdurchläufe nicht notwendig und der Testdurchlauf kann abgebrochen werden.
 
 Nach dem Ausführen der Tests wird ein Bericht erstellt. Je nach Ausgang der Tests muss der Testplan angepasst werden. Verliefen alle Tests positiv, kann das die jeweilige Phase abgeschlossen werden. \cite{eval_regression}[S. 26]
 
@@ -300,7 +300,7 @@ Aufgrund der Dokumentation der Testfälle, ergeben sich zusätzlich folgende Vor
 	\item Verschiedene Testbereiche können an mehrere Personen mit unterschiedlichen Fachkenntnissen verteilt werden, um Personalengpässe zu vermeiden \cite{test_large_systems}[S. 19]
 	\item Ineffiziente Test-Tools und Test-Strategien können erkannt und verbessert werden \cite{eval_regression}[S. 25]
 	\item Geschäftskritische Bereiche und solche mit einer erhöhten  Fehleranfälligkeit werden sichtbarer \cite{testing_apps_on_web}[S. 34]. Dies ist vor allem darum wichtig, weil Fehler ungleich verteilt sind und in bestimmten Bereichen häufiger vorkommen als in Anderen \cite{eval_regression}[S. 12]
-	\item Sinnlose Testfälle und Testbereiche können aussortiert werden 
+	\item Sinnlose Testfälle und Testbereiche können aussortiert werden
 	\item Abhängigkeiten der Testfälle untereinander und der Implementierung werden transparent und erlauben schnell auf Änderungen zu reagieren\cite{test_auto}[S. 4]
 \end{itemize}
 
@@ -328,15 +328,13 @@ Durch diesen modularen Aufbau ist es besonders schwer einen Fehler zu lokalisier
 \end{figure}
 
 \section{Plattformunabhängigkeit}
-Web-Applikationen laufen auf einer Vielzahl verschiedener Plattformen, server- und clientseitig. Dies ermöglicht dem/der EntwicklerIn Zeit und Aufwand zu sparen, befreit ihn/sie jedoch nicht von der Aufgabe, sicher zu stellen, dass die Applikation auf möglichst vielen Plattformen korrekt ausgeführt wird.
-
-Während auf der Serverseite die jeweilig zu verwendenden Plattformen noch vom/von der BetreiberIn festlegbar sind, sprich welches Betriebssystem und welche Datenbank eingesetzt wird, ist dies auf der Clientseite schon nicht mehr möglich. 
+Web-Applikationen laufen auf einer Vielzahl verschiedener Plattformen, server- und clientseitig. Während auf der Serverseite die jeweilig zu verwendenden Plattformen noch vom/von der BetreiberIn festlegbar sind, sprich welches Betriebssystem und welche Datenbank eingesetzt wird, ist dies auf der Clientseite schon nicht mehr möglich. Daher werden der/die EntwicklerInnen nicht von der Aufgabe befreit, sicher zu stellen, dass die Applikation auf möglichst vielen Web-Browsern korrekt ausgeführt wird.
 
 Die BesucherInnen der Webseite verwenden unterschiedliche Web-Browser auf verschiedenen Betriebssystemen in unterschiedlichen Versionen. Auch können unterschiedliche Plugins und Fonts in unterschiedlichen Versionen installiert sein \cite{testing_apps_on_web}[Foreword]. Dies erhöht den Testaufwand, da bestimmte Funktionen nicht vorhanden sein bzw. anders funktionieren können \cite{caniuse}.
 
 Eine weitere Herausforderung von clientseitigem Code stellt die asynchrone und eventbasierte Programmierung dar. Dies erschwehrt nicht nur die Erstellung von Testfällen sondern erhöht auch die möglichen Kombinationen, in der die Events eintreten können. Die Möglichkeit, dass durch eine Aktion, z.B. ein Mausklick auf einen Link, mehrere Events ausgelöst werden können erhöht die Komplexität noch weiter. \cite{testing_apps_on_web}[S. 18]
 
-All diese Probleme werden durch eine zunehmende Verlagerung der Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13] noch weiter verstärkt. 
+All diese Probleme werden durch eine zunehmende Verlagerung der Applikations-Logik von der Server- auf die Clientseite\cite{testing_apps_on_web}[S. 13] noch weiter verstärkt.
 
 \section{Session Modell}
 Eine weitere Herausforderung stellt das Session Modell von Web-Applikationen dar: viele Web-Applikationen verwenden nur eine Session pro NutzerIn, erlauben aber mehrere gleichzeitige Logins. Werden mehrere Instanzen der Applikation gestartet - z.B. loggt sich der/die NutzerIn auf dem Mobiltelefon und dem Laptop auf der Webseite ein - kann dies zu Synchronisationsproblemen zwischen den einzelnen Instanzen führen: Wird in einer Instanz ein Eintrag gelöscht, kann dieser durch eine fehlerhafte Synchronisation in einer anderen Instanz immer noch existieren und in weiterer Folge zu Fehlern führen. \cite{testing_apps_on_web}[S. 20]
@@ -348,7 +346,7 @@ Diese Vielfalt an verschiedenen möglichen Konfigurationen und Herausforderungen
 \chapter{Projektumfeld}
 Die Tests wurden im Rahmen eines Praktikums bei onwCloud Inc. erstellt, um die News Reader App \emph{News} zu testen. Die App setzt auf die ownCloud\cite{owncloud} Plattform auf.
 
-ownCloud ist eine Open Source Web-Applikations-Plattform, welche oft genutzte Cloud Dienste wie z.B. Kalendar, Kontakte, Dateiupload und Synchronisation zur Verfügung stellt. Sie ist in PHP und JavaScript geschrieben, und kann von jedem/jeder NutzerIn auf seinem/ihren privaten Server installiert und verwendet werden. Im Unterschied zu anderen großen Cloud-Service-Anbietern wie Google und Microsoft liegt die Kontrolle der Daten damit beim/bei der NutzerIn. 
+ownCloud ist eine Open Source Web-Applikations-Plattform, welche oft genutzte Cloud Dienste wie z.B. Kalendar, Kontakte, Dateiupload und Synchronisation zur Verfügung stellt. Sie ist in PHP und JavaScript geschrieben, und kann von jedem/jeder NutzerIn auf seinem/ihren privaten Server installiert und verwendet werden. Im Unterschied zu anderen großen Cloud-Service-Anbietern wie Google und Microsoft liegt die Kontrolle der Daten damit beim/bei der NutzerIn.
 
 \section{Setup auf der Serverseite}
 Auf der Serverseite wird PHP in der Version 5.3 eingesetzt. Als Inversion of Control Container kommt Pimple\cite{pimple} zum Einsatz. Als Test-Framwork wird PHPUnit\cite{phpunit} in der Version 3.8 eingesetzt.
@@ -356,20 +354,20 @@ Auf der Serverseite wird PHP in der Version 5.3 eingesetzt. Als Inversion of Con
 Für die Erstellung und Einrichtung der virtuellen Maschinen werden Vagrant\cite{vagrant} und Chef\cite{chef} verwendet. Vagrant erlaubt das einfache Erstellen und starten von Virtuellen Maschinen. Chef erlaubt durch das Verwenden sogenannter \emph{Cookbooks} und \emph{Recipes} eine einfache Installation und Konfiguration von häufig verwendeten Software-Paketen durch Ruby Skripte.
 
 \section{Setup auf der Clientseite}
-Die clientseitige Logik ist mit JavaScript und dem JavaScript Framework AngularJS\cite{angular} in Version 1.0 umgesetzt. AngularJS ist ein MV* Framework und erlaubt durch eine Templatesprache eine Trennung von Präsentation und Logik. Da AngularJS bereits einen Inversion of Control Container mitliefert, wird dieser verwendet. 
+Die clientseitige Logik ist mit JavaScript und dem JavaScript Framework AngularJS\cite{angular} in Version 1.0 umgesetzt. AngularJS ist ein MV* Framework und erlaubt durch eine Templatesprache eine Trennung von Präsentation und Logik. Da AngularJS bereits einen Inversion of Control Container mitliefert, wird dieser verwendet.
 
 Die JavaScript Tests werden mithilfe von Karma\cite{karma}(früher Testacular) 0.8 ausgeführt und basieren auf dem JavaScript Unit Test Framework Jasmine 1.3.1 \cite{jasmine}. Die Acceptance und System Tests werden mit Cucumber 1.3.2 \cite{cucumber} erstellt. Cucumber bietet die Möglichkeit, bereits erstellte User-Stories zu parsen und mittels Selenium im Browser auszuführen.
 
 
 \chapter{Unit Test}
-Unit Tests werden verwendet, um Klassen, Module oder einzelne Komponenten zu testen. Sie sind Whitebox Tests, sprich die Implementationsdetails sind bekannt\cite{betrieb}[S. 26], und werden üblicherweise vom ProgrammiererInnen selbst erstellt. 
+Unit Tests werden verwendet, um Klassen, Module oder einzelne Komponenten zu testen. Sie sind Whitebox Tests, sprich die Implementationsdetails sind bekannt\cite{betrieb}[S. 26], und werden üblicherweise vom ProgrammiererInnen selbst erstellt.
 
 Da Unit Tests eine Komponente isoliert von anderen Komponenten testet, werden Abhängigkeiten oft mit Mocks (auch Stubs genannt) ersetzt. Diese Mocks implementieren die Methoden und Attribute, von denen die geteste Komponente abhängt und erlauben es, eigene Testwerte zurückzugeben. Viele Test-Framworks wie PHPUnit oder Jasmine liefern eigene Mock-Frameworks mit, mit welchen die Erstellung vereinfacht wird. Ein Mock in PHPUnit sieht in etwa so aus:
 
 \lstinputlisting[language=java]{src/mock.php}
 
 \section{Häufige Probleme}
-Das Web ist noch recht jung und entwickelt sich rasant. Wurde es früher nur für Webseiten eingesetzt, sollen nun auf einmal komplette Applikationen entstehen. Dies überfordert viele Entwickler und resultiert oft in halbgaren Architekturen und schlampigen Umsetzungen. 
+Das Web ist noch recht jung und entwickelt sich rasant. Wurde es früher nur für Webseiten eingesetzt, sollen nun auf einmal komplette Applikationen entstehen. Dies überfordert viele Entwickler und resultiert oft in halbgaren Architekturen und schlampigen Umsetzungen.
 
 
 \subsection{Fehlende Trennung von Logik und Präsentation}
@@ -402,7 +400,7 @@ Um dies zu erreichen wird auf der Clientseite das JavaScript Framework \emph{Ang
 
 
 \section{Serverseitige Unit Tests}
-Durch die Verwendung von Pimple lässt sich nun die Konstruktion der Klassen konfigurieren, indem die Abhängigkeiten im Container definiert werden. Auch Super-Globals können hier konfiguriert werden, damit der Code unabhängig von globalen Variablen wird. 
+Durch die Verwendung von Pimple lässt sich nun die Konstruktion der Klassen konfigurieren, indem die Abhängigkeiten im Container definiert werden. Auch Super-Globals können hier konfiguriert werden, damit der Code unabhängig von globalen Variablen wird.
 
 Ein Beispiel für die Container-Konfiguration könnte so aussehen:
 \lstinputlisting[language=java]{src/pimple.php}
@@ -449,7 +447,7 @@ Viele dieser Vorteile werden durch den Einsatz von Mocks erreicht, die die konkr
 \end{itemize}
 
 \chapter{Integration Test}
-Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten und den Programm-Fluss zu testen. Sie funktionieren ähnlich wie Unit Tests, verwenden jedoch je nach Implementations-Strategie wenig bis keine Mocks und testen weniger Implementationsdetails\cite{test_large_systems}[S. 53-54]. Auf ein Integration Test Quellcode-Beispiel wird deshalb verzichtet. 
+Integration Tests werden verwendet, um die Kommunikation zwischen einzelnen Klassen, Modulen und Komponenten und den Programm-Fluss zu testen. Sie funktionieren ähnlich wie Unit Tests, verwenden jedoch je nach Implementations-Strategie wenig bis keine Mocks und testen weniger Implementationsdetails\cite{test_large_systems}[S. 53-54]. Auf ein Integration Test Quellcode-Beispiel wird deshalb verzichtet.
 
 Durch die vielen möglichen Kombinationen der einzelnen Module gibt es keine allgemein gültige Implementations-Strategie \cite{betrieb}[S. 29]. Die zwei häufigsten verwendeten Methoden zur Erstellung der Testfälle sind:
 
@@ -461,7 +459,7 @@ Durch die vielen möglichen Kombinationen der einzelnen Module gibt es keine all
 \section{Nicht Inkrementelle Testfallerstellung}
 Wird die nicht inkrementelle Testfallerstellung genutzt, werden die nicht vorhandenen Module mit Mocks ersetzt. Diese werden am Schluss dann durch die aktuelle Implementierung ausgetauscht.
 
-Dies mag vor allem am Anfang sehr aufwendig erscheinen, erlaubt jedoch schon früh die Kommunikation zwischen den einzelnen Bereichen zu testen. Auf diese Weise kann sehr schnell ein Überblick über den Implementationsstand der Software erlangt werden. Diese Methode eignet sich daher besonders für Agile Software-Entwicklung. \cite{test_large_systems}[S. 54-59] 
+Dies mag vor allem am Anfang sehr aufwendig erscheinen, erlaubt jedoch schon früh die Kommunikation zwischen den einzelnen Bereichen zu testen. Auf diese Weise kann sehr schnell ein Überblick über den Implementationsstand der Software erlangt werden. Diese Methode eignet sich daher besonders für Agile Software-Entwicklung. \cite{test_large_systems}[S. 54-59]
 
 Typische Strategien der nicht inkrementellen Testfallerstellung beinhalten\cite{test_large_systems}[S. 54]:
 
@@ -573,7 +571,7 @@ Zu den verschiedenen Tests zählen \cite{betrieb}[S. 33-34]:
    \item \glqq Test der Benutzbarkeit\grqq
    \item \glqq Akzeptanz durch den Systembetreiber\grqq
    \item \glqq Feldrest (Alpha- und Betatest)\grqq
- \end{itemize} 
+ \end{itemize}
 
 Um das Risiko einer verweigerten Abnahme im späten Stadium zu vermindern, können die Acceptance Tests bereits während der Entwicklung mit dem/der Kunden/Kundin zusammen durchgeführt werden, was sich vor allem in einem agilen Software-Projekt anbietet. \cite{eval_regression}[S. 17]
 
@@ -597,7 +595,7 @@ Schlussendlich muss immer abgewägt werden, wieviel Zeit und Geld in Tests inves
 
 
 %\\[2\baselineskip]
-%Hier wird auf Abbildung~\ref{Abb1} verwiesen. 
+%Hier wird auf Abbildung~\ref{Abb1} verwiesen.
 %\begin{figure}[htbp]
 %\centering
 %\includegraphics[width=75mm]{Buchruecken}
@@ -630,9 +628,9 @@ Schlussendlich muss immer abgewägt werden, wieviel Zeit und Geld in Tests inves
 %Hier wird auf die Formel (\ref{For1}) verwiesen. \\
 
 %\noindent
-%So kann zum Beispiel ein \glqq Source-Code\grqq\  angegeben werden: 
+%So kann zum Beispiel ein \glqq Source-Code\grqq\  angegeben werden:
 %\begin{verbatim}
-%for (i=1; i < 10; i++) {...} 
+%for (i=1; i < 10; i++) {...}
 %\end{verbatim}
 
 %\noindent
@@ -654,7 +652,7 @@ Schlussendlich muss immer abgewägt werden, wieviel Zeit und Geld in Tests inves
 % Das Literaturverzeichnis kann auch nach einem allfälligen Anhang positiioniert werden (siehe "`Leitfaden für Bachelor- und Diplomarbeiten"', Version 2.0, Abschnitt 2.9).
 
 % Möglichkeit 1: Erzeugung des Literaturverzeichnisses mit BibTeX:
-% Die Quellen sind in der Datei *.bib (hier Literatur.bib) einzugeben. Danach muss diese Vorlage einmal geTeXt werden, dann BibTeX angewendet werden und 
+% Die Quellen sind in der Datei *.bib (hier Literatur.bib) einzugeben. Danach muss diese Vorlage einmal geTeXt werden, dann BibTeX angewendet werden und
 % anschliessend nochmals zweimal geTeXt werden.
 % Im Text erfolgt die Zitierung mit dem Anker-Schlüsselwort, z.B. \cite{kop05}.
 \bibliographystyle{IEEEtran}
@@ -665,7 +663,7 @@ Schlussendlich muss immer abgewägt werden, wieviel Zeit und Geld in Tests inves
 %\bibitem[kop05]{kop05}
 %H.~Kopka, {\em LaTeX, Band 1: Einführung}, Pearson Studium, München, 3.~Auflage, 2005.
 %\bibitem[knu98]{knu98}
-%F.~Mittelbach, M.~Goossens, J.~Braams, D.~Carlisle, and Ch. Rowley, {\em The LaTeX Companion}, 
+%F.~Mittelbach, M.~Goossens, J.~Braams, D.~Carlisle, and Ch. Rowley, {\em The LaTeX Companion},
 %Addison-Wesley, 2nd edition, 2004.
 %\end{thebibliography}
 
@@ -675,13 +673,13 @@ Schlussendlich muss immer abgewägt werden, wieviel Zeit und Geld in Tests inves
 \newpage
 
 % Tabellenverzeichnis
-%\listoftables 
+%\listoftables
 %\addcontentsline{toc}{chapter}{Tabellenverzeichnis} % fügt den Eintrag
 %"Tabellenverzeichnis" im Inhaltsverzeichnis hinzu
 %\newpage
 
 % Abkürzungsverzeichnis
-% Bei Verwendung der Dokumentklasse "scrartcl" ist der Befehlt \addchap{Abkürzungsverzeichnis} durch 
+% Bei Verwendung der Dokumentklasse "scrartcl" ist der Befehlt \addchap{Abkürzungsverzeichnis} durch
 % \addsec{Abkürzungsverzeichnis} zu ersetzen
 \addchap{Abkürzungsverzeichnis}
 \hspace{-17mm}\begin{tabular}{>{\raggedleft}p{0.2\linewidth} p{0.75\linewidth} p{0.1\linewidth}}
