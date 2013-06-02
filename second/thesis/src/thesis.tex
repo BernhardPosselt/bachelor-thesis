@@ -195,13 +195,10 @@ Ein weiteres Problem ist das verhaltene Upgradeverhalten der NutzerInnen. Im Fal
 
 All dies zwingt Web-EntwicklerInnen dazu, eine Vielzahl an unterschiedlichen Browsern und Browser-Versionen zu unterstützen.
 
-
 \section{Lösungsansatz}
 Um eine konstante Qualität der Web-Applikation auf allen Plattformen zu gewährleisten, muss das bisherige Testssystem angepasst werden, um der höheren Komplexität von Web-Applikationen gerecht zu werden.
 
 Dazu werden die jeweiligen Testarten des V-Modells - Unit Test, Integration Test, System Test und Acceptance Test - anhand eines Projektes an eine Web-Applikation angepasst. Sowohl client- als auch serverseitige Tests werden erstellt, um die verschiedenen Plattformen erfolgreich testen zu können. Dies wird mit dementsprechenden Code-Beispielen illustriert.
-
-\newpage
 
 \section{Aufbau}
 Der erste Teil der Arbeit (Kapitel 2, 3 und 4) behandelt den Sinn und die Grenzen des Software-Tests und wie das Testen sich in den Entwicklungsprozess einbinden lässt. Es wird auf Unterschiede zwischen Software-Test von klassischen und Web-Applikationen wird eingegangen. Außerdem wird anhand des V-Modells versucht, den Zusammenhang zwischen Software-Test und Projektablauf aufzuzeigen. Schlussendlich wird der Ablauf des Testprozesses mit Hilfe eines Testplanes erläutert.
@@ -367,7 +364,14 @@ Da Unit Tests eine Komponente isoliert von anderen Komponenten testet, werden Ab
 \lstinputlisting[language=java]{src/mock.php}
 
 \section{Häufige Probleme}
-Das Web ist noch recht jung und entwickelt sich rasant. Wurde es früher nur für Webseiten eingesetzt, sollen nun auf einmal komplette Applikationen entstehen. Dies überfordert viele Entwickler und resultiert oft in halbgaren Architekturen und schlampigen Umsetzungen.
+Das Web ist noch recht jung und entwickelt sich rasant. Wurde es früher nur für Webseiten eingesetzt, sollen nun auf einmal komplette Applikationen entstehen. Dies überfordert viele Entwickler und hat oft einen negativen Einfluss auf die Architektur und Umsetzung der Applikation.
+
+Da Unit Tests isolierte Komponenten Tests sind, kann durch es durch eine schlechte Architektur sehr schwierig sein, eine komplette Isolation bestimmter Bereiche zu erreichen. Vor allem folgende Punkte gestalten das Erstellung der Tests als äußerst kompliziert:
+
+\begin{itemize}
+  \item Fehlende Trennung von Logik und Präsentation
+  \item Verwendung globaler Objekte und Variablen
+\end{itemize}
 
 
 \subsection{Fehlende Trennung von Logik und Präsentation}
@@ -376,7 +380,6 @@ Die mit Abstand am beliebtesten clientseitige JavaScript Library ist jQuery. Im 
 jQuery ist sehr einfach zu verwenden \cite{jquery}[S. 110], verleitet jedoch den/die ProgrammiererIn aufgrund ihrer Funktionsweise dazu, Präsentation und Logik stark miteinander zu verweben. Dies liegt unter anderem daran, dass die meisten jQuery-Methoden einen Selektor als ersten Parameter erwarten. Dieser Selektor funktioniert ähnlich wie ein CSS Selector und selektiert bestimmte Element im DOM. \cite{jquery_selectors}
 
 Folgender Code soll dieses Problem verdeutlichen: Der angeführte Code führt einen AJAX Request aus und gibt abhängig von der zurückgegebenen Datenstruktur einen unterschiedlichen Text aus:
-\newpage
 \lstinputlisting[language=Html]{src/jquery.html}
 \lstinputlisting[language=JavaScript]{src/jquery.js}
 
@@ -386,7 +389,7 @@ Durch das Verwenden des Selektors \emph{\#field .info span} ist der JavaScript C
 JavaScript macht es einfach, globale Variablen zu verwenden: Es unterstützt nicht nur implizite \emph{Globals}\cite{js_patterns}[S. 11], sondern regelt den Zugriff auf das DOM über das globale \emph{window} Objekt\cite{js_patterns}[S. 13]. Dadurch werden ProgrammiererInnen dazu verleitet, globale Variablen und Objekte zu benutzen. Das wiederum erschwert die Testbarkeit, da eine implizite Abhängigkeit ensteht, die für den/die TesterIn nicht sofort offensichtlich ist. Auch wird es schwieriger, den Code in Isolation zu testen.
 
 Jedoch nicht nur JavaScript sondern auch PHP setzt auf globale Variablen: Durch den Einsatz von \emph{Super-Globals} (z.B. \$\_POST oder \$\_SERVER) ist es schwer, eine komplette Isolation von globalen Variablen zu erreichen.
-
+\newpage
 \section{Lösungsansatz}
 Die vorher aufgezeigten Probleme können mit Hilfe folgender Techniken gelöst werden:
 
@@ -409,7 +412,7 @@ Dazu lassen sich nun einfach Unit Tests erstellen, da die Klasse komplett vom gl
 
 \lstinputlisting[language=java]{src/phpunit.php}
 \lstinputlisting[language=java]{src/phpunittest.php}
-
+\newpage
 
 \section{Clientseitige Unit Tests}
 Auf der Clientseite wird als JavaScript Framework AngularJS eingesetzt. AngularJS erlaubt das Erstellen eigener HTML-Attribute und HTML-Elemente. Diese werden \emph{Directives} genannt und werden für die Darstellungslogik verwendet.
@@ -516,7 +519,7 @@ Die serverseitigen Tests reduzieren sich deshalb auf das Erstellen und Einrichte
 \begin{itemize}
   \item Security: Statische Code Analysen können mit Tools durchgeführt werden; Security Audits von Fachkräften werden durchgeführt
   \item Konfiguration: Mit einem Skript werden verschiedene Konfigurationen getestet
-  \item Kompatibiltät der Applikation mit dem Server Betriebssystem und den serverseitigen Applikationen: Wird mit Chef und Vagrant durchgeführt
+  \item Kompatibiltät der Applikation mit dem Server Betriebssystem und den serverseitigen Applikationen: Mit Vagrant werden virtuelle Maschinen der unterstützten serverseitigen Betriebssysteme erstellt; die zu testenden Web-Server und Datenbanken werden mit Chef Cookbooks eingerichtet
   \item Recovery Funktionen: Falls verfügbar, wird dies mit einem Script getestet
   \item Performance und Speicherverbrauch: Mit einem Skript werden verschiedene, gleichzeitige Anfragen an den Server erstellt; der Arbeitsspeicher wird auf das spezifizierte Minimum reduziert
   \item Installation: Wird durch den clientseitigen Installationsdialog server- und clientseitig getestet
